@@ -92,6 +92,3 @@ SSL_CTX* InitServerCTX(void){
 	}
 	return ctx;
 }
-
-void LoadCertificates(SSL_CTX* ctx, char* CertFile, char* KeyFile){
-	if(
