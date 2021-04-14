@@ -51,7 +51,6 @@ int OpenListener(int port){
 int isRoot(){
 	if(getuid()!=0)
 		return 0;
-
 	else
 		return 1;
 }
@@ -71,4 +70,25 @@ SSL_CTX* InitServerCTX(void){
 		abort();
 	}
 	return ctx;
+}
+
+void LoadCertificates(SSL_CTX* ctx, char* CertFile, char* KeyFile){
+	if(SSL_CTX_use_certificate_file(ctx, CertFile, SSL_FILETYPE_PEM)<=0){
+		ERR_print_errors_fp(stderr);
+		abort();
+	}
+
+	if(SSL_CTX_use_PrivateKey_file(ctx, KeyFile, SSL_FILETYPE_PEM) <=0){
+		ERR_print_errors_fp(stderr);
+		abort();
+	}
+	
+	if(!SSL_CTX_check_private_key(ctx)){
+		fprintf(stderr, "Private key does not match the public certificate\n");
+		abort();
+	}
+}
+
+int main(void){
+	return 0;
 }
