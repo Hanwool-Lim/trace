@@ -89,6 +89,22 @@ void LoadCertificates(SSL_CTX* ctx, char* CertFile, char* KeyFile){
 	}
 }
 
-int main(void){
-	return 0;
+int main(int count, char *argc[]){
+	SSL_CTX *ctx;
+	int server;
+	char *portnum;
+
+	if(!isRoot()){
+		printf("This program must be run as root/sudo user!!\n");
+		exit(0);
+	}
+	
+	if(count!=2){
+		printf("Usage : %s <portnum>\n", Argc[0]);
+		exit(0);
+	}
+
+	SSL_library_init();
 }
+
+
