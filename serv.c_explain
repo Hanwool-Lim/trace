@@ -82,6 +82,8 @@ int isRoot(){
 //............................................................................................................................
 
 SSL_CTX* InitServerCTX(void){ //암호화 통신을 위한 초기화 작업을 하는 함수 //SSL_CTX형식의 함수를 사용
+	//암호화 통신을 위해서 ctx라는 프레임워크를 생성하는 함수
+	
 	SSL_METHOD *method;
 	SSL_CTX *ctx;
 
@@ -106,8 +108,11 @@ SSL_CTX* InitServerCTX(void){ //암호화 통신을 위한 초기화 작업을 �
 }
 //............................................................................................................................
 
-void LoadCertificates(SSL_CTX* ctx, char* CertFile, char* KeyFile){
-	if(SSL_CTX_use_certificate_file(ctx, CertFile, SSL_FILETYPE_PEM)<=0){
+void LoadCertificates(SSL_CTX* ctx, char* CertFile, char* KeyFile){ //암호화 통신을 위한 키, 인증서를 설정하는 함수
+	//ctx를 입력값으로 받음(SSL/TLS를 구축하기위한 프레임워크)
+	//	ctx는 위의 InitServerCTX 함수에서 TLS에 대한 메소드를 삽입하였음
+	
+	if(SSL_CTX_use_certificate_file(ctx, CertFile, SSL_FILETYPE_PEM)<=0){ //ctx파일에 저장되어있는
 		ERR_print_errors_fp(stderr);
 		abort();
 	}
