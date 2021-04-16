@@ -104,7 +104,7 @@ SSL_CTX* InitServerCTX(void){ //암호화 통신을 위한 초기화 작업을 �
 	}
 	return ctx;
 	//마지막으로 ctx를 반환
-	// SSL/TLS를 구축하기위한 프레임워크 
+	// SSL/TLS를 구축하기위한 프레임워크(+메소드 설정)
 }
 //............................................................................................................................
 
@@ -112,17 +112,21 @@ void LoadCertificates(SSL_CTX* ctx, char* CertFile, char* KeyFile){ //암호화 
 	//ctx를 입력값으로 받음(SSL/TLS를 구축하기위한 프레임워크)
 	//	ctx는 위의 InitServerCTX 함수에서 TLS에 대한 메소드를 삽입하였음
 	
-	if(SSL_CTX_use_certificate_file(ctx, CertFile, SSL_FILETYPE_PEM)<=0){ //ctx파일에 저장되어있는
+	if(SSL_CTX_use_certificate_file(ctx, CertFile, SSL_FILETYPE_PEM)<=0){ 
+	//certFile에 저장되어있는 인증서를 ctx로 로드(+키 설정)
+	//type : SSL_FILETYPE_PEM
 		ERR_print_errors_fp(stderr);
 		abort();
 	}
 
 	if(SSL_CTX_use_PrivateKey_file(ctx, KeyFile, SSL_FILETYPE_PEM) <=0){
+	//KeyFile에 저장되어있는 인증서를 ctx로 로드(+인증서 설정)
+	//type : SSL_FILETYPE_PEM
 		ERR_print_errors_fp(stderr);
 		abort();
 	}
 	
-	if(!SSL_CTX_check_private_key(ctx)){
+	if(!SSL_CTX_check_private_key(ctx)){ //비밀키(개인키)가 사용가능한 것인지 확인
 		fprintf(stderr, "Private key does not match the public certificate\n");
 		abort();
 	}
