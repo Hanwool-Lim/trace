@@ -35,6 +35,7 @@ int OpenListener(int port){ //소켓을 생성하는 함수
 	//domain : PF_INET
 	//type : SOCK_STREAM = tcp
 	//protocol : type에서 미리 지정한 경우 0을 입력
+	//소켓을 만들어만놓은것이지 안에 데이터를 삽입하거나 한 것은 아님
 	
 	bzero(&addr, sizeof(addr));
 	//메모리 공간을 size만큼 0으로 채우는 함수(ptr 주소값부터 size바이트만큼 0으로 채움)
@@ -60,6 +61,7 @@ int OpenListener(int port){ //소켓을 생성하는 함수
 	}
 	//listen : 지정한 소켓 디스크립터로 클라이언트의 접속요청을 기다리는 함수
 	//		(보통 bind()함수와 같이 사용)
+	
 	return sd; //생성하고 데이터를 집어넣은 소켓을 반환
 }
 
@@ -69,22 +71,33 @@ int isRoot(){
 	else
 		return 1;
 }
+//현재 프로그램을 사용한 주체를 확인하는 것
+//getuid == 0 -> root sudo
+//root, sudo로 프로그램을 시작할 경우 0을 반환
+//아닐경우 1을 반환
 
-SSL_CTX* InitServerCTX(void){
+SSL_CTX* InitServerCTX(void){ //암호화 통신을 위한 초기화 작업을 하는 함수 //SSL_CTX형식의 함수를 사용
 	SSL_METHOD *method;
 	SSL_CTX *ctx;
 
-	OpenSSL_add_all_algorithms();
-	SSL_load_error_strings();
+	OpenSSL_add_all_algorithms(); //모든 암호화 타입들을 로드
+	SSL_load_error_strings(); //에러메세지 문자열을 로드
 
-	method = TLSv1_2_server_method();
+	method = TLSv1_2_server_method(); 
+	//TLS에 대한 메소드를 생성
+	//TLS v1.2의 서버 메소드를 생성
+	
 	ctx = SSL_CTX_new(method);
+	//위에서 생성한 메소드를 활용하여 새로운 SSL_CTX를 생성
+	//SSL_CTX : SSL/TLS를 구축하기위한 프레임워크(SSL Context를 생성)
 
 	if(ctx == NULL){
 		ERR_print_errors_fp(stderr);
 		abort();
 	}
 	return ctx;
+	//마지막으로 ctx를 반환
+	// SSL/TLS를 구축하기위한 프레임워크 
 }
 
 void LoadCertificates(SSL_CTX* ctx, char* CertFile, char* KeyFile){
