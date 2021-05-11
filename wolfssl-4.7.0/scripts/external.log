@@ -1,0 +1,2 @@
+WOLFSSL_EXTERNAL_TEST NOT set, won't run
+PASS scripts/external.test (exit status: 0)

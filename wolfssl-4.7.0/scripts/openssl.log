@@ -1,0 +1,2 @@
+WOLFSSL_OPENSSL_TEST NOT set, won't run
+PASS scripts/openssl.test (exit status: 0)
