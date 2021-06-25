@@ -1,4 +1,4 @@
-/* echoserver.h
+/* server.h
  *
  * Copyright (C) 2006-2021 wolfSSL Inc.
  *
@@ -20,12 +20,16 @@
  */
 
 
-#ifndef WOLFSSL_ECHOSERVER_H
-#define WOLFSSL_ECHOSERVER_H
+#ifndef WOLFSSL_SERVER_H
+#define WOLFSSL_SERVER_H
 
 
-THREAD_RETURN WOLFSSL_THREAD echoserver_test(void* args);
+THREAD_RETURN WOLFSSL_THREAD server_test(void* args);
+
+/* Echo bytes using buffer of blockSize until [echoData] bytes are complete. */
+/* If [bechmarkThroughput] set the statistcs will be output at the end */
+int ServerEchoData(WOLFSSL* ssl, int clientfd, int echoData, int blockSize,
+                   size_t benchmarkThroughput);
 
 
-#endif /* WOLFSSL_ECHOSERVER_H */
-
+#endif /* WOLFSSL_SERVER_H */

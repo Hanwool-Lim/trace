@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="echoserver"
-	ProjectGUID="{07D97C48-E08F-4E34-9F67-3064039FF2CB}"
-	RootNamespace="echoserver"
+	Name="server"
+	ProjectGUID="{E9FB0BA5-BA46-4A59-A953-39C18CD1DCB1}"
+	RootNamespace="server"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -42,7 +42,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="../../;../../IDE/WIN"
-				PreprocessorDefinitions="USE_ANY_ADDR;WOLFSSL_USER_SETTINGS;CYASSL_USER_SETTINGS"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;WOLFSSL_USER_SETTINGS;CYASSL_USER_SETTINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -117,7 +117,7 @@
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
 				AdditionalIncludeDirectories="../../;../../IDE/WIN"
-				PreprocessorDefinitions="USE_ANY_ADDR;WOLFSSL_USER_SETTINGS;CYASSL_USER_SETTINGS"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;WOLFSSL_USER_SETTINGS;CYASSL_USER_SETTINGS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
@@ -175,7 +175,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\echoserver.c"
+				RelativePath=".\server.c"
 				>
 			</File>
 		</Filter>
