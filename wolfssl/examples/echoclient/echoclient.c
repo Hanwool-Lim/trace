@@ -26,9 +26,11 @@
 
 //------------------------(wolfssl 프로그래밍의 기본적인 헤더파일 추가)-----------------------------
 //cyassl이 wolfssl의 이전버전이지만, 헤더파일을 잘 보면 wolfssl을 사용한 경우가 많음
-#include <cyassl/ctaocrypt/settings.h>
+#include <cyassl/ctaocrypt/settings.h> 
+//wolfssl의 경우 wolfssl/wolfcrypt/setting.h를 사용(구조가 꽤 다름)
+
 /* let's use cyassl layer AND cyassl openssl layer */
-#include <cyassl/ssl.h>
+#include <cyassl/ssl.h> //wolfssl/ssl.h(구조가 꽤 다름)
 #include <cyassl/openssl/ssl.h>
 #ifdef CYASSL_DTLS
     #include <cyassl/error-ssl.h>
