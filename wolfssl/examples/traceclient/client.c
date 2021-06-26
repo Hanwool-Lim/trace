@@ -29,6 +29,7 @@
 #include <wolfssl/wolfcrypt/settings.h>
 
 #include <wolfssl/ssl.h>
+#include <wolfssl/openssl/ssl.h>
 
 #if defined(WOLFSSL_MDK_ARM) || defined(WOLFSSL_KEIL_TCP_NET)
         #include <stdio.h>
