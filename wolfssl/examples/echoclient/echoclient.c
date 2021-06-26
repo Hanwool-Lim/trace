@@ -31,10 +31,14 @@
 
 /* let's use cyassl layer AND cyassl openssl layer */
 #include <cyassl/ssl.h> //wolfssl/ssl.h(구조가 꽤 다름)
-#include <cyassl/openssl/ssl.h>
+#include <cyassl/openssl/ssl.h> 
+//코드가 많이 간결함
+//wolfssl/openssl/ssl.h가 추가되어있음(wolfssl/openssl/ssl.h의 확장버전이라고 생각하면 될듯)
+
 #ifdef CYASSL_DTLS
     #include <cyassl/error-ssl.h>
 #endif
+//wolfssl/error-ssl.h만 추가되어있음(=)
 
 #if defined(WOLFSSL_MDK_ARM) || defined(WOLFSSL_KEIL_TCP_NET)
         #include <stdio.h>
