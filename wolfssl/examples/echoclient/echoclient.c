@@ -19,11 +19,13 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
  */
 
-
+//wolfssl이 config.h 파일을 가지고 있는 경우 해당 config.h 파일을 include
 #ifdef HAVE_CONFIG_H
     #include <config.h>
 #endif
 
+//------------------------(wolfssl 프로그래밍의 기본적인 헤더파일 추가)-----------------------------
+//cyassl이 wolfssl의 이전버전이지만, 헤더파일을 추가하는 부분에서 조금의 차이는 존재
 #include <cyassl/ctaocrypt/settings.h>
 /* let's use cyassl layer AND cyassl openssl layer */
 #include <cyassl/ssl.h>
@@ -60,7 +62,7 @@
 #ifdef WOLFSSL_ASYNC_CRYPT
     static int devId = INVALID_DEVID;
 #endif
-
+//---------------------------------------------------------------------------------------------------------------
 
 void echoclient_test(void* args)
 {
