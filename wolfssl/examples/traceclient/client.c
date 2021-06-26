@@ -32,7 +32,7 @@
 #include <wolfssl/openssl/ssl.h> //추가
 //wolfssl/openssl/ssl.h은 cyassl/openssl/ssl.h과 비교하여 많은 코드가 존재
 
-//추가된 항목
+//추가된 항목 //cyassl/error-ssl.h 역시 wolfssl을 include하고있음
 #ifdef WOLFSSL_DTLS
     #include <wolfssl/error-ssl.h>
 #endif
