@@ -25,7 +25,7 @@
 #endif
 
 //------------------------(wolfssl 프로그래밍의 기본적인 헤더파일 추가)-----------------------------
-//cyassl이 wolfssl의 이전버전이지만, 헤더파일을 추가하는 부분에서 조금의 차이는 존재
+//cyassl이 wolfssl의 이전버전이지만, 헤더파일을 잘 보면 wolfssl을 사용한 경우가 많음
 #include <cyassl/ctaocrypt/settings.h>
 /* let's use cyassl layer AND cyassl openssl layer */
 #include <cyassl/ssl.h>
