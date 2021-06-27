@@ -272,8 +272,8 @@ egs:
 	$(MAKE) examples/client/client; \
 	$(MAKE) examples/echoclient/echoclient;\
 	$(MAKE) examples/server/server; \
-	$(MAKE) examples/echoserver/echoserver;
-	$(MAKE) examples/traceclient/client;
+	$(MAKE) examples/echoserver/echoserver; \
+	$(MAKE) examples/traceclient/client; \
 	$(MAKE) examples/traceserver/server;
 
 wc_egs:
