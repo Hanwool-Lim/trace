@@ -72,10 +72,10 @@
 
 void echoclient_test(void* args)
 {
-    SOCKET_T sockfd = 0;
+    SOCKET_T sockfd = 0; //소켓을 생성
 
-    FILE* fin   = stdin  ;
-    FILE* fout = stdout;
+    FILE* fin   = stdin  ; //입력받은 값들을 잠시 담아둠
+    FILE* fout = stdout; //출력할 값들을 잠시 담아둠
 
 #ifndef WOLFSSL_MDK_SHELL
     int inCreated  = 0;
