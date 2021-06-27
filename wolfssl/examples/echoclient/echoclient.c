@@ -31,12 +31,12 @@
 //wolfssl의 경우 wolfssl/wolfcrypt/setting.h를 사용(구조가 꽤 다름)
 
 /* let's use cyassl layer AND cyassl openssl layer */
-#include <cyassl/ssl.h> //wolfssl/ssl.h(구조가 꽤 다름)
+#include <cyassl/ssl.h> //wolfssl/ssl.h를 포함(확장)
 #include <cyassl/openssl/ssl.h> 
 //코드가 많이 간결함
 //wolfssl/openssl/ssl.h가 추가되어있음(wolfssl/openssl/ssl.h의 확장버전이라고 생각하면 될듯)
 
-#ifdef CYASSL_DTLS
+#ifdef CYASSL_DTLS //CYASSL_DTLS는 cyassl/ssl.h에 정의되어있음
     #include <cyassl/error-ssl.h>
 #endif
 //wolfssl/error-ssl.h만 추가되어있음(=)
