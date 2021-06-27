@@ -156,6 +156,7 @@ static int lng_index = 0;
     }
 #endif
 
+//-------------(여기서부터 시작)--------------------
 static int NonBlockingSSL_Connect(WOLFSSL* ssl)
 {
     int ret;
