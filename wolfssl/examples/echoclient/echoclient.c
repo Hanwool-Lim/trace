@@ -20,6 +20,7 @@
  */
 
 //wolfssl이 config.h 파일을 가지고 있는 경우 해당 config.h 파일을 include
+//현재 따로 config 파일은 존재하지 않는 것으로 판단되어짐
 #ifdef HAVE_CONFIG_H
     #include <config.h>
 #endif
