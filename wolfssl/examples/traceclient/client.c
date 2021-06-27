@@ -37,6 +37,7 @@
     #include <wolfssl/error-ssl.h>
 #endif
 
+//WOLFSSL_MDK_ARM은 wolfssl/wolfcrypt/settings.h에 정의되어있음
 #if defined(WOLFSSL_MDK_ARM) || defined(WOLFSSL_KEIL_TCP_NET)
         #include <stdio.h>
         #include <string.h>
