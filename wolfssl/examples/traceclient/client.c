@@ -128,32 +128,28 @@ static const char kHttpGetMsg[] = "GET /index.html HTTP/1.0\r\n\r\n";
 
 static int lng_index = 0;
 #ifdef WOLFSSL_CALLBACKS
-    WOLFSSL_TIMEVAL timeoutConnect;
-    static int handShakeCB(HandShakeInfo* info)
-    {
-        (void)info;
-        return 0;
-    }
 
-    static int timeoutCB(TimeoutInfo* info)
-    {
+WOLFSSL_TIMEVAL timeoutConnect;
+
+static int handShakeCB(HandShakeInfo* info){
         (void)info;
         return 0;
-    }
+}
+
+static int timeoutCB(TimeoutInfo* info){
+        (void)info;
+        return 0;
+}
 
 #endif
 
 #ifdef HAVE_SESSION_TICKET
-    static int sessionTicketCB(WOLFSSL* ssl,
-                        const unsigned char* ticket, int ticketSz,
-                        void* ctx)
-    {
+static int sessionTicketCB(WOLFSSL* ssl, const unsigned char* ticket, int ticketSz, void* ctx){
         (void)ssl;
         (void)ticket;
-        printf("Session Ticket CB: ticketSz = %d, ctx = %s\n",
-               ticketSz, (char*)ctx);
+        printf("Session Ticket CB: ticketSz = %d, ctx = %s\n", ticketSz, (char*)ctx);
         return 0;
-    }
+}
 #endif
 
 //-------------(여기서부터 시작)--------------------
