@@ -118,6 +118,9 @@ static const char kHttpGetMsg[] = "GET /index.html HTTP/1.0\r\n\r\n";
     #define TEST_DELAY() XSLEEP_MS(1000)
 #endif
 
+//------------------------------------------------------------------------------------------------------
+//윗 부분까지는 헤더파일의 추가와 매크로변수의 선언이라고 생각하면됨
+        
 /* Note on using port 0: the client standalone example doesn't utilize the
  * port 0 port sharing; that is used by (1) the server in external control
  * test mode and (2) the testsuite which uses this code and sets up the correct
