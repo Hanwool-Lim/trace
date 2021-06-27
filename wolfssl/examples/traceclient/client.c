@@ -37,7 +37,7 @@
     #include <wolfssl/error-ssl.h>
 #endif
 
-//WOLFSSL_MDK_ARM은 wolfssl/wolfcrypt/settings.h에 정의되어있음
+//WOLFSSL_MDK_ARM은 wolfssl/wolfcrypt/settings.h에 정의되어있음(즉, 실행되어짐)
 #if defined(WOLFSSL_MDK_ARM) || defined(WOLFSSL_KEIL_TCP_NET)
         #include <stdio.h>
         #include <string.h>
@@ -92,7 +92,9 @@
     #define TEST_STR_TERM
 #endif
 
-static const char kHelloMsg[] = "hello wolfssl!" TEST_STR_TERM;
+static const char kHelloMsg[] = "hello wolfssl!" TEST_STR_TERM; //처음 SSL을 연결하였을때 서버에 전달하는 client message
+//현재는 해당 문장만 출력되어짐
+
 #ifndef NO_SESSION_CACHE
 static const char kResumeMsg[] = "resuming wolfssl!" TEST_STR_TERM;
 #endif
