@@ -77,6 +77,7 @@ void echoclient_test(void* args)
     FILE* fin   = stdin  ; //입력받은 값들을 잠시 담아둠
     FILE* fout = stdout; //출력할 값들을 잠시 담아둠
 
+//ifndef : 정의되어있지 않을 경우
 #ifndef WOLFSSL_MDK_SHELL
     int inCreated  = 0;
     int outCreated = 0;
@@ -84,7 +85,8 @@ void echoclient_test(void* args)
 
     char msg[1024];
     char reply[1024+1];
-
+    
+    //SSL의 필요 요소들
     SSL_METHOD* method = 0;
     SSL_CTX*    ctx    = 0;
     SSL*        ssl    = 0;
