@@ -1380,8 +1380,7 @@ static void Usage(void)
     int msgid = 0;
     const char** msg = client_usage_msg[lng_index];
 
-    printf("%s%s%s", "wolfSSL client ",    LIBWOLFSSL_VERSION_STRING,
-           msg[msgid]);
+    printf("%s%s%s", "wolfSSL client ",    LIBWOLFSSL_VERSION_STRING, msg[msgid]);
 
     /* print out so that scripts can know what the max supported key size is */
     printf("%s", msg[++msgid]);
@@ -1931,11 +1930,11 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
                     break;
                 }
             #endif
-                version = atoi(myoptarg);
+                version = atoi(myoptarg); //atoi : 문자 스트링을 정수로 변환
                 if (version < 0 || version > 4) {
                     Usage();
                     XEXIT_T(MY_EX_USAGE);
-                }
+                } //usage와 XEXIT_T의 경우 v가 0~4가 아닐경우 실행(대충 사용법을 출력하는 함수로 추측)
                 break;
 
             case 'V' :
@@ -2355,7 +2354,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
                 Usage();
                 XEXIT_T(MY_EX_USAGE);
         }
-    }
+    }//end switch
 
     myoptind = 0;      /* reset for test cases */
 #endif /* !WOLFSSL_VXWORKS */
