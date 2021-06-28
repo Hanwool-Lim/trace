@@ -1555,12 +1555,14 @@ static void Usage(void)
 
 THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 {
-    SOCKET_T sockfd = WOLFSSL_SOCKET_INVALID;
+    //create socket
+    SOCKET_T sockfd = WOLFSSL_SOCKET_INVALID; 
 
     wolfSSL_method_func method = NULL;
     WOLFSSL_CTX*     ctx     = 0;
     WOLFSSL*         ssl     = 0;
 
+//기본적인 실행에서는 실행되지 않음
 #ifdef WOLFSSL_WOLFSENTRY_HOOKS
     wolfsentry_errcode_t wolfsentry_ret;
 #endif
@@ -1574,6 +1576,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     int  msgSz = 0;
     char reply[CLI_REPLY_SZ];
 
+    //IP/port/domain setting **
     word16 port   = wolfSSLPort;
     char* host   = (char*)wolfSSLIP;
     const char* domain = "localhost";  /* can't default to www.wolfssl.com
@@ -1582,7 +1585,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
                                        */
 #ifndef WOLFSSL_VXWORKS
     int    ch;
-    static const struct mygetopt_long_config long_options[] = {
+    static const struct mygetopt_long_config long_options[] = { //구조체 배열
 #if defined(WOLFSSL_WOLFSENTRY_HOOKS) && !defined(NO_FILESYSTEM) && \
     !defined(WOLFSENTRY_NO_JSON)
         { "wolfsentry-config", 1, 256 },
@@ -1590,7 +1593,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         { "help", 0, 257 },
         { "ヘルプ", 0, 258 },
         { 0, 0, 0 }
-    };
+    }; 
 #endif
     int    version = CLIENT_INVALID_VERSION;
     int    minVersion = CLIENT_INVALID_VERSION;
@@ -1714,7 +1717,9 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     int     argc = ((func_args*)args)->argc;
     char**  argv = ((func_args*)args)->argv;
 
+// ------------------------- variable announcement up to this point ------------------------
 
+//기본적인 실행에서는 실행되지 않음
 #ifdef WOLFSSL_STATIC_MEMORY
     #if (defined(HAVE_ECC) && !defined(ALT_ECC_SIZE)) \
         || defined(SESSION_CERTS)
