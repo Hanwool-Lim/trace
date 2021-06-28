@@ -1738,10 +1738,15 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 
     ((func_args*)args)->return_code = -1; /* error state */
 
+//기본적인 실행에서 실행
 #ifndef NO_RSA
     verifyCert = caCertFile;
     ourCert    = cliCertFile;
     ourKey     = cliKeyFile;
+//setting caCert, client_cert, client_key
+//각 변수는 char 형식으로 파일의 디렉터리 값을 가짐
+
+//기본적인 실행에서는 실행되지 않음
 #else
     #ifdef HAVE_ECC
         verifyCert = caEccCertFile;
@@ -1788,7 +1793,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     (void)useSupCurve;
     (void)loadCertKeyIntoSSLObj;
 
-    StackTrap();
+    StackTrap(); //wolfssl/test.h //기본적인 실행으로는 아무것도 실행되는게 없음
 
     /* Reinitialize the global myVerifyAction. */
     myVerifyAction = VERIFY_OVERRIDE_ERROR;

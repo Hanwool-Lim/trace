@@ -3032,6 +3032,7 @@ static WC_INLINE void StackTrap(void)
 
 #else /* STACK_TRAP */
 
+//기본적인 실행으로 실행되어지는 것
 static WC_INLINE void StackTrap(void)
 {
 }
