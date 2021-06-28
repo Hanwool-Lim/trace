@@ -1805,6 +1805,8 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
             "A:B:CDE:F:GH:IJKL:M:NO:PQRS:TUVW:XYZ:"
             "01:23:4567:89"
             "@#", long_options, 0)) != -1) {
+	//mygetopt_long : 프로그램을 실행할때 적용한 옵션을 반환
+	//ch : return mygetopt_long을 반환값을 저장하는 변수
         switch (ch) {
             case '?' :
                 if(myoptarg!=NULL) {
@@ -1903,7 +1905,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
                 break;
 
             case 'h' :
-                host   = myoptarg;
+                host   = myoptarg; //myoptarg : 옵션 뒤에 붙여지는 매개변수 (ex. -h 127.0.0.1일 경우 127.0.0.1이 해당되어짐)
                 domain = myoptarg;
                 break;
 
