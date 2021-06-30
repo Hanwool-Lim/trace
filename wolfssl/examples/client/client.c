@@ -2938,7 +2938,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         err_sys("UseSessionTicket failed");
     }
 #endif
-#ifdef HAVE_EXTENDED_MASTER //실행 //disableExtMasterSecret은 n옵션때 변경됨
+#ifdef HAVE_EXTENDED_MASTER //조건에는 맞지만 실행되는 부분이 없음 //disableExtMasterSecret은 n옵션때 변경됨
     if (disableExtMasterSecret){
         if (wolfSSL_CTX_DisableExtendedMasterSecret(ctx) != WOLFSSL_SUCCESS) {
             wolfSSL_CTX_free(ctx); ctx = NULL;
@@ -2947,61 +2947,55 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 #endif
 //-------------------------(6/29)---------------------------
-#if defined(HAVE_SUPPORTED_CURVES)
-    #if defined(HAVE_CURVE25519)
-    if (useX25519) {
+#if defined(HAVE_SUPPORTED_CURVES) //실행
+    #if defined(HAVE_CURVE25519) //실행 X
+    if (useX25519) { //useX25519 기본값 = 0 t옵션때 변경됨
         if (wolfSSL_CTX_UseSupportedCurve(ctx, WOLFSSL_ECC_X25519)
                                                            != WOLFSSL_SUCCESS) {
             err_sys("unable to support X25519");
         }
     }
     #endif /* HAVE_CURVE25519 */
-    #if defined(HAVE_CURVE448)
-    if (useX448) {
+    #if defined(HAVE_CURVE448) //실행 X
+    if (useX448) { //useX448 기본값 = 0 8옵션때 변경됨
         if (wolfSSL_CTX_UseSupportedCurve(ctx, WOLFSSL_ECC_X448)
                                                            != WOLFSSL_SUCCESS) {
             err_sys("unable to support X448");
         }
     }
     #endif /* HAVE_CURVE448 */
-    #ifdef HAVE_ECC
-    if (useSupCurve) {
-        #if !defined(NO_ECC_SECP) && \
-            (defined(HAVE_ECC384) || defined(HAVE_ALL_CURVES))
-        if (wolfSSL_CTX_UseSupportedCurve(ctx, WOLFSSL_ECC_SECP384R1)
-                                                           != WOLFSSL_SUCCESS) {
+    #ifdef HAVE_ECC //실행 //조건에는 맞지만 실행되는 부분이 없음
+    if (useSupCurve) { //실행 X //useSupCurve 기본값 = 0
+        #if !defined(NO_ECC_SECP) && (defined(HAVE_ECC384) || defined(HAVE_ALL_CURVES))
+        if (wolfSSL_CTX_UseSupportedCurve(ctx, WOLFSSL_ECC_SECP384R1)!= WOLFSSL_SUCCESS) {
             err_sys("unable to support secp384r1");
         }
         #endif
-        #if !defined(NO_ECC_SECP) && \
-            (!defined(NO_ECC256) || defined(HAVE_ALL_CURVES))
-        if (wolfSSL_CTX_UseSupportedCurve(ctx, WOLFSSL_ECC_SECP256R1)
-                                                           != WOLFSSL_SUCCESS) {
+        #if !defined(NO_ECC_SECP) && (!defined(NO_ECC256) || defined(HAVE_ALL_CURVES))
+        if (wolfSSL_CTX_UseSupportedCurve(ctx, WOLFSSL_ECC_SECP256R1)!= WOLFSSL_SUCCESS) {
             err_sys("unable to support secp256r1");
         }
         #endif
     }
     #endif /* HAVE_ECC */
     #ifdef HAVE_FFDHE_2048
-    if (useSupCurve) {
-        if (wolfSSL_CTX_UseSupportedCurve(ctx, WOLFSSL_FFDHE_2048)
-                                                           != WOLFSSL_SUCCESS) {
+    if (useSupCurve) { //실행 X //useSupCurve 기본값 = 0
+        if (wolfSSL_CTX_UseSupportedCurve(ctx, WOLFSSL_FFDHE_2048)!= WOLFSSL_SUCCESS) {
             err_sys("unable to support FFDHE 2048");
         }
     }
     #endif
 #endif /* HAVE_SUPPORTED_CURVES */
 
-#ifdef WOLFSSL_TLS13
-    if (noPskDheKe)
+#ifdef WOLFSSL_TLS13 //wolfssl_tls13은 정의되어있음 //실행 
+    if (noPskDheKe) //기본값 = 0
         wolfSSL_CTX_no_dhe_psk(ctx);
 #endif
-#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
+#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH) //실행 X
     if (postHandAuth)
         wolfSSL_CTX_allow_post_handshake_auth(ctx);
 #endif
-
-    if (benchmark) {
+    if (benchmark) { //benchmark 기본값 = 0
         ((func_args*)args)->return_code =
             ClientBenchmarkConnections(ctx, host, port, dtlsUDP, dtlsSCTP,
                                        benchmark, resumeSession, useX25519,
@@ -3011,7 +3005,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         XEXIT_T(EXIT_SUCCESS);
     }
 
-    if (throughput) {
+    if (throughput) { //throughput 기본값 = 0
         ((func_args*)args)->return_code =
             ClientBenchmarkThroughput(ctx, host, port, dtlsUDP, dtlsSCTP,
                                       block, throughput, useX25519, useX448,
@@ -3023,11 +3017,11 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
             goto exit;
     }
 
-    #if defined(WOLFSSL_MDK_ARM)
+    #if defined(WOLFSSL_MDK_ARM) //실행 X
     wolfSSL_CTX_set_verify(ctx, WOLFSSL_VERIFY_NONE, 0);
     #endif
 
-    #if defined(OPENSSL_EXTRA)
+    #if defined(OPENSSL_EXTRA) //실행 X
     if (wolfSSL_CTX_get_read_ahead(ctx) != 0) {
         wolfSSL_CTX_free(ctx); ctx = NULL;
         err_sys("bad read ahead default value");
@@ -3038,7 +3032,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
     #endif
 
-#if defined(WOLFSSL_STATIC_MEMORY) && defined(DEBUG_WOLFSSL)
+#if defined(WOLFSSL_STATIC_MEMORY) && defined(DEBUG_WOLFSSL) //실행 X
         fprintf(stderr, "Before creating SSL\n");
         if (wolfSSL_CTX_is_static_memory(ctx, &mem_stats) != 1)
             err_sys("ctx not using static memory");
@@ -3046,7 +3040,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
             err_sys("error printing out memory stats");
 #endif
 
-    if (doMcast) {
+    if (doMcast) { //실행 X //doMcast 기본값 = 0
 #ifdef WOLFSSL_MULTICAST
         wolfSSL_CTX_mcast_set_member_id(ctx, mcastID);
         if (wolfSSL_CTX_set_cipher_list(ctx, "WDM-NULL-SHA256")
@@ -3057,12 +3051,12 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 #endif
     }
 
-#ifdef HAVE_PK_CALLBACKS
-    if (pkCallbacks)
+#ifdef HAVE_PK_CALLBACKS //실행 X
+    if (pkCallbacks) //pkCallbacks 기본값 = 0 //P옵션때 변경됨
         SetupPkCallbacks(ctx);
 #endif
 
-    ssl = wolfSSL_new(ctx);
+    ssl = wolfSSL_new(ctx); //이전까지 ctx에 탑재한 내용을 토대로 SSL 변수에 적용(CA 목록, Client 인증서, Client 키)
     if (ssl == NULL) {
         wolfSSL_CTX_free(ctx); ctx = NULL;
         err_sys("unable to get SSL object");
