@@ -118,6 +118,7 @@
     #include <net/socket.h>
     #define SOCKET_T int
     #define SOL_SOCKET 1
+    #define SO_REUSEADDR 201
     #define WOLFSSL_USE_GETADDRINFO
 
     static unsigned long inet_addr(const char *cp)
@@ -665,7 +666,7 @@ struct mygetopt_long_config {
 static WC_INLINE int mygetopt_long(int argc, char** argv, const char* optstring,
     const struct mygetopt_long_config *longopts, int *longindex)
 {
-    static char* next = NULL;
+    static char* next = NULL; //프로그램에서 지정한 옵션 (-h, -b 등)
 
     int  c;
     char* cp;
@@ -675,34 +676,37 @@ static WC_INLINE int mygetopt_long(int argc, char** argv, const char* optstring,
     if (argv == NULL)  {
         myoptarg = NULL;
         return -1;
-    }
+    }//일반적으로는 실행X
 
-    if (myoptind == 0)
+    if (myoptind == 0){
         next = NULL;   /* we're starting new/over */
+    }//처음에 myoptind는 0부터 시작
 
     if (next == NULL || *next == '\0') {
-        if (myoptind == 0)
+
+        if (myoptind == 0) //myoptind가 0일경우 ++
             myoptind++;
 
-        if (myoptind >= argc || argv[myoptind] == NULL ||
-                argv[myoptind][0] != '-' || argv[myoptind][1] == '\0') {
+        if (myoptind >= argc || argv[myoptind] == NULL || argv[myoptind][0] != '-' || argv[myoptind][1] == '\0') {
             myoptarg = NULL;
+            if (myoptind < argc)
+                myoptarg = argv[myoptind];
+            return -1;
+        }//첫 조건문은 실행되지만 두번째 조건문은 실행되지 않음(1, 2는 조건에 해당됨/3, 4는 모르겠음)
+	//반복문을 처음 동작할때만 조건문을 충족함
+
+	//일반적으로는 실행X
+        if (strcmp(argv[myoptind], "--") == 0) {// == -> 0
+            myoptind++;
+            myoptarg = NULL;
+
             if (myoptind < argc)
                 myoptarg = argv[myoptind];
 
             return -1;
         }
 
-        if (strcmp(argv[myoptind], "--") == 0) {
-            myoptind++;
-            myoptarg = NULL;
-
-            if (myoptind < argc)
-                myoptarg = argv[myoptind];
-
-            return -1;
-        }
-
+	//일반적으로는 실행X
         if (strncmp(argv[myoptind], "--", 2) == 0) {
             const struct mygetopt_long_config *i;
             c = -1;
@@ -727,16 +731,18 @@ static WC_INLINE int mygetopt_long(int argc, char** argv, const char* optstring,
             return c;
         }
 
-        next = argv[myoptind];
-        next++;                  /* skip - */
+        next = argv[myoptind]; //-h -b 등
+        next++; //옵션에서 '-'을 제거(h, b)                /* skip - */
         myoptind++;
     }
 
     c  = *next++;
-    /* The C++ strchr can return a different value */
-    cp = (char*)strchr(optstring, c);
+    //c : 옵션에서 '-'을 제거한것(h, b), 이후 next는 다음 칸으로 넘어감(공백)
 
-    if (cp == NULL || c == ':' || c == ';')
+    /* The C++ strchr can return a different value */
+    cp = (char*)strchr(optstring, c); //strchr : 문자열 내에 일치하는 문자가 있는지 검사하는 함수(존재하면 존재하는 곳의 포인터를 반환)
+
+    if (cp == NULL || c == ':' || c == ';') //잘못되었으면 ?옵션을 출력
         return '?';
 
     cp++;
@@ -767,7 +773,6 @@ static WC_INLINE int mygetopt_long(int argc, char** argv, const char* optstring,
             }
         }
     }
-
     return c;
 }
 
@@ -3031,6 +3036,7 @@ static WC_INLINE void StackTrap(void)
 
 #else /* STACK_TRAP */
 
+//기본적인 실행으로 실행되어지는 것
 static WC_INLINE void StackTrap(void)
 {
 }
