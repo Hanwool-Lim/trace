@@ -2878,7 +2878,6 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         wolfSSL_CTX_free(ctx); ctx = NULL;
         err_sys("unable to get SSL object");
     }
-//------------------------------------(7/1)-------------------------------------------
 
 #ifndef NO_CERTS //실행 //조건에는 해당하지만 아래 실행되어지는 것들이 없음
     //userClientCert = 1
@@ -3084,18 +3083,21 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         wolfSSL_AllowEncryptThenMac(ssl, 0);
 #endif
 
-//--------------------------------(7/2)---------------------------------
-
     tcp_connect(&sockfd, host, port, dtlsUDP, dtlsSCTP, ssl);
+    //wolfssl/test.h    //이전에 세팅한 IP/port 등을 통해서연결을 요청
+    //ssl의 경우 입력값으로 받지만, 실제로 함수에서는 사용되지 않음     
+    //dtlsUDP = 0
+    //dtlsSCTP = 0
 
     if (wolfSSL_set_fd(ssl, sockfd) != WOLFSSL_SUCCESS) {
+	//wolfSSL_set_fd : fd(sockfd, socket file descriptor)를 SSL 연결을 위한 입출력기능을 할당
         wolfSSL_free(ssl); ssl = NULL;
         wolfSSL_CTX_free(ctx); ctx = NULL;
         err_sys("error in setting fd");
     }
 
     /* STARTTLS */
-    if (doSTARTTLS) {
+    if (doSTARTTLS) { //실행 X    //기본값 = 0, M옵션을 사용할때 1의 값을 가짐
         if (StartTLS_Init(&sockfd) != WOLFSSL_SUCCESS) {
             wolfSSL_free(ssl); ssl = NULL;
             wolfSSL_CTX_free(ctx); ctx = NULL;
@@ -3103,7 +3105,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         }
     }
 
-#ifdef HAVE_CRL
+#ifdef HAVE_CRL    //실행 X
     if (disableCRL == 0 && !useVerifyCb) {
     #ifdef HAVE_IO_TIMEOUT
         wolfIO_SetTimeout(DEFAULT_TIMEOUT_SEC);
@@ -3126,44 +3128,50 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
             err_sys("can't set crl callback");
         }
     }
-#endif
-#ifdef HAVE_SECURE_RENEGOTIATION
-    if (scr) {
+#endif //HAVE_CRL
+
+#ifdef HAVE_SECURE_RENEGOTIATION //실행 X
+    if (scr) { 
         if (wolfSSL_UseSecureRenegotiation(ssl) != WOLFSSL_SUCCESS) {
             wolfSSL_free(ssl); ssl = NULL;
             wolfSSL_CTX_free(ctx); ctx = NULL;
             err_sys("can't enable secure renegotiation");
         }
     }
-#endif
-#if defined(ATOMIC_USER) && !defined(WOLFSSL_AEAD_ONLY)
+#endif //HAVE_SECURE_RENEGOTIATION
+
+#if defined(ATOMIC_USER) && !defined(WOLFSSL_AEAD_ONLY) //실행 X
     if (atomicUser)
         SetupAtomicUser(ctx, ssl);
 #endif
-#ifdef HAVE_PK_CALLBACKS
+
+#ifdef HAVE_PK_CALLBACKS //실행 X
     if (pkCallbacks)
         SetupPkCallbackContexts(ssl, &pkCbInfo);
 #endif
-    if (matchName && doPeerCheck)
+
+    if (matchName && doPeerCheck) //실행 X
         wolfSSL_check_domain_name(ssl, domain);
-#ifndef WOLFSSL_CALLBACKS
-    if (nonBlocking) {
-#ifdef WOLFSSL_DTLS
+
+#ifndef WOLFSSL_CALLBACKS  //실행
+    if (nonBlocking) { //실행 X    //nonBlocking : 기본값 = 0,   N,6옵션을 사용할때 1의 값을 가짐
+	#ifdef WOLFSSL_DTLS
         if (doDTLS) {
             wolfSSL_dtls_set_using_nonblock(ssl, 1);
         }
-#endif
+	#endif
         tcp_set_nonblocking(&sockfd);
         ret = NonBlockingSSL_Connect(ssl);
-    }
-    else {
-#ifdef WOLFSSL_EARLY_DATA
+    } //nonblocking이 활성화되어있으면 nonblocking형식의 SSL 연결을 수행
+    else { //실행
+	#ifdef WOLFSSL_EARLY_DATA //실행 X
         if (usePsk && earlyData)
             EarlyData(ctx, ssl, kEarlyMsg, sizeof(kEarlyMsg)-1, buffer);
-#endif
+	#endif
+
         do {
             err = 0; /* reset error */
-            ret = wolfSSL_connect(ssl);
+            ret = wolfSSL_connect(ssl); //클라이언트와 서버사이에서 SSL/TLS 핸드쉐이크를 수행
             if (ret != WOLFSSL_SUCCESS) {
                 err = wolfSSL_get_error(ssl, 0);
             #ifdef WOLFSSL_ASYNC_CRYPT
@@ -3172,15 +3180,16 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
                     if (ret < 0) break;
                 }
             #endif
-            }
-        } while (err == WC_PENDING_E);
-    }
+            } //if (ret != WOLFSSL_SUCCESS)
+        } while (err == WC_PENDING_E); //한번만 수행
+    } //end if (nonBlocking)
 #else
     timeoutConnect.tv_sec  = DEFAULT_TIMEOUT_SEC;
     timeoutConnect.tv_usec = 0;
     ret = NonBlockingSSL_Connect(ssl);  /* will keep retrying on timeout */
-#endif
-    if (ret != WOLFSSL_SUCCESS) {
+#endif //ifndef WOLFSSL_CALLBACKS
+
+    if (ret != WOLFSSL_SUCCESS) { //실행 X
         err = wolfSSL_get_error(ssl, 0);
         printf("wolfSSL_connect error %d, %s\n", err,
             wolfSSL_ERR_error_string(err, buffer));
@@ -3197,9 +3206,12 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 
         ((func_args*)args)->return_code = err;
         goto exit;
-    }
+    } //end if (ret != WOLFSSL_SUCCESS)
 
-    showPeerEx(ssl, lng_index);
+    showPeerEx(ssl, lng_index); //적용한 SSL/TLS 세션의 정보를 출력
+    //lng_index = 0
+
+//------------------------------------(7/2)-------------------------------------------
 
     /* if the caller requested a particular cipher, check here that either
      * a canonical name of the established cipher matches the requested

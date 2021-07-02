@@ -819,14 +819,15 @@ static WC_INLINE void showPeerEx(WOLFSSL* ssl, int lng_index)
     WOLFSSL_CIPHER* cipher;
     const char** words = client_showpeer_msg[lng_index];
 
-#if defined(HAVE_ECC) || defined(HAVE_CURVE25519) || defined(HAVE_CURVE448) || \
-                                                                 !defined(NO_DH)
+#if defined(HAVE_ECC) || defined(HAVE_CURVE25519) || defined(HAVE_CURVE448) || !defined(NO_DH) //HAVE_ECC //!NO_DH -> OK
     const char *name;
 #endif
+
 #ifndef NO_DH
     int bits;
 #endif
-#ifdef KEEP_PEER_CERT
+
+#ifdef KEEP_PEER_CERT //실행 X
     WOLFSSL_X509* peer = wolfSSL_get_peer_certificate(ssl);
     if (peer)
         ShowX509Ex(peer, words[6], lng_index);
@@ -834,38 +835,45 @@ static WC_INLINE void showPeerEx(WOLFSSL* ssl, int lng_index)
         printf("peer has no cert!\n");
     wolfSSL_FreeX509(peer);
 #endif
-#if defined(SHOW_CERTS) && defined(KEEP_OUR_CERT) && \
-    (defined(OPENSSL_EXTRA) || defined(OPENSSL_EXTRA_X509_SMALL))
+
+#if defined(SHOW_CERTS) && defined(KEEP_OUR_CERT) && (defined(OPENSSL_EXTRA) || defined(OPENSSL_EXTRA_X509_SMALL)) //실행 X
     ShowX509(wolfSSL_get_certificate(ssl), "our cert info:");
     printf("Peer verify result = %lu\n", wolfSSL_get_verify_result(ssl));
 #endif /* SHOW_CERTS && KEEP_OUR_CERT */
-    printf("%s %s\n", words[0], wolfSSL_get_version(ssl));
 
+    printf("%s %s\n", words[0], wolfSSL_get_version(ssl));
+	//wolfSSL_get_version(ssl) : wolfssl의 현재 버전을 출력(TLSv1.2, TLSv1.3)
     cipher = wolfSSL_get_current_cipher(ssl);
-#ifdef HAVE_QSH
+	//wolfSSL_get_current_cipher : ssl 세션에서 현재 cipher의 포인터를 반환
+		//cipher : 암호 알고리즘
+		// wolfssl/ssl.h
+
+#ifdef HAVE_QSH //실행 X
     printf("%s %s%s\n", words[1], (wolfSSL_isQSH(ssl))? "QSH:": "",
             wolfSSL_CIPHER_get_name(cipher));
-#else
-    printf("%s %s\n", words[1], wolfSSL_CIPHER_get_name(cipher));
+#else //실행
+    printf("%s %s\n", words[1], wolfSSL_CIPHER_get_name(cipher)); //암호 알고리즘의 이름을 출력
 #endif
-#if defined(HAVE_ECC) || defined(HAVE_CURVE25519) || defined(HAVE_CURVE448) || \
-                                                                 !defined(NO_DH)
-    if ((name = wolfSSL_get_curve_name(ssl)) != NULL)
-        printf("%s %s\n", words[2], name);
+
+#if defined(HAVE_ECC) || defined(HAVE_CURVE25519) || defined(HAVE_CURVE448) || !defined(NO_DH) //실행
+    if ((name = wolfSSL_get_curve_name(ssl)) != NULL) //실행
+        printf("%s %s\n", words[2], name); //curve name을 출력
 #endif
-#ifndef NO_DH
+
+#ifndef NO_DH //실행 X
     else if ((bits = wolfSSL_GetDhKey_Sz(ssl)) > 0)
         printf("%s %d bits\n", words[3], bits);
 #endif
+
     if (wolfSSL_session_reused(ssl))
         printf("%s\n", words[4]);
+
 #ifdef WOLFSSL_ALT_CERT_CHAINS
     if (wolfSSL_is_peer_alt_cert_chain(ssl))
         printf("%s\n", words[5]);
 #endif
 
-#if defined(SHOW_CERTS) && defined(SESSION_CERTS) && \
-    (defined(OPENSSL_EXTRA) || defined(OPENSSL_EXTRA_X509_SMALL))
+#if defined(SHOW_CERTS) && defined(SESSION_CERTS) && (defined(OPENSSL_EXTRA) || defined(OPENSSL_EXTRA_X509_SMALL))
     {
         WOLFSSL_X509_CHAIN* chain;
 
@@ -1056,12 +1064,12 @@ static WC_INLINE void tcp_connect(SOCKET_T* sockfd, const char* ip, word16 port,
     if (udp) {
         wolfSSL_dtls_set_peer(ssl, &addr, sizeof(addr));
     }
-    tcp_socket(sockfd, udp, sctp);
+    tcp_socket(sockfd, udp, sctp); //소켓을 생성
 
     if (!udp) {
         if (connect(*sockfd, (const struct sockaddr*)&addr, sizeof(addr)) != 0)
             err_sys_with_errno("tcp connect failed");
-    }
+    } //실행
 }
 
 
