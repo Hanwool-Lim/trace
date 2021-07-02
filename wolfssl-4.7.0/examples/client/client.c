@@ -2880,17 +2880,17 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 //------------------------------------(7/1)-------------------------------------------
 
-#ifndef NO_CERTS
-    if (useClientCert && loadCertKeyIntoSSLObj){
+#ifndef NO_CERTS //실행 //조건에는 해당하지만 아래 실행되어지는 것들이 없음
+    //userClientCert = 1
+    //loadCertKeyIntoSSLObj = 0
+    if (useClientCert && loadCertKeyIntoSSLObj){ //실행 X
     #ifdef NO_FILESYSTEM
-        if (wolfSSL_use_certificate_buffer(ssl, client_cert_der_2048,
-            sizeof_client_cert_der_2048, SSL_FILETYPE_ASN1) != WOLFSSL_SUCCESS) {
+        if (wolfSSL_use_certificate_buffer(ssl, client_cert_der_2048, sizeof_client_cert_der_2048, SSL_FILETYPE_ASN1) != WOLFSSL_SUCCESS) {
             wolfSSL_CTX_free(ctx); ctx = NULL;
             err_sys("can't load client cert buffer");
         }
     #elif !defined(TEST_LOAD_BUFFER)
-        if (wolfSSL_use_certificate_chain_file(ssl, ourCert)
-                                                           != WOLFSSL_SUCCESS) {
+        if (wolfSSL_use_certificate_chain_file(ssl, ourCert) != WOLFSSL_SUCCESS) {
             wolfSSL_CTX_free(ctx); ctx = NULL;
             err_sys("can't load client cert file, check file and run from"
                     " wolfSSL home dir");
@@ -2898,20 +2898,18 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     #else
         load_ssl_buffer(ssl, ourCert, WOLFSSL_CERT_CHAIN);
     #endif
-    }
+    } //end if (useClientCert && loadCertKeyIntoSSLObj)
 
     if (loadCertKeyIntoSSLObj
     #if defined(HAVE_PK_CALLBACKS) && defined(TEST_PK_PRIVKEY)
         && !pkCallbacks
     #endif
-    ) {
+    ) { //실행 X
     #ifdef NO_FILESYSTEM
-        if (wolfSSL_CTX_use_PrivateKey_buffer(ctx, client_key_der_2048,
-            sizeof_client_key_der_2048, SSL_FILETYPE_ASN1) != WOLFSSL_SUCCESS)
+        if (wolfSSL_CTX_use_PrivateKey_buffer(ctx, client_key_der_2048, sizeof_client_key_der_2048, SSL_FILETYPE_ASN1) != WOLFSSL_SUCCESS)
             err_sys("can't load client private key buffer");
     #elif !defined(TEST_LOAD_BUFFER)
-        if (wolfSSL_use_PrivateKey_file(ssl, ourKey, WOLFSSL_FILETYPE_PEM)
-                                         != WOLFSSL_SUCCESS) {
+        if (wolfSSL_use_PrivateKey_file(ssl, ourKey, WOLFSSL_FILETYPE_PEM) != WOLFSSL_SUCCESS) {
             wolfSSL_CTX_free(ctx); ctx = NULL;
             err_sys("can't load client private key file, check file and run "
                     "from wolfSSL home dir");
@@ -2919,14 +2917,14 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     #else
         load_ssl_buffer(ssl, ourKey, WOLFSSL_KEY);
     #endif
-    }
+    } //end if (loadCertKeyIntoSSLObj........
 #endif /* !NO_CERTS */
 
-#ifdef OPENSSL_EXTRA
+#ifdef OPENSSL_EXTRA //실행 X
     wolfSSL_KeepArrays(ssl);
 #endif
 
-#if defined(WOLFSSL_STATIC_MEMORY) && defined(DEBUG_WOLFSSL)
+#if defined(WOLFSSL_STATIC_MEMORY) && defined(DEBUG_WOLFSSL) //실행 X
     fprintf(stderr, "After creating SSL\n");
     if (wolfSSL_CTX_is_static_memory(ctx, &mem_stats) != 1)
         err_sys("ctx not using static memory");
@@ -2934,52 +2932,55 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
             err_sys("error printing out memory stats");
 #endif
 
-#if defined(WOLFSSL_TLS13) && defined(HAVE_SUPPORTED_CURVES)
-    if (!helloRetry && version >= 4) {
-    #if defined(WOLFSSL_TLS13) && (!defined(NO_DH) || defined(HAVE_ECC) || \
-                             defined(HAVE_CURVE25519) || defined(HAVE_CURVE448))
-        if (onlyKeyShare == 0 || onlyKeyShare == 2) {
-        #ifdef HAVE_CURVE25519
-            if (useX25519) {
-                if (wolfSSL_UseKeyShare(ssl, WOLFSSL_ECC_X25519)
-                                                           != WOLFSSL_SUCCESS) {
+#if defined(WOLFSSL_TLS13) && defined(HAVE_SUPPORTED_CURVES) //실행
+    if (!helloRetry && version >= 4) { //!helloRetry = 1   //v 4 옵션을 주었을때 실행
+    #if defined(WOLFSSL_TLS13) && (!defined(NO_DH) || defined(HAVE_ECC) || defined(HAVE_CURVE25519) || defined(HAVE_CURVE448)) //실행
+        if (onlyKeyShare == 0 || onlyKeyShare == 2) { //실행 //onlyKeyShare : 기본값 0, y옵션에서 1 / Y, t, 8옵션에서 2값을 가짐
+        #ifdef HAVE_CURVE25519 //실행 X
+            if (useX25519) { //useX25519 기본값 = 0 t옵션때 변경됨
+                if (wolfSSL_UseKeyShare(ssl, WOLFSSL_ECC_X25519) != WOLFSSL_SUCCESS) {
                     err_sys("unable to use curve x25519");
                 }
             }
-        #endif
-        #ifdef HAVE_CURVE448
-            if (useX448) {
-                if (wolfSSL_UseKeyShare(ssl, WOLFSSL_ECC_X448)
-                                                           != WOLFSSL_SUCCESS) {
+        #endif //HAVE_CURVE25519
+        #ifdef HAVE_CURVE448 //실행 X
+            if (useX448) { //useX448 기본값 = 0 8옵션때 변경됨
+                if (wolfSSL_UseKeyShare(ssl, WOLFSSL_ECC_X448) != WOLFSSL_SUCCESS) {
                     err_sys("unable to use curve x448");
                 }
             }
-        #endif
-        #ifdef HAVE_ECC
-            #if !defined(NO_ECC256) || defined(HAVE_ALL_CURVES)
-            if (wolfSSL_UseKeyShare(ssl, WOLFSSL_ECC_SECP256R1)
-                                                           != WOLFSSL_SUCCESS) {
+        #endif //HAVE_CURVE448
+        #ifdef HAVE_ECC //실행
+            #if !defined(NO_ECC256) || defined(HAVE_ALL_CURVES) //실행
+            if (wolfSSL_UseKeyShare(ssl, WOLFSSL_ECC_SECP256R1) != WOLFSSL_SUCCESS) {
+		//wolfSSL_UseKeyShare : wolfssl의 key pair를 생성하는것, 키교환을 위한 공개키가 포함되어짐
+		//WOLFSSL_ECC_SECP256R1 = 0x17
                 err_sys("unable to use curve secp256r1");
             }
             #endif
-        #endif
-        }
-        if (onlyKeyShare == 0 || onlyKeyShare == 1) {
-        #ifdef HAVE_FFDHE_2048
-            if (wolfSSL_UseKeyShare(ssl, WOLFSSL_FFDHE_2048)
-                                                           != WOLFSSL_SUCCESS) {
+        #endif //HAVE_ECC
+        } //end if (onlyKeyShare == 0 || onlyKeyShare == 2)
+        if (onlyKeyShare == 0 || onlyKeyShare == 1) { //실행 //onlyKeyShare : 기본값 0, y옵션에서 1 / Y, t, 8옵션에서 2값을 가짐
+        #ifdef HAVE_FFDHE_2048 //실행
+            if (wolfSSL_UseKeyShare(ssl, WOLFSSL_FFDHE_2048) != WOLFSSL_SUCCESS) {
+		//wolfSSL_UseKeyShare : wolfssl의 key pair를 생성하는것, 키교환을 위한 공개키가 포함되어짐
                 err_sys("unable to use DH 2048-bit parameters");
             }
         #endif
-        }
-    #endif
-    }
-    else {
+        } //end if (onlyKeyShare == 0 || onlyKeyShare == 1)
+
+	//WOLFSSL_FFDHE_2048, WOLFSSL_ECC_SECP256R1 둘다 wolfSSL_UseKeyShare를 실행
+
+    #endif //defined(WOLFSSL_TLS13) && (!defined(NO_DH) || defined(HAVE_ECC) || defined(HAVE_CURVE25519) || defined(HAVE_CURVE448))
+
+    } //end if (!helloRetry && version >= 4)
+
+    else { //v 옵션을 주지 않았을경우 실행됨
         wolfSSL_NoKeyShares(ssl);
     }
-#endif
+#endif //if defined(WOLFSSL_TLS13) && defined(HAVE_SUPPORTED_CURVES)
 
-    if (doMcast) {
+    if (doMcast) { //실행 X //doMcast 기본값 = 0
 #ifdef WOLFSSL_MULTICAST
         /* DTLS multicast secret for testing only */
         #define CLI_SRV_RANDOM_SZ 32     /* RAN_LEN (see internal.h) */
@@ -2992,20 +2993,19 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         XMEMSET(pms, 0x23, sizeof(pms));
         XMEMSET(cr, 0xA5, sizeof(cr));
         XMEMSET(sr, 0x5A, sizeof(sr));
-
-        if (wolfSSL_set_secret(ssl, 1, pms, sizeof(pms), cr, sr, suite)
-                                                           != WOLFSSL_SUCCESS) {
+	
+        if (wolfSSL_set_secret(ssl, 1, pms, sizeof(pms), cr, sr, suite) != WOLFSSL_SUCCESS) {
             wolfSSL_CTX_free(ctx); ctx = NULL;
             err_sys("unable to set mcast secret");
         }
 #endif
-    }
+    } //end if(doMcast)
 
-    #ifdef HAVE_SESSION_TICKET
+    #ifdef HAVE_SESSION_TICKET //실행 X
     wolfSSL_set_SessionTicket_cb(ssl, sessionTicketCB, (void*)"initial session");
     #endif
 
-#ifdef HAVE_TRUSTED_CA
+#ifdef HAVE_TRUSTED_CA //실행 X
     if (trustedCaKeyId) {
         if (wolfSSL_UseTrustedCA(ssl, WOLFSSL_TRUSTED_CA_PRE_AGREED,
                     NULL, 0) != WOLFSSL_SUCCESS) {
@@ -3013,6 +3013,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         }
     }
 #endif
+
 #ifdef HAVE_ALPN
     if (alpnList != NULL) {
        printf("ALPN accepted protocols list : %s\n", alpnList);

@@ -108,10 +108,28 @@ examples/client/client.o: examples/client/client.c \
  /usr/include/x86_64-linux-gnu/bits/ioctl-types.h \
  /usr/include/x86_64-linux-gnu/sys/ttydefaults.h \
  /usr/include/x86_64-linux-gnu/sys/uio.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h wolfssl/test.h \
- /usr/include/assert.h wolfssl/wolfcrypt/error-crypt.h \
- wolfssl/wolfcrypt/random.h wolfssl/wolfcrypt/sha256.h \
- wolfssl/wolfcrypt/mem_track.h /usr/include/netinet/tcp.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h wolfssl/openssl/ssl.h \
+ wolfssl/openssl/tls1.h wolfssl/openssl/evp.h wolfssl/openssl/md5.h \
+ wolfssl/wolfcrypt/hash.h wolfssl/wolfcrypt/md5.h wolfssl/wolfcrypt/sha.h \
+ wolfssl/wolfcrypt/sha256.h wolfssl/wolfcrypt/sha512.h \
+ wolfssl/wolfcrypt/sha3.h wolfssl/openssl/sha.h wolfssl/openssl/sha3.h \
+ wolfssl/openssl/ripemd.h wolfssl/openssl/rsa.h wolfssl/openssl/bn.h \
+ wolfssl/wolfcrypt/integer.h wolfssl/wolfcrypt/tfm.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ wolfssl/wolfcrypt/random.h wolfssl/wolfcrypt/wolfmath.h \
+ wolfssl/openssl/err.h wolfssl/openssl/dsa.h wolfssl/openssl/ec.h \
+ wolfssl/wolfcrypt/asn.h wolfssl/wolfcrypt/dh.h wolfssl/wolfcrypt/ecc.h \
+ wolfssl/openssl/dh.h wolfssl/openssl/opensslv.h wolfssl/wolfcrypt/aes.h \
+ wolfssl/wolfcrypt/des3.h wolfssl/wolfcrypt/arc4.h \
+ wolfssl/wolfcrypt/hmac.h wolfssl/wolfcrypt/pwdbased.h \
+ wolfssl/openssl/objects.h wolfssl/openssl/bio.h \
+ wolfssl/wolfcrypt/error-crypt.h wolfssl/openssl/x509.h \
+ wolfssl/openssl/crypto.h wolfssl/openssl/conf.h wolfssl/openssl/ecdsa.h \
+ wolfssl/openssl/pkcs7.h wolfssl/wolfcrypt/pkcs7.h wolfssl/test.h \
+ /usr/include/assert.h wolfssl/wolfcrypt/mem_track.h \
+ /usr/include/netinet/tcp.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
@@ -132,11 +150,7 @@ examples/client/client.o: examples/client/client.c \
  /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h examples/client/client.h \
- wolfssl/error-ssl.h wolfssl/wolfcrypt/integer.h wolfssl/wolfcrypt/tfm.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- wolfssl/wolfcrypt/wolfmath.h wolfssl/wolfcrypt/ecc.h
+ wolfssl/error-ssl.h
 
 /usr/include/stdc-predef.h:
 
@@ -412,15 +426,99 @@ wolfssl/wolfio.h:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
-wolfssl/test.h:
+wolfssl/openssl/ssl.h:
 
-/usr/include/assert.h:
+wolfssl/openssl/tls1.h:
 
-wolfssl/wolfcrypt/error-crypt.h:
+wolfssl/openssl/evp.h:
+
+wolfssl/openssl/md5.h:
+
+wolfssl/wolfcrypt/hash.h:
+
+wolfssl/wolfcrypt/md5.h:
+
+wolfssl/wolfcrypt/sha.h:
+
+wolfssl/wolfcrypt/sha256.h:
+
+wolfssl/wolfcrypt/sha512.h:
+
+wolfssl/wolfcrypt/sha3.h:
+
+wolfssl/openssl/sha.h:
+
+wolfssl/openssl/sha3.h:
+
+wolfssl/openssl/ripemd.h:
+
+wolfssl/openssl/rsa.h:
+
+wolfssl/openssl/bn.h:
+
+wolfssl/wolfcrypt/integer.h:
+
+wolfssl/wolfcrypt/tfm.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 wolfssl/wolfcrypt/random.h:
 
-wolfssl/wolfcrypt/sha256.h:
+wolfssl/wolfcrypt/wolfmath.h:
+
+wolfssl/openssl/err.h:
+
+wolfssl/openssl/dsa.h:
+
+wolfssl/openssl/ec.h:
+
+wolfssl/wolfcrypt/asn.h:
+
+wolfssl/wolfcrypt/dh.h:
+
+wolfssl/wolfcrypt/ecc.h:
+
+wolfssl/openssl/dh.h:
+
+wolfssl/openssl/opensslv.h:
+
+wolfssl/wolfcrypt/aes.h:
+
+wolfssl/wolfcrypt/des3.h:
+
+wolfssl/wolfcrypt/arc4.h:
+
+wolfssl/wolfcrypt/hmac.h:
+
+wolfssl/wolfcrypt/pwdbased.h:
+
+wolfssl/openssl/objects.h:
+
+wolfssl/openssl/bio.h:
+
+wolfssl/wolfcrypt/error-crypt.h:
+
+wolfssl/openssl/x509.h:
+
+wolfssl/openssl/crypto.h:
+
+wolfssl/openssl/conf.h:
+
+wolfssl/openssl/ecdsa.h:
+
+wolfssl/openssl/pkcs7.h:
+
+wolfssl/wolfcrypt/pkcs7.h:
+
+wolfssl/test.h:
+
+/usr/include/assert.h:
 
 wolfssl/wolfcrypt/mem_track.h:
 
@@ -473,19 +571,3 @@ wolfssl/wolfcrypt/mem_track.h:
 examples/client/client.h:
 
 wolfssl/error-ssl.h:
-
-wolfssl/wolfcrypt/integer.h:
-
-wolfssl/wolfcrypt/tfm.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h:
-
-/usr/include/limits.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
-
-wolfssl/wolfcrypt/wolfmath.h:
-
-wolfssl/wolfcrypt/ecc.h:
