@@ -30,6 +30,7 @@
 #include <wolfssl/wolfcrypt/settings.h>
 
 #include <wolfssl/ssl.h>
+#include <wolfssl/openssl/ssl.h> //add
 
 #if defined(WOLFSSL_MDK_ARM) || defined(WOLFSSL_KEIL_TCP_NET)
         #include <stdio.h>
@@ -85,7 +86,7 @@
     #define TEST_STR_TERM
 #endif
 
-static const char kHelloMsg[] = "hello wolfssl!" TEST_STR_TERM;
+static const char kHelloMsg[] = "hello wolfssl!" TEST_STR_TERM; //SSL을 연결하였을때 서버에 전달하는 client message
 #ifndef NO_SESSION_CACHE
 static const char kResumeMsg[] = "resuming wolfssl!" TEST_STR_TERM;
 #endif
@@ -109,10 +110,18 @@ static const char kHttpGetMsg[] = "GET /index.html HTTP/1.0\r\n\r\n";
     #define TEST_DELAY() XSLEEP_MS(1000)
 #endif
 
+//---------------------------------------------------------------------------------------------------------
+// 윗 부분까지는 헤더파일의 추가와 매크로 변수의 선언이라고 생각하면 됨
+
+
 /* Note on using port 0: the client standalone example doesn't utilize the
  * port 0 port sharing; that is used by (1) the server in external control
  * test mode and (2) the testsuite which uses this code and sets up the correct
  * port numbers when the internal thread using the server code using port 0. */
+
+//CB(callback) : 어떤 이벤트가 발생했거나 특정 시점에 도달했을 때 시스템에서 호출하는 함수
+
+//handshakeCB, timeoutCB : ssl 연결시에 사용되어지는 함수들(wolfssl_connect_ex)
 
 static int lng_index = 0;
 #ifdef WOLFSSL_CALLBACKS
