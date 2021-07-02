@@ -3007,26 +3007,22 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 
 #ifdef HAVE_TRUSTED_CA //실행 X
     if (trustedCaKeyId) {
-        if (wolfSSL_UseTrustedCA(ssl, WOLFSSL_TRUSTED_CA_PRE_AGREED,
-                    NULL, 0) != WOLFSSL_SUCCESS) {
+        if (wolfSSL_UseTrustedCA(ssl, WOLFSSL_TRUSTED_CA_PRE_AGREED, NULL, 0) != WOLFSSL_SUCCESS) {
             err_sys("UseTrustedCA failed");
         }
     }
 #endif
 
-#ifdef HAVE_ALPN
-    if (alpnList != NULL) {
+#ifdef HAVE_ALPN //실행 X
+    if (alpnList != NULL) { //alpnList 기본값 = NULL //L옵션을 주었을때 myoptarg에 따라 달라짐
        printf("ALPN accepted protocols list : %s\n", alpnList);
        wolfSSL_UseALPN(ssl, alpnList, (word32)XSTRLEN(alpnList), alpn_opt);
     }
 #endif
 
-#if defined(HAVE_CERTIFICATE_STATUS_REQUEST) || \
-    defined(HAVE_CERTIFICATE_STATUS_REQUEST_V2)
+#if defined(HAVE_CERTIFICATE_STATUS_REQUEST) || defined(HAVE_CERTIFICATE_STATUS_REQUEST_V2) //실행 X
     if (statusRequest) {
-        if (version == 4 &&
-            (statusRequest == OCSP_STAPLINGV2 || \
-             statusRequest == OCSP_STAPLINGV2_MULTI)) {
+        if (version == 4 && (statusRequest == OCSP_STAPLINGV2 || statusRequest == OCSP_STAPLINGV2_MULTI)) {
             err_sys("Cannot use OCSP Stapling V2 with TLSv1.3");
         }
 
@@ -3074,21 +3070,24 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 
         wolfSSL_CTX_EnableOCSP(ctx, 0);
     }
-#endif
+#endif //if defined(HAVE_CERTIFICATE_STATUS_REQUEST) || defined(HAVE_CERTIFICATE_STATUS_REQUEST_V2)
 
-#if !defined(NO_DH) && !defined(WOLFSSL_OLD_PRIME_CHECK) && \
-    !defined(HAVE_FIPS) && !defined(HAVE_SELFTEST)
+#if !defined(NO_DH) && !defined(WOLFSSL_OLD_PRIME_CHECK) && !defined(HAVE_FIPS) && !defined(HAVE_SELFTEST) //실행
+	//doDhKeyCheck = 1
     if (!doDhKeyCheck)
         wolfSSL_SetEnableDhKeyTest(ssl, 0);
 #endif
 
-#ifdef HAVE_ENCRYPT_THEN_MAC
+#ifdef HAVE_ENCRYPT_THEN_MAC //실행
+	//disallowETM : 0
     if (disallowETM)
         wolfSSL_AllowEncryptThenMac(ssl, 0);
 #endif
 
+//--------------------------------(7/2)---------------------------------
 
     tcp_connect(&sockfd, host, port, dtlsUDP, dtlsSCTP, ssl);
+
     if (wolfSSL_set_fd(ssl, sockfd) != WOLFSSL_SUCCESS) {
         wolfSSL_free(ssl); ssl = NULL;
         wolfSSL_CTX_free(ctx); ctx = NULL;
