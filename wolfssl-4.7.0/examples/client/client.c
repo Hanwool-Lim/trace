@@ -2878,7 +2878,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         wolfSSL_CTX_free(ctx); ctx = NULL;
         err_sys("unable to get SSL object");
     }
-
+//------------------------------------(7/1)-------------------------------------------
 
 #ifndef NO_CERTS
     if (useClientCert && loadCertKeyIntoSSLObj){
