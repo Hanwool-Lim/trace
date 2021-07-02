@@ -558,7 +558,7 @@ extern char* myoptarg;
  */
 static WC_INLINE int mygetopt(int argc, char** argv, const char* optstring)
 {
-    static char* next = NULL;
+    static char* next = NULL; //프로그램에서 지정한 옵션 (-h, -b 등)
 
     char  c;
     char* cp;
@@ -568,24 +568,25 @@ static WC_INLINE int mygetopt(int argc, char** argv, const char* optstring)
     if (argv == NULL)  {
         myoptarg = NULL;
         return -1;
-    }
+    } //일반적으로는 실행X
 
-    if (myoptind == 0)
+    if (myoptind == 0) //처음에 myoptind는 0부터 시작
         next = NULL;   /* we're starting new/over */
 
     if (next == NULL || *next == '\0') {
-        if (myoptind == 0)
+        if (myoptind == 0) //myoptind가 0일 경우 ++
             myoptind++;
 
-        if (myoptind >= argc || argv[myoptind] == NULL ||
-                argv[myoptind][0] != '-' || argv[myoptind][1] == '\0') {
+        if (myoptind >= argc || argv[myoptind] == NULL || argv[myoptind][0] != '-' || argv[myoptind][1] == '\0') {
             myoptarg = NULL;
             if (myoptind < argc)
                 myoptarg = argv[myoptind];
 
             return -1;
-        }
+        }//첫 조건문은 실행되지만 두번째 조건문은 실행되지 않음(1, 2는 조건에 해당됨/3, 4는 모르겠음)
+        //반복문을 처음 동작할때만 조건문을 충족함
 
+        //일반적으로는 실행X
         if (strcmp(argv[myoptind], "--") == 0) {
             myoptind++;
             myoptarg = NULL;
@@ -596,16 +597,18 @@ static WC_INLINE int mygetopt(int argc, char** argv, const char* optstring)
             return -1;
         }
 
-        next = argv[myoptind];
-        next++;                  /* skip - */
+        next = argv[myoptind]; //-h -b 등
+        next++; //옵션에서 '-'를 제거                 /* skip - */
         myoptind++;
     }
 
     c  = *next++;
+    //c : 옵션에서 '-'를 제거한 것(h, b), 이후 netx는 다음 칸으로 넘어감(공백)
+    
     /* The C++ strchr can return a different value */
-    cp = (char*)strchr(optstring, c);
+    cp = (char*)strchr(optstring, c); //strchr : 문자열 내에 일치하는 문자가 있는지 검사하는 함수(존재하면 존재하는 곳의 포인터를 반환)
 
-    if (cp == NULL || c == ':' || c == ';')
+    if (cp == NULL || c == ':' || c == ';') //옵션이 잘못되었으면 ?옵션을 출력
         return '?';
 
     cp++;
@@ -2348,6 +2351,7 @@ static WC_INLINE void StackTrap(void)
 
 #else /* STACK_TRAP */
 
+//기본적인 실행으로 실행되어지는 것
 static WC_INLINE void StackTrap(void)
 {
 }
