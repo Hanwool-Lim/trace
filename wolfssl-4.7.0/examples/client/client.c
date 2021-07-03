@@ -81,12 +81,15 @@
 #define OCSP_STAPLING_OPT_MAX OCSP_STAPLINGV2_MULTI
 
 #ifdef WOLFSSL_ALT_TEST_STRINGS
-    #define TEST_STR_TERM "\n"
+    #define TEST_STR_TERM "\n" 
 #else
     #define TEST_STR_TERM
 #endif
 
-static const char kHelloMsg[] = "hello wolfssl!" TEST_STR_TERM; //SSL을 연결하였을때 서버에 전달하는 client message
+//static const char kHelloMsg[] = "hello wolfssl!" TEST_STR_TERM; //SSL을 연결하였을때 서버에 전달하는 client message //TEST_STR_TERM = \n
+
+char traceMsg[32];
+
 #ifndef NO_SESSION_CACHE
 static const char kResumeMsg[] = "resuming wolfssl!" TEST_STR_TERM;
 #endif
@@ -868,7 +871,7 @@ static int ClientWrite(WOLFSSL* ssl, const char* msg, int msgSz, const char* str
 
     do {
         err = 0; /* reset error */
-        ret = wolfSSL_write(ssl, msg, msgSz);
+        ret = wolfSSL_write(ssl, msg, msgSz); //ret = 전달하는 글자수를 저장
         if (ret <= 0) {
             err = wolfSSL_get_error(ssl, 0);
         #ifdef WOLFSSL_ASYNC_CRYPT
@@ -877,9 +880,8 @@ static int ClientWrite(WOLFSSL* ssl, const char* msg, int msgSz, const char* str
                 if (ret < 0) break;
             }
         #endif
-        }
-    } while (err == WOLFSSL_ERROR_WANT_WRITE ||
-             err == WOLFSSL_ERROR_WANT_READ
+        } //end if (ret <= 0)
+    } while (err == WOLFSSL_ERROR_WANT_WRITE || err == WOLFSSL_ERROR_WANT_READ
     #ifdef WOLFSSL_ASYNC_CRYPT
         || err == WC_PENDING_E
     #endif
@@ -3211,14 +3213,12 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     showPeerEx(ssl, lng_index); //적용한 SSL/TLS 세션의 정보를 출력
     //lng_index = 0
 
-//------------------------------------(7/2)-------------------------------------------
-
     /* if the caller requested a particular cipher, check here that either
      * a canonical name of the established cipher matches the requested
      * cipher name, or the requested cipher name is marked as an alias
      * that matches the established cipher.
      */
-    if (cipherList && (! XSTRSTR(cipherList, ":"))) {
+    if (cipherList && (! XSTRSTR(cipherList, ":"))) { //넘어감
         WOLFSSL_CIPHER* established_cipher = wolfSSL_get_current_cipher(ssl);
         byte requested_cipherSuite0, requested_cipherSuite;
         int requested_cipherFlags;
@@ -3252,9 +3252,9 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
                     err_sys("Mismatch between IDs of requested and established ciphers.");
             }
         }
-    }
+    } //end if(cipherList && (! XSTRSTR(cipherList, ":")))
 
-#if defined(HAVE_OCSP) && !defined(NO_ASN_TIME)
+#if defined(HAVE_OCSP) && !defined(NO_ASN_TIME) //실행 X
 #ifdef HAVE_STRFTIME
     {
         struct tm tm;
@@ -3274,7 +3274,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 #endif
 #endif
 
-#ifdef OPENSSL_EXTRA
+#ifdef OPENSSL_EXTRA //실행 X
     printf("Session timeout set to %ld seconds\n", wolfSSL_get_timeout(ssl));
     {
         byte*  rnd;
@@ -3329,7 +3329,10 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     #endif
 #endif
 
-    if (doSTARTTLS && starttlsProt != NULL) {
+
+	//doSTARTTLS = 0
+	//starttlsProt = 0
+    if (doSTARTTLS && starttlsProt != NULL) { //실행 X
         if (XSTRNCMP(starttlsProt, "smtp", 4) == 0) {
             if (SMTP_Shutdown(ssl, wc_shutdown) != WOLFSSL_SUCCESS) {
                 wolfSSL_free(ssl); ssl = NULL;
@@ -3345,9 +3348,9 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 
         ((func_args*)args)->return_code = 0;
         return 0;
-    }
+    }//end if(doSTARTTLS && starttlsProt != NULL)
 
-#ifdef HAVE_ALPN
+#ifdef HAVE_ALPN //실행 X
     if (alpnList != NULL) {
         char *protocol_name = NULL;
         word16 protocol_nameSz = 0;
@@ -3363,7 +3366,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 #endif
 
-#ifdef HAVE_SECURE_RENEGOTIATION
+#ifdef HAVE_SECURE_RENEGOTIATION //실행 X
     if (scr && forceScr) {
         if (nonBlocking) {
             if (!resumeScr) {
@@ -3490,30 +3493,50 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 #endif /* HAVE_SECURE_RENEGOTIATION */
 
-    XMEMSET(msg, 0, sizeof(msg));
-    if (sendGET) {
+//*************************중요
+	//msgSz : 기본값 = 0
+	//msg[CLI_MSG_SZ]
+	//CLI_MSG_SZ = 32
+
+	//add 
+	if (argv[5] ==NULL) {
+                wolfSSL_free(ssl); ssl = NULL;
+                wolfSSL_CTX_free(ctx); ctx = NULL;
+                err_sys("Input the trace data");
+        }
+
+	XMEMSET(msg, 0, sizeof(msg));
+	XMEMSET(traceMsg, 0, sizeof(traceMsg));
+
+	strncpy(traceMsg, argv[5], sizeof(argv[5])); //add
+    
+	//XMEMSET() : memset과 유사(시작주소, 값, 사이즈)
+
+    if (sendGET) { //sendGET : 기본값 = 0, g옵션을 사용할때 1값을 가짐
         printf("SSL connect ok, sending GET...\n");
 
         msgSz = (int)XSTRLEN(kHttpGetMsg);
         XMEMCPY(msg, kHttpGetMsg, msgSz);
     }
-    else {
-        msgSz = (int)XSTRLEN(kHelloMsg);
-        XMEMCPY(msg, kHelloMsg, msgSz);
+    else { //실행
+        msgSz = (int)XSTRLEN(traceMsg);
+        XMEMCPY(msg, traceMsg, msgSz);
+	//XMEMCPY() : memcpy와 유사(destination, source, size)
     }
 
 /* allow some time for exporting the session */
-#ifdef WOLFSSL_SESSION_EXPORT_DEBUG
+#ifdef WOLFSSL_SESSION_EXPORT_DEBUG //실행X
     TEST_DELAY();
 #endif /* WOLFSSL_SESSION_EXPORT_DEBUG */
 
-#ifdef WOLFSSL_TLS13
-    if (updateKeysIVs)
+#ifdef WOLFSSL_TLS13 //실행
+    if (updateKeysIVs) //updateKeysIVs : 기본값 = 0, I옵션에서 1로 변경
         wolfSSL_update_keys(ssl);
 #endif
 
-    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet);
-    if (exitWithRet && (err != 0)) {
+//*************************중요
+    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
+    if (exitWithRet && (err != 0)) { //실행 X
         ((func_args*)args)->return_code = err;
         wolfSSL_free(ssl); ssl = NULL;
         wolfSSL_CTX_free(ctx); ctx = NULL;
@@ -3527,9 +3550,9 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         wolfSSL_CTX_free(ctx); ctx = NULL;
         goto exit;
     }
-
+	
 #if defined(WOLFSSL_TLS13)
-    if (updateKeysIVs || postHandAuth)
+    if (updateKeysIVs || postHandAuth) //실행 X     //updateKeysIVs : 기본값 = 0, I옵션에서 1로 변경 //postHandAuth : 기본값 = 0, Q옵션에서 1로 변경
         (void)ClientWrite(ssl, msg, msgSz, "", 0);
 #endif
 
@@ -3539,8 +3562,9 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 #endif
 
-#if !defined(NO_SESSION_CACHE) && (defined(OPENSSL_EXTRA) || \
-        defined(HAVE_EXT_CACHE))
+//------------------------------------(7/3)-------------------------------------------
+
+#if !defined(NO_SESSION_CACHE) && (defined(OPENSSL_EXTRA) || defined(HAVE_EXT_CACHE)) //실행 X
     if (session != NULL && resumeSession) {
         flatSessionSz = wolfSSL_i2d_SSL_SESSION(session, NULL);
         if (flatSessionSz != 0) {
@@ -3555,7 +3579,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 #endif
 
-    if (dtlsUDP == 0) {           /* don't send alert after "break" command */
+    if (dtlsUDP == 0) { //실행, 세션을 종료          /* don't send alert after "break" command */
         ret = wolfSSL_shutdown(ssl);
         if (wc_shutdown && ret == WOLFSSL_SHUTDOWN_NOT_DONE) {
             if (tcp_select(sockfd, DEFAULT_TIMEOUT_SEC) == TEST_RECV_READY) {
@@ -3567,6 +3591,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
                 printf("Bidirectional shutdown failed\n");
         }
     }
+
 #if defined(ATOMIC_USER) && !defined(WOLFSSL_AEAD_ONLY)
     if (atomicUser)
         FreeAtomicUser(ssl);
