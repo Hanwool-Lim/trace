@@ -2765,6 +2765,37 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             }
         } //end if(err == 0 && echoData == 0 && throughput == 0)
 
+//add2
+        if (echoData == 0 && throughput == 0) {
+            ServerRead(ssl, input, sizeof(input)-1);
+            err = SSL_get_error(ssl, 0); //err = 0
+        }
+	if (err == 0 && echoData == 0 && throughput == 0) {
+            const char* write_msg;
+            int write_msg_sz;
+
+		#ifdef WOLFSSL_TLS13
+            	if (updateKeysIVs)
+                	wolfSSL_update_keys(ssl);
+		#endif
+
+		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
+        	if (postHandAuth)
+                	wolfSSL_request_certificate(ssl);
+		#endif
+
+    	        write_msg = kReplyMsg;
+    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
+
+            	ServerWrite(ssl, write_msg, write_msg_sz);
+
+		#ifdef WOLFSSL_TLS13
+            	if (updateKeysIVs || postHandAuth)
+                	ServerRead(ssl, input, sizeof(input)-1);
+		#endif
+        }
+//end add2
+
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;
 #elif defined (WOLFSSL_TIRTOS) //실행 X

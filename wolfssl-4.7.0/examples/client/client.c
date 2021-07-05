@@ -3210,7 +3210,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         goto exit;
     } //end if (ret != WOLFSSL_SUCCESS)
 
-    showPeerEx(ssl, lng_index); //적용한 SSL/TLS 세션의 정보를 출력
+    //showPeerEx(ssl, lng_index); //적용한 SSL/TLS 세션의 정보를 출력
     //lng_index = 0
 
     /* if the caller requested a particular cipher, check here that either
@@ -3507,9 +3507,8 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 	//XMEMSET() : memset과 유사(시작주소, 값, 사이즈)
 	XMEMSET(msg, 0, sizeof(msg));
 	XMEMSET(traceMsg, 0, sizeof(traceMsg)); //add
+	strncpy(traceMsg, argv[5], strlen(argv[5])); //add
 
-	strncpy(traceMsg, argv[5], strlen(argv[5])); //add 
-    
     if (sendGET) { //sendGET : 기본값 = 0, g옵션을 사용할때 1값을 가짐
         printf("SSL connect ok, sending GET...\n");
 
@@ -3547,6 +3546,31 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         wolfSSL_CTX_free(ctx); ctx = NULL;
         goto exit;
     }
+
+//add2
+    XMEMSET(msg, 0, sizeof(msg));
+    XMEMSET(traceMsg, 0, sizeof(traceMsg));
+    strncpy(traceMsg, argv[6], strlen(argv[6])); 
+
+    msgSz = (int)XSTRLEN(traceMsg);
+    XMEMCPY(msg, traceMsg, msgSz);
+    
+    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+
+    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+//end add2
 	
 #if defined(WOLFSSL_TLS13)
     if (updateKeysIVs || postHandAuth) //실행 X   //updateKeysIVs : 기본값 = 0, I옵션에서 1로 변경   //postHandAuth : 기본값 = 0, Q옵션에서 1로 변경
@@ -3722,7 +3746,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
             err_sys("wolfSSL_connect resume failed");
         }
 
-        showPeerEx(sslResume, lng_index);
+        //showPeerEx(sslResume, lng_index);
 
         if (wolfSSL_session_reused(sslResume))
             printf("reused session id\n");
