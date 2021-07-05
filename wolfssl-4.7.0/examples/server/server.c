@@ -92,7 +92,7 @@ static const char kHttpServerMsg[] =
     "</html>\r\n";
 
 /* Read needs to be largest of the client.c message strings (29) */
-#define SRV_READ_SZ    32
+#define SRV_READ_SZ    1024
 
 
 int runWithErrors = 0; /* Used with -x flag to run err_sys vs. print errors */
@@ -2771,7 +2771,6 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         Task_yield();
 #endif
 
-
         if (dtlsUDP == 0) {
             ret = SSL_shutdown(ssl); //실행
             if (wc_shutdown && ret == WOLFSSL_SHUTDOWN_NOT_DONE) {
@@ -2780,7 +2779,6 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                     printf("Bidirectional shutdown complete\n");
             }
         }
-//주석처리
 
         /* display collected statistics */
 #ifdef WOLFSSL_STATIC_MEMORY
@@ -2800,9 +2798,9 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                 ssl_stats.totalFr);
 
 #endif
-       // SSL_free(ssl); ssl = NULL; //주석처리
+       SSL_free(ssl); ssl = NULL;
 
-       // CloseSocket(clientfd); //주석처리
+       CloseSocket(clientfd);
 
 	
         if (resume == 1 && resumeCount == 0) {
@@ -2815,7 +2813,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 	/*
         if (loops > 0 && --loops == 0) {
             break;  //out of while loop, done with normal and resume option
-        } */  //주석처리
+        } */ //modify
     } /* while(1) */
 
     WOLFSSL_TIME(cnt);
