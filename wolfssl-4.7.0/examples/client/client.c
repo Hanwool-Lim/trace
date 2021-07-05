@@ -3499,7 +3499,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 	//CLI_MSG_SZ = 32
 
 	//add 
-	if (argv[5] ==NULL) {
+	if (argc < 6) {
                 wolfSSL_free(ssl); ssl = NULL;
                 wolfSSL_CTX_free(ctx); ctx = NULL;
                 err_sys("Input the trace data");
@@ -3508,7 +3508,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 	XMEMSET(msg, 0, sizeof(msg));
 	XMEMSET(traceMsg, 0, sizeof(traceMsg));
 
-	strncpy(traceMsg, argv[5], sizeof(argv[5])); //add
+	strncpy(traceMsg, argv[5], strlen(argv[5])); //add
     
 	//XMEMSET() : memset과 유사(시작주소, 값, 사이즈)
 
