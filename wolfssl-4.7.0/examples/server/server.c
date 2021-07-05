@@ -2074,6 +2074,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     if (noPskDheKe)
         wolfSSL_CTX_no_dhe_psk(ctx);
 #endif
+
 #ifdef HAVE_SESSION_TICKET
 #ifdef WOLFSSL_TLS13
     if (noTicketTls13)
@@ -2083,7 +2084,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     if (noTicketTls12)
         wolfSSL_CTX_NoTicketTLSv12(ctx);
 #endif
-#endif
+#endif //end ifdef HAVE_SESSION_TICKET
 
     while (1) {
         /* allow resume option */
@@ -2101,7 +2102,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             if (WOLFSSL_SOCKET_IS_INVALID(clientfd)) {
                 err_sys_ex(runWithErrors, "tcp accept failed");
             }
-        }
+        } //end if (resumeCount > 1)
+
 #if defined(WOLFSSL_STATIC_MEMORY) && defined(DEBUG_WOLFSSL)
         fprintf(stderr, "Before creating SSL\n");
         if (wolfSSL_CTX_is_static_memory(ctx, &mem_stats) != 1)
@@ -2111,20 +2113,20 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 #endif
 
     if (doMcast) {
-#ifdef WOLFSSL_MULTICAST
+	#ifdef WOLFSSL_MULTICAST
         wolfSSL_CTX_mcast_set_member_id(ctx, mcastID);
         if (wolfSSL_CTX_set_cipher_list(ctx, "WDM-NULL-SHA256")
             != WOLFSSL_SUCCESS)
             err_sys("Couldn't set multicast cipher list.");
-#endif
+	#endif
     }
 
     if (doDTLS && dtlsUDP) {
-#ifdef WOLFSSL_DTLS
+	#ifdef WOLFSSL_DTLS
         if (doBlockSeq) {
             wolfSSL_CTX_SetIOSend(ctx, TestEmbedSendTo);
         }
-#endif
+	#endif
     }
 
 #ifdef HAVE_PK_CALLBACKS
@@ -2132,7 +2134,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             SetupPkCallbacks(ctx);
 #endif
 
-        ssl = SSL_new(ctx);
+        ssl = SSL_new(ctx); //이전까지 ctx에 탑재한 내용을 토대로 SSL 변수에 적용(인증서, 키)
+	//클라이언트와는 다르게 wolfSSL_new()가 아닌 SSL_new를 사용
         if (ssl == NULL)
             err_sys_ex(catastrophic, "unable to create an SSL object");
         #ifdef OPENSSL_EXTRA
@@ -2143,12 +2146,10 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 #if !defined(NO_CERTS)
     if ((!usePsk || usePskPlus) && !useAnon && loadCertKeyIntoSSLObj) {
     #ifdef NO_FILESYSTEM
-        if (wolfSSL_use_certificate_chain_buffer(ssl, server_cert_der_2048,
-            sizeof_server_cert_der_2048) != WOLFSSL_SUCCESS)
+        if (wolfSSL_use_certificate_chain_buffer(ssl, server_cert_der_2048, sizeof_server_cert_der_2048) != WOLFSSL_SUCCESS)
             err_sys_ex(catastrophic, "can't load server cert buffer");
     #elif !defined(TEST_LOAD_BUFFER)
-        if (SSL_use_certificate_chain_file(ssl, ourCert)
-                                         != WOLFSSL_SUCCESS)
+        if (SSL_use_certificate_chain_file(ssl, ourCert) != WOLFSSL_SUCCESS)
             err_sys_ex(catastrophic, "can't load server cert file, check file "
                        "and run from wolfSSL home dir");
     #else
@@ -2157,19 +2158,16 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     #endif
     }
 
-    if (!useNtruKey && (!usePsk || usePskPlus) && !useAnon &&
-        loadCertKeyIntoSSLObj
+    if (!useNtruKey && (!usePsk || usePskPlus) && !useAnon && loadCertKeyIntoSSLObj
     #if defined(HAVE_PK_CALLBACKS) && defined(TEST_PK_PRIVKEY)
         && !pkCallbacks
     #endif /* HAVE_PK_CALLBACKS && TEST_PK_PRIVKEY */
     ) {
     #if defined(NO_FILESYSTEM)
-        if (wolfSSL_use_PrivateKey_buffer(ssl, server_key_der_2048,
-            sizeof_server_key_der_2048, SSL_FILETYPE_ASN1) != WOLFSSL_SUCCESS)
+        if (wolfSSL_use_PrivateKey_buffer(ssl, server_key_der_2048, sizeof_server_key_der_2048, SSL_FILETYPE_ASN1) != WOLFSSL_SUCCESS)
             err_sys_ex(catastrophic, "can't load server private key buffer");
     #elif !defined(TEST_LOAD_BUFFER)
-        if (SSL_use_PrivateKey_file(ssl, ourKey, WOLFSSL_FILETYPE_PEM)
-                                         != WOLFSSL_SUCCESS)
+        if (SSL_use_PrivateKey_file(ssl, ourKey, WOLFSSL_FILETYPE_PEM) != WOLFSSL_SUCCESS)
             err_sys_ex(catastrophic, "can't load server private key file, check"
                        "file and run from wolfSSL home dir");
     #else
@@ -2259,6 +2257,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 #ifndef NO_HANDSHAKE_DONE_CB
         wolfSSL_SetHsDoneCb(ssl, myHsDoneCb, NULL);
 #endif
+
 #ifdef HAVE_CRL
     if (!disableCRL) {
 #ifdef HAVE_CRL_MONITOR
@@ -2273,6 +2272,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             err_sys_ex(runWithErrors, "unable to set CRL callback url");
     }
 #endif
+
 #ifdef HAVE_OCSP
         if (useOcsp) {
             if (ocspUrl != NULL) {
@@ -2285,8 +2285,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         }
 #ifndef NO_RSA
     /* All the OSCP Stapling test certs are RSA. */
-#if defined(HAVE_CERTIFICATE_STATUS_REQUEST) \
-    || defined(HAVE_CERTIFICATE_STATUS_REQUEST_V2)
+#if defined(HAVE_CERTIFICATE_STATUS_REQUEST) || defined(HAVE_CERTIFICATE_STATUS_REQUEST_V2)
         { /* scope start */
             const char* ca1 = "certs/ocsp/intermediate1-ca-cert.pem";
             const char* ca2 = "certs/ocsp/intermediate2-ca-cert.pem";
@@ -2334,8 +2333,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         #ifdef HAVE_CURVE25519
                     int groups[1] = { WOLFSSL_ECC_X25519 };
 
-                    if (wolfSSL_UseKeyShare(ssl, WOLFSSL_ECC_X25519)
-                                                           != WOLFSSL_SUCCESS) {
+                    if (wolfSSL_UseKeyShare(ssl, WOLFSSL_ECC_X25519) != WOLFSSL_SUCCESS) {
                         err_sys("unable to use curve x25519");
                     }
                     if (wolfSSL_set_groups(ssl, groups, 1) != WOLFSSL_SUCCESS) {
@@ -2369,15 +2367,14 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                         err_sys("unable to set groups: secp256r1");
                     }
             #endif
-        #endif
+        #endif //end ifdef WOLFSSL_TLS13
                 }
             }
             else if (onlyKeyShare == 1) {
         #ifdef HAVE_FFDHE_2048
                 int groups[1] = { WOLFSSL_FFDHE_2048 };
 
-                if (wolfSSL_UseKeyShare(ssl, WOLFSSL_FFDHE_2048)
-                                                           != WOLFSSL_SUCCESS) {
+                if (wolfSSL_UseKeyShare(ssl, WOLFSSL_FFDHE_2048)!= WOLFSSL_SUCCESS) {
                     err_sys("unable to use DH 2048-bit parameters");
                 }
                 if (wolfSSL_set_groups(ssl, groups, 1) != WOLFSSL_SUCCESS) {
@@ -2456,16 +2453,14 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             }
         }
 #endif
-        if ((usePsk == 0 || usePskPlus) || useAnon == 1 || cipherList != NULL
-                                                               || needDH == 1) {
+        if ((usePsk == 0 || usePskPlus) || useAnon == 1 || cipherList != NULL || needDH == 1) {
             #if !defined(NO_FILESYSTEM) && !defined(NO_DH) && !defined(NO_ASN)
                 wolfSSL_SetTmpDH_file(ssl, ourDhParam, WOLFSSL_FILETYPE_PEM);
             #elif !defined(NO_DH)
                 SetDH(ssl);  /* repick suites with DHE, higher priority than
                               * PSK */
             #endif
-#if !defined(NO_DH) && !defined(WOLFSSL_OLD_PRIME_CHECK) && \
-    !defined(HAVE_FIPS) && !defined(HAVE_SELFTEST)
+#if !defined(NO_DH) && !defined(WOLFSSL_OLD_PRIME_CHECK) && !defined(HAVE_FIPS) && !defined(HAVE_SELFTEST)
             if (!doDhKeyCheck)
                 wolfSSL_SetEnableDhKeyTest(ssl, 0);
 #endif
@@ -2541,7 +2536,9 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             }
         }
 
-        showPeerEx(ssl, lng_index);
+        //showPeerEx(ssl, lng_index); //적용한 SSL/TLS 세션의 정보를 출력 //깔끔함을 위해서 주석처리
+	//lng_index = 0
+
         if (SSL_state(ssl) != 0) {
             err_sys_ex(runWithErrors, "SSL in error state");
         }
@@ -2551,7 +2548,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
          * cipher name, or the requested cipher name is marked as an alias
          * that matches the established cipher.
          */
-        if (cipherList && (! XSTRSTR(cipherList, ":"))) {
+        if (cipherList && (! XSTRSTR(cipherList, ":"))) { //실행 X
             WOLFSSL_CIPHER* established_cipher = wolfSSL_get_current_cipher(ssl);
             byte requested_cipherSuite0, requested_cipherSuite;
             int requested_cipherFlags;
@@ -2578,19 +2575,14 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                     ((established_cipher_name_iana == NULL) ||
                      strcmp(cipherList, established_cipher_name_iana))) {
                     if (! (requested_cipherFlags & WOLFSSL_CIPHER_SUITE_FLAG_NAMEALIAS))
-                        err_sys_ex(
-                            catastrophic,
-                            "Unexpected mismatch between names of requested and established ciphers.");
-                    else if ((requested_cipherSuite0 != established_cipherSuite0) ||
-                             (requested_cipherSuite != established_cipherSuite))
-                        err_sys_ex(
-                            catastrophic,
-                            "Mismatch between IDs of requested and established ciphers.");
+                        err_sys_ex(catastrophic, "Unexpected mismatch between names of requested and established ciphers.");
+                    else if ((requested_cipherSuite0 != established_cipherSuite0) || (requested_cipherSuite != established_cipherSuite))
+                        err_sys_ex(catastrophic, "Mismatch between IDs of requested and established ciphers.");
                 }
             }
-        }
+        } //end if(cipherList && (! XSTRSTR(cipherList, ":")))
 
-#ifdef OPENSSL_EXTRA
+#ifdef OPENSSL_EXTRA //실행 X
     {
         byte*  rnd = NULL;
         byte*  pt;
@@ -2630,7 +2622,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     }
 #endif
 
-#ifdef HAVE_ALPN
+#ifdef HAVE_ALPN //실행 X
+	printf("HAVE_ALPN\n");
         if (alpnList != NULL) {
             char *protocol_name = NULL, *list = NULL;
             word16 protocol_nameSz = 0, listSz = 0;
@@ -2656,13 +2649,13 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         }
 #endif
 
-        if (echoData == 0 && throughput == 0) { //실행
-            ServerRead(ssl, input, sizeof(input)-1);
-            err = SSL_get_error(ssl, 0);
+//*********************중요
+        if (echoData == 0 && throughput == 0) {
+            ServerRead(ssl, input, sizeof(input)-1); //클라이언트로부터 받은 메세지를 출력
+            err = SSL_get_error(ssl, 0); //err = 0
         }
 
-#if defined(HAVE_SECURE_RENEGOTIATION) && \
-    defined(HAVE_SERVER_RENEGOTIATION_INFO)
+#if defined(HAVE_SECURE_RENEGOTIATION) && defined(HAVE_SERVER_RENEGOTIATION_INFO) //실행 X
         if (scr && forceScr) {
             if (nonBlocking) {
                 if ((ret = wolfSSL_Rehandshake(ssl)) != WOLFSSL_SUCCESS) {
@@ -2705,7 +2698,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                 }
             } else {
                 if ((ret = wolfSSL_Rehandshake(ssl)) != WOLFSSL_SUCCESS) {
-#ifdef WOLFSSL_ASYNC_CRYPT
+		#ifdef WOLFSSL_ASYNC_CRYPT
                     err = wolfSSL_get_error(ssl, 0);
                     while (err == WC_PENDING_E) {
                         err = 0;
@@ -2719,7 +2712,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                         }
                     }
                     if (ret != WOLFSSL_SUCCESS)
-#endif
+		#endif
                         printf("not doing secure renegotiation\n");
                 }
                 else {
@@ -2729,7 +2722,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         }
 #endif /* HAVE_SECURE_RENEGOTIATION */
 
-        if (err == 0 && echoData == 0 && throughput == 0) {
+        if (err == 0 && echoData == 0 && throughput == 0) { //실행
             const char* write_msg;
             int write_msg_sz;
 
@@ -2737,6 +2730,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             if (updateKeysIVs)
                 wolfSSL_update_keys(ssl);
 #endif
+
 #if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
             if (postHandAuth)
                 wolfSSL_request_certificate(ssl);
@@ -2758,7 +2752,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                 ServerRead(ssl, input, sizeof(input)-1);
 #endif
         }
-        else if (err == 0 || err == WOLFSSL_ERROR_ZERO_RETURN) {
+	
+        else if (err == 0 || err == WOLFSSL_ERROR_ZERO_RETURN) { //실행 X
             err = ServerEchoData(ssl, clientfd, echoData, block, throughput);
             if (err != 0) {
                 SSL_free(ssl); ssl = NULL;
@@ -2768,22 +2763,24 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                 ((func_args*)args)->return_code = err;
                 goto exit;
             }
-        }
+        } //end if(err == 0 && echoData == 0 && throughput == 0)
 
-#if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX)
+#if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;
-#elif defined (WOLFSSL_TIRTOS)
+#elif defined (WOLFSSL_TIRTOS) //실행 X
         Task_yield();
 #endif
 
+
         if (dtlsUDP == 0) {
-            ret = SSL_shutdown(ssl);
+            ret = SSL_shutdown(ssl); //실행
             if (wc_shutdown && ret == WOLFSSL_SHUTDOWN_NOT_DONE) {
-                ret = SSL_shutdown(ssl); /* bidirectional shutdown */
+                ret = SSL_shutdown(ssl); //bidirectional shutdown
                 if (ret == WOLFSSL_SUCCESS)
                     printf("Bidirectional shutdown complete\n");
             }
         }
+//주석처리
 
         /* display collected statistics */
 #ifdef WOLFSSL_STATIC_MEMORY
@@ -2803,10 +2800,11 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                 ssl_stats.totalFr);
 
 #endif
-        SSL_free(ssl); ssl = NULL;
+       // SSL_free(ssl); ssl = NULL; //주석처리
 
-        CloseSocket(clientfd);
+       // CloseSocket(clientfd); //주석처리
 
+	
         if (resume == 1 && resumeCount == 0) {
             resumeCount++;           /* only do one resume for testing */
             continue;
@@ -2814,9 +2812,10 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         resumeCount = 0;
 
         cnt++;
+	/*
         if (loops > 0 && --loops == 0) {
-            break;  /* out of while loop, done with normal and resume option */
-        }
+            break;  //out of while loop, done with normal and resume option
+        } */  //주석처리
     } /* while(1) */
 
     WOLFSSL_TIME(cnt);
