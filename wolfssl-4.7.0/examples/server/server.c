@@ -471,7 +471,7 @@ int ServerEchoData(SSL* ssl, int clientfd, int echoData, int block,
     return 0;
 }
 
-static void ServerRead(WOLFSSL* ssl, char* input, int inputLen)
+static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 {
     int ret, err;
     char buffer[WOLFSSL_MAX_ERROR_SZ];
@@ -532,7 +532,7 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen)
     if (ret > 0) {
         /* null terminate message */
         input[ret] = '\0';
-        printf("Client message: %s\n", input);
+        printf("Client message: %s\n", input); //client로부터 입력받은 메세지를 출력
     }
 }
 
@@ -1088,14 +1088,12 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     int hrrCookie = 0;
 #endif
     byte mcastID = 0;
-#if !defined(NO_DH) && !defined(HAVE_FIPS) && \
-    !defined(HAVE_SELFTEST) && !defined(WOLFSSL_OLD_PRIME_CHECK)
+#if !defined(NO_DH) && !defined(HAVE_FIPS) && !defined(HAVE_SELFTEST) && !defined(WOLFSSL_OLD_PRIME_CHECK)
     int doDhKeyCheck = 1;
 #endif
 
 #ifdef WOLFSSL_STATIC_MEMORY
-    #if (defined(HAVE_ECC) && !defined(ALT_ECC_SIZE)) \
-        || defined(SESSION_CERTS)
+    #if (defined(HAVE_ECC) && !defined(ALT_ECC_SIZE)) || defined(SESSION_CERTS)
         /* big enough to handle most cases including session certs */
         byte memory[239936];
     #else
@@ -1127,12 +1125,17 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     int disallowETM = 0;
 #endif
 
+//----------------- variable annountcement up to this point ----------------------------
+
     ((func_args*)args)->return_code = -1; /* error state */
 
+//기본적인 실행에서 실행
 #ifndef NO_RSA
     verifyCert = cliCertFile;
     ourCert    = svrCertFile;
     ourKey     = svrKeyFile;
+//setting Client_cert, server_cert, Server_Key
+
 #else
     #ifdef HAVE_ECC
         verifyCert = cliEccCertFile;
@@ -1659,7 +1662,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                 Usage();
                 XEXIT_T(MY_EX_USAGE);
         }
-    }
+    } //end switch (ch)
 
     myoptind = 0;      /* reset for test cases */
 #endif /* !WOLFSSL_VXWORKS */
@@ -1670,13 +1673,19 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     }
 
     /* sort out DTLS versus TLS versions */
+
+    //CLIENT_INVALID_VERSION : -99
+    //CLIENT_DTLS_DEFAULT_VERSION : -2
+    //CLIENT_DEFAULT_VERSION : 3
+
+    //version : 기본값 = CLIENT_INVALID_VERSION, v옵션을 통해서 version 값을 변경한 상태
     if (version == CLIENT_INVALID_VERSION) {
-        if (doDTLS)
+        if (doDTLS) //doDTLS : 기본값 = 0
             version = CLIENT_DTLS_DEFAULT_VERSION;
-        else
+        else //v옵션을 주지 않았을때 실행
             version = CLIENT_DEFAULT_VERSION;
     }
-    else {
+    else { //v옵션을 지정했을때 //하지만 아래 조건문은 실행X
         if (doDTLS) {
             if (version == 3)
                 version = -2;
@@ -1695,7 +1704,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                    "file");
 #endif
 
-    switch (version) {
+    switch (version) { //version 3 or 4 //version값에 따라서 method를 변환(TLS 버전)
 #ifndef NO_OLD_TLS
     #ifdef WOLFSSL_ALLOW_SSLV3
         case 0:
@@ -1765,6 +1774,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     if (method == NULL)
         err_sys_ex(runWithErrors, "unable to get method");
 
+    //end setting version & method
+
 #ifdef WOLFSSL_STATIC_MEMORY
     #ifdef DEBUG_WOLFSSL
     /* print off helper buffer sizes for use with static memory
@@ -1787,11 +1798,13 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                                  WOLFMEM_IO_POOL_FIXED | WOLFMEM_TRACK_STATS, 1)
             != WOLFSSL_SUCCESS)
         err_sys_ex(catastrophic, "unable to load static memory and create ctx");
+
 #else
     if (method != NULL) {
-        ctx = SSL_CTX_new(method(NULL));
+        ctx = SSL_CTX_new(method(NULL)); //ctx : SSL/TLS를 구축하기위한 프레임워크(메소드를 이용하여 생성)
     }
 #endif /* WOLFSSL_STATIC_MEMORY */
+
     if (ctx == NULL)
         err_sys_ex(catastrophic, "unable to get ctx");
 
@@ -1800,8 +1813,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         wolfSSL_CTX_SetIOSend(ctx, SimulateWantWriteIOSendCb);
     }
 
-#if defined(HAVE_SESSION_TICKET) && defined(WOLFSSL_NO_DEF_TICKET_ENC_CB) && \
-    ((defined(HAVE_CHACHA) && defined(HAVE_POLY1305)) || defined(HAVE_AESGCM))
+#if defined(HAVE_SESSION_TICKET) && defined(WOLFSSL_NO_DEF_TICKET_ENC_CB) && ((defined(HAVE_CHACHA) && defined(HAVE_POLY1305)) || defined(HAVE_AESGCM))
     if (TicketInit() != 0)
         err_sys_ex(catastrophic, "unable to setup Session Ticket Key context");
     wolfSSL_CTX_set_TicketEncCb(ctx, myTicketEncCb);
@@ -1810,14 +1822,14 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 #if defined(WOLFSSL_SNIFFER) && defined(WOLFSSL_STATIC_EPHEMERAL)
     /* used for testing only to set a static/fixed ephemeral key 
         for use with the sniffer */
-#if defined(HAVE_ECC) && !defined(NO_ECC_SECP) && \
-        (!defined(NO_ECC256) || defined(HAVE_ALL_CURVES))
+#if defined(HAVE_ECC) && !defined(NO_ECC_SECP) && (!defined(NO_ECC256) || defined(HAVE_ALL_CURVES))
     ret = wolfSSL_CTX_set_ephemeral_key(ctx, WC_PK_TYPE_ECDH,
         "./certs/statickeys/ecc-secp256r1.pem", 0, WOLFSSL_FILETYPE_PEM);
     if (ret != 0) {
         err_sys_ex(runWithErrors, "error loading static ECDH key");
     }
 #endif
+
 #ifndef NO_DH
     ret = wolfSSL_CTX_set_ephemeral_key(ctx, WC_PK_TYPE_DH,
         "./certs/statickeys/dh-ffdhe2048.pem", 0, WOLFSSL_FILETYPE_PEM);
@@ -1838,8 +1850,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     }
 #endif
 
-#if defined(NO_RSA) && !defined(HAVE_ECC) && !defined(HAVE_ED25519) && \
-                                                            !defined(HAVE_ED448)
+#if defined(NO_RSA) && !defined(HAVE_ECC) && !defined(HAVE_ED25519) && !defined(HAVE_ED448)
     if (!usePsk) {
         usePsk = 1;
     }
@@ -1857,6 +1868,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     SSL_CTX_set_default_passwd_cb(ctx, PasswordCallBack);
 #endif
 
+//client의 인증서와 key 파일을 ctx에 저장하는 구간
 #if !defined(NO_CERTS)
     if ((!usePsk || usePskPlus) && !useAnon && !(loadCertKeyIntoSSLObj == 1)) {
     #ifdef NO_FILESYSTEM
@@ -1864,8 +1876,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             sizeof_server_cert_der_2048) != WOLFSSL_SUCCESS)
             err_sys_ex(catastrophic, "can't load server cert buffer");
     #elif !defined(TEST_LOAD_BUFFER)
-        if (SSL_CTX_use_certificate_chain_file(ctx, ourCert)
-                                         != WOLFSSL_SUCCESS)
+        if (SSL_CTX_use_certificate_chain_file(ctx, ourCert)!= WOLFSSL_SUCCESS)
             err_sys_ex(catastrophic, "can't load server cert file, check file "
                        "and run from wolfSSL home dir");
     #else
@@ -1876,16 +1887,17 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 #endif
 
 #ifndef NO_DH
-    if (wolfSSL_CTX_SetMinDhKey_Sz(ctx, (word16)minDhKeyBits)
-        != WOLFSSL_SUCCESS) {
+    if (wolfSSL_CTX_SetMinDhKey_Sz(ctx, (word16)minDhKeyBits)!= WOLFSSL_SUCCESS) {
         err_sys_ex(runWithErrors, "Error setting minimum DH key size");
     }
 #endif
+
 #ifndef NO_RSA
     if (wolfSSL_CTX_SetMinRsaKey_Sz(ctx, minRsaKeyBits) != WOLFSSL_SUCCESS){
         err_sys_ex(runWithErrors, "Error setting minimum RSA key size");
     }
 #endif
+
 #ifdef HAVE_ECC
     if (wolfSSL_CTX_SetMinEccKey_Sz(ctx, minEccKeyBits) != WOLFSSL_SUCCESS){
         err_sys_ex(runWithErrors, "Error setting minimum ECC key size");
@@ -1894,29 +1906,26 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 
 #ifdef HAVE_NTRU
     if (useNtruKey) {
-        if (wolfSSL_CTX_use_NTRUPrivateKey_file(ctx, ourKey)
-                                != WOLFSSL_SUCCESS)
+        if (wolfSSL_CTX_use_NTRUPrivateKey_file(ctx, ourKey) != WOLFSSL_SUCCESS)
             err_sys_ex(catastrophic, "can't load ntru key file, "
                     "Please run from wolfSSL home dir");
     }
 #endif
+
 #if !defined(NO_CERTS)
     #ifdef HAVE_PK_CALLBACKS
         pkCbInfo.ourKey = ourKey;
     #endif
-    if (!useNtruKey && (!usePsk || usePskPlus) && !useAnon
-        && !(loadCertKeyIntoSSLObj == 1)
+    if (!useNtruKey && (!usePsk || usePskPlus) && !useAnon && !(loadCertKeyIntoSSLObj == 1)
     #if defined(HAVE_PK_CALLBACKS) && defined(TEST_PK_PRIVKEY)
         && !pkCallbacks
     #endif /* HAVE_PK_CALLBACKS && TEST_PK_PRIVKEY */
     ) {
     #ifdef NO_FILESYSTEM
-        if (wolfSSL_CTX_use_PrivateKey_buffer(ctx, server_key_der_2048,
-            sizeof_server_key_der_2048, SSL_FILETYPE_ASN1) != WOLFSSL_SUCCESS)
+        if (wolfSSL_CTX_use_PrivateKey_buffer(ctx, server_key_der_2048, sizeof_server_key_der_2048, SSL_FILETYPE_ASN1) != WOLFSSL_SUCCESS)
             err_sys_ex(catastrophic, "can't load server private key buffer");
     #elif !defined(TEST_LOAD_BUFFER)
-        if (SSL_CTX_use_PrivateKey_file(ctx, ourKey, WOLFSSL_FILETYPE_PEM)
-                                         != WOLFSSL_SUCCESS)
+        if (SSL_CTX_use_PrivateKey_file(ctx, ourKey, WOLFSSL_FILETYPE_PEM) != WOLFSSL_SUCCESS)
             err_sys_ex(catastrophic, "can't load server private key file, "
                        "check file and run from wolfSSL home dir");
     #else
@@ -2647,7 +2656,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         }
 #endif
 
-        if (echoData == 0 && throughput == 0) {
+        if (echoData == 0 && throughput == 0) { //실행
             ServerRead(ssl, input, sizeof(input)-1);
             err = SSL_get_error(ssl, 0);
         }
@@ -2884,7 +2893,7 @@ exit:
 #if defined(DEBUG_WOLFSSL) && !defined(WOLFSSL_MDK_SHELL)
         wolfSSL_Debugging_ON();
 #endif
-        wolfSSL_Init();
+        wolfSSL_Init(); //모든 Application은 시작전에 wolfSSL_init을 호출 
         ChangeToWolfRoot();
 
 #ifndef NO_WOLFSSL_SERVER
@@ -2897,8 +2906,11 @@ exit:
         printf("Server not compiled in!\n");
 #endif
 
-        wolfSSL_Cleanup();
+        wolfSSL_Cleanup(); //모든 Application은 종료전에 wolfSSL_Cleanup을 호출 
         FreeTcpReady(&ready);
+
+//wolfSSL_Init() : 시작전
+//wolfSSL_Cleanup() : 종료전
 
 #ifdef HAVE_WNR
     if (wc_FreeNetRandom() < 0)

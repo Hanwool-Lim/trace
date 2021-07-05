@@ -3493,7 +3493,6 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 #endif /* HAVE_SECURE_RENEGOTIATION */
 
-//*************************중요
 	//msgSz : 기본값 = 0
 	//msg[CLI_MSG_SZ]
 	//CLI_MSG_SZ = 32
@@ -3505,13 +3504,12 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
                 err_sys("Input the trace data");
         }
 
-	XMEMSET(msg, 0, sizeof(msg));
-	XMEMSET(traceMsg, 0, sizeof(traceMsg));
-
-	strncpy(traceMsg, argv[5], strlen(argv[5])); //add
-    
 	//XMEMSET() : memset과 유사(시작주소, 값, 사이즈)
+	XMEMSET(msg, 0, sizeof(msg));
+	XMEMSET(traceMsg, 0, sizeof(traceMsg)); //add
 
+	strncpy(traceMsg, argv[5], strlen(argv[5])); //add 
+    
     if (sendGET) { //sendGET : 기본값 = 0, g옵션을 사용할때 1값을 가짐
         printf("SSL connect ok, sending GET...\n");
 
@@ -3534,8 +3532,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         wolfSSL_update_keys(ssl);
 #endif
 
-//*************************중요
-    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
+    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0  //서버로 데이터를 전송
     if (exitWithRet && (err != 0)) { //실행 X
         ((func_args*)args)->return_code = err;
         wolfSSL_free(ssl); ssl = NULL;
@@ -3552,7 +3549,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 	
 #if defined(WOLFSSL_TLS13)
-    if (updateKeysIVs || postHandAuth) //실행 X     //updateKeysIVs : 기본값 = 0, I옵션에서 1로 변경 //postHandAuth : 기본값 = 0, Q옵션에서 1로 변경
+    if (updateKeysIVs || postHandAuth) //실행 X   //updateKeysIVs : 기본값 = 0, I옵션에서 1로 변경   //postHandAuth : 기본값 = 0, Q옵션에서 1로 변경
         (void)ClientWrite(ssl, msg, msgSz, "", 0);
 #endif
 
