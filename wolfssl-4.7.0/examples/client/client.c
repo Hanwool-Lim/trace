@@ -3646,6 +3646,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         goto exit;
     }
 //end add5
+
 	
 #if defined(WOLFSSL_TLS13)
     if (updateKeysIVs || postHandAuth) //실행 X   //updateKeysIVs : 기본값 = 0, I옵션에서 1로 변경   //postHandAuth : 기본값 = 0, Q옵션에서 1로 변경

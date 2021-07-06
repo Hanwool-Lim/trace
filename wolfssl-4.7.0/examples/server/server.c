@@ -562,7 +562,6 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 		XMEMSET(FileID, 0, sizeof(KeyID));
 		strncpy(FileID, input, strlen(input));
 	}
-	
 	count++;
 	//end add
 
@@ -2925,6 +2924,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 
 printf("trace data : AgentID = %s, DeviceID = %s, ServiceID = %s, KeyID = %s, FileID = %s\n", AgentID, DeviceID, ServiceID, KeyID, FileID); //add
 
+count = 0; //아래로 보내면 종료 시점때문에 값이 들쭉날쭉함
+
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;
 #elif defined (WOLFSSL_TIRTOS) //실행 X
@@ -2968,7 +2969,6 @@ printf("trace data : AgentID = %s, DeviceID = %s, ServiceID = %s, KeyID = %s, Fi
             continue;
         }
         resumeCount = 0;
-	count = 0;
         cnt++;
 	/*
         if (loops > 0 && --loops == 0) {
