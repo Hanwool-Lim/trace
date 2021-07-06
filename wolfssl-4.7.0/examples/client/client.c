@@ -943,7 +943,7 @@ static int ClientRead(WOLFSSL* ssl, char* reply, int replyLen, int mustRead,
     );
     if (ret > 0) {
         reply[ret] = 0; /* null terminate */
-        printf("%s%s\n", str, reply);
+        // printf("%s%s\n", str, reply);
     }
 
     return err;
@@ -3571,6 +3571,81 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         goto exit;
     }
 //end add2
+
+//add3
+    XMEMSET(msg, 0, sizeof(msg));
+    XMEMSET(traceMsg, 0, sizeof(traceMsg));
+    strncpy(traceMsg, argv[7], strlen(argv[7])); 
+
+    msgSz = (int)XSTRLEN(traceMsg);
+    XMEMCPY(msg, traceMsg, msgSz);
+    
+    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+
+    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+//end add3
+
+//add4
+    XMEMSET(msg, 0, sizeof(msg));
+    XMEMSET(traceMsg, 0, sizeof(traceMsg));
+    strncpy(traceMsg, argv[8], strlen(argv[8])); 
+
+    msgSz = (int)XSTRLEN(traceMsg);
+    XMEMCPY(msg, traceMsg, msgSz);
+    
+    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+
+    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+//end add4
+
+//add5
+    XMEMSET(msg, 0, sizeof(msg));
+    XMEMSET(traceMsg, 0, sizeof(traceMsg));
+    strncpy(traceMsg, argv[9], strlen(argv[9])); 
+
+    msgSz = (int)XSTRLEN(traceMsg);
+    XMEMCPY(msg, traceMsg, msgSz);
+    
+    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+
+    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+//end add5
 	
 #if defined(WOLFSSL_TLS13)
     if (updateKeysIVs || postHandAuth) //실행 X   //updateKeysIVs : 기본값 = 0, I옵션에서 1로 변경   //postHandAuth : 기본값 = 0, Q옵션에서 1로 변경
