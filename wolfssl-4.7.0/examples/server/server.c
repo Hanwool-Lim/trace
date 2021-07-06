@@ -56,6 +56,7 @@
 #include <wolfssl/error-ssl.h>
 
 #include "examples/server/server.h"
+#include <stdlib.h> //add
 
 #ifndef NO_WOLFSSL_SERVER
 
@@ -103,6 +104,7 @@ char KeyID[32]; //add
 char FileID[32]; //add
 int IO; //add
 int count = 0; //add
+char command[1024];
 
 
 int runWithErrors = 0; /* Used with -x flag to run err_sys vs. print errors */
@@ -3028,8 +3030,11 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         }
 //end add8
 
-printf("Date : %s, Time : %s\n", Date, Time);
+printf("Date : %s, Time : %s\n", Date, Time); //add
 printf("trace data : AgentID = %s, DeviceID = %s, ServiceID = %s, KeyID = %s, FileID = %s, I/O = %s\n", AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? "Input" : "Output")); //add
+
+sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? 1 : 0));
+system(command);
 
 count = 0; //아래로 보내면 종료 시점때문에 값이 들쭉날쭉함
 
