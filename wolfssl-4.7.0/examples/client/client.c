@@ -3497,16 +3497,44 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 	//msg[CLI_MSG_SZ]
 	//CLI_MSG_SZ = 32
 
-	//add 
+	//add
 	if (argc < 6) {
                 wolfSSL_free(ssl); ssl = NULL;
                 wolfSSL_CTX_free(ctx); ctx = NULL;
-                err_sys("Input the trace data");
-        }
+                err_sys("Input the Date");
+        }else if (argc < 7) {
+                wolfSSL_free(ssl); ssl = NULL;
+                wolfSSL_CTX_free(ctx); ctx = NULL;
+                err_sys("Input the Time");
+        }else if (argc < 8) {
+                wolfSSL_free(ssl); ssl = NULL;
+                wolfSSL_CTX_free(ctx); ctx = NULL;
+                err_sys("Input the AgentID");
+        }else if(argc < 9){
+                wolfSSL_free(ssl); ssl = NULL;
+                wolfSSL_CTX_free(ctx); ctx = NULL;
+                err_sys("Input the DeviceID");
+	}else if(argc < 10){
+                wolfSSL_free(ssl); ssl = NULL;
+                wolfSSL_CTX_free(ctx); ctx = NULL;
+                err_sys("Input the ServiceID");
+	}else if(argc < 11){
+                wolfSSL_free(ssl); ssl = NULL;
+                wolfSSL_CTX_free(ctx); ctx = NULL;
+                err_sys("Input the KeyID");
+	}else if(argc < 12){
+                wolfSSL_free(ssl); ssl = NULL;
+                wolfSSL_CTX_free(ctx); ctx = NULL;
+                err_sys("Input the FileID");
+	}else if(argc < 13){
+                wolfSSL_free(ssl); ssl = NULL;
+                wolfSSL_CTX_free(ctx); ctx = NULL;
+                err_sys("Input the IO");
+	}
 
 	//XMEMSET() : memset과 유사(시작주소, 값, 사이즈)
 	XMEMSET(msg, 0, sizeof(msg));
-	XMEMSET(traceMsg, 0, sizeof(traceMsg)); //add
+	XMEMSET(traceMsg, 0, sizeof(traceMsg)); //add  Date
 	strncpy(traceMsg, argv[5], strlen(argv[5])); //add
 
     if (sendGET) { //sendGET : 기본값 = 0, g옵션을 사용할때 1값을 가짐
@@ -3547,7 +3575,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         goto exit;
     }
 
-//add2
+//add2 //Time
     XMEMSET(msg, 0, sizeof(msg));
     XMEMSET(traceMsg, 0, sizeof(traceMsg));
     strncpy(traceMsg, argv[6], strlen(argv[6])); 
@@ -3572,7 +3600,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 //end add2
 
-//add3
+//add3 //AgentID
     XMEMSET(msg, 0, sizeof(msg));
     XMEMSET(traceMsg, 0, sizeof(traceMsg));
     strncpy(traceMsg, argv[7], strlen(argv[7])); 
@@ -3597,7 +3625,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 //end add3
 
-//add4
+//add4 //DeviceID
     XMEMSET(msg, 0, sizeof(msg));
     XMEMSET(traceMsg, 0, sizeof(traceMsg));
     strncpy(traceMsg, argv[8], strlen(argv[8])); 
@@ -3622,7 +3650,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     }
 //end add4
 
-//add5
+//add5 //ServiceID
     XMEMSET(msg, 0, sizeof(msg));
     XMEMSET(traceMsg, 0, sizeof(traceMsg));
     strncpy(traceMsg, argv[9], strlen(argv[9])); 
@@ -3646,6 +3674,81 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         goto exit;
     }
 //end add5
+
+//add6 //KeyID
+    XMEMSET(msg, 0, sizeof(msg));
+    XMEMSET(traceMsg, 0, sizeof(traceMsg));
+    strncpy(traceMsg, argv[10], strlen(argv[10])); 
+
+    msgSz = (int)XSTRLEN(traceMsg);
+    XMEMCPY(msg, traceMsg, msgSz);
+    
+    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+
+    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+//end add6
+
+//add7 //FileID
+    XMEMSET(msg, 0, sizeof(msg));
+    XMEMSET(traceMsg, 0, sizeof(traceMsg));
+    strncpy(traceMsg, argv[11], strlen(argv[11])); 
+
+    msgSz = (int)XSTRLEN(traceMsg);
+    XMEMCPY(msg, traceMsg, msgSz);
+    
+    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+
+    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+//end add7
+
+//add8 //IO
+    XMEMSET(msg, 0, sizeof(msg));
+    XMEMSET(traceMsg, 0, sizeof(traceMsg));
+    strncpy(traceMsg, argv[12], strlen(argv[12])); 
+
+    msgSz = (int)XSTRLEN(traceMsg);
+    XMEMCPY(msg, traceMsg, msgSz);
+    
+    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+
+    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
+    if (exitWithRet && (err != 0)) {
+        ((func_args*)args)->return_code = err;
+        wolfSSL_free(ssl); ssl = NULL;
+        wolfSSL_CTX_free(ctx); ctx = NULL;
+        goto exit;
+    }
+//end add8
 
 	
 #if defined(WOLFSSL_TLS13)

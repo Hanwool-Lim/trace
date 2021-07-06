@@ -94,6 +94,8 @@ static const char kHttpServerMsg[] =
 /* Read needs to be largest of the client.c message strings (29) */
 #define SRV_READ_SZ    32
 
+char Date[32]; //add
+char Time[32]; //add
 char AgentID[32]; //add
 char DeviceID[32]; //add
 char ServiceID[32]; //add
@@ -543,24 +545,35 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 
 	//add
 	if(count == 0){
+		XMEMSET(Date, 0, sizeof(Date));
+		strncpy(Date, input, strlen(input));
+	}
+	else if(count == 1){
+		XMEMSET(Time, 0, sizeof(Time));
+		strncpy(Time, input, strlen(input));
+	}
+	else if(count == 2){
 		XMEMSET(AgentID, 0, sizeof(AgentID));
 		strncpy(AgentID, input, strlen(input));
 	}
-	else if(count == 1){
+	else if(count == 3){
 		XMEMSET(DeviceID, 0, sizeof(DeviceID));
 		strncpy(DeviceID, input, strlen(input));
 	}
-	else if(count == 2){
+	else if(count == 4){
 		XMEMSET(ServiceID, 0, sizeof(ServiceID));
 		strncpy(ServiceID, input, strlen(input));
 	}
-	else if(count == 3){
+	else if(count == 5){
 		XMEMSET(KeyID, 0, sizeof(KeyID));
 		strncpy(KeyID, input, strlen(input));
 	}
-	else if(count == 4){
+	else if(count == 6){
 		XMEMSET(FileID, 0, sizeof(KeyID));
 		strncpy(FileID, input, strlen(input));
+	}
+	else if(count == 7){
+		IO = atoi(input);
 	}
 	count++;
 	//end add
@@ -2922,7 +2935,101 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         }
 //end add5
 
-printf("trace data : AgentID = %s, DeviceID = %s, ServiceID = %s, KeyID = %s, FileID = %s\n", AgentID, DeviceID, ServiceID, KeyID, FileID); //add
+//add6
+        if (echoData == 0 && throughput == 0) {
+            ServerRead(ssl, input, sizeof(input)-1);
+            err = SSL_get_error(ssl, 0); //err = 0
+        }
+	if (err == 0 && echoData == 0 && throughput == 0) {
+            const char* write_msg;
+            int write_msg_sz;
+
+		#ifdef WOLFSSL_TLS13
+            	if (updateKeysIVs)
+                	wolfSSL_update_keys(ssl);
+		#endif
+
+		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
+        	if (postHandAuth)
+                	wolfSSL_request_certificate(ssl);
+		#endif
+
+    	        write_msg = kReplyMsg;
+    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
+
+            	ServerWrite(ssl, write_msg, write_msg_sz);
+
+		#ifdef WOLFSSL_TLS13
+            	if (updateKeysIVs || postHandAuth)
+                	ServerRead(ssl, input, sizeof(input)-1);
+		#endif
+        }
+//end add6
+
+//add7
+        if (echoData == 0 && throughput == 0) {
+            ServerRead(ssl, input, sizeof(input)-1);
+            err = SSL_get_error(ssl, 0); //err = 0
+        }
+	if (err == 0 && echoData == 0 && throughput == 0) {
+            const char* write_msg;
+            int write_msg_sz;
+
+		#ifdef WOLFSSL_TLS13
+            	if (updateKeysIVs)
+                	wolfSSL_update_keys(ssl);
+		#endif
+
+		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
+        	if (postHandAuth)
+                	wolfSSL_request_certificate(ssl);
+		#endif
+
+    	        write_msg = kReplyMsg;
+    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
+
+            	ServerWrite(ssl, write_msg, write_msg_sz);
+
+		#ifdef WOLFSSL_TLS13
+            	if (updateKeysIVs || postHandAuth)
+                	ServerRead(ssl, input, sizeof(input)-1);
+		#endif
+        }
+//end add7
+
+//add8
+        if (echoData == 0 && throughput == 0) {
+            ServerRead(ssl, input, sizeof(input)-1);
+            err = SSL_get_error(ssl, 0); //err = 0
+        }
+	if (err == 0 && echoData == 0 && throughput == 0) {
+            const char* write_msg;
+            int write_msg_sz;
+
+		#ifdef WOLFSSL_TLS13
+            	if (updateKeysIVs)
+                	wolfSSL_update_keys(ssl);
+		#endif
+
+		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
+        	if (postHandAuth)
+                	wolfSSL_request_certificate(ssl);
+		#endif
+
+    	        write_msg = kReplyMsg;
+    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
+
+            	ServerWrite(ssl, write_msg, write_msg_sz);
+
+		#ifdef WOLFSSL_TLS13
+            	if (updateKeysIVs || postHandAuth)
+                	ServerRead(ssl, input, sizeof(input)-1);
+		#endif
+        }
+//end add8
+
+printf("Date : %s, Time : %s\n", Date, Time);
+printf("trace data : AgentID = %s, DeviceID = %s, ServiceID = %s, KeyID = %s, FileID = %s, I/O = %s\n", AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? "Input" : "Output")); //add
 
 count = 0; //아래로 보내면 종료 시점때문에 값이 들쭉날쭉함
 
