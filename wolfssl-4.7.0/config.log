@@ -1454,6 +1454,7 @@ config.status:1427: creating rpm/spec
 config.status:1427: creating wolfcrypt/test/test_paths.h
 config.status:1427: creating scripts/unit.test
 config.status:1427: creating config.h
+config.status:1608: config.h is unchanged
 config.status:1656: executing depfiles commands
 config.status:1656: executing libtool commands
 
