@@ -51,6 +51,9 @@
     #include <wolfssl/certs_test.h>
 #endif
 
+#include "parson.h"
+#include "parson.c"
+
 #include <wolfssl/openssl/ssl.h>
 #include <wolfssl/test.h>
 #include <wolfssl/error-ssl.h>
@@ -105,7 +108,6 @@ char FileID[32]; //add
 int IO; //add
 int count = 0; //add
 char command[1024];
-
 
 int runWithErrors = 0; /* Used with -x flag to run err_sys vs. print errors */
 int catastrophic = 0; /* Use with -x flag to still exit when an error is
@@ -488,6 +490,15 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
     int ret, err;
     char buffer[WOLFSSL_MAX_ERROR_SZ];
 
+    JSON_Value *rootValue;
+    JSON_Object *rootObject;
+
+    rootValue = json_parse_file("trace.json");
+    rootObject = json_value_get_object(rootValue);
+
+    JSON_Array *array;
+    char test[128];
+
     /* Read data */
     do {
         err = 0; /* reset error */
@@ -556,22 +567,34 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 	}
 	else if(count == 2){
 		XMEMSET(AgentID, 0, sizeof(AgentID));
-		strncpy(AgentID, input, strlen(input));
+		XMEMSET(test, 0, sizeof(test));
+		array = json_object_get_array(rootObject, "Agent");
+   		sprintf(test, "%s", json_array_get_string(array, atoi(input)-1));
+		strncpy(AgentID, test, strlen(test));
 	}
 	else if(count == 3){
 		XMEMSET(DeviceID, 0, sizeof(DeviceID));
-		strncpy(DeviceID, input, strlen(input));
+		XMEMSET(test, 0, sizeof(test));
+		array = json_object_get_array(rootObject, "Device");
+		sprintf(test, "%s", json_array_get_string(array, atoi(input)-1));
+		strncpy(DeviceID, test, strlen(test));
 	}
 	else if(count == 4){
 		XMEMSET(ServiceID, 0, sizeof(ServiceID));
-		strncpy(ServiceID, input, strlen(input));
+		XMEMSET(test, 0, sizeof(test));
+		array = json_object_get_array(rootObject, "Service");
+		sprintf(test, "%s", json_array_get_string(array, atoi(input)-1));
+		strncpy(ServiceID, test, strlen(test));
 	}
 	else if(count == 5){
 		XMEMSET(KeyID, 0, sizeof(KeyID));
-		strncpy(KeyID, input, strlen(input));
+		XMEMSET(test, 0, sizeof(test));
+		array = json_object_get_array(rootObject, "Key");
+		sprintf(test, "%s", json_array_get_string(array, atoi(input)-1));
+		strncpy(KeyID, test, strlen(test));
 	}
 	else if(count == 6){
-		XMEMSET(FileID, 0, sizeof(KeyID));
+		XMEMSET(FileID, 0, sizeof(FileID));
 		strncpy(FileID, input, strlen(input));
 	}
 	else if(count == 7){
@@ -2774,15 +2797,15 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             const char* write_msg;
             int write_msg_sz;
 
-#ifdef WOLFSSL_TLS13
+	#ifdef WOLFSSL_TLS13
             if (updateKeysIVs)
                 wolfSSL_update_keys(ssl);
-#endif
+	#endif
 
-#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
+	#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
             if (postHandAuth)
                 wolfSSL_request_certificate(ssl);
-#endif
+	#endif
 
             /* Write data */
             if (!useWebServerMsg) {
@@ -2795,10 +2818,10 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             }
             ServerWrite(ssl, write_msg, write_msg_sz);
 
-#ifdef WOLFSSL_TLS13
+	#ifdef WOLFSSL_TLS13
             if (updateKeysIVs || postHandAuth)
                 ServerRead(ssl, input, sizeof(input)-1);
-#endif
+	#endif
         }
 	
         else if (err == 0 || err == WOLFSSL_ERROR_ZERO_RETURN) { //실행 X
