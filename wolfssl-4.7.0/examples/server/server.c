@@ -490,6 +490,8 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
     int ret, err;
     char buffer[WOLFSSL_MAX_ERROR_SZ];
 
+    //json variable
+    char json[10];
     JSON_Value *rootValue;
     JSON_Object *rootObject;
 
@@ -497,6 +499,7 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
     rootObject = json_value_get_object(rootValue);
 
     JSON_Array *array;
+    //end json variable
 
     char *ptr; //strtok
 
@@ -567,25 +570,37 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 	ptr = strtok(NULL, " ");
 	strncpy(Time, ptr, strlen(ptr));
 
-	//AgentID
+	//AgentID //json
 	XMEMSET(AgentID, 0, sizeof(AgentID));
+	XMEMSET(json, 0, sizeof(json));
 	ptr = strtok(NULL, " ");
-	strncpy(AgentID, ptr, strlen(ptr));
+	array = json_object_get_array(rootObject, "Agent");
+	sprintf(json, "%s", json_array_get_string(array, atoi(ptr)-1));
+	strncpy(AgentID, json, strlen(json));
 
-	//DeviceID
+	//DeviceID //json
 	XMEMSET(DeviceID, 0, sizeof(DeviceID));
+	XMEMSET(json, 0, sizeof(json));
 	ptr = strtok(NULL, " ");
-	strncpy(DeviceID, ptr, strlen(ptr));
+	array = json_object_get_array(rootObject, "Device");
+	sprintf(json, "%s", json_array_get_string(array, atoi(ptr)-1));
+	strncpy(DeviceID, json, strlen(json));
 
-	//ServiceID
+	//ServiceID //json
 	XMEMSET(ServiceID, 0, sizeof(ServiceID));
+	XMEMSET(json, 0, sizeof(json));
 	ptr = strtok(NULL, " ");
-	strncpy(ServiceID, ptr, strlen(ptr));
+	array = json_object_get_array(rootObject, "Service");
+	sprintf(json, "%s", json_array_get_string(array, atoi(ptr)-1));
+	strncpy(ServiceID, json, strlen(json));
 
-	//KeyID
+	//KeyID //json
 	XMEMSET(KeyID, 0, sizeof(KeyID));
+	XMEMSET(json, 0, sizeof(json));
 	ptr = strtok(NULL, " ");
-	strncpy(KeyID, ptr, strlen(ptr));
+	array = json_object_get_array(rootObject, "Key");
+	sprintf(json, "%s", json_array_get_string(array, atoi(ptr)-1));
+	strncpy(KeyID, json, strlen(json));
 
 	//FileID
 	XMEMSET(FileID, 0, sizeof(FileID));
