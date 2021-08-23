@@ -88,7 +88,7 @@
 
 //static const char kHelloMsg[] = "hello wolfssl!" TEST_STR_TERM; //SSL을 연결하였을때 서버에 전달하는 client message //TEST_STR_TERM = \n
 
-char traceMsg[32];
+char traceMsg[128];
 
 #ifndef NO_SESSION_CACHE
 static const char kResumeMsg[] = "resuming wolfssl!" TEST_STR_TERM;
@@ -100,7 +100,7 @@ static const char kResumeMsg[] = "resuming wolfssl!" TEST_STR_TERM;
 static const char kHttpGetMsg[] = "GET /index.html HTTP/1.0\r\n\r\n";
 
 /* Write needs to be largest of the above strings (29) */
-#define CLI_MSG_SZ      32
+#define CLI_MSG_SZ      128
 /* Read needs to be at least sizeof server.c `webServerMsg` (226) */
 #define CLI_REPLY_SZ    256
 
@@ -3497,41 +3497,6 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 	//msg[CLI_MSG_SZ]
 	//CLI_MSG_SZ = 32
 
-	//add
-	if (argc < 6) {
-                wolfSSL_free(ssl); ssl = NULL;
-                wolfSSL_CTX_free(ctx); ctx = NULL;
-                err_sys("Input the Date");
-        }else if (argc < 7) {
-                wolfSSL_free(ssl); ssl = NULL;
-                wolfSSL_CTX_free(ctx); ctx = NULL;
-                err_sys("Input the Time");
-        }else if (argc < 8) {
-                wolfSSL_free(ssl); ssl = NULL;
-                wolfSSL_CTX_free(ctx); ctx = NULL;
-                err_sys("Input the AgentID");
-        }else if(argc < 9){
-                wolfSSL_free(ssl); ssl = NULL;
-                wolfSSL_CTX_free(ctx); ctx = NULL;
-                err_sys("Input the DeviceID");
-	}else if(argc < 10){
-                wolfSSL_free(ssl); ssl = NULL;
-                wolfSSL_CTX_free(ctx); ctx = NULL;
-                err_sys("Input the ServiceID");
-	}else if(argc < 11){
-                wolfSSL_free(ssl); ssl = NULL;
-                wolfSSL_CTX_free(ctx); ctx = NULL;
-                err_sys("Input the KeyID");
-	}else if(argc < 12){
-                wolfSSL_free(ssl); ssl = NULL;
-                wolfSSL_CTX_free(ctx); ctx = NULL;
-                err_sys("Input the FileID");
-	}else if(argc < 13){
-                wolfSSL_free(ssl); ssl = NULL;
-                wolfSSL_CTX_free(ctx); ctx = NULL;
-                err_sys("Input the IO");
-	}
-
 	//XMEMSET() : memset과 유사(시작주소, 값, 사이즈)
 	XMEMSET(msg, 0, sizeof(msg));
 	XMEMSET(traceMsg, 0, sizeof(traceMsg)); //add  Date
@@ -3558,7 +3523,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     if (updateKeysIVs) //updateKeysIVs : 기본값 = 0, I옵션에서 1로 변경
         wolfSSL_update_keys(ssl);
 #endif
-
+    //ClientWrite/ClientRead -> 실제로 실행되어지는 코드
     err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0  //서버로 데이터를 전송
     if (exitWithRet && (err != 0)) { //실행 X
         ((func_args*)args)->return_code = err;
@@ -3574,182 +3539,6 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         wolfSSL_CTX_free(ctx); ctx = NULL;
         goto exit;
     }
-
-//add2 //Time
-    XMEMSET(msg, 0, sizeof(msg));
-    XMEMSET(traceMsg, 0, sizeof(traceMsg));
-    strncpy(traceMsg, argv[6], strlen(argv[6])); 
-
-    msgSz = (int)XSTRLEN(traceMsg);
-    XMEMCPY(msg, traceMsg, msgSz);
-    
-    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-
-    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-//end add2
-
-//add3 //AgentID
-    XMEMSET(msg, 0, sizeof(msg));
-    XMEMSET(traceMsg, 0, sizeof(traceMsg));
-    strncpy(traceMsg, argv[7], strlen(argv[7])); 
-
-    msgSz = (int)XSTRLEN(traceMsg);
-    XMEMCPY(msg, traceMsg, msgSz);
-    
-    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-
-    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-//end add3
-
-//add4 //DeviceID
-    XMEMSET(msg, 0, sizeof(msg));
-    XMEMSET(traceMsg, 0, sizeof(traceMsg));
-    strncpy(traceMsg, argv[8], strlen(argv[8])); 
-
-    msgSz = (int)XSTRLEN(traceMsg);
-    XMEMCPY(msg, traceMsg, msgSz);
-    
-    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-
-    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-//end add4
-
-//add5 //ServiceID
-    XMEMSET(msg, 0, sizeof(msg));
-    XMEMSET(traceMsg, 0, sizeof(traceMsg));
-    strncpy(traceMsg, argv[9], strlen(argv[9])); 
-
-    msgSz = (int)XSTRLEN(traceMsg);
-    XMEMCPY(msg, traceMsg, msgSz);
-    
-    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-
-    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-//end add5
-
-//add6 //KeyID
-    XMEMSET(msg, 0, sizeof(msg));
-    XMEMSET(traceMsg, 0, sizeof(traceMsg));
-    strncpy(traceMsg, argv[10], strlen(argv[10])); 
-
-    msgSz = (int)XSTRLEN(traceMsg);
-    XMEMCPY(msg, traceMsg, msgSz);
-    
-    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-
-    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-//end add6
-
-//add7 //FileID
-    XMEMSET(msg, 0, sizeof(msg));
-    XMEMSET(traceMsg, 0, sizeof(traceMsg));
-    strncpy(traceMsg, argv[11], strlen(argv[11])); 
-
-    msgSz = (int)XSTRLEN(traceMsg);
-    XMEMCPY(msg, traceMsg, msgSz);
-    
-    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-
-    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-//end add7
-
-//add8 //IO
-    XMEMSET(msg, 0, sizeof(msg));
-    XMEMSET(traceMsg, 0, sizeof(traceMsg));
-    strncpy(traceMsg, argv[12], strlen(argv[12])); 
-
-    msgSz = (int)XSTRLEN(traceMsg);
-    XMEMCPY(msg, traceMsg, msgSz);
-    
-    err = ClientWrite(ssl, msg, msgSz, "", exitWithRet); //err = 0
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-
-    err = ClientRead(ssl, reply, sizeof(reply)-1, 1, "", exitWithRet);
-    if (exitWithRet && (err != 0)) {
-        ((func_args*)args)->return_code = err;
-        wolfSSL_free(ssl); ssl = NULL;
-        wolfSSL_CTX_free(ctx); ctx = NULL;
-        goto exit;
-    }
-//end add8
-
 	
 #if defined(WOLFSSL_TLS13)
     if (updateKeysIVs || postHandAuth) //실행 X   //updateKeysIVs : 기본값 = 0, I옵션에서 1로 변경   //postHandAuth : 기본값 = 0, Q옵션에서 1로 변경
@@ -3761,8 +3550,6 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
         session = wolfSSL_get_session(ssl);
     }
 #endif
-
-//------------------------------------(7/3)-------------------------------------------
 
 #if !defined(NO_SESSION_CACHE) && (defined(OPENSSL_EXTRA) || defined(HAVE_EXT_CACHE)) //실행 X
     if (session != NULL && resumeSession) {
@@ -3816,6 +3603,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
     CloseSocket(sockfd);
 
 #ifndef NO_SESSION_CACHE
+
     if (resumeSession) {
         sslResume = wolfSSL_new(ctx);
         if (sslResume == NULL) {

@@ -96,7 +96,7 @@ static const char kHttpServerMsg[] =
     "</html>\r\n";
 
 /* Read needs to be largest of the client.c message strings (29) */
-#define SRV_READ_SZ    32
+#define SRV_READ_SZ    256
 
 char Date[32]; //add
 char Time[32]; //add
@@ -106,7 +106,7 @@ char ServiceID[32]; //add
 char KeyID[32]; //add
 char FileID[32]; //add
 int IO; //add
-int count = 0; //add
+
 char command[1024];
 
 int runWithErrors = 0; /* Used with -x flag to run err_sys vs. print errors */
@@ -497,7 +497,8 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
     rootObject = json_value_get_object(rootValue);
 
     JSON_Array *array;
-    char test[128];
+
+    char *ptr; //strtok
 
     /* Read data */
     do {
@@ -556,52 +557,44 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
         /* null terminate message */
         input[ret] = '\0';
 
-	//add
-	if(count == 0){
-		XMEMSET(Date, 0, sizeof(Date));
-		strncpy(Date, input, strlen(input));
-	}
-	else if(count == 1){
-		XMEMSET(Time, 0, sizeof(Time));
-		strncpy(Time, input, strlen(input));
-	}
-	else if(count == 2){
-		XMEMSET(AgentID, 0, sizeof(AgentID));
-		XMEMSET(test, 0, sizeof(test));
-		array = json_object_get_array(rootObject, "Agent");
-   		sprintf(test, "%s", json_array_get_string(array, atoi(input)-1));
-		strncpy(AgentID, test, strlen(test));
-	}
-	else if(count == 3){
-		XMEMSET(DeviceID, 0, sizeof(DeviceID));
-		XMEMSET(test, 0, sizeof(test));
-		array = json_object_get_array(rootObject, "Device");
-		sprintf(test, "%s", json_array_get_string(array, atoi(input)-1));
-		strncpy(DeviceID, test, strlen(test));
-	}
-	else if(count == 4){
-		XMEMSET(ServiceID, 0, sizeof(ServiceID));
-		XMEMSET(test, 0, sizeof(test));
-		array = json_object_get_array(rootObject, "Service");
-		sprintf(test, "%s", json_array_get_string(array, atoi(input)-1));
-		strncpy(ServiceID, test, strlen(test));
-	}
-	else if(count == 5){
-		XMEMSET(KeyID, 0, sizeof(KeyID));
-		XMEMSET(test, 0, sizeof(test));
-		array = json_object_get_array(rootObject, "Key");
-		sprintf(test, "%s", json_array_get_string(array, atoi(input)-1));
-		strncpy(KeyID, test, strlen(test));
-	}
-	else if(count == 6){
-		XMEMSET(FileID, 0, sizeof(FileID));
-		strncpy(FileID, input, strlen(input));
-	}
-	else if(count == 7){
-		IO = atoi(input);
-	}
-	count++;
-	//end add
+	//Date
+	XMEMSET(Date, 0, sizeof(Date));
+	ptr = strtok(input, " ");
+	strncpy(Date, ptr, strlen(ptr));
+
+	//Time
+	XMEMSET(Time, 0, sizeof(Time));
+	ptr = strtok(NULL, " ");
+	strncpy(Time, ptr, strlen(ptr));
+
+	//AgentID
+	XMEMSET(AgentID, 0, sizeof(AgentID));
+	ptr = strtok(NULL, " ");
+	strncpy(AgentID, ptr, strlen(ptr));
+
+	//DeviceID
+	XMEMSET(DeviceID, 0, sizeof(DeviceID));
+	ptr = strtok(NULL, " ");
+	strncpy(DeviceID, ptr, strlen(ptr));
+
+	//ServiceID
+	XMEMSET(ServiceID, 0, sizeof(ServiceID));
+	ptr = strtok(NULL, " ");
+	strncpy(ServiceID, ptr, strlen(ptr));
+
+	//KeyID
+	XMEMSET(KeyID, 0, sizeof(KeyID));
+	ptr = strtok(NULL, " ");
+	strncpy(KeyID, ptr, strlen(ptr));
+
+	//FileID
+	XMEMSET(FileID, 0, sizeof(FileID));
+	ptr = strtok(NULL, " ");
+	strncpy(FileID, ptr, strlen(ptr));
+
+	//IO
+	ptr = strtok(NULL, " ");
+	IO = atoi(ptr);
 
         //printf("Client message: %s\n", input); //client로부터 입력받은 메세지를 출력
     }
@@ -2836,230 +2829,11 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             }
         } //end if(err == 0 && echoData == 0 && throughput == 0)
 
-//add2
-        if (echoData == 0 && throughput == 0) {
-            ServerRead(ssl, input, sizeof(input)-1);
-            err = SSL_get_error(ssl, 0); //err = 0
-        }
-	if (err == 0 && echoData == 0 && throughput == 0) {
-            const char* write_msg;
-            int write_msg_sz;
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs)
-                	wolfSSL_update_keys(ssl);
-		#endif
-
-		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
-        	if (postHandAuth)
-                	wolfSSL_request_certificate(ssl);
-		#endif
-
-    	        write_msg = kReplyMsg;
-    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
-
-            	ServerWrite(ssl, write_msg, write_msg_sz);
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs || postHandAuth)
-                	ServerRead(ssl, input, sizeof(input)-1);
-		#endif
-        }
-//end add2
-
-//add3
-        if (echoData == 0 && throughput == 0) {
-            ServerRead(ssl, input, sizeof(input)-1);
-            err = SSL_get_error(ssl, 0); //err = 0
-        }
-	if (err == 0 && echoData == 0 && throughput == 0) {
-            const char* write_msg;
-            int write_msg_sz;
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs)
-                	wolfSSL_update_keys(ssl);
-		#endif
-
-		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
-        	if (postHandAuth)
-                	wolfSSL_request_certificate(ssl);
-		#endif
-
-    	        write_msg = kReplyMsg;
-    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
-
-            	ServerWrite(ssl, write_msg, write_msg_sz);
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs || postHandAuth)
-                	ServerRead(ssl, input, sizeof(input)-1);
-		#endif
-        }
-//end add3
-
-//add4
-        if (echoData == 0 && throughput == 0) {
-            ServerRead(ssl, input, sizeof(input)-1);
-            err = SSL_get_error(ssl, 0); //err = 0
-        }
-	if (err == 0 && echoData == 0 && throughput == 0) {
-            const char* write_msg;
-            int write_msg_sz;
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs)
-                	wolfSSL_update_keys(ssl);
-		#endif
-
-		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
-        	if (postHandAuth)
-                	wolfSSL_request_certificate(ssl);
-		#endif
-
-    	        write_msg = kReplyMsg;
-    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
-
-            	ServerWrite(ssl, write_msg, write_msg_sz);
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs || postHandAuth)
-                	ServerRead(ssl, input, sizeof(input)-1);
-		#endif
-        }
-//end add4
-
-//add5
-        if (echoData == 0 && throughput == 0) {
-            ServerRead(ssl, input, sizeof(input)-1);
-            err = SSL_get_error(ssl, 0); //err = 0
-        }
-	if (err == 0 && echoData == 0 && throughput == 0) {
-            const char* write_msg;
-            int write_msg_sz;
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs)
-                	wolfSSL_update_keys(ssl);
-		#endif
-
-		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
-        	if (postHandAuth)
-                	wolfSSL_request_certificate(ssl);
-		#endif
-
-    	        write_msg = kReplyMsg;
-    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
-
-            	ServerWrite(ssl, write_msg, write_msg_sz);
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs || postHandAuth)
-                	ServerRead(ssl, input, sizeof(input)-1);
-		#endif
-        }
-//end add5
-
-//add6
-        if (echoData == 0 && throughput == 0) {
-            ServerRead(ssl, input, sizeof(input)-1);
-            err = SSL_get_error(ssl, 0); //err = 0
-        }
-	if (err == 0 && echoData == 0 && throughput == 0) {
-            const char* write_msg;
-            int write_msg_sz;
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs)
-                	wolfSSL_update_keys(ssl);
-		#endif
-
-		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
-        	if (postHandAuth)
-                	wolfSSL_request_certificate(ssl);
-		#endif
-
-    	        write_msg = kReplyMsg;
-    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
-
-            	ServerWrite(ssl, write_msg, write_msg_sz);
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs || postHandAuth)
-                	ServerRead(ssl, input, sizeof(input)-1);
-		#endif
-        }
-//end add6
-
-//add7
-        if (echoData == 0 && throughput == 0) {
-            ServerRead(ssl, input, sizeof(input)-1);
-            err = SSL_get_error(ssl, 0); //err = 0
-        }
-	if (err == 0 && echoData == 0 && throughput == 0) {
-            const char* write_msg;
-            int write_msg_sz;
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs)
-                	wolfSSL_update_keys(ssl);
-		#endif
-
-		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
-        	if (postHandAuth)
-                	wolfSSL_request_certificate(ssl);
-		#endif
-
-    	        write_msg = kReplyMsg;
-    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
-
-            	ServerWrite(ssl, write_msg, write_msg_sz);
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs || postHandAuth)
-                	ServerRead(ssl, input, sizeof(input)-1);
-		#endif
-        }
-//end add7
-
-//add8
-        if (echoData == 0 && throughput == 0) {
-            ServerRead(ssl, input, sizeof(input)-1);
-            err = SSL_get_error(ssl, 0); //err = 0
-        }
-	if (err == 0 && echoData == 0 && throughput == 0) {
-            const char* write_msg;
-            int write_msg_sz;
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs)
-                	wolfSSL_update_keys(ssl);
-		#endif
-
-		#if defined(WOLFSSL_TLS13) && defined(WOLFSSL_POST_HANDSHAKE_AUTH)
-        	if (postHandAuth)
-                	wolfSSL_request_certificate(ssl);
-		#endif
-
-    	        write_msg = kReplyMsg;
-    	        write_msg_sz = (int)XSTRLEN(kReplyMsg);
-
-            	ServerWrite(ssl, write_msg, write_msg_sz);
-
-		#ifdef WOLFSSL_TLS13
-            	if (updateKeysIVs || postHandAuth)
-                	ServerRead(ssl, input, sizeof(input)-1);
-		#endif
-        }
-//end add8
-
 printf("Date : %s, Time : %s\n", Date, Time); //add
 printf("trace data : AgentID = %s, DeviceID = %s, ServiceID = %s, KeyID = %s, FileID = %s, I/O = %s\n", AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? "Input" : "Output")); //add
 
-sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? 1 : 0));
-system(command);
-
-count = 0; //아래로 보내면 종료 시점때문에 값이 들쭉날쭉함
+//sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? 1 : 0));
+//system(command);
 
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;
