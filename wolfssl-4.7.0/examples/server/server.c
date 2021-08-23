@@ -2847,8 +2847,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 printf("Date : %s, Time : %s\n", Date, Time); //add
 printf("trace data : AgentID = %s, DeviceID = %s, ServiceID = %s, KeyID = %s, FileID = %s, I/O = %s\n", AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? "Input" : "Output")); //add
 
-//sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? 1 : 0));
-//system(command);
+sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? 1 : 0));
+system(command);
 
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;
