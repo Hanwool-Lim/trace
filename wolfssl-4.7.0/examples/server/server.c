@@ -98,14 +98,26 @@ static const char kHttpServerMsg[] =
 /* Read needs to be largest of the client.c message strings (29) */
 #define SRV_READ_SZ    256
 
-char Date[32]; //add
-char Time[32]; //add
-char AgentID[32]; //add
-char DeviceID[32]; //add
-char ServiceID[32]; //add
-char KeyID[32]; //add
-char FileID[32]; //add
-int IO; //add
+char len[128]; //memcpy
+
+int totallen; //add
+int messagetype; //add
+char timestamp[20]; //add
+
+int AgentID_len; //add
+char AgentID[16]; //add
+
+int DeviceID_len; //add
+char DeviceID[16]; //add
+
+int ServiceID_len; //add
+char ServiceID[16]; //add
+
+int FileID_len; //add
+char FileID[128]; //add
+
+int IO_mode; //add
+int Result; //add
 
 char command[1024];
 
@@ -490,19 +502,6 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
     int ret, err;
     char buffer[WOLFSSL_MAX_ERROR_SZ];
 
-    //json variable
-    char json[10];
-    JSON_Value *rootValue;
-    JSON_Object *rootObject;
-
-    rootValue = json_parse_file("trace.json");
-    rootObject = json_value_get_object(rootValue);
-
-    JSON_Array *array;
-    //end json variable
-
-    char *ptr; //strtok
-
     /* Read data */
     do {
         err = 0; /* reset error */
@@ -559,59 +558,54 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
     if (ret > 0) {
         /* null terminate message */
         input[ret] = '\0';
+		memset(len, 0, sizeof(len));
+	memcpy(len, input, 4);
+	totallen = atoi(len);
+	printf("totallen : %d  ", totallen);
 
-	//Date
-	XMEMSET(Date, 0, sizeof(Date));
-	ptr = strtok(input, " ");
-	strncpy(Date, ptr, strlen(ptr));
+	memcpy(len, input+4, 4);
+	messagetype = atoi(len);
+	printf("messagetype : %d  ", messagetype);
 
-	//Time
-	XMEMSET(Time, 0, sizeof(Time));
-	ptr = strtok(NULL, " ");
-	strncpy(Time, ptr, strlen(ptr));
+	memcpy(len, input+8, 19);
+	strncpy(timestamp, len, sizeof(timestamp));
+	printf("timestamp : %s\n", timestamp);
 
-	//AgentID //json
-	XMEMSET(AgentID, 0, sizeof(AgentID));
-	XMEMSET(json, 0, sizeof(json));
-	ptr = strtok(NULL, " ");
-	array = json_object_get_array(rootObject, "Agent");
-	sprintf(json, "%s", json_array_get_string(array, atoi(ptr)-1));
-	strncpy(AgentID, json, strlen(json));
+	memset(len, 0, sizeof(len));
+	memcpy(len, input+27, 4);
+	ServiceID_len = atoi(len);
+	printf("ServiceID_len : %d  ", ServiceID_len);
 
-	//DeviceID //json
-	XMEMSET(DeviceID, 0, sizeof(DeviceID));
-	XMEMSET(json, 0, sizeof(json));
-	ptr = strtok(NULL, " ");
-	array = json_object_get_array(rootObject, "Device");
-	sprintf(json, "%s", json_array_get_string(array, atoi(ptr)-1));
-	strncpy(DeviceID, json, strlen(json));
+	memcpy(len, input+31, ServiceID_len);
+	strncpy(ServiceID, len, sizeof(ServiceID));
+	printf("ServiceID : %s  /  ", ServiceID);
 
-	//ServiceID //json
-	XMEMSET(ServiceID, 0, sizeof(ServiceID));
-	XMEMSET(json, 0, sizeof(json));
-	ptr = strtok(NULL, " ");
-	array = json_object_get_array(rootObject, "Service");
-	sprintf(json, "%s", json_array_get_string(array, atoi(ptr)-1));
-	strncpy(ServiceID, json, strlen(json));
+	memset(len, 0, sizeof(len));
+	memcpy(len, input+31+ServiceID_len, 4);
+	AgentID_len = atoi(len);
+	printf("AgentID_len : %d  ", AgentID_len);
 
-	//KeyID //json
-	XMEMSET(KeyID, 0, sizeof(KeyID));
-	XMEMSET(json, 0, sizeof(json));
-	ptr = strtok(NULL, " ");
-	array = json_object_get_array(rootObject, "Key");
-	sprintf(json, "%s", json_array_get_string(array, atoi(ptr)-1));
-	strncpy(KeyID, json, strlen(json));
+	memcpy(len, input+35+ServiceID_len, AgentID_len);
+	strncpy(AgentID, len, sizeof(AgentID));
+	printf("AgentID : %s  /  ", AgentID);
 
-	//FileID
-	XMEMSET(FileID, 0, sizeof(FileID));
-	ptr = strtok(NULL, " ");
-	strncpy(FileID, ptr, strlen(ptr));
+	memset(len, 0, sizeof(len));
+	memcpy(len, input+35+ServiceID_len+AgentID_len, 4);
+	DeviceID_len = atoi(len);
+	printf("DeviceID_len : %d  ", DeviceID_len);
+	
+	memcpy(len, input+39+ServiceID_len+AgentID_len, DeviceID_len);
+	strncpy(DeviceID, len, sizeof(DeviceID));
+	printf("DeviceID : %s\n", DeviceID);
 
-	//IO
-	ptr = strtok(NULL, " ");
-	IO = atoi(ptr);
+	memset(len, 0, sizeof(len));
+	memcpy(len, input+39+ServiceID_len+AgentID_len+DeviceID_len, 4);
+	FileID_len = atoi(len);
+	printf("FileID_len : %d  ", FileID_len);
 
-        //printf("Client message: %s\n", input); //client로부터 입력받은 메세지를 출력
+	memcpy(len, input+43+ServiceID_len+AgentID_len+DeviceID_len, FileID_len);
+	strncpy(FileID, len, sizeof(FileID));
+	printf("FileID : %s\n", FileID);
     }
 }
 
@@ -2844,11 +2838,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             }
         } //end if(err == 0 && echoData == 0 && throughput == 0)
 
-printf("Date : %s, Time : %s\n", Date, Time); //add
-printf("trace data : AgentID = %s, DeviceID = %s, ServiceID = %s, KeyID = %s, FileID = %s, I/O = %s\n", AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? "Input" : "Output")); //add
-
-sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? 1 : 0));
-system(command);
+//sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? 1 : 0));
+//system(command);
 
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;
