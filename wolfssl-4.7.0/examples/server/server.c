@@ -1211,24 +1211,24 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 
 //기본적인 실행에서 실행
 #ifndef NO_RSA
-    verifyCert = cliCertFile;
-    ourCert    = svrCertFile;
-    ourKey     = svrKeyFile;
+    verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile
+    ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile
+    ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile
 //setting Client_cert, server_cert, Server_Key
 
 #else
     #ifdef HAVE_ECC
-        verifyCert = cliEccCertFile;
-        ourCert    = eccCertFile;
-        ourKey     = eccKeyFile;
+        verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-ecc-cert.pem"; //cliEccCertFile;
+        ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-ecc.pem"; //eccCertFile;
+        ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/ecc-key.pem"; //eccKeyFile;
     #elif defined(HAVE_ED25519)
-        verifyCert = cliEdCertFile;
-        ourCert    = edCertFile;
-        ourKey     = edKeyFile;
+        verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/ed25519/client-ed25519.pem"; //cliEdCertFile;
+        ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/ed25519/server-ed25519-cert.pem"; //edCertFile;
+        ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/ed25519/server-ed25519-priv.pem"; //edKeyFile;
     #elif defined(HAVE_ED448)
-        verifyCert = cliEd448CertFile;
-        ourCert    = ed448CertFile;
-        ourKey     = ed448KeyFile;
+        verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/ed448/client-ed448.pem"; //cliEd448CertFile;
+        ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/ed448/server-ed448-cert.pem"; //ed448CertFile;
+        ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/ed448/server-ed448-priv.pem"; //ed448KeyFile;
     #else
         verifyCert = NULL;
         ourCert    = NULL;
@@ -2973,7 +2973,7 @@ exit:
         wolfSSL_Debugging_ON();
 #endif
         wolfSSL_Init(); //모든 Application은 시작전에 wolfSSL_init을 호출 
-        ChangeToWolfRoot();
+        //ChangeToWolfRoot();
 
 #ifndef NO_WOLFSSL_SERVER
 #ifdef HAVE_STACK_SIZE
