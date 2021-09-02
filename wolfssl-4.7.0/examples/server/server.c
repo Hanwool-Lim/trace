@@ -569,7 +569,7 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 
 	memcpy(len, input+8, 19);
 	strncpy(timestamp, len, sizeof(timestamp));
-	printf("timestamp : %s\n", timestamp);
+	printf("timestamp : %s  /  ", timestamp);
 
 	memset(len, 0, sizeof(len));
 	memcpy(len, input+27, 4);
@@ -587,7 +587,7 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 
 	memcpy(len, input+35+ServiceID_len, AgentID_len);
 	strncpy(AgentID, len, sizeof(AgentID));
-	printf("AgentID : %s  /  ", AgentID);
+	printf("AgentID : %s  /\n", AgentID);
 
 	memset(len, 0, sizeof(len));
 	memcpy(len, input+35+ServiceID_len+AgentID_len, 4);
@@ -596,7 +596,7 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 	
 	memcpy(len, input+39+ServiceID_len+AgentID_len, DeviceID_len);
 	strncpy(DeviceID, len, sizeof(DeviceID));
-	printf("DeviceID : %s\n", DeviceID);
+	printf("DeviceID : %s  /  ", DeviceID);
 
 	memset(len, 0, sizeof(len));
 	memcpy(len, input+39+ServiceID_len+AgentID_len+DeviceID_len, 4);
@@ -605,7 +605,17 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 
 	memcpy(len, input+43+ServiceID_len+AgentID_len+DeviceID_len, FileID_len);
 	strncpy(FileID, len, sizeof(FileID));
-	printf("FileID : %s\n", FileID);
+	printf("FileID : %s  /  ", FileID);
+
+	memset(len, 0, sizeof(len));
+	memcpy(len, input+43+ServiceID_len+AgentID_len+DeviceID_len+FileID_len, 4);
+	IO_mode = atoi(len);
+	printf("IO_mode : %d  /  ", IO_mode);
+
+	memset(len, 0, sizeof(len));
+	memcpy(len, input+47+ServiceID_len+AgentID_len+DeviceID_len+FileID_len, 4);
+	Result = atoi(len);
+	printf("Result : %d\n", Result);
     }
 }
 
