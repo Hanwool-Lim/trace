@@ -51,9 +51,6 @@
     #include </home/tracking/trace/wolfssl-4.7.0/wolfssl/certs_test.h>
 #endif
 
-#include "/home/tracking/trace/wolfssl-4.7.0/parson.h"
-#include "/home/tracking/trace/wolfssl-4.7.0/parson.c"
-
 #include </home/tracking/trace/wolfssl-4.7.0/wolfssl/openssl/ssl.h>
 #include </home/tracking/trace/wolfssl-4.7.0/wolfssl/test.h>
 #include </home/tracking/trace/wolfssl-4.7.0/wolfssl/error-ssl.h>
