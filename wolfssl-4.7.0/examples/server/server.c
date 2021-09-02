@@ -21,25 +21,25 @@
 
 
 #ifdef HAVE_CONFIG_H
-    #include <config.h>
+    #include </home/tracking/trace/wolfssl-4.7.0/config.h>
 #endif
 
 #ifndef WOLFSSL_USER_SETTINGS
-    #include <wolfssl/options.h>
+    #include </home/tracking/trace/wolfssl-4.7.0/wolfssl/options.h>
 #endif
-#include <wolfssl/wolfcrypt/settings.h>
+#include </home/tracking/trace/wolfssl-4.7.0/wolfssl/wolfcrypt/settings.h>
 
-#include <wolfssl/ssl.h> /* name change portability layer */
+#include </home/tracking/trace/wolfssl-4.7.0/wolfssl/ssl.h> /* name change portability layer */
 
 #ifdef HAVE_ECC
-    #include <wolfssl/wolfcrypt/ecc.h>   /* wc_ecc_fp_free */
+    #include </home/tracking/trace/wolfssl-4.7.0/wolfssl/wolfcrypt/ecc.h>   /* wc_ecc_fp_free */
 #endif
 
 #if defined(WOLFSSL_MDK_ARM) || defined(WOLFSSL_KEIL_TCP_NET)
         #include <stdio.h>
         #include <string.h>
-        #include "rl_fs.h"
-        #include "rl_net.h"
+        //#include "/home/tracking/trace/wolfssl-4.7.0/rl_fs.h"
+        //#include "/home/tracking/trace/wolfssl-4.7.0/rl_net.h"
 #endif
 
 #ifdef NO_FILESYSTEM
@@ -48,17 +48,17 @@
     #endif
     #undef USE_CERT_BUFFERS_2048
     #define USE_CERT_BUFFERS_2048
-    #include <wolfssl/certs_test.h>
+    #include </home/tracking/trace/wolfssl-4.7.0/wolfssl/certs_test.h>
 #endif
 
-#include "parson.h"
-#include "parson.c"
+#include "/home/tracking/trace/wolfssl-4.7.0/parson.h"
+#include "/home/tracking/trace/wolfssl-4.7.0/parson.c"
 
-#include <wolfssl/openssl/ssl.h>
-#include <wolfssl/test.h>
-#include <wolfssl/error-ssl.h>
+#include </home/tracking/trace/wolfssl-4.7.0/wolfssl/openssl/ssl.h>
+#include </home/tracking/trace/wolfssl-4.7.0/wolfssl/test.h>
+#include </home/tracking/trace/wolfssl-4.7.0/wolfssl/error-ssl.h>
 
-#include "examples/server/server.h"
+#include "/home/tracking/trace/wolfssl-4.7.0/examples/server/server.h"
 #include <stdlib.h> //add
 
 #ifndef NO_WOLFSSL_SERVER
