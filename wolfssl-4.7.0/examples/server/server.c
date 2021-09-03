@@ -40,6 +40,7 @@
         #include <string.h>
 	#include <stdlib.h>
 	#include <unistd.h>
+	#include <sys/types.h>
 
         //#include "/home/tracking/trace/wolfssl-4.7.0/rl_fs.h"
         //#include "/home/tracking/trace/wolfssl-4.7.0/rl_net.h"
@@ -119,7 +120,7 @@ char ServiceID[16]; //add
 int FileID_len; //add
 char FileID[128]; //add
 
-int IO_mode; //add
+char IO_mode[10]; //add
 int Result; //add
 
 char command[1024];
@@ -617,8 +618,13 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 
 	memset(len, 0, sizeof(len));
 	memcpy(len, input+43+ServiceID_len+AgentID_len+DeviceID_len+FileID_len, 4);
-	IO_mode = atoi(len);
-	printf("IO_mode : %d  /  ", IO_mode);
+	if(atoi(len)==0)
+		strncpy(IO_mode, "READ", sizeof(IO_mode));
+	else if(atoi(len)==1)
+		strncpy(IO_mode, "WRITE", sizeof(IO_mode));
+	else
+		strncpy(IO_mode, "R&W", sizeof(IO_mode));
+	printf("IO_mode : %s  /  ", IO_mode);
 
 	memset(len, 0, sizeof(len));
 	memcpy(len, input+47+ServiceID_len+AgentID_len+DeviceID_len+FileID_len, 4);
@@ -2858,6 +2864,15 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 
 //sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, FileID, ((IO_mode !=0)?1:0));
 //system(command);
+
+pid_t childpid = fork();
+
+if(!childpid){
+	char *trace[] = {"/home/tracking/trace/traceDB", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode, NULL};
+
+	execvp("/home/tracking/trace/traceDB", trace);
+}else
+	waitpid(childpid, NULL, 0);
 
 
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
