@@ -38,6 +38,9 @@
 #if defined(WOLFSSL_MDK_ARM) || defined(WOLFSSL_KEIL_TCP_NET)
         #include <stdio.h>
         #include <string.h>
+	#include <stdlib.h>
+	#include <unistd.h>
+
         //#include "/home/tracking/trace/wolfssl-4.7.0/rl_fs.h"
         //#include "/home/tracking/trace/wolfssl-4.7.0/rl_net.h"
 #endif
@@ -99,7 +102,10 @@ char len[128]; //memcpy
 
 int totallen; //add
 int messagetype; //add
+
 char timestamp[20]; //add
+char Date[20];
+char Time[20];
 
 int AgentID_len; //add
 char AgentID[16]; //add
@@ -498,6 +504,7 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 {
     int ret, err;
     char buffer[WOLFSSL_MAX_ERROR_SZ];
+    char *ptr; //strtok
 
     /* Read data */
     do {
@@ -567,6 +574,10 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 	memcpy(len, input+8, 19);
 	strncpy(timestamp, len, sizeof(timestamp));
 	printf("timestamp : %s  /  ", timestamp);
+	ptr = strtok(timestamp, " ");
+	strncpy(Date, ptr, strlen(ptr));
+	ptr = strtok(NULL, " ");
+	strncpy(Time, ptr, strlen(ptr));
 
 	memset(len, 0, sizeof(len));
 	memcpy(len, input+27, 4);
@@ -2845,8 +2856,9 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             }
         } //end if(err == 0 && echoData == 0 && throughput == 0)
 
-//sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, KeyID, FileID, ((IO != 0)? 1 : 0));
+//sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, FileID, ((IO_mode !=0)?1:0));
 //system(command);
+
 
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;
