@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
 
 	result = mysql_use_result(connect);
 
-	sprintf(trace, "insert into tracking (Date, Time, AgentID, DeviceID, ServiceID, KeyID, FileID, IO) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", argv[1], argv[2], argv[3], argv[4], argv[5], argv[6], argv[7], argv[8]);
+	sprintf(trace, "insert into tracking (Date, Time, AgentID, DeviceID, ServiceID, FileID, IO) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s')", argv[1], argv[2], argv[3], argv[4], argv[5], argv[6], argv[7]);
 
 	mysql_query(connect, trace);
 	result=mysql_use_result(connect);
