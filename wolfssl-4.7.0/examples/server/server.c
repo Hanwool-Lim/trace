@@ -122,6 +122,8 @@ char FileID[128]; //add
 char IO_mode[10]; //add
 int Result; //add
 
+FILE *fp;
+
 char command[1024];
 
 int runWithErrors = 0; /* Used with -x flag to run err_sys vs. print errors */
@@ -2872,9 +2874,12 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 pid_t childpid = fork();
 
 if(!childpid){
-	char *trace[] = {"/home/tracking/trace/traceDB", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode, NULL};
-
-	execvp("/home/tracking/trace/traceDB", trace);
+	//char *trace[] = {"traceDB", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode, NULL};
+	//execvp("traceDB", trace);
+	
+	fp = fopen("trace.txt", "a");
+	fprintf(fp, "%s %s %s %s %s %s %s\n", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
+	fclose(fp);
 }else
 	waitpid(childpid, NULL, 0);
 
@@ -2905,12 +2910,9 @@ if(!childpid){
         fprintf(stderr, "peak connection memory = %d\n", ssl_stats.peakMem);
         fprintf(stderr, "current memory in use  = %d\n", ssl_stats.curMem);
         fprintf(stderr, "peak connection allocs = %d\n", ssl_stats.peakAlloc);
-        fprintf(stderr, "current connection allocs = %d\n",ssl_stats.curAlloc);
-        fprintf(stderr, "total connection allocs   = %d\n",
-                ssl_stats.totalAlloc);
-        fprintf(stderr, "total connection frees    = %d\n\n",
-                ssl_stats.totalFr);
-
+        fprintf(stderr, "current connection allocs = %d\n", ssl_stats.curAlloc);
+        fprintf(stderr, "total connection allocs   = %d\n", ssl_stats.totalAlloc);
+        fprintf(stderr, "total connection frees    = %d\n\n", ssl_stats.totalFr);
 #endif
        SSL_free(ssl); ssl = NULL;
 
