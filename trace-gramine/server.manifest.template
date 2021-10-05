@@ -52,8 +52,7 @@ sgx.trusted_files.executable = "file:server"
 sgx.trusted_files.argv = "file:server.argv"
 
 sgx.trusted_files.certs = "file:certs/"
-sgx.trusted_files.data = "file:trace.json"
-sgx.trusted_files.tracedb = "file:traceDB"
+sgx.allowed_files.trace = "file:trace.txt"
 
 ### Network Service ###
 
