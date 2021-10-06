@@ -1,2 +1,0 @@
-2021-08-15, 17:00:00, I/O_agent_1, user_device, ecg_app1, test.txt, READ
-2021-08-15, 18:00:00, I/O_agent_1, user_device, ecg_app1, test.txt, READ
