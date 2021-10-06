@@ -1236,7 +1236,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     
     //verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
     //ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
-    //ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
+    //fourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
 //setting Client_cert, server_cert, Server_Key
 
 #else
@@ -2874,8 +2874,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 pid_t childpid = fork();
 
 if(!childpid){
-	//char *trace[] = {"traceDB", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode, NULL};
-	//execvp("traceDB", trace);
+	//char *trace[] = {"test", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode, NULL};
+	//execvp("test", trace);
 	
 	fp = fopen("trace.txt", "a");
 	fprintf(fp, "%s %s %s %s %s %s %s\n", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
