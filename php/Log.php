@@ -12,7 +12,7 @@
 
 
     mysqli_stmt_store_result($statement);
-    mysqli_stmt_bind_result($statement,$id, $Date, $AgentID, $DeviceID, $ServiceID, $KeyID, $FileID, $IO, $Time);
+    mysqli_stmt_bind_result($statement,$id, $Date, $Time, $AgentID, $DeviceID, $ServiceID, $KeyID, $FileID, $IO );
 
     $response = array();
     $response2 = array();
@@ -20,13 +20,13 @@
     while(mysqli_stmt_fetch($statement)) {
         $response["id"] = $id;
         $response["Date"] = $Date;
+        $response["Time"] = $Time;
         $response["AgentID"] = $AgentID;
         $response["DeviceID"] = $DeviceID;
         $response["ServiceID"] = $ServiceID;
         $response["KeyID"] = $KeyID;
         $response["FileID"] = $FileID;
-        $response["IO"] = $IO;
-        $response["Time"] = $Time;
+        $response["IO"] = $IO; 
         $response2[] = $response;
     }
 
