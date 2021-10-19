@@ -15,6 +15,6 @@ Server : ./server -b -r -v 4
 
 client : ./client -v 4 -h "서버IP 날짜 시간 AgentID DeviceID ServiceID KeyID FileID IO"
 
-  AgentID, DeviceID, ServiceID, KeyID : json 형식을 사용
+  AgentID, DeviceID, ServiceID, KeyID : json 형식을 이용
 
   IO -> 0 : Output / 1 : Input
