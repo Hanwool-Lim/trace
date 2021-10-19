@@ -122,8 +122,6 @@ char FileID[128]; //add
 char IO_mode[10]; //add
 int Result; //add
 
-FILE *fp;
-
 char command[1024];
 
 int runWithErrors = 0; /* Used with -x flag to run err_sys vs. print errors */
@@ -1078,6 +1076,8 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     wolfSSL_method_func method = NULL;
     SSL_CTX*    ctx    = 0;
     SSL*        ssl    = 0;
+    
+    FILE *fp;
 
     int    useWebServerMsg = 0;
     char   input[SRV_READ_SZ];
@@ -1225,18 +1225,18 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 #endif
 
 //----------------- variable annountcement up to this point ----------------------------
-
+    
     ((func_args*)args)->return_code = -1; /* error state */
 
 //기본적인 실행에서 실행
 #ifndef NO_RSA
-    verifyCert = cliCertFile;
-    ourCert    = svrCertFile;
-    ourKey     = svrKeyFile;
+    //verifyCert = cliCertFile;
+    //ourCert    = svrCertFile;
+    //ourKey     = svrKeyFile;
     
-    //verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
-    //ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
-    //fourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
+    verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
+    ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
+    ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
 //setting Client_cert, server_cert, Server_Key
 
 #else
@@ -2188,7 +2188,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
         wolfSSL_CTX_NoTicketTLSv12(ctx);
 #endif
 #endif //end ifdef HAVE_SESSION_TICKET
-
+    
     while (1) {
         /* allow resume option */
         if (resumeCount > 1) {
@@ -2848,7 +2848,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                 write_msg = kHttpServerMsg;
                 write_msg_sz = (int)XSTRLEN(kHttpServerMsg);
             }
-            ServerWrite(ssl, write_msg, write_msg_sz);
+            //ServerWrite(ssl, write_msg, write_msg_sz);
 
 	#ifdef WOLFSSL_TLS13
             if (updateKeysIVs || postHandAuth)
@@ -2868,14 +2868,14 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             }
         } //end if(err == 0 && echoData == 0 && throughput == 0)
 
-//sprintf(command, "sudo /home/tracking/trace/traceDB %s %s %s %s %s %s %d", Date, Time, AgentID, DeviceID, ServiceID, FileID, ((IO_mode !=0)?1:0));
-//system(command);
-
 pid_t childpid = fork();
 
 if(!childpid){
 	//char *trace[] = {"test", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode, NULL};
 	//execvp("test", trace);
+	
+	//sprintf(command, "sudo ./test %s %s %s %s %s %s %s", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
+	//system(command);
 	
 	fp = fopen("trace.txt", "a");
 	fprintf(fp, "%s %s %s %s %s %s %s\n", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
@@ -2930,7 +2930,6 @@ if(!childpid){
             break;  //out of while loop, done with normal and resume option
         } */ //modify
     } /* while(1) */
-
     WOLFSSL_TIME(cnt);
     (void)cnt;
 
@@ -3017,7 +3016,8 @@ exit:
 #else
         printf("Server not compiled in!\n");
 #endif
-
+	
+	//fclose(fp); //add
         wolfSSL_Cleanup(); //모든 Application은 종료전에 wolfSSL_Cleanup을 호출 
         FreeTcpReady(&ready);
 
