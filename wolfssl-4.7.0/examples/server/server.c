@@ -1230,13 +1230,13 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 
 //기본적인 실행에서 실행
 #ifndef NO_RSA
-    //verifyCert = cliCertFile;
-    //ourCert    = svrCertFile;
-    //ourKey     = svrKeyFile;
+    verifyCert = cliCertFile;
+    ourCert    = svrCertFile;
+    ourKey     = svrKeyFile;
     
-    verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
-    ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
-    ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
+    //verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
+    //ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
+    //ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
 //setting Client_cert, server_cert, Server_Key
 
 #else
@@ -2871,15 +2871,15 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 pid_t childpid = fork();
 
 if(!childpid){
-	//char *trace[] = {"test", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode, NULL};
-	//execvp("test", trace);
+	char *trace[] = {"traceDB", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode, NULL};
+	execvp("./traceDB", trace);
 	
 	//sprintf(command, "sudo ./test %s %s %s %s %s %s %s", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
 	//system(command);
 	
-	fp = fopen("trace.txt", "a");
-	fprintf(fp, "%s %s %s %s %s %s %s\n", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
-	fclose(fp);
+	//fp = fopen("trace.txt", "a");
+	//fprintf(fp, "%s %s %s %s %s %s %s\n", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
+	//fclose(fp);
 }else
 	waitpid(childpid, NULL, 0);
 
