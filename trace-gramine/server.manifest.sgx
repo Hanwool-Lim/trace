@@ -958,27 +958,27 @@ sha256 = "51af2a869c41889eb68f2ae359397f29241195fabc225153405638de289551cd"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/caca/libgl_plugin.so"
-sha256 = "cec7495083e385ebcbb0a8743f228e01a225f6a8092e1ce0086d886b481ab365"
+sha256 = "be01b12557a7dc96a508e724687d03919afaa278a09b78dc4b864dbc9853f83d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/caca/libgl_plugin.so.0"
-sha256 = "cec7495083e385ebcbb0a8743f228e01a225f6a8092e1ce0086d886b481ab365"
+sha256 = "be01b12557a7dc96a508e724687d03919afaa278a09b78dc4b864dbc9853f83d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/caca/libgl_plugin.so.0.0.0"
-sha256 = "cec7495083e385ebcbb0a8743f228e01a225f6a8092e1ce0086d886b481ab365"
+sha256 = "be01b12557a7dc96a508e724687d03919afaa278a09b78dc4b864dbc9853f83d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/caca/libx11_plugin.so"
-sha256 = "680fb261c09e1930c08c9cec058a9b7f6f5d5d47d5fcb963260ba04a32cf0f13"
+sha256 = "d12326f9bfce934d6d41139f852b77d42e6845070567ac0c594653f62563d187"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/caca/libx11_plugin.so.0"
-sha256 = "680fb261c09e1930c08c9cec058a9b7f6f5d5d47d5fcb963260ba04a32cf0f13"
+sha256 = "d12326f9bfce934d6d41139f852b77d42e6845070567ac0c594653f62563d187"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/caca/libx11_plugin.so.0.0.0"
-sha256 = "680fb261c09e1930c08c9cec058a9b7f6f5d5d47d5fcb963260ba04a32cf0f13"
+sha256 = "d12326f9bfce934d6d41139f852b77d42e6845070567ac0c594653f62563d187"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ceph/libceph-common.so.2"
@@ -9026,19 +9026,19 @@ sha256 = "2aabc899fd2f27ff0bc1fd8540bd55e5e860560a601a1023df587b4454789b7d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libcaca++.so.0"
-sha256 = "cf1dcf05fb259965f6a9b182f91588b6e785a152483058277d049a5ef8daf763"
+sha256 = "66ea9ad0f8137dc438ded11fd01fa432c9d9282b52fa86000c701b639043e31c"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libcaca++.so.0.99.19"
-sha256 = "cf1dcf05fb259965f6a9b182f91588b6e785a152483058277d049a5ef8daf763"
+sha256 = "66ea9ad0f8137dc438ded11fd01fa432c9d9282b52fa86000c701b639043e31c"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libcaca.so.0"
-sha256 = "6fbd1d4ec797b9f97fc9d3bf5583dfc0b40b2b9732395a9cc2599b5b36196bd8"
+sha256 = "0a112fff35473f562142c55c464bdc03b5d67cceda8f918f68d5341bef645cc6"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libcaca.so.0.99.19"
-sha256 = "6fbd1d4ec797b9f97fc9d3bf5583dfc0b40b2b9732395a9cc2599b5b36196bd8"
+sha256 = "0a112fff35473f562142c55c464bdc03b5d67cceda8f918f68d5341bef645cc6"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libcairo-gobject.so.2"
@@ -25598,27 +25598,27 @@ sha256 = "51af2a869c41889eb68f2ae359397f29241195fabc225153405638de289551cd"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/caca/libgl_plugin.so"
-sha256 = "cec7495083e385ebcbb0a8743f228e01a225f6a8092e1ce0086d886b481ab365"
+sha256 = "be01b12557a7dc96a508e724687d03919afaa278a09b78dc4b864dbc9853f83d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/caca/libgl_plugin.so.0"
-sha256 = "cec7495083e385ebcbb0a8743f228e01a225f6a8092e1ce0086d886b481ab365"
+sha256 = "be01b12557a7dc96a508e724687d03919afaa278a09b78dc4b864dbc9853f83d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/caca/libgl_plugin.so.0.0.0"
-sha256 = "cec7495083e385ebcbb0a8743f228e01a225f6a8092e1ce0086d886b481ab365"
+sha256 = "be01b12557a7dc96a508e724687d03919afaa278a09b78dc4b864dbc9853f83d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/caca/libx11_plugin.so"
-sha256 = "680fb261c09e1930c08c9cec058a9b7f6f5d5d47d5fcb963260ba04a32cf0f13"
+sha256 = "d12326f9bfce934d6d41139f852b77d42e6845070567ac0c594653f62563d187"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/caca/libx11_plugin.so.0"
-sha256 = "680fb261c09e1930c08c9cec058a9b7f6f5d5d47d5fcb963260ba04a32cf0f13"
+sha256 = "d12326f9bfce934d6d41139f852b77d42e6845070567ac0c594653f62563d187"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/caca/libx11_plugin.so.0.0.0"
-sha256 = "680fb261c09e1930c08c9cec058a9b7f6f5d5d47d5fcb963260ba04a32cf0f13"
+sha256 = "d12326f9bfce934d6d41139f852b77d42e6845070567ac0c594653f62563d187"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ceph/libceph-common.so.2"
@@ -33666,19 +33666,19 @@ sha256 = "2aabc899fd2f27ff0bc1fd8540bd55e5e860560a601a1023df587b4454789b7d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libcaca++.so.0"
-sha256 = "cf1dcf05fb259965f6a9b182f91588b6e785a152483058277d049a5ef8daf763"
+sha256 = "66ea9ad0f8137dc438ded11fd01fa432c9d9282b52fa86000c701b639043e31c"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libcaca++.so.0.99.19"
-sha256 = "cf1dcf05fb259965f6a9b182f91588b6e785a152483058277d049a5ef8daf763"
+sha256 = "66ea9ad0f8137dc438ded11fd01fa432c9d9282b52fa86000c701b639043e31c"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libcaca.so.0"
-sha256 = "6fbd1d4ec797b9f97fc9d3bf5583dfc0b40b2b9732395a9cc2599b5b36196bd8"
+sha256 = "0a112fff35473f562142c55c464bdc03b5d67cceda8f918f68d5341bef645cc6"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libcaca.so.0.99.19"
-sha256 = "6fbd1d4ec797b9f97fc9d3bf5583dfc0b40b2b9732395a9cc2599b5b36196bd8"
+sha256 = "0a112fff35473f562142c55c464bdc03b5d67cceda8f918f68d5341bef645cc6"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libcairo-gobject.so.2"
@@ -52454,7 +52454,7 @@ sha256 = "9884b238e9f6e887c37045dd3ae814d3b2a26a2eb41d0200b9b65488baf8bb42"
 
 [[sgx.trusted_files]]
 uri = "file:server"
-sha256 = "56c5670607bb3303af4e29a855429387bfee1f5badbfe8aefd1844aabb5ccd07"
+sha256 = "e80106a61167a0b928d18c882131e6cb68f769cedba0b3bb0d0a477707b5c90d"
 
 [[sgx.trusted_files]]
 uri = "file:server.argv"
@@ -54302,12 +54302,13 @@ sha256 = "ff8489197516857d4bb632189747ab3b98080bdebe63d9dc375d3eb0900fba0c"
 
 [[sgx.trusted_files]]
 uri = "file:traceDB"
-sha256 = "38f9a2a2f06ce05315575273d8df7e4ab778967efef486f21586104af86fb76c"
+sha256 = "bb1bb4b9a7f5803aed783d4e352ba70413e77af1e2686f180b225856ee917c10"
 
 [loader.env]
 LD_LIBRARY_PATH = "/lib:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/local/lib"
 
 [sgx.allowed_files]
+mysqlconnect = "file:/var/run/mysqld/mysqld.sock"
 nsswitch = "file:/etc/nsswitch.conf"
 ethers = "file:/etc/ethers"
 hostconf = "file:/etc/host.conf"
@@ -54346,6 +54347,11 @@ uri = "file:/usr/lib/mysql/plugin"
 type = "chroot"
 path = "/usr/lib/mysql-workbench"
 uri = "file:/usr/lib/mysql-workbench"
+
+[fs.mount.mysqlconnect]
+type = "chroot"
+path = "/var/run/mysqld/"
+uri = "file:/var/run/mysqld/"
 
 [fs.mount.etc]
 type = "chroot"

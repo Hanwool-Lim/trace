@@ -36,6 +36,10 @@ fs.mount.mysqlworkbench.type = "chroot"
 fs.mount.mysqlworkbench.path = "/usr/lib/mysql-workbench"
 fs.mount.mysqlworkbench.uri = "file:/usr/lib/mysql-workbench"
 
+fs.mount.mysqlconnect.type = "chroot"
+fs.mount.mysqlconnect.path = "/var/run/mysqld/"
+fs.mount.mysqlconnect.uri = "file:/var/run/mysqld/"
+
 fs.mount.etc.type = "chroot"
 fs.mount.etc.path = "/etc"
 fs.mount.etc.uri = "file:/etc"
@@ -44,9 +48,11 @@ sgx.trusted_files.runtime = "file:{{ gramine.runtimedir() }}/"
 sgx.trusted_files.arch_libdir = "file:/lib/x86_64-linux-gnu/"
 sgx.trusted_files.usr_arch_libdir = "file:/usr/lib/x86_64-linux-gnu/"
 sgx.trusted_files.local_libdir = "file:/usr/local/lib/"
+#sgx.trusted_files.services= "file:/etc/services"
 
 sgx.trusted_files.mysqlplugin = "file:/usr/lib/mysql/plugin"
 sgx.trusted_files.mysqlworkbench = "file:/usr/lib/mysql-workbench"
+sgx.allowed_files.mysqlconnect = "file:/var/run/mysqld/mysqld.sock"
 
 sgx.trusted_files.executable = "file:server"
 sgx.trusted_files.argv = "file:server.argv"
