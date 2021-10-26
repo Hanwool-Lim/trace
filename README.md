@@ -12,5 +12,3 @@ WolfSSL 사용법
 ---
 
 Server : ./server -b -r -v 4
-
-client : ./client -v 4 -h "서버IP 날짜 시간 AgentID DeviceID ServiceID KeyID FileID IO"
