@@ -9,7 +9,7 @@ int main(int argc, char *argv[]){
 	MYSQL *connect;
 	MYSQL_RES *result;
 	
-	char *server = "127.0.0.1";
+	char *server = "127.0.0.1"; //no localhost
 	char *user = "root";
 	char *database = "tracking";
 
