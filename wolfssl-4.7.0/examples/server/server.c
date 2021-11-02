@@ -99,27 +99,29 @@ static const char kHttpServerMsg[] =
 /* Read needs to be largest of the client.c message strings (29) */
 #define SRV_READ_SZ    256
 
-char len[128]; //memcpy
+char len[1024]; //memcpy
 
 int totallen; //add
 int messagetype; //add
 
-char Date[15];
-char Time[10];
+char Date[30];
+int Date_len;
+char Time[20];
+int Time_len;
 
 int AgentID_len; //add
-char AgentID[16]; //add
+char AgentID[32]; //add
 
 int DeviceID_len; //add
-char DeviceID[16]; //add
+char DeviceID[32]; //add
 
 int ServiceID_len; //add
-char ServiceID[16]; //add
+char ServiceID[32]; //add
 
 int FileID_len; //add
-char FileID[128]; //add
+char FileID[512]; //add
 
-char IO_mode[10]; //add
+char IO_mode[20]; //add
 int Result; //add
 
 char command[1024];
@@ -562,73 +564,60 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
     if (ret > 0) {
         /* null terminate message */
         input[ret] = '\0';
-		memset(len, 0, sizeof(len));
-	memcpy(len, input, 4);
-	totallen = atoi(len);
-	//printf("totallen : %d  ", totallen);
 
-	memcpy(len, input+4, 4);
-	messagetype = atoi(len);
-	//printf("messagetype : %d  ", messagetype);
+	//message type
+	ptr = strtok(input, ",");
+	messagetype = atoi(ptr);
+	printf("messagetype : %d  ", messagetype);
 
-	memcpy(len, input+8, 10);
-	strncpy(Date, len, sizeof(Date));
+	//Date
+	XMEMSET(Date, 0, sizeof(Date));
+	ptr = strtok(NULL, ",");
+	strncpy(Date, ptr, sizeof(Date));
 	//printf("Date : %s  ", Date);
 
-	memset(len, 0, sizeof(len));
-	memcpy(len, input+18, 8);
-	strncpy(Time, len, sizeof(Time));
+	//Time
+	XMEMSET(Time, 0, sizeof(Time));
+	ptr = strtok(NULL, ",");
+	strncpy(Time, ptr, sizeof(Time));
 	//printf("Time : %s  /  ", Time);
 
-	memset(len, 0, sizeof(len));
-	memcpy(len, input+26, 4);
-	ServiceID_len = atoi(len);
-	//printf("ServiceID_len : %d  ", ServiceID_len);
-
-	memcpy(len, input+30, ServiceID_len);
-	strncpy(ServiceID, len, sizeof(ServiceID));
+	//ServiceID
+	XMEMSET(ServiceID, 0, sizeof(ServiceID));
+	ptr = strtok(NULL, ",");
+	strncpy(ServiceID, ptr, sizeof(ServiceID));
 	//printf("ServiceID : %s  /  ", ServiceID);
-
-	memset(len, 0, sizeof(len));
-	memcpy(len, input+30+ServiceID_len, 4);
-	AgentID_len = atoi(len);
-	//printf("AgentID_len : %d  ", AgentID_len);
-
-	memcpy(len, input+34+ServiceID_len, AgentID_len);
-	strncpy(AgentID, len, sizeof(AgentID));
-	//printf("AgentID : %s  /\n", AgentID);
-
-	memset(len, 0, sizeof(len));
-	memcpy(len, input+34+ServiceID_len+AgentID_len, 4);
-	DeviceID_len = atoi(len);
-	//printf("DeviceID_len : %d  ", DeviceID_len);
 	
-	memcpy(len, input+38+ServiceID_len+AgentID_len, DeviceID_len);
-	strncpy(DeviceID, len, sizeof(DeviceID));
-	//printf("DeviceID : %s  /  ", DeviceID);
+	//AgentID
+	XMEMSET(AgentID, 0, sizeof(AgentID));
+	ptr = strtok(NULL, ",");
+	strncpy(AgentID, ptr, sizeof(AgentID));
+	//printf("AgentID : %s  /  ", AgentID);
 
-	memset(len, 0, sizeof(len));
-	memcpy(len, input+38+ServiceID_len+AgentID_len+DeviceID_len, 4);
-	FileID_len = atoi(len);
-	//printf("FileID_len : %d  ", FileID_len);
+	//DeviceID
+	XMEMSET(DeviceID, 0, sizeof(DeviceID));
+	ptr = strtok(NULL, ",");
+	strncpy(DeviceID, ptr, sizeof(DeviceID));
+	//printf("DeviceID : %s  /\n", DeviceID);
 
-	memcpy(len, input+42+ServiceID_len+AgentID_len+DeviceID_len, FileID_len);
-	strncpy(FileID, len, sizeof(FileID));
+	//FileID
+	XMEMSET(FileID, 0, sizeof(FileID));
+	ptr = strtok(NULL, ",");
+	strncpy(FileID, ptr, sizeof(FileID));
 	//printf("FileID : %s  /  ", FileID);
 
-	memset(len, 0, sizeof(len));
-	memcpy(len, input+42+ServiceID_len+AgentID_len+DeviceID_len+FileID_len, 4);
-	if(atoi(len)==0)
+
+	ptr = strtok(NULL, ",");
+	if(atoi(ptr)==0)
 		strncpy(IO_mode, "READ", sizeof(IO_mode));
-	else if(atoi(len)==1)
+	else if(atoi(ptr)==1)
 		strncpy(IO_mode, "WRITE", sizeof(IO_mode));
 	else
 		strncpy(IO_mode, "R&W", sizeof(IO_mode));
 	//printf("IO_mode : %s  /  ", IO_mode);
 
-	memset(len, 0, sizeof(len));
-	memcpy(len, input+46+ServiceID_len+AgentID_len+DeviceID_len+FileID_len, 4);
-	Result = atoi(len);
+	ptr = strtok(NULL, ",");
+	Result = atoi(ptr);
 	//printf("Result : %d\n", Result);
     }
 }
