@@ -1,1 +1,1 @@
-server -b -r -v 4
+server -b -d
