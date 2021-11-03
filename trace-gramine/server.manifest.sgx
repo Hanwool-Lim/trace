@@ -51609,6 +51609,10 @@ uri = "file:/usr/local/lib/x86_64-linux-gnu/pkgconfig/sgx_util.pc"
 sha256 = "89807b61501f1967a9643073ebe239e9cd8cfa0c1d4abdb5767350db2503866f"
 
 [[sgx.trusted_files]]
+uri = "file:/etc/services"
+sha256 = "a1c2d8af47c1a951f39f11cf53160703f282946d9821068eadf97b7d43208a34"
+
+[[sgx.trusted_files]]
 uri = "file:/usr/lib/mysql/plugin/adt_null.so"
 sha256 = "ede3bd3f126e525e4968562ad3e42e1197ed75247315ad713888755a8a41edc4"
 
