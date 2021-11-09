@@ -32,9 +32,9 @@ fs.mount.mysqlplugin.type = "chroot"
 fs.mount.mysqlplugin.path = "/usr/lib/mysql/plugin"
 fs.mount.mysqlplugin.uri = "file:/usr/lib/mysql/plugin"
 
-fs.mount.mysqlworkbench.type = "chroot"
-fs.mount.mysqlworkbench.path = "/usr/lib/mysql-workbench"
-fs.mount.mysqlworkbench.uri = "file:/usr/lib/mysql-workbench"
+#fs.mount.mysqlworkbench.type = "chroot"
+#fs.mount.mysqlworkbench.path = "/usr/lib/mysql-workbench"
+#fs.mount.mysqlworkbench.uri = "file:/usr/lib/mysql-workbench"
 
 fs.mount.mysqlconnect.type = "chroot"
 fs.mount.mysqlconnect.path = "/var/run/mysqld/"
@@ -50,15 +50,16 @@ sgx.trusted_files.usr_arch_libdir = "file:/usr/lib/x86_64-linux-gnu/"
 sgx.trusted_files.local_libdir = "file:/usr/local/lib/"
 sgx.trusted_files.services= "file:/etc/services"
 
-sgx.trusted_files.mysqlplugin = "file:/usr/lib/mysql/plugin"
-sgx.trusted_files.mysqlworkbench = "file:/usr/lib/mysql-workbench"
-sgx.allowed_files.mysqlconnect = "file:/var/run/mysqld/mysqld.sock"
+#sgx.trusted_files.mysqlplugin = "file:/usr/lib/mysql/plugin"
+#sgx.trusted_files.mysqlworkbench = "file:/usr/lib/mysql-workbench"
+#sgx.allowed_files.mysqlconnect = "file:/var/run/mysqld/mysqld.sock"
 
 sgx.trusted_files.executable = "file:server"
 sgx.trusted_files.argv = "file:server.argv"
 
 sgx.trusted_files.certs = "file:certs/"
 sgx.trusted_files.tracedb = "file:traceDB"
+sgx.allowed_files.SGX_test = "file:SGX.txt"
 
 ### Network Service ###
 
