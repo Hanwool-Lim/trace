@@ -126,17 +126,8 @@ char FileID[512]; //add
 char IO_mode[20]; //add
 int Result; //add
 
-clock_t start_time;
-clock_t end_time;
-double time_result;
-
-double num[10];
-int count=0;
-double average=0;
-
-//MYSQL *connect;
-//MYSQL_RES *result;
-
+MYSQL *DB_connect;
+MYSQL_RES *DB_result;
 
 char command[1024];
 
@@ -522,8 +513,6 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
     char buffer[WOLFSSL_MAX_ERROR_SZ];
     char *ptr; //strtok
 
-    start_time = clock();
-    
     /* Read data */
     do {
         err = 0; /* reset error */
@@ -584,43 +573,43 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 	//message type
 	ptr = strtok(input, ",");
 	messagetype = atoi(ptr);
-	printf("messagetype : %d  ", messagetype);
+	//printf("messagetype : %d  ", messagetype);
 
 	//Date
 	XMEMSET(Date, 0, sizeof(Date));
 	ptr = strtok(NULL, ",");
 	strncpy(Date, ptr, sizeof(Date));
-	printf("Date : %s  ", Date);
+	//printf("Date : %s  ", Date);
 
 	//Time
 	XMEMSET(Time, 0, sizeof(Time));
 	ptr = strtok(NULL, ",");
 	strncpy(Time, ptr, sizeof(Time));
-	printf("Time : %s  /  ", Time);
+	//printf("Time : %s  /  ", Time);
 
 	//ServiceID
 	XMEMSET(ServiceID, 0, sizeof(ServiceID));
 	ptr = strtok(NULL, ",");
 	strncpy(ServiceID, ptr, sizeof(ServiceID));
-	printf("ServiceID : %s  /  ", ServiceID);
+	//printf("ServiceID : %s  /  ", ServiceID);
 	
 	//AgentID
 	XMEMSET(AgentID, 0, sizeof(AgentID));
 	ptr = strtok(NULL, ",");
 	strncpy(AgentID, ptr, sizeof(AgentID));
-	printf("AgentID : %s  /  ", AgentID);
+	//printf("AgentID : %s  /  ", AgentID);
 
 	//DeviceID
 	XMEMSET(DeviceID, 0, sizeof(DeviceID));
 	ptr = strtok(NULL, ",");
 	strncpy(DeviceID, ptr, sizeof(DeviceID));
-	printf("DeviceID : %s  /\n", DeviceID);
+	//printf("DeviceID : %s  /\n", DeviceID);
 
 	//FileID
 	XMEMSET(FileID, 0, sizeof(FileID));
 	ptr = strtok(NULL, ",");
 	strncpy(FileID, ptr, sizeof(FileID));
-	printf("FileID : %s  /  ", FileID);
+	//printf("FileID : %s  /  ", FileID);
 
 
 	ptr = strtok(NULL, ",");
@@ -630,11 +619,11 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 		strncpy(IO_mode, "WRITE", sizeof(IO_mode));
 	else
 		strncpy(IO_mode, "R&W", sizeof(IO_mode));
-	printf("IO_mode : %s  /  ", IO_mode);
+	//printf("IO_mode : %s  /  ", IO_mode);
 
 	ptr = strtok(NULL, ",");
 	Result = atoi(ptr);
-	printf("Result : %d\n", Result);
+	//printf("Result : %d\n", Result);
     }
 }
 
@@ -1237,13 +1226,13 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 
 //기본적인 실행에서 실행
 #ifndef NO_RSA
-    //verifyCert = cliCertFile;
-    //ourCert    = svrCertFile;
-    //ourKey     = svrKeyFile;
+    verifyCert = cliCertFile;
+    ourCert    = svrCertFile;
+    ourKey     = svrKeyFile;
     
-    verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
-    ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
-    ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
+    //verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
+    //ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
+    //ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
 //setting Client_cert, server_cert, Server_Key
 
 #else
@@ -2874,48 +2863,28 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                 goto exit;
             }
         } //end if(err == 0 && echoData == 0 && throughput == 0)
-        
 
-pid_t childpid = fork();
+//mysql connect
+char *server = "127.0.0.1"; //no localhost
+char *user = "root";
+char *database = "tracking";
 
-if(!childpid){
-	char *trace[] = {"/home/tracking/trace/traceDB", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode, NULL};
-	execvp("/home/tracking/trace/traceDB", trace);
-	
-	//sprintf(command, "sudo ./test %s %s %s %s %s %s %s", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
-	//system(command);
-	
-	//fp = fopen("trace.txt", "a");
-	//fprintf(fp, "%s %s %s %s %s %s %s\n", Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
-	//fclose(fp);
-}else
-	waitpid(childpid, NULL, 0);
-    
-    end_time = clock();
-    time_result = (double)(end_time-start_time);
-    
-    printf("time : %f\n", time_result/1000);
-    //fp = fopen("SGX.txt", "a");
-    //fprintf(fp, "time : %f\n", time_result/1000000);
-    
-    num[count] = time_result/1000;
-    //num[count] = time_result/1000000;
-    count++;
-    
-    if(count==10){
-    	int i = 0;
-    	
-    	while(i!=10){
-		average+=num[i];
-		i++;
-	}
-	average/=10;
-	//fprintf(fp, "average : %f\n", average);
-	printf("average : %f\n", average);
-	count=0;
-    }
+DB_connect = mysql_init(NULL);
 
-    //fclose(fp);
+if(!mysql_real_connect(DB_connect, server, user, "", "tracking", 0, NULL, 0)){
+	fprintf(stderr, "%s\n", mysql_error(DB_connect));
+	return -1;
+}
+
+DB_result = mysql_use_result(DB_connect);
+
+sprintf(command, "insert into tracking (Date, Time, AgentID, DeviceID, ServiceID, FileID, IO) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
+
+mysql_query(DB_connect, command);
+DB_result=mysql_use_result(DB_connect);
+
+mysql_close(DB_connect);
+//end mysql         
     
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;

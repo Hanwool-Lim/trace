@@ -973,11 +973,11 @@ configure:12684: result: yes
 configure:19018: checking for fast RSA
 configure:19033: result: no
 configure:20316: checking for library containing gethostbyname
-configure:20347: gcc -o conftest      conftest.c   >&5
+configure:20347: gcc -o conftest      conftest.c   -lmysqlclient -ldl -lm >&5
 configure:20347: $? = 0
 configure:20364: result: none required
 configure:20372: checking for library containing socket
-configure:20403: gcc -o conftest      conftest.c   >&5
+configure:20403: gcc -o conftest      conftest.c   -lmysqlclient -ldl -lm >&5
 configure:20403: $? = 0
 configure:20420: result: none required
 configure:20471: checking for vcs system
@@ -985,15 +985,15 @@ configure:20491: result: none
 configure:20500: checking for vcs checkout
 configure:20512: result: no
 configure:20584: checking whether the linker accepts -Werror
-configure:20603: gcc -o conftest       -Werror conftest.c   >&5
+configure:20603: gcc -o conftest       -Werror conftest.c   -lmysqlclient -ldl -lm >&5
 configure:20603: $? = 0
 configure:20612: result: yes
 configure:20626: checking whether the linker accepts -z relro -z now
-configure:20645: gcc -o conftest      -Werror -z relro -z now conftest.c   >&5
+configure:20645: gcc -o conftest      -Werror -z relro -z now conftest.c   -lmysqlclient -ldl -lm >&5
 configure:20645: $? = 0
 configure:20655: result: yes
 configure:20667: checking whether the linker accepts -pie
-configure:20686: gcc -o conftest      -Werror -pie conftest.c   >&5
+configure:20686: gcc -o conftest      -Werror -pie conftest.c   -lmysqlclient -ldl -lm >&5
 configure:20686: $? = 0
 configure:20696: result: yes
 configure:20810: checking whether C compiler accepts -Werror
@@ -1428,7 +1428,7 @@ configure:23844: $? = 0
 configure:23853: result: yes
 configure:23869: : CFLAGS="$CFLAGS"
 configure:23872: $? = 0
-configure:27320: result: creating wolfssl-config - generic 4.7.0 for -lwolfssl
+configure:27320: result: creating wolfssl-config - generic 4.7.0 for -lwolfssl -lmysqlclient -ldl -lm
 configure:27445: checking the number of available CPUs
 configure:27528: result: 16
 configure:27545: adding automake macro support
@@ -1972,7 +1972,7 @@ LD='/usr/local/bin/ld -m elf_x86_64'
 LDFLAGS=''
 LIBM='-lm'
 LIBOBJS=''
-LIBS=' '
+LIBS='  -lmysqlclient -ldl -lm'
 LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 LIB_ADD=''
 LIB_STATIC_ADD=''

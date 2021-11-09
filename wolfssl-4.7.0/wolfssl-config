@@ -2,7 +2,7 @@
  
 package="wolfssl"
 version="4.7.0"
-libs="-lwolfssl"
+libs="-lwolfssl -lmysqlclient -ldl -lm"
  
 prefix="/usr/local"
 exec_prefix="${prefix}"

@@ -3908,7 +3908,7 @@ m4trace:configure.ac:602: -1- AX_PTHREAD([
                    # versions of clang don't need the -Q flag when using pthreads.
                    AS_CASE([$PTHREAD_CFLAGS],[-Qunused-arguments*],[PTHREAD_CFLAGS="-Xcompiler $PTHREAD_CFLAGS"])
                    AM_CFLAGS="-D_POSIX_THREADS $AM_CFLAGS $PTHREAD_CFLAGS"
-                   LIBS="$LIBS $PTHREAD_LIBS"
+                   LIBS="$LIBS $PTHREAD_LIBS -lmysqlclient -ldl -lm"
                    ], [
                       ENABLED_SINGLETHREADED=yes
                       ])

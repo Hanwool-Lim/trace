@@ -16057,7 +16057,7 @@ $as_echo "@%:@define HAVE_PTHREAD 1" >>confdefs.h
      ;;
 esac
                    AM_CFLAGS="-D_POSIX_THREADS $AM_CFLAGS $PTHREAD_CFLAGS"
-                   LIBS="$LIBS $PTHREAD_LIBS"
+                   LIBS="$LIBS $PTHREAD_LIBS -lmysqlclient -ldl -lm"
                    
         :
 else
@@ -16809,7 +16809,7 @@ if test "${with_cryptoauthlib+set}" = set; then :
         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for cryptoauthlib" >&5
 $as_echo_n "checking for cryptoauthlib... " >&6; }
         CPPFLAGS="$CPPFLAGS -DWOLFSSL_ATECC508A"
-        LIBS="$LIBS -lcryptoauth"
+        LIBS="$LIBS -lcryptoauth -lmysqlclient -ldl -lm"
 
         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
@@ -19406,7 +19406,7 @@ trycryptodir=""
 if test "${with_user_crypto+set}" = set; then :
   withval=$with_user_crypto; 
         CPPFLAGS="$CPPFLAGS -DHAVE_USER_CRYPTO"
-        LIBS="$LIBS -lusercrypto"
+        LIBS="$LIBS -lusercrypto -lmysqlclient -ldl -lm"
 
         if test "x$withval" != "xno" ; then
             trycryptodir=$withval
@@ -19530,7 +19530,7 @@ if test "${with_ntru+set}" = set; then :
         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for NTRU" >&5
 $as_echo_n "checking for NTRU... " >&6; }
         CPPFLAGS="$CPPFLAGS -DHAVE_NTRU -DHAVE_TLS_EXTENSIONS"
-        LIBS="$LIBS -lntruencrypt"
+        LIBS="$LIBS -lntruencrypt -lmysqlclient -ldl -lm"
 
         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
@@ -19632,7 +19632,7 @@ if test "${with_wnr+set}" = set; then :
         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Whitewood netRandom" >&5
 $as_echo_n "checking for Whitewood netRandom... " >&6; }
         CPPFLAGS="$CPPFLAGS -DHAVE_WNR"
-        LIBS="$LIBS -lwnr"
+        LIBS="$LIBS -lwnr -lmysqlclient -ldl -lm"
 
         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
@@ -21110,7 +21110,7 @@ if test "${with_libz+set}" = set; then :
         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libz" >&5
 $as_echo_n "checking for libz... " >&6; }
         CPPFLAGS="$CPPFLAGS -DHAVE_LIBZ"
-        LIBS="$LIBS -lz"
+        LIBS="$LIBS -lz -lmysqlclient -ldl -lm"
 
         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
@@ -21191,7 +21191,7 @@ fi
 if test "x$ENABLED_PKCS11" = "xyes"
 then
     AM_CFLAGS="$AM_CFLAGS -DHAVE_PKCS11 -DHAVE_WOLF_BIGINT"
-    LIBS="$LIBS -ldl"
+    LIBS="$LIBS -ldl -lmysqlclient -lm"
 fi
 
 
@@ -21418,7 +21418,7 @@ $as_echo_n "checking for intelqa... " >&6; }
 else
   AM_CPPFLAGS="$AM_CPPFLAGS -DHAVE_INTEL_QA_SYNC -DQAT_USE_POLLING_THREAD -DO_CRYPTO -DUSER_SPACE"; intelqa_opt="-sync"
 fi
-     OLD_LIBS="$LIBS"
+     OLD_LIBS="$LIBS -lmysqlclient -ldl -lm"
      OLD_CPPFLAGS="$CPPFLAGS"
 
      if test "x$QAT_DIR" = "xyes"; then :
@@ -21432,7 +21432,7 @@ fi
      CPPFLAGS="$AM_CPPFLAGS"
 
      LDFLAGS="$LDFLAGS -L$QAT_DIR/build"
-     LIBS="$LIBS -lqat_s -lusdm_drv_s"
+     LIBS="$LIBS -lqat_s -lusdm_drv_s -lmysqlclient -ldl -lm"
 
      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
@@ -21455,7 +21455,7 @@ rm -f core conftest.err conftest.$ac_objext \
 
      if test "x$intelqa_linked" = "xno"; then :
   # Try old QAT driver libraries
-            LIBS="$OLD_LIBS -licp_qa_al_s"
+            LIBS="$OLD_LIBS -licp_qa_al_s -lmysqlclient -ldl -lm"
             cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 #include "cpa_cy_common.h"
@@ -22298,7 +22298,7 @@ if test "$ENABLED_FAST_RSA" = "yes"; then
     # add in user crypto header that uses Intel IPP
     AM_CPPFLAGS="$AM_CPPFLAGS -I$srcdir/wolfcrypt/user-crypto/include"
     if test "$enable_shared" = "yes"; then
-        LIBS="$LIBS -lippcore -lippcp"
+        LIBS="$LIBS -lippcore -lippcp -lmysqlclient -ldl -lm"
         LIB_ADD="-lippcp -lippcore $LIB_ADD"
     else
         LIB_ADD="$srcdir/IPP/$ipplib/libippcp.a $srcdir/IPP/$ipplib/libippcore.a $LIB_ADD"

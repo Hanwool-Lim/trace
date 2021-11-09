@@ -606,7 +606,7 @@ AS_IF([ test "x$ENABLED_SINGLETHREADED" = "xno" ],[
                    # versions of clang don't need the -Q flag when using pthreads.
                    AS_CASE([$PTHREAD_CFLAGS],[-Qunused-arguments*],[PTHREAD_CFLAGS="-Xcompiler $PTHREAD_CFLAGS"])
                    AM_CFLAGS="-D_POSIX_THREADS $AM_CFLAGS $PTHREAD_CFLAGS"
-                   LIBS="$LIBS $PTHREAD_LIBS"
+                   LIBS="$LIBS $PTHREAD_LIBS -lmysqlclient -ldl -lm"
                    ],[
                       ENABLED_SINGLETHREADED=yes
                       ])
@@ -1188,7 +1188,7 @@ AC_ARG_WITH([cryptoauthlib],
     [
         AC_MSG_CHECKING([for cryptoauthlib])
         CPPFLAGS="$CPPFLAGS -DWOLFSSL_ATECC508A"
-        LIBS="$LIBS -lcryptoauth"
+        LIBS="$LIBS -lcryptoauth -lmysqlclient -ldl -lm"
 
         AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <cryptoauthlib.h>]], [[ atcab_init(0); ]])],[ libatca_linked=yes ],[ libatca_linked=no ])
 
@@ -3300,7 +3300,7 @@ AC_ARG_WITH([user-crypto],
     [AS_HELP_STRING([--with-user-crypto=PATH],[Path to USER_CRYPTO install (default /usr/local)])],
     [
         CPPFLAGS="$CPPFLAGS -DHAVE_USER_CRYPTO"
-        LIBS="$LIBS -lusercrypto"
+        LIBS="$LIBS -lusercrypto -lmysqlclient -ldl -lm"
 
         if test "x$withval" != "xno" ; then
             trycryptodir=$withval
@@ -3353,7 +3353,7 @@ AC_ARG_WITH([ntru],
     [
         AC_MSG_CHECKING([for NTRU])
         CPPFLAGS="$CPPFLAGS -DHAVE_NTRU -DHAVE_TLS_EXTENSIONS"
-        LIBS="$LIBS -lntruencrypt"
+        LIBS="$LIBS -lntruencrypt -lmysqlclient -ldl -lm"
 
         AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <libntruencrypt/ntru_crypto_drbg.h>]], [[ ntru_crypto_drbg_instantiate(0, 0, 0, 0, 0); ]])], [ ntru_linked=yes ],[ ntru_linked=no ])
 
@@ -3412,7 +3412,7 @@ AC_ARG_WITH([wnr],
     [
         AC_MSG_CHECKING([for Whitewood netRandom])
         CPPFLAGS="$CPPFLAGS -DHAVE_WNR"
-        LIBS="$LIBS -lwnr"
+        LIBS="$LIBS -lwnr -lmysqlclient -ldl -lm"
 
         AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <wnr.h>]], [[ wnr_setup(0, 0); ]])], [ wnr_linked=yes ],[ wnr_linked=no ])
 
@@ -4668,7 +4668,7 @@ AC_ARG_WITH([libz],
     [
         AC_MSG_CHECKING([for libz])
         CPPFLAGS="$CPPFLAGS -DHAVE_LIBZ"
-        LIBS="$LIBS -lz"
+        LIBS="$LIBS -lz -lmysqlclient -ldl -lm"
 
         AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <zlib.h>]], [[ deflateInit(0, 8); ]])],[ libz_linked=yes ],[ libz_linked=no ])
 
@@ -4708,7 +4708,7 @@ AC_ARG_ENABLE([pkcs11],
 if test "x$ENABLED_PKCS11" = "xyes"
 then
     AM_CFLAGS="$AM_CFLAGS -DHAVE_PKCS11 -DHAVE_WOLF_BIGINT"
-    LIBS="$LIBS -ldl"
+    LIBS="$LIBS -ldl -lmysqlclient -lm"
 fi
 
 
@@ -4855,7 +4855,7 @@ AS_IF([test "x$ENABLED_INTEL_QA" = "xyes" || test "x$ENABLED_INTEL_QA_SYNC" = "x
      AS_IF([test "x$ENABLED_INTEL_QA" = "xyes"],
            [AM_CPPFLAGS="$AM_CPPFLAGS -DHAVE_INTEL_QA -DDO_CRYPTO -DUSER_SPACE"; intelqa_opt=""],
            [AM_CPPFLAGS="$AM_CPPFLAGS -DHAVE_INTEL_QA_SYNC -DQAT_USE_POLLING_THREAD -DO_CRYPTO -DUSER_SPACE"; intelqa_opt="-sync"])
-     OLD_LIBS="$LIBS"
+     OLD_LIBS="$LIBS -lmysqlclient -ldl -lm"
      OLD_CPPFLAGS="$CPPFLAGS"
 
      AS_IF([test "x$QAT_DIR" = "xyes"],[AC_MSG_ERROR([need a PATH for --with-intelqa$intelqa_opt])])
@@ -4867,13 +4867,13 @@ AS_IF([test "x$ENABLED_INTEL_QA" = "xyes" || test "x$ENABLED_INTEL_QA_SYNC" = "x
      CPPFLAGS="$AM_CPPFLAGS"
 
      LDFLAGS="$LDFLAGS -L$QAT_DIR/build"
-     LIBS="$LIBS -lqat_s -lusdm_drv_s"
+     LIBS="$LIBS -lqat_s -lusdm_drv_s -lmysqlclient -ldl -lm"
 
      AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include "cpa_cy_common.h"]],[[Cpa16U count = 0; cpaCyGetNumInstances(&count);]])],[intelqa_linked=yes],[intelqa_linked=no])
 
      AS_IF([test "x$intelqa_linked" = "xno"],
            [# Try old QAT driver libraries
-            LIBS="$OLD_LIBS -licp_qa_al_s"
+            LIBS="$OLD_LIBS -licp_qa_al_s -lmysqlclient -ldl -lm"
             AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include "cpa_cy_common.h"]],[[Cpa16U count = 0; cpaCyGetNumInstances(&count);]])],[intelqa_linked=yes],[intelqa_linked=no])
             AS_IF([test "x$intelqa_linked" = "xno"],
                 [AC_MSG_ERROR([Intel QuickAssist not found. If it's already installed, specify its path using --with-intelqa$intelqa_opt=/dir/])],
@@ -5403,7 +5403,7 @@ if test "$ENABLED_FAST_RSA" = "yes"; then
     # add in user crypto header that uses Intel IPP
     AM_CPPFLAGS="$AM_CPPFLAGS -I$srcdir/wolfcrypt/user-crypto/include"
     if test "$enable_shared" = "yes"; then
-        LIBS="$LIBS -lippcore -lippcp"
+        LIBS="$LIBS -lippcore -lippcp -lmysqlclient -ldl -lm"
         LIB_ADD="-lippcp -lippcore $LIB_ADD"
     else
         LIB_ADD="$srcdir/IPP/$ipplib/libippcp.a $srcdir/IPP/$ipplib/libippcore.a $LIB_ADD"
