@@ -127,9 +127,20 @@ examples/server/server.o: examples/server/server.c \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  wolfssl/wolfcrypt/random.h wolfssl/wolfcrypt/sha256.h \
- wolfssl/wolfcrypt/wolfmath.h wolfssl/openssl/ssl.h \
- wolfssl/openssl/tls1.h wolfssl/openssl/evp.h wolfssl/openssl/md5.h \
- wolfssl/wolfcrypt/hash.h wolfssl/wolfcrypt/md5.h wolfssl/wolfcrypt/sha.h \
+ wolfssl/wolfcrypt/wolfmath.h /usr/include/mysql/mysql.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/mysql/field_types.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/my_command.h \
+ /usr/include/mysql/my_compress.h \
+ /usr/include/mysql/mysql/udf_registration_types.h \
+ /usr/include/mysql/mysql/client_plugin.h \
+ /usr/include/mysql/mysql/plugin_auth_common.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/errmsg.h wolfssl/openssl/ssl.h wolfssl/openssl/tls1.h \
+ wolfssl/openssl/evp.h wolfssl/openssl/md5.h wolfssl/wolfcrypt/hash.h \
+ wolfssl/wolfcrypt/md5.h wolfssl/wolfcrypt/sha.h \
  wolfssl/wolfcrypt/sha512.h wolfssl/wolfcrypt/sha3.h \
  wolfssl/openssl/sha.h wolfssl/openssl/sha3.h wolfssl/openssl/ripemd.h \
  wolfssl/openssl/rsa.h wolfssl/openssl/bn.h wolfssl/openssl/err.h \
@@ -143,9 +154,7 @@ examples/server/server.o: examples/server/server.c \
  wolfssl/openssl/ecdsa.h wolfssl/openssl/pkcs7.h \
  wolfssl/wolfcrypt/pkcs7.h wolfssl/test.h /usr/include/assert.h \
  wolfssl/wolfcrypt/mem_track.h /usr/include/netinet/tcp.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h /usr/include/signal.h \
- /usr/include/x86_64-linux-gnu/bits/signum.h \
+ /usr/include/signal.h /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
  /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
@@ -486,6 +495,38 @@ wolfssl/wolfcrypt/sha256.h:
 
 wolfssl/wolfcrypt/wolfmath.h:
 
+/usr/include/mysql/mysql.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/mysql/field_types.h:
+
+/usr/include/mysql/my_list.h:
+
+/usr/include/mysql/mysql_com.h:
+
+/usr/include/mysql/my_command.h:
+
+/usr/include/mysql/my_compress.h:
+
+/usr/include/mysql/mysql/udf_registration_types.h:
+
+/usr/include/mysql/mysql/client_plugin.h:
+
+/usr/include/mysql/mysql/plugin_auth_common.h:
+
+/usr/include/mysql/mysql_version.h:
+
+/usr/include/mysql/mysql_time.h:
+
+/usr/include/mysql/errmsg.h:
+
 wolfssl/openssl/ssl.h:
 
 wolfssl/openssl/tls1.h:
@@ -563,12 +604,6 @@ wolfssl/test.h:
 wolfssl/wolfcrypt/mem_track.h:
 
 /usr/include/netinet/tcp.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
-
-/usr/include/stdint.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 /usr/include/signal.h:
 

@@ -40,7 +40,6 @@
         #include <string.h>
         #include <time.h>
 	#include <stdlib.h>
-	#include "/usr/include/mysql/mysql.h"
 	#include <unistd.h>
 	#include <sys/types.h>
 
@@ -57,6 +56,7 @@
     #include <wolfssl/certs_test.h>
 #endif
 
+#include "/usr/include/mysql/mysql.h"
 #include <wolfssl/openssl/ssl.h>
 #include <wolfssl/test.h>
 #include <wolfssl/error-ssl.h>
@@ -134,8 +134,8 @@ double num[10];
 int count=0;
 double average=0;
 
-MYSQL *connect;
-MYSQL_RES *result;
+//MYSQL *connect;
+//MYSQL_RES *result;
 
 
 char command[1024];
