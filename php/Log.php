@@ -12,7 +12,7 @@
 
 
     mysqli_stmt_store_result($statement);
-    mysqli_stmt_bind_result($statement,$id, $Date, $Time, $AgentID, $DeviceID, $ServiceID, $KeyID, $FileID, $IO );
+    mysqli_stmt_bind_result($statement,$id, $Date, $Time, $AgentID, $DeviceID, $ServiceID, $FileID, $IO);
 
     $response = array();
     $response2 = array();
@@ -24,9 +24,8 @@
         $response["AgentID"] = $AgentID;
         $response["DeviceID"] = $DeviceID;
         $response["ServiceID"] = $ServiceID;
-        $response["KeyID"] = $KeyID;
         $response["FileID"] = $FileID;
-        $response["IO"] = $IO; 
+        $response["IO"] = $IO;
         $response2[] = $response;
     }
 
