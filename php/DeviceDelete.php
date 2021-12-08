@@ -13,7 +13,8 @@
 		$NFS_statement = mysqli_query($con, "Select Distinct FileID FROM tracking WHERE DeviceID = '$DeviceID'");
 		while($row=mysqli_fetch_assoc($NFS_statement)){
 			$command = $row["FileID"];
-			system("sudo /home/tracking/Deletion/Deletion '$command'");
+			system("python Socket.py /home/tracking/trace/Deletion '$command'");
+			system("sudo /home/tracking/trace/Deletion '$command'");
 		}
 
     		$statement = mysqli_query($con, "DELETE FROM tracking WHERE DeviceID = '$DeviceID'");
