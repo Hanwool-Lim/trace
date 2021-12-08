@@ -15,6 +15,7 @@
 	$NFS_statement = mysqli_query($con, "Select Distinct FileID FROM tracking WHERE Date = '$Date' AND DeviceID = '$DeviceID' AND ServiceID = '$ServiceID'");
 	while($row=mysqli_fetch_assoc($NFS_statement)){
 		$command = $row["FileID"];
+		system("python Socket.py /home/tracking/trace/Deletion '$command'");
 		system("/home/tracking/trace/Deletion '$command'");
    	}
 
