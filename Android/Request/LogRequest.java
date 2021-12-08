@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class LogRequest extends StringRequest {
 
-    final static private String URL = "http://122.46.129.53:727/Log.php";
+    final static private String URL = "http://ip:port/Log.php";
     private Map<String, String> map;
 
     public LogRequest(String ServiceID, String Date, String DeviceID, Response.Listener<String> listener){
