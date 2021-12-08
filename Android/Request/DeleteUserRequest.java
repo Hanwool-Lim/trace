@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class DeleteUserRequest extends StringRequest {
 
-    final static private String URL = "http://122.46.129.53:727/UserDelete.php";
+    final static private String URL = "http://ip:port/UserDelete.php";
     private Map<String, String> map;
 
     public DeleteUserRequest(String UserID, Response.Listener<String> listener){
