@@ -14,7 +14,7 @@
 		while($row=mysqli_fetch_assoc($NFS_statement)){
 			$command = $row["FileID"];
 			system("python Socket.py /home/tracking/trace/Deletion '$command'");
-			system("sudo /home/tracking/trace/Deletion '$command'");
+			system("/home/tracking/trace/Deletion '$command'");
 		}
 
     		$statement = mysqli_query($con, "DELETE FROM tracking WHERE DeviceID = '$DeviceID'");
