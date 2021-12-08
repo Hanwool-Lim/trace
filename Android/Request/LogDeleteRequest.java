@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class LogDeleteRequest extends StringRequest {
 
-    final static private String URL = "http://122.46.129.53:727/LogDelete.php";
+    final static private String URL = "http://ip:port/LogDelete.php";
     private Map<String, String> map;
 
     public LogDeleteRequest(String Date, String DeviceID, String ServiceID, Response.Listener<String> listener){
