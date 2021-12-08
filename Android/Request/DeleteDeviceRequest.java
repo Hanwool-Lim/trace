@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class DeleteDeviceRequest extends StringRequest {
 
-    final static private String URL = "http://122.46.129.53:727/DeviceDelete.php";
+    final static private String URL = "http://ip:port/DeviceDelete.php";
     private Map<String, String> map;
 
     public DeleteDeviceRequest(String DeviceID, Response.Listener<String> listener){
