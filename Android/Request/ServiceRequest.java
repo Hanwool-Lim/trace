@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class ServiceRequest extends StringRequest {
 
-    final static private String URL = "http://122.46.129.53:727/Service.php";
+    final static private String URL = "http://ip:port/Service.php";
     private Map<String, String> map;
 
     public ServiceRequest(String DeviceID, Response.Listener<String> listener){
