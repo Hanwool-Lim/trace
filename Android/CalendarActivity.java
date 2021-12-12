@@ -63,7 +63,7 @@ public class CalendarActivity extends Activity {
 
         materialCalendarView.state().edit()
                 .setFirstDayOfWeek(Calendar.SUNDAY)
-                .setMinimumDate(CalendarDay.from(2017, 0, 1)) // 달력의 시작
+                .setMinimumDate(CalendarDay.from(2017, 00, 01)) // 달력의 시작
                 .setMaximumDate(CalendarDay.from(2030, 11, 31)) // 달력의 끝
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
                 .commit();
