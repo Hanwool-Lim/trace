@@ -7242,59 +7242,59 @@ sha256 = "96493303ba8ba364a8da6b77fbb9f04d0f170cbecbc6bbacca616161bd0f0008"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/libldb-key-value.so"
-sha256 = "94f7a75192c2314b1a6400c1d42d710b3c0c386de1578bfd8d6b6411df81b58c"
+sha256 = "0934e41773abe4782db73c5766125a89c48a0dc8e929a0b893d74b31d2181d9a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/libldb-mdb-int.so"
-sha256 = "383a4ba620193a046d3ca2339ffe6f2df1a7658d5fc88405fd96a01ce772b58d"
+sha256 = "c0cf6bd6acd92b24fc5af9d56de32650b545304db0d0ffc4328afd1d4f1f370f"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/libldb-tdb-err-map.so"
-sha256 = "f14992f1a31c83206a83ee7e447f2c1c680857f3a745aca0d70f14bc58977163"
+sha256 = "5ff61e94de1ae6904f34db3e976f0ae8652e4a413458396386ba2ce0e389b834"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/libldb-tdb-int.so"
-sha256 = "1dc5f3b93cff8f3f79dd43c3dcf0344ca86562176f9ce682c942d608acf731b4"
+sha256 = "1e5aa12c31202c45b93c6187bba32dfe4111f16466329f42aefeaea6f9780573"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/asq.so"
-sha256 = "418769ab0bbc2e584672b598662fdb87c84ba39d749f16d1c29f047f56ca9c85"
+sha256 = "d2a8fe60afcb19a1db32481de6f0321dc90fe3a5522662b3605ed577691faac3"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/ldap.so"
-sha256 = "211ce1234e2e4515303fab9a675e36b44aaa8f68b131412f9c45e2797b4b3def"
+sha256 = "d4f63988b79b62832c37ee03b6117c59a2cd3f3e76097070e3e91c40f55fc283"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/ldb.so"
-sha256 = "a00ec4cbb0c22f63b9af502d8772bbfbb0742ca54f6fefa43c7076ceafba2ad6"
+sha256 = "bddc1273a945eff25d311476e2436a9cb017c8f7c48d46e76ea55a000d1840f9"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/mdb.so"
-sha256 = "96e178c767871df0f3eedee1065b42b81d9b2ffd67b8e54556bd7c48eec90862"
+sha256 = "40cca44c16f64095a6e762acbc07f9f3bbf6ee727fb79585f43e64bca8e6709e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/paged_searches.so"
-sha256 = "20d0284ebd8d172d62ade5b8f76ae7e61076cdbaf4ae4259740edfad324a81cf"
+sha256 = "0a71c55a64b00ffb6295883c1a7d206298dc2f40e5db0e525f93e8fcbe98c2fb"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/rdn_name.so"
-sha256 = "e8b10f1b8d9e37390408cfd66f93ba90bfd9fd89d142acc00d90d96731a78724"
+sha256 = "830f97d340d6331801cedac56e39a5fa5390ed82b751a05546f528f1886c61cc"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/sample.so"
-sha256 = "f6e74d5dea101748f1680d7b09f280aa9bcc2332f947403c60664f7b64251a51"
+sha256 = "f14ab66eaedfc5e7334f108969f029d61e5fb61056501d1493621d99ac616a0b"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/server_sort.so"
-sha256 = "7e8bc59939dd4bd62136a9f3266a8bc199ca871f8f5ba73e63c6863cb064bc3d"
+sha256 = "103354369e742eb1e35805284c1374302206d99e2a2a2e2047f43748ca548eb4"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/skel.so"
-sha256 = "77f8190f4296013705abd1bc8fc2c208514b86dadbdb055732e496fbb4d00c23"
+sha256 = "497242d9cb4df17b55197f356dbed450d0d90986bdf138adad709408f3103241"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldb/modules/ldb/tdb.so"
-sha256 = "2d5b8347abb76f59f5ed2f744e8fa6dcef3efc8cfaa88a134a785f46f07307d6"
+sha256 = "1126273de3350bb0bd0c4bef725f6470108629d9bcd8366d3f29cbbfe5bed6d6"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/ldscripts/elf32_x86_64.x"
@@ -9538,11 +9538,11 @@ sha256 = "c2b29a4ecca1e13ce3de5fbf858a7bc4a672a8ab60accabca29d786df7b25c9d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libdcerpc-binding.so.0"
-sha256 = "f648f3d1c5f82a39e6ea99ebbeda7139b552d65653a9a4bf9a2fe32b89eb2821"
+sha256 = "7d82b6429f684ca57c1e8d747208fbbd4cac22024e21c388fdc20fd76e9cab94"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libdcerpc-binding.so.0.0.1"
-sha256 = "f648f3d1c5f82a39e6ea99ebbeda7139b552d65653a9a4bf9a2fe32b89eb2821"
+sha256 = "7d82b6429f684ca57c1e8d747208fbbd4cac22024e21c388fdc20fd76e9cab94"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libdcerpc-samr.so.0"
@@ -9553,20 +9553,28 @@ uri = "file:/lib/x86_64-linux-gnu/libdcerpc-samr.so.0.0.1"
 sha256 = "d97ebdeb31b31bec45360c72dc80c65861db94363b663f7f1040c6c164fe5c87"
 
 [[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libdcerpc-server-core.so.0"
+sha256 = "1ce19610b43e71b1a85239bcac5fc957ca6cd62645cdd91ed21ada33f40fd937"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libdcerpc-server-core.so.0.0.1"
+sha256 = "1ce19610b43e71b1a85239bcac5fc957ca6cd62645cdd91ed21ada33f40fd937"
+
+[[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libdcerpc-server.so.0"
-sha256 = "a39bb4f870cf8bae6599c4adf7cf9bb42a89bb6df19b2606e1d102e830f4050b"
+sha256 = "ecb426c3b4ab6276ae392db75124ca3fa6ef5d0f3d82c8c26c9b06be4934e538"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libdcerpc-server.so.0.0.1"
-sha256 = "a39bb4f870cf8bae6599c4adf7cf9bb42a89bb6df19b2606e1d102e830f4050b"
+sha256 = "ecb426c3b4ab6276ae392db75124ca3fa6ef5d0f3d82c8c26c9b06be4934e538"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libdcerpc.so.0"
-sha256 = "670abbc11c2ca998afab8e93c1dee6a510f426d49f7521b78077ab6c5e07336f"
+sha256 = "11480b9c51fb8e65271a531a447acf822eab1b1c7de5d6195e3239d5e91f681d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libdcerpc.so.0.0.1"
-sha256 = "670abbc11c2ca998afab8e93c1dee6a510f426d49f7521b78077ab6c5e07336f"
+sha256 = "11480b9c51fb8e65271a531a447acf822eab1b1c7de5d6195e3239d5e91f681d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libdconf.so.1"
@@ -10210,19 +10218,19 @@ sha256 = "e1de0b73a3471a618f950c92ff43060beac1271afb2cfad2c5c7118dec54092b"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreebl3.chk"
-sha256 = "260cfc74618a6e9c38c46369b653affcfdc204c2f2cb0393748e67dcfeb563dc"
+sha256 = "b4624b36cb1f6c7081205b1fa4237b2e6f1a7caa44c91fad268bf598460bacda"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreebl3.so"
-sha256 = "1172d618fdc5c7649d999422cb7f2653beb334d4f290732579f511a17f3ac21d"
+sha256 = "534dee1aefb4c830323af8beca35658af6536357be0bbb6535c394e376b3f8bd"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreeblpriv3.chk"
-sha256 = "3e3078e4f0493191ca44f5f1503464afec8cb80ee22e1bbb101f0a1a6f8e3a2a"
+sha256 = "7d898e2f8629929b777211308d7e3e4b58906ab4575dafeba121e8daa3e81fcd"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreeblpriv3.so"
-sha256 = "71c16eb306f9600c688b39413f2b2e2ed3ab597c782f8599388ca287dfa13942"
+sha256 = "20eeb25a3f84670aca08d1c22f7b02b4ef7c029b22e0d0cd93a44c8cb924bb31"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreehand-0.1.so.1"
@@ -10234,19 +10242,19 @@ sha256 = "9356b4e39914e91c619aaa6584321525eecd1654becfb856d7712b7b1c5e0d0e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreerdp-client2.so.2"
-sha256 = "5d83dfd4a764fdb4eb06b91333f20fdc94a7ffc86c0b3768b304183ba34877a2"
+sha256 = "2952e0f20a5ecc7e39afc872682ec38641c994cdfab301a1ca0bf991f8dfb445"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreerdp-client2.so.2.2.0"
-sha256 = "5d83dfd4a764fdb4eb06b91333f20fdc94a7ffc86c0b3768b304183ba34877a2"
+sha256 = "2952e0f20a5ecc7e39afc872682ec38641c994cdfab301a1ca0bf991f8dfb445"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreerdp2.so.2"
-sha256 = "232ecd4ae54ef79e95802a2c501f897649185576d22e27fc4306b21e224a7366"
+sha256 = "6fc7623d67012ef0ab3c2ea2073fd260332a723b317f77d264a0258668db38bb"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreerdp2.so.2.2.0"
-sha256 = "232ecd4ae54ef79e95802a2c501f897649185576d22e27fc4306b21e224a7366"
+sha256 = "6fc7623d67012ef0ab3c2ea2073fd260332a723b317f77d264a0258668db38bb"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libfreetype.so.6"
@@ -11506,51 +11514,51 @@ sha256 = "ecc9e112c9d17b09cd72f2c2ca17a56c3468ca62d62959fa52efcb8b7f8db2a5"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicudata.so.66"
-sha256 = "a46f7385244a9d93140c0685059acb6ba1568f0989874623086c09021b28901d"
+sha256 = "50b039da86ab40fed973954892aa52b0b833127b94103ec62b71c1e0891ce5ed"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicudata.so.66.1"
-sha256 = "a46f7385244a9d93140c0685059acb6ba1568f0989874623086c09021b28901d"
+sha256 = "50b039da86ab40fed973954892aa52b0b833127b94103ec62b71c1e0891ce5ed"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicui18n.so.66"
-sha256 = "c05137d241e8df4efafb29268dfc8429dd8073a9ba33337f0c1231cc14ba8af1"
+sha256 = "e6b2f6fdf6f473bd529526a06b1e1bb6dab4a9998da941346711f1805dd42816"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicui18n.so.66.1"
-sha256 = "c05137d241e8df4efafb29268dfc8429dd8073a9ba33337f0c1231cc14ba8af1"
+sha256 = "e6b2f6fdf6f473bd529526a06b1e1bb6dab4a9998da941346711f1805dd42816"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicuio.so.66"
-sha256 = "86afdb8d1ce7680a9221c45fa8aa17d21c6b9df696e75e97d5502595161bc27d"
+sha256 = "d60e57e18b70a3e71a28f5b23af8bdc239e2a0d9cd4f3d77094f2c50746bb6a1"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicuio.so.66.1"
-sha256 = "86afdb8d1ce7680a9221c45fa8aa17d21c6b9df696e75e97d5502595161bc27d"
+sha256 = "d60e57e18b70a3e71a28f5b23af8bdc239e2a0d9cd4f3d77094f2c50746bb6a1"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicutest.so.66"
-sha256 = "9c5670a28419640175c32eaf757999d82f129d6ee5353dbfcb6c9b19a5c0b5bf"
+sha256 = "8e998364ad7b3e26c69332b4684d423e5c4e12723455eb1abcd6ad033d4cb446"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicutest.so.66.1"
-sha256 = "9c5670a28419640175c32eaf757999d82f129d6ee5353dbfcb6c9b19a5c0b5bf"
+sha256 = "8e998364ad7b3e26c69332b4684d423e5c4e12723455eb1abcd6ad033d4cb446"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicutu.so.66"
-sha256 = "f88820b1a261a7c43864f35796fb9b037754419b2b3eba07f40740d2aafbbecc"
+sha256 = "d61f49b6f693eee3bd68a426fe13f467ac59296ff8ea2dc26a2056af2a57eed4"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicutu.so.66.1"
-sha256 = "f88820b1a261a7c43864f35796fb9b037754419b2b3eba07f40740d2aafbbecc"
+sha256 = "d61f49b6f693eee3bd68a426fe13f467ac59296ff8ea2dc26a2056af2a57eed4"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicuuc.so.66"
-sha256 = "97b89b3fcc8dbe8db72d3ef5f2300346bf60db5e3d119889deaa221334340e9c"
+sha256 = "d41e9287614412b6e95f809773a5f0f86ee3763a7d5f0db4856e79f64f7c8dab"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libicuuc.so.66.1"
-sha256 = "97b89b3fcc8dbe8db72d3ef5f2300346bf60db5e3d119889deaa221334340e9c"
+sha256 = "d41e9287614412b6e95f809773a5f0f86ee3763a7d5f0db4856e79f64f7c8dab"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libidn.so.11"
@@ -11902,11 +11910,11 @@ sha256 = "8d156993c4d72f11c35d5464f86322c42f1071d7e3a556a9a30147cedc48404c"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libldb.so.2"
-sha256 = "e629301beb84469e8ae6ce0ddc333dc23f4e2a6171a052116e2abec21ac04260"
+sha256 = "79686bc6a9421dd52d53bfbba1252faf7b6a88c9968b201f35bcb3a717f9c01b"
 
 [[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/libldb.so.2.0.10"
-sha256 = "e629301beb84469e8ae6ce0ddc333dc23f4e2a6171a052116e2abec21ac04260"
+uri = "file:/lib/x86_64-linux-gnu/libldb.so.2.2.3"
+sha256 = "79686bc6a9421dd52d53bfbba1252faf7b6a88c9968b201f35bcb3a717f9c01b"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/liblirc_client.so.0"
@@ -12426,35 +12434,35 @@ sha256 = "fa03e9eef85aa5f95a277bee08e0ede54fa02444500d55275effb983a3898c0b"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libndr-krb5pac.so.0"
-sha256 = "936698e58feed5e581a4674ca930858c9167d76f410c27f3b68e9694a8c5e2de"
+sha256 = "6209448738a75b3acb6d60097aad474ea99324b0c02dc46478c2ee4e107c9a84"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libndr-krb5pac.so.0.0.1"
-sha256 = "936698e58feed5e581a4674ca930858c9167d76f410c27f3b68e9694a8c5e2de"
+sha256 = "6209448738a75b3acb6d60097aad474ea99324b0c02dc46478c2ee4e107c9a84"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libndr-nbt.so.0"
-sha256 = "5961f2a276776192467bd8a45e2d400b9da8bbdaae3afb09a8cb87dee72d6877"
+sha256 = "f372c7ce99fce9faedaf15aed9528306d6f225b63f3105bf5469d67e886b344d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libndr-nbt.so.0.0.1"
-sha256 = "5961f2a276776192467bd8a45e2d400b9da8bbdaae3afb09a8cb87dee72d6877"
+sha256 = "f372c7ce99fce9faedaf15aed9528306d6f225b63f3105bf5469d67e886b344d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libndr-standard.so.0"
-sha256 = "e186fc31e94beaa5087d2d8c4700e5f9ff2652aa7904d3d3a275364f5ac4061d"
+sha256 = "049cd152d9ff7c290b75a201f917859cfd76818c2f2d352d3cda23b2685c7ea2"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libndr-standard.so.0.0.1"
-sha256 = "e186fc31e94beaa5087d2d8c4700e5f9ff2652aa7904d3d3a275364f5ac4061d"
+sha256 = "049cd152d9ff7c290b75a201f917859cfd76818c2f2d352d3cda23b2685c7ea2"
 
 [[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/libndr.so.0"
-sha256 = "7614fe75bebb7db133607c62b0bc9c2648e386ba646fa0d48306db3708a12553"
+uri = "file:/lib/x86_64-linux-gnu/libndr.so.1"
+sha256 = "3e4cf0795f7f55ff4374a1e974918ac741e5a3e0849f22817317f17fae546408"
 
 [[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/libndr.so.0.2.0"
-sha256 = "7614fe75bebb7db133607c62b0bc9c2648e386ba646fa0d48306db3708a12553"
+uri = "file:/lib/x86_64-linux-gnu/libndr.so.1.0.0"
+sha256 = "3e4cf0795f7f55ff4374a1e974918ac741e5a3e0849f22817317f17fae546408"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libneon-gnutls.so.27"
@@ -12466,7 +12474,7 @@ sha256 = "739f6a35935cdb260ce41ff5651632f0a1dca69b76c21ff5f8f9a981184211ef"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libnetapi.so.0"
-sha256 = "d8d192cc3c80a37fd96fe45a8161f21f2c3b9d3a1f001f7b958527326a833b19"
+sha256 = "baa200fd06b73af129a928a1eb4a2ee6d7931bff2d9cd126e691f3b589c7f5d9"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libnetfilter_conntrack.so.3"
@@ -12551,6 +12559,26 @@ sha256 = "3da34dd8ee9e3f34b4b4bf36bc0fa82acddf9a23eca6eeb45a58bb6c1113fda7"
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libnfs.so.13.0.0"
 sha256 = "3da34dd8ee9e3f34b4b4bf36bc0fa82acddf9a23eca6eeb45a58bb6c1113fda7"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libnfsidmap/nsswitch.so"
+sha256 = "75e8cb50143e42db25448ff20fd9195af8c222cc505f2dd800f8dfbcb332b49f"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libnfsidmap/static.so"
+sha256 = "fa93b3eff1dd9824e9256c53f69cfea0cbd2aa8b8982c701e64b5f99df5b4043"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libnfsidmap/umich_ldap.so"
+sha256 = "d07c3a673d7e9cad5237b7956792ce887909e44ca4c3613ef8d0bfa24f1d94c0"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libnfsidmap.so.0"
+sha256 = "21dba0ff8741512b735e6f437ac3d68205d99ba5f8f3769ba9831c0592238f03"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libnfsidmap.so.0.3.0"
+sha256 = "21dba0ff8741512b735e6f437ac3d68205d99ba5f8f3769ba9831c0592238f03"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libnftnl.so.11"
@@ -12654,7 +12682,7 @@ sha256 = "4f0040c3c17df5457b82c571cfcd86d59b1763bd645992fef01088210a2d0bbb"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libnss3.so"
-sha256 = "6b791dec3859048e6e9965faab8b16dd3ccd67b46e63cf90740eabcff6f908e6"
+sha256 = "929a540c9dd382dec0087dce7ce1267f817703012566d6bf6421395702701794"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libnss_compat-2.31.so"
@@ -12758,7 +12786,7 @@ sha256 = "1ee219242183e9da72a838e6e0b33e1ebf07f90103741a7c406434ad03e30761"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libnssutil3.so"
-sha256 = "67f09fe304b0ee0ee86e5023af3e3282bd62087a1d401c38a589aa10d84ba76c"
+sha256 = "67539e931b3d046d0527f7d01f3e9bee3017f8de56060dfe58cb71dbc57c7ccf"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libntfs-3g.so.883"
@@ -13278,11 +13306,11 @@ sha256 = "bef33b4179d705baa8422e3de31c67982f03aad6bf0e8509cf018344b80d7bea"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libpq.so.5"
-sha256 = "6aab8f10ae3b0c696ef5b69efbabb613757622e9889fc1ac973ce06b17977b24"
+sha256 = "4ca7edcce063616714806d73b5a845043d3b03dbc401ca97606600e4a00a5f59"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libpq.so.5.12"
-sha256 = "6aab8f10ae3b0c696ef5b69efbabb613757622e9889fc1ac973ce06b17977b24"
+sha256 = "4ca7edcce063616714806d73b5a845043d3b03dbc401ca97606600e4a00a5f59"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libprocps.so.8"
@@ -13449,12 +13477,20 @@ uri = "file:/lib/x86_64-linux-gnu/libpwquality.so.1.0.2"
 sha256 = "5d14662708b1518cb5e97f40923e98342036826febc83c6804007c06e8c879d6"
 
 [[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/libpytalloc-util.cpython-38-x86-64-linux-gnu.so.2"
-sha256 = "678af4c96ae25b60e4ff2a3bf9da7533a94581c4a055d1b12bb98b353aae5ef4"
+uri = "file:/lib/x86_64-linux-gnu/libpyldb-util.cpython-38-x86-64-linux-gnu.so.2"
+sha256 = "b6594673852292b599728dbb4c4f094c2c24fc2b085eac7e2eff881a596fff8b"
 
 [[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/libpytalloc-util.cpython-38-x86-64-linux-gnu.so.2.3.0"
-sha256 = "678af4c96ae25b60e4ff2a3bf9da7533a94581c4a055d1b12bb98b353aae5ef4"
+uri = "file:/lib/x86_64-linux-gnu/libpyldb-util.cpython-38-x86-64-linux-gnu.so.2.2.3"
+sha256 = "b6594673852292b599728dbb4c4f094c2c24fc2b085eac7e2eff881a596fff8b"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libpytalloc-util.cpython-38-x86-64-linux-gnu.so.2"
+sha256 = "1a08b87bb4b1dda2668a60ea1cc07de562d7f424f55e522f77bf19bca6b6b086"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libpytalloc-util.cpython-38-x86-64-linux-gnu.so.2.3.1"
+sha256 = "1a08b87bb4b1dda2668a60ea1cc07de562d7f424f55e522f77bf19bca6b6b086"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libpython3.8.a"
@@ -13750,55 +13786,55 @@ sha256 = "5a0a88920f788f914dc9dadf5a652b800173c2592adeb30352f903ea0087cbd1"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-credentials.so.0"
-sha256 = "30c2d6e20a3582f283e1cd0595c7a5f3e8c1c95d85bc3847403120917c2a2ed2"
+sha256 = "f004e778c610b76dc3f0e9c44441da08d557885ea6866c73fdbbb23154a39664"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-credentials.so.0.0.1"
-sha256 = "30c2d6e20a3582f283e1cd0595c7a5f3e8c1c95d85bc3847403120917c2a2ed2"
+sha256 = "f004e778c610b76dc3f0e9c44441da08d557885ea6866c73fdbbb23154a39664"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-errors.so.1"
-sha256 = "befb1deeff9616b88cb3401d86a3d970a408677069385fb0295131f117bb8bd7"
+sha256 = "7e6ec1586d490437657df07d6f70530eba4f732d48d3e5e39b7cab748741f102"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-hostconfig.so.0"
-sha256 = "328a608deafde26f5b0015a536abb5dccc7ab4c1c94328f03009e5e83db3b593"
+sha256 = "6444a545696a462eff9223f7c82c2bc1225127ff05fa0bdc14b9baba0b5dfb74"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-hostconfig.so.0.0.1"
-sha256 = "328a608deafde26f5b0015a536abb5dccc7ab4c1c94328f03009e5e83db3b593"
+sha256 = "6444a545696a462eff9223f7c82c2bc1225127ff05fa0bdc14b9baba0b5dfb74"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-passdb.so.0"
-sha256 = "918851464a04826e0addada886a3a8aafeb5e494c136cb36d66db340dd16378c"
+sha256 = "51e5f76fa237579f7d80325ec80278a208ef23933c52bb7fe785a633c89fe432"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-passdb.so.0.28.0"
-sha256 = "918851464a04826e0addada886a3a8aafeb5e494c136cb36d66db340dd16378c"
+sha256 = "51e5f76fa237579f7d80325ec80278a208ef23933c52bb7fe785a633c89fe432"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-policy.cpython-38-x86-64-linux-gnu.so.0"
-sha256 = "d2a59e904c610c170d8909a5a2d85ae2d3c1b084bb3fc8bf7696b0c90647eec8"
+sha256 = "c5f89403b4cbff7fc098a07aee79e10d5a5ea66255172c698c86ceb37a14fe99"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-policy.cpython-38-x86-64-linux-gnu.so.0.0.1"
-sha256 = "d2a59e904c610c170d8909a5a2d85ae2d3c1b084bb3fc8bf7696b0c90647eec8"
+sha256 = "c5f89403b4cbff7fc098a07aee79e10d5a5ea66255172c698c86ceb37a14fe99"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-util.so.0"
-sha256 = "495b99b6e4842935e9de933e06da9c570c1220f4fb9ff5cbc4d150c98aee915a"
+sha256 = "3b6f20a4b988c1e2b18e01126c6fa7561f0bea488e1d391cca472189590ffaee"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamba-util.so.0.0.1"
-sha256 = "495b99b6e4842935e9de933e06da9c570c1220f4fb9ff5cbc4d150c98aee915a"
+sha256 = "3b6f20a4b988c1e2b18e01126c6fa7561f0bea488e1d391cca472189590ffaee"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamdb.so.0"
-sha256 = "0ddfff422d39524402108acd85bf1eceddbf9ad44aee91d13161cc8087771891"
+sha256 = "e62f2f74ff343d2ce8b676ab3323149fcd1e69563af5d9215e272485b262ca77"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamdb.so.0.0.1"
-sha256 = "0ddfff422d39524402108acd85bf1eceddbf9ad44aee91d13161cc8087771891"
+sha256 = "e62f2f74ff343d2ce8b676ab3323149fcd1e69563af5d9215e272485b262ca77"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsamplerate.so.0"
@@ -14050,15 +14086,15 @@ sha256 = "994408d29ba0c1f5b3757a2dc9b81c1298b5a35eb45b995b062e3de774a6bae2"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsmbclient.so.0"
-sha256 = "352241f68b0b7cd4a35cecab41ec99a5c1ed9c366309d8240d5872560a64a333"
+sha256 = "3e1a283d27d9594dc9c050867d6ad311414176b2d26deb8c5b0f3919e6916613"
 
 [[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/libsmbclient.so.0.5.0"
-sha256 = "352241f68b0b7cd4a35cecab41ec99a5c1ed9c366309d8240d5872560a64a333"
+uri = "file:/lib/x86_64-linux-gnu/libsmbclient.so.0.6.0"
+sha256 = "3e1a283d27d9594dc9c050867d6ad311414176b2d26deb8c5b0f3919e6916613"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsmbconf.so.0"
-sha256 = "4ad7d8a1fc33d14eb4a38bb49683742eeca07b16ba0be600a5edad405ae83557"
+sha256 = "3341cb390a495e98e88289929d2eb784aef24a69ce0c641551b765e8c08a9349"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsmbios_c.so.2"
@@ -14070,7 +14106,7 @@ sha256 = "210be5c65e79032c1e9162301dd8a1c3422e108704278a52e8e366fc01aadb13"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsmbldap.so.2"
-sha256 = "d29e8c56a72c9b2ab295ac4546f03441e128774b482e5ebabcebe1e006bf1b41"
+sha256 = "181af790bdf71707ed079e86f03587616c705ad6b97ca7e252fe5553fcc9b804"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsmi.so.2"
@@ -14082,7 +14118,7 @@ sha256 = "2770949c4185523d5713d0e11c182163cf409d0dc035b8874b1cbae51a022476"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsmime3.so"
-sha256 = "b897e152f6c57d2d8cbdbeedbaedc7d5ae7a1222bd4e541c4179cf977cea0606"
+sha256 = "bda444fb81c9a694cf8202607a78955475359a68143dc8995721db58c6b1308a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libsnapd-glib.so.1"
@@ -14258,7 +14294,7 @@ sha256 = "a0e971d42962917d1054da891917230387f2613ff20c74bfd30a02c334280078"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libssl3.so"
-sha256 = "d7aafc1ea66d8233f4fb6e9a78598d474b9370017a6eb7a112d013c56903a4b6"
+sha256 = "ff6536d4490a8190871f3182bc2833e32f3a2d250f9d1c32f21d4e7a8c4b3539"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libstartup-notification-1.so.0"
@@ -14322,11 +14358,11 @@ sha256 = "5239b453ae01e001801a824f41a896160d892a4891e862b97e7387d5c316fd7a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libtalloc.so.2"
-sha256 = "a35e1830e2ee58ecc08031c88564712b6ac4a6eb84f97d7df5c6efacfe7f975b"
+sha256 = "43f161ddddbaf2e04ef8cef89cbb4e0e19f739611ef1d0bedf6dc248ca5c4cd4"
 
 [[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/libtalloc.so.2.3.0"
-sha256 = "a35e1830e2ee58ecc08031c88564712b6ac4a6eb84f97d7df5c6efacfe7f975b"
+uri = "file:/lib/x86_64-linux-gnu/libtalloc.so.2.3.1"
+sha256 = "43f161ddddbaf2e04ef8cef89cbb4e0e19f739611ef1d0bedf6dc248ca5c4cd4"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libtasn1.so.6"
@@ -14346,11 +14382,11 @@ sha256 = "52903f23dec4b52084654a6ea54426d48f6919e9347d3e73fb777226763ac498"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libtdb.so.1"
-sha256 = "987791f5335aebce546163526fa13b9d4cea1bd1aecca830a251b0a8e2a592f2"
+sha256 = "c2df7be47cab20df6524e6a39aeac7a6c8c63684cb1749b3a3c1effe164ba030"
 
 [[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/libtdb.so.1.4.2"
-sha256 = "987791f5335aebce546163526fa13b9d4cea1bd1aecca830a251b0a8e2a592f2"
+uri = "file:/lib/x86_64-linux-gnu/libtdb.so.1.4.3"
+sha256 = "c2df7be47cab20df6524e6a39aeac7a6c8c63684cb1749b3a3c1effe164ba030"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libteamdctl.so.0"
@@ -14378,19 +14414,19 @@ sha256 = "9b1ea63a129c225573d10f9747083a68356ee339e83ca773fee98c2378da53a4"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libtevent-util.so.0"
-sha256 = "355aa337114cc780ab7d9183946e5c64c2c3f8a553d8c7fa394a611f885fbb4c"
+sha256 = "3399004ed1fc2e3dc0eddfe35529c95b32264b108d04e24373b46c63fced72af"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libtevent-util.so.0.0.1"
-sha256 = "355aa337114cc780ab7d9183946e5c64c2c3f8a553d8c7fa394a611f885fbb4c"
+sha256 = "3399004ed1fc2e3dc0eddfe35529c95b32264b108d04e24373b46c63fced72af"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libtevent.so.0"
-sha256 = "5cc9502812e6adea6a1b2231e87d00e301752f5e97ac63590e74b1312a36bf82"
+sha256 = "98fd249cd122653c20d72109a0b5741b83f53f3214f1cd194f6df21b9c1c2133"
 
 [[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/libtevent.so.0.10.1"
-sha256 = "5cc9502812e6adea6a1b2231e87d00e301752f5e97ac63590e74b1312a36bf82"
+uri = "file:/lib/x86_64-linux-gnu/libtevent.so.0.10.2"
+sha256 = "98fd249cd122653c20d72109a0b5741b83f53f3214f1cd194f6df21b9c1c2133"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libtexlua53.so.5"
@@ -14507,6 +14543,14 @@ sha256 = "425378a1cfa4f5f2f8a847d4828f0dfc92c2b7d75e5f8f5207a4c0a42b2ee6fa"
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libtinfo.so.6.2"
 sha256 = "425378a1cfa4f5f2f8a847d4828f0dfc92c2b7d75e5f8f5207a4c0a42b2ee6fa"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libtirpc.so.3"
+sha256 = "6f6ca9d7f77d43c61ad66eb1137108e77d477fcd14d0602c0d281c80956c30e4"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libtirpc.so.3.0.0"
+sha256 = "6f6ca9d7f77d43c61ad66eb1137108e77d477fcd14d0602c0d281c80956c30e4"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libtk8.6.so"
@@ -14726,7 +14770,7 @@ sha256 = "b38a2a13ee67927eb28abb889be78aafc1ef1f6fc0c1c987abf12892fddf8a27"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libuno_sal.so.3"
-sha256 = "e9b9c2c1d4681c2bc8d0148afc4160708b4a76c3289975a4db1c622db4eda364"
+sha256 = "4ea09fc512486f27d09aa24ddd91781f7a67818f876f298ae10f58acd7662094"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libuno_salhelpergcc3.so.3"
@@ -15010,11 +15054,11 @@ sha256 = "674ab3456ce2f8d14015b36b81b0d61ee5fdd9bc46f00f41aa5dd0d12d319afa"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libwbclient.so.0"
-sha256 = "8960665260996b12f4ef9a0b6c1434f360d8ebdd3958adb74c410f7528541002"
+sha256 = "455617c8cf20cfca708f7cd0c4d1c309718772b4661e02090205ae5105c28bf2"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libwbclient.so.0.15"
-sha256 = "8960665260996b12f4ef9a0b6c1434f360d8ebdd3958adb74c410f7528541002"
+sha256 = "455617c8cf20cfca708f7cd0c4d1c309718772b4661e02090205ae5105c28bf2"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libwebkit2gtk-4.0.so.37"
@@ -15082,11 +15126,11 @@ sha256 = "48cf57c8929aac2d7f8647bc1bf5d0778db989660ff76783fb5c5dab110d52e0"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libwinpr2.so.2"
-sha256 = "0986f401b14607d3af0f8ceb7f494a6265fbf79b329366fb8954cf720329e815"
+sha256 = "fd596896fbf0610b8675f896f7e43eea18488265a4b80e3b0d816fdb18644074"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libwinpr2.so.2.2.0"
-sha256 = "0986f401b14607d3af0f8ceb7f494a6265fbf79b329366fb8954cf720329e815"
+sha256 = "fd596896fbf0610b8675f896f7e43eea18488265a4b80e3b0d816fdb18644074"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libwireshark.so.13"
@@ -15702,39 +15746,39 @@ sha256 = "b364ef6baf07979c3a8fa8bac8d59acfc8f333286c5b404b5a0b7062929e169c"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/nss/libfreebl3.chk"
-sha256 = "260cfc74618a6e9c38c46369b653affcfdc204c2f2cb0393748e67dcfeb563dc"
+sha256 = "b4624b36cb1f6c7081205b1fa4237b2e6f1a7caa44c91fad268bf598460bacda"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/nss/libfreebl3.so"
-sha256 = "1172d618fdc5c7649d999422cb7f2653beb334d4f290732579f511a17f3ac21d"
+sha256 = "534dee1aefb4c830323af8beca35658af6536357be0bbb6535c394e376b3f8bd"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/nss/libfreeblpriv3.chk"
-sha256 = "3e3078e4f0493191ca44f5f1503464afec8cb80ee22e1bbb101f0a1a6f8e3a2a"
+sha256 = "7d898e2f8629929b777211308d7e3e4b58906ab4575dafeba121e8daa3e81fcd"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/nss/libfreeblpriv3.so"
-sha256 = "71c16eb306f9600c688b39413f2b2e2ed3ab597c782f8599388ca287dfa13942"
+sha256 = "20eeb25a3f84670aca08d1c22f7b02b4ef7c029b22e0d0cd93a44c8cb924bb31"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/nss/libnssckbi.so"
-sha256 = "3097fd760cadcb36e32fe1f4d2da7c7114b5169b997fe31ce001515db061dc8a"
+sha256 = "8e0e352ca9208aedf425d5a6be807eca131f49d6671c4802d292599e31498e0f"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/nss/libnssdbm3.chk"
-sha256 = "2e6d540a75bc0773405d8c7aff9f1ffa35cff56ae9883b218d5d1db0f0840dfd"
+sha256 = "afe5c64066ac0aa58ec1878ac06361a0d92d4caf84274bafc45f5122f4b1e7e7"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/nss/libnssdbm3.so"
-sha256 = "aafb384d059a61ccbe02b9dc60f2288b9d8c1fcd2aed6bbe552290e74ac3ccb0"
+sha256 = "c0b4762f40fd1a9ee6b255439933bdf53a529f496cfc02bdcda8368bff9d99b0"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/nss/libsoftokn3.chk"
-sha256 = "c8ff3343e6da4aee360e57348a43f74d36561b6f3dce4ebd171a8ea6305fce13"
+sha256 = "253fd8e5e8819d2335328920f6612674ed2e5e109a515a54bb79673923796841"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/nss/libsoftokn3.so"
-sha256 = "e87910c29653a63a6668ed44e4d619fa39d40fb6169235ef6a12019ef4df7ccb"
+sha256 = "b0b297995b7dfde80b8a497333db92612463ae7b52a792510633018044783a61"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so"
@@ -22354,511 +22398,515 @@ sha256 = "1d32f7ecf7a38d2e05190565761bf7efd5aa38a35602e499d293d5392c3f5abc"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/auth/samba4.so"
-sha256 = "6c7416e27b85244c6f4afc2841ee4292bab38519adaa099d7079af8632766966"
-
-[[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/samba/auth/script.so"
-sha256 = "f0f58d022ae0953d3f219413aa5846aa88dd390c6f59c851246de47cecc354e5"
+sha256 = "b964c605cab4f36fc4cf79b187d4b5157b1f632ef7f028b48cac1434fbb2f297"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9.so"
-sha256 = "97d1dd28b979d3af1e3b173059abb9a8c1b380aeeb94ad28dd5b0ae051e9a1fd"
+sha256 = "cbd522d7576f72eb3a0f3c7b016c8e9e4cb1d63e938ad096862acee5595c74f1"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_10.so"
-sha256 = "22989e714bfcd65d51222f129e7665ee53da511f24137ffb3cfc3df7cc38b3d6"
+sha256 = "00c9c7391add67032eed613aa3c39a89b04cd636b04914979c14cb2f69b9b847"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_11.so"
-sha256 = "13df06f8e892e964ecc5ae25af30bfc8330d47fb73647898c0daaf5657bfbdc7"
+sha256 = "4c58bcaf4eaea5dc3643a3b32c675a41f045dfbcf862013b289ab7f1da29c674"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_12.so"
-sha256 = "98df381e5465dc493a93d147873e53cf625bdad96e9262673149110232f8e9bc"
+sha256 = "17011660d5b530b470fb12cb888ead78c611bb9a665dc5d867b437b664acbb42"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_14.so"
+sha256 = "4dd763831dff56851cdc43de35d48d3911eec0fb31505dc2d7a72c76cffda04d"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_16.so"
+sha256 = "5251900e5ecd47a286edcb4c0276c43fbc31ea09ffd5dc0ec33b084b16b12d3e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_9.so"
-sha256 = "f33d65798206d9c75b30941a42d5682f67bd39ccdb4e79c769dfa23b936f14d5"
+sha256 = "1fedc7d444adf6e59c75a9ec49159c280655b3ef3f958908d69dcd8d5667e450"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/gensec/krb5.so"
-sha256 = "4220a9225334cb55820ff42e5f2540ef320e5dae499ab98939b68a6270920c46"
+sha256 = "4812ef431552736dd9fe34c4a900e9b2547e6f4a65c116a0246aefd46cf71e9e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libCHARSET3.so.0"
-sha256 = "9d1c361006b2dcd390342f16c4da45ce07f8215b676414acf1fa7433729224b9"
+sha256 = "facffcfe1f56d898a2a3d8e4e1b16d46dc5bc22701ad4e02613514b701431e2c"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libLIBWBCLIENT-OLD.so.0"
-sha256 = "7d12afd467579f34d26ce888b42621118e76f2063945df89ce53061eef34b0f0"
+sha256 = "2352c734be9b6813980dd0aa14018f43a29810adb80f4e2dc5b904d3996a9ff0"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libMESSAGING-SEND.so.0"
-sha256 = "eb84883da36bbcf56244d518877c4444261eaa6b69c8fc10351b0e2ac88292dd"
+sha256 = "f2eca67f08d0496c965d802dd0f15112c82f23c194d11dde8265bd29ad9df74d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libMESSAGING.so.0"
-sha256 = "7ba2dc8dfe5b4ad3fbb56b0cd25b21d421f932b7cbc2d7d0afd15b06a0139df0"
+sha256 = "5e433f5e9e8b8382d0e19f94d1d27553ed8c05ea38b6686901204c17649b213f"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libaddns.so.0"
-sha256 = "97a8ad4490e73c0ee5614bfc5669abec280e9c21dc05743456e79821a7f5c2e9"
+sha256 = "a05abe75821d24748af15072e6fdb970fca0741819366f27e26e148840d62307"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libads.so.0"
-sha256 = "52bd7a90fc8ddca38def14bd06ca3eda8a29d180a7bb4b6be0fd4ce29fa082cf"
-
-[[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/samba/libaesni-intel.so.0"
-sha256 = "31385a209d5ba0e6e9be2d697ae914e2d72b82c94b43106550003305d0c390c9"
+sha256 = "c7fa7e72c218b5e17ca887dfa40132d8f2d23f3ac3173887a2abf8c0be9a2210"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libasn1-samba4.so.8"
-sha256 = "ee1c39456f486308935a9bd4b41098613faa14df92cf56490ca87019f9e2dacb"
+sha256 = "210611496788376b00e9ca84a3aa19ec8cff3faa93c682e8385b34acb4363155"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libasn1-samba4.so.8.0.0"
-sha256 = "ee1c39456f486308935a9bd4b41098613faa14df92cf56490ca87019f9e2dacb"
+sha256 = "210611496788376b00e9ca84a3aa19ec8cff3faa93c682e8385b34acb4363155"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libasn1util.so.0"
-sha256 = "8cabb97b5fcb45cb3be1870e0a3ebbe9540b6701bc16884730cb26bfeca719f5"
+sha256 = "221d1f27cb95e42ddb2df72bf7ca25dfaa439a154b246b8970706d92b0198b63"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libauth-unix-token.so.0"
-sha256 = "462f8065184e573952b2249e13396b3c015282ac3469186d602569f2e1f57290"
+sha256 = "8cdabfe941f449c6b8ea404c27a97073c09e17b7034f0c36b373d57de177a7e8"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libauth.so.0"
-sha256 = "a9815dbd08b51ab52921bc37816f1e63ddeb66a715fc14e8330d53fe6c334904"
+sha256 = "507879a3928bfa954b5d38137847a42e9f305d60fdaf22023ba9b2a304ed9bd9"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libauth4.so.0"
-sha256 = "dea22cf5468ce334b4a13678e9ef7c9ebd9291d4f2f5a170986483a7e8d801f9"
+sha256 = "b47742a3a22280df2197ed2c42c5ef9a67d8df77a2714b0bd5838a746e97864e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libauthkrb5.so.0"
-sha256 = "b6781d6745f1273dbbb956a2de96d21554338ba2d4b87a9a6d5fe3501c6ebf06"
+sha256 = "fc17fc4c482ba0727862b36c99e2943dff2036e617d8a54731fde182f897839d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcli-cldap.so.0"
-sha256 = "31b1e790a271cfe1806fb09482a3efe1faf5dc96f7bf28b61a534565229d61e9"
+sha256 = "5727c5102671eecffd2921a258a21327f9a5835a596e3fb36e962bcf07899ac3"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcli-ldap-common.so.0"
-sha256 = "a2b4e08f1a2d0931e4889aec698754833c515432238cfc047951e28dd3cc602e"
+sha256 = "5be4b73e287f29427664c61900ef12bd6b924e5fdd9c942a3fe836f58bbc9e3b"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcli-ldap.so.0"
-sha256 = "cdd0820b3b45e0296cba13088ba2804e6f727bf5d4604636b8136da12a6dc97b"
+sha256 = "928e8513a85fa5ff0f89059609b1244eba9ff5f2037bcecba789a8bc9d1b9dc2"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcli-nbt.so.0"
-sha256 = "8133cabb41c25c1f472b39a065d13fef33c6a7806c990aab7ec9fa02cd8a9ba2"
+sha256 = "74b357c6525457c3034befce2307df70b463e718002a009637aa5f4cfbfceebb"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcli-smb-common.so.0"
-sha256 = "29b274ad3da465b2f173a8de2d96bef348b4b87975c5b2c4f568bcac394f21f4"
+sha256 = "94a90af1ae6c004d9959b438d1659b15b13930fe1b001341587630744396c342"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcli-spoolss.so.0"
-sha256 = "8df62728b222f1b0c3c73b5c333e6a3e2b42e88724637a16f114a321a47a20f0"
+sha256 = "d0823105013101daccd9f596cfa313b330443a7ad4045a4170eb003f95cd78c4"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcliauth.so.0"
-sha256 = "6591bc4ad84158eebbaaa6ef04b2fc719cd4c80e3f1d1ab73445d147f53e1e89"
+sha256 = "30935f61de1d28f92a377f428ccf6f5bd9402c1e62a4626bf3ee50c258b42487"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libclidns.so.0"
-sha256 = "3a075b73e698668e3fb084ddbce6abbbd7fd6322f2845ca4cb8492bb15ebf46b"
+sha256 = "b89aaa7e66bfc73a56d0f3d49f39364ff62cfb4b82b97d161eff976ba392dfe7"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcluster.so.0"
-sha256 = "9d84dafec904e3f9bf5957e1dcedd10eecbbf95190150b7fa8feb738e6385a56"
+sha256 = "3e40cd51ee8e530c595c0fa02eb65425ada6a076ea04473fcebf7669f777bc10"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcmdline-contexts.so.0"
-sha256 = "815713ac0eff0233ad58624a8595e9ef2cc7cb7977569d3ddb043b0a93fac9a1"
+sha256 = "42f9c931cc5ae28a038ee4d634db07209d73d64c78b946420f99c1bf95845225"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcmdline-credentials.so.0"
-sha256 = "0bb982051b33bc5e9f134a2a37449bafefaec8d7466e0ac17020ffebacc26389"
+sha256 = "07ecb7b9aa5679af2d1bb3edc283410b4238951988011d66d3fcefca705f3ade"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcom_err-samba4.so.0"
-sha256 = "47283a2ce262b1fef114ffc85c62412badf032044e721b46c1723d3013738b5e"
+sha256 = "6cd2392fe589ea834e45044e00dace3708865b8ce4bc887df548bca605e5acce"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcom_err-samba4.so.0.25"
-sha256 = "47283a2ce262b1fef114ffc85c62412badf032044e721b46c1723d3013738b5e"
+sha256 = "6cd2392fe589ea834e45044e00dace3708865b8ce4bc887df548bca605e5acce"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libcommon-auth.so.0"
-sha256 = "14a61bc9935471abc710eaaef9112b150e41f2cc91454aa0e703763f3eae61b8"
+sha256 = "43cc5c20096a4bf8e1f73a536ca1c1d71568cc4f895252c5dcb05e92598513a3"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libdbwrap.so.0"
-sha256 = "d0abda5285c95f2d22b984cb43221776308d0b02aa112d0e729af0c734c6d7cd"
+sha256 = "85f4241dc5e5d71ac9a45c797fdf2e0ca9dfd33baa953ead9bc746727d001976"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/samba/libdcerpc-pkt-auth.so.0"
+sha256 = "170ab3bc363740aa710e17c9dea9716f8dc61408805554cd10410ddcc1ccd94e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libdcerpc-samba.so.0"
-sha256 = "49b692e2a10085f0d24eb505f6bd0e7ed934c74dc753530c62b73e46c22c3518"
+sha256 = "558a4b86cf105e8f58720f718f13f1222b35d576350ac6d198dc9004f5ac008a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libdcerpc-samba4.so.0"
-sha256 = "4ac5f482aaa1d9a50ff56f61c4d16e48bd0e8a79894c3bf976f676996f440aa4"
+sha256 = "f069707cfe3b7d84656c1bfb969df8dfbb27e767d2c797d533b7f84e23e9bf7d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libdfs-server-ad.so.0"
-sha256 = "53a60350f910b3ec149c4b71c6447e9272a4ae1494ceda6f2c030a67bef793cf"
+sha256 = "ea245d101259b994da4d3eeb8f159032a935257cd2330009795889ec92cc02b0"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libdnsserver-common.so.0"
-sha256 = "392401749194e6652bf4651c0be474d9c8e9b73880ffea4ab9ff3a86e3f4288d"
+sha256 = "0756885c7d199e883d994e0f560f3a5089d8dde1b318d58d17e50c8dcb2c4dbb"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libdsdb-garbage-collect-tombstones.so.0"
-sha256 = "2c392b429b89d13a5c52766e6cbb2a1de649a321d2c40b1c4516764a4dd72157"
+sha256 = "3e4a1e32ae510f5236dd73de02ec4f830107dd56841ee51bebfaebc45f9a1cac"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libdsdb-module.so.0"
-sha256 = "52727d53ee8ec59efbe2676ca54d66b7db2ea17265f9a719ac056a9787aa12fc"
+sha256 = "bbaeb82bcc844888bfeb290dfcce6bc1c34746eb045a0a9f32700ffa94597e9d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libevents.so.0"
-sha256 = "7dc4d7d6bc6e566bd0972495a09849ce9a91cfc2816997fa9f08feefbfcfc758"
+sha256 = "27f19ec658b3bed9973a161c548bb447a6b178c674ca495e0904529af749c2ce"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libflag-mapping.so.0"
-sha256 = "7cf85eabe7ab48b2c0bc6fcf24be605f6d0323b27088bb5ae26ed937b2a81e42"
+sha256 = "22c543236c3012d1d993ca46174be0cc4f319fb50911dc13622f3e722ea4d35e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libgenrand.so.0"
-sha256 = "5920008a398c693aa80a1b4ed2fddfe7209848bff3e0e035cd65ea447a71483d"
+sha256 = "7574c6cca54b65d3a55cfb9f0bda405eeb5c065c5294055010702459131e957d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libgensec.so.0"
-sha256 = "2ed2cf94a937053fe90bafdafc7df3e29ea74ea29c3793e157859c88a6639703"
+sha256 = "cc0e229c5e9323e27d02b662f2dec55ed11f3c27150c14a071076b841406b1c0"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libgpext.so.0"
-sha256 = "26062a8d89007831094ecbc457e9e49e4cdcf0c9b177326fbe6c7e36fb391686"
+sha256 = "13fcd201c31ac39762da6b0044a6eed7e5a730d545aac1d54c6f5a2df9aecea9"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libgpo.so.0"
-sha256 = "6f401a253da2b53684b99879aa6665e26177b9bed120d2882411c28c97e59e27"
+sha256 = "51e035f69b92bbf35e2d5e73e8332ac66d31c464931464cebeed15177ee9c8aa"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libgse.so.0"
-sha256 = "9c7a603e2e10266dd0064fe4f7f3e6c7287f1efb27259b3645a5dcd005d72926"
+sha256 = "8e569fa646f13159705a089fc91c332027296076a6549eeb35a3dcbeaf63ce83"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libgssapi-samba4.so.2"
-sha256 = "e7c87aae405b1f2ba159b0aff487b678072bddd6e1ebae6beef204793d8faa23"
+sha256 = "ae0a7913a2d844cddb4cfc8b0468b076361a3a9c8f8a1b79220230f8ad24ed19"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libgssapi-samba4.so.2.0.0"
-sha256 = "e7c87aae405b1f2ba159b0aff487b678072bddd6e1ebae6beef204793d8faa23"
+sha256 = "ae0a7913a2d844cddb4cfc8b0468b076361a3a9c8f8a1b79220230f8ad24ed19"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libhcrypto-samba4.so.5"
-sha256 = "c554c785d8fe10afa7bb06e8a431cbaa4d51796c8dddd540a6aa66745ccb7798"
+sha256 = "eff47e3615aa718e3e4d2f7a8db08a199cfd622078bf47b3849129269f6ef711"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libhcrypto-samba4.so.5.0.1"
-sha256 = "c554c785d8fe10afa7bb06e8a431cbaa4d51796c8dddd540a6aa66745ccb7798"
+sha256 = "eff47e3615aa718e3e4d2f7a8db08a199cfd622078bf47b3849129269f6ef711"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libheimbase-samba4.so.1"
-sha256 = "7cdec9029375a3ad48672cb1e908f87b6b3354dd138f28b2964dcf13ab6299e7"
+sha256 = "b3dea85a4e4d45e9f4be36ca4728dec4ec425c6121472553acee104aa46514d8"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libheimbase-samba4.so.1.0.0"
-sha256 = "7cdec9029375a3ad48672cb1e908f87b6b3354dd138f28b2964dcf13ab6299e7"
+sha256 = "b3dea85a4e4d45e9f4be36ca4728dec4ec425c6121472553acee104aa46514d8"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libheimntlm-samba4.so.1"
-sha256 = "98b3e8b5aab33669399530c83b971810bca30993f7e2881e027e2b4edf14f403"
+sha256 = "856165c8ba7dad10b14008e78d4b25cb297f489d56e64deb3e51906f51b3fff9"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libheimntlm-samba4.so.1.0.1"
-sha256 = "98b3e8b5aab33669399530c83b971810bca30993f7e2881e027e2b4edf14f403"
+sha256 = "856165c8ba7dad10b14008e78d4b25cb297f489d56e64deb3e51906f51b3fff9"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libhttp.so.0"
-sha256 = "85cd44a2f69fd00c9dbca60be621b06516e518eaccf2702bb900d13d78ee3e01"
+sha256 = "ff8171fdf53b9de516f88794cd7533a87c293c09aefde5fc305fbc8c74a7ed48"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libhx509-samba4.so.5"
-sha256 = "1ce9837f4c9cce19ee5131ae44c7d8a2a5cb82dae1faeaedcfc2bb289d19eb8b"
+sha256 = "6e584c6418d2268d826f9f0b848736ff7fd7a7cbf0fed82516362f16bb62e934"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libhx509-samba4.so.5.0.0"
-sha256 = "1ce9837f4c9cce19ee5131ae44c7d8a2a5cb82dae1faeaedcfc2bb289d19eb8b"
+sha256 = "6e584c6418d2268d826f9f0b848736ff7fd7a7cbf0fed82516362f16bb62e934"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libinterfaces.so.0"
-sha256 = "7bb58bd2acbfac1c23f8558c483d38dd08d4a4a59f3d5ddf84178b434b9f555e"
+sha256 = "7675cef2003ba3fa49bc7ac3bd414fa53d09b16f216d8a7d30d2eee516c03169"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libiov-buf.so.0"
-sha256 = "05747febd3784ee1dffb40bdd3dab8556e2a3d2e05eba1369f2ebbef5965aca9"
+sha256 = "54298cff13c9af4e4b30448e390da2e4db0170b9affb325fbdb4c5c5b91e4b36"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libkrb5-samba4.so.26"
-sha256 = "ba93b6590110702cbcf550e953ff430c99421ec77807fe839a0534a75fb56cf0"
+sha256 = "0b1b42f4fe319d19ee7fd96abab298d3d8b9241aa3d0ec8d2a609c65ab6d3b0a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libkrb5-samba4.so.26.0.0"
-sha256 = "ba93b6590110702cbcf550e953ff430c99421ec77807fe839a0534a75fb56cf0"
+sha256 = "0b1b42f4fe319d19ee7fd96abab298d3d8b9241aa3d0ec8d2a609c65ab6d3b0a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libkrb5samba.so.0"
-sha256 = "fbf249c6d91f9eed53ef40f0371ee07a78487465c3f421b66cb2c760ff452e15"
+sha256 = "88104be7321c4a293e20b4ca65bdde520b14715cd2a64e02014ebdcf4298c936"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libldbsamba.so.0"
-sha256 = "5de41307f2b3c1f218b6a399dd7618a4a252a44f6558493a848eea0392ffec15"
+sha256 = "ee5b2f579a4bf8682e5f37dc5dbfb67a4fb370487853cb2ef322ca553ea34a9f"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/liblibcli-lsa3.so.0"
-sha256 = "8aaf2af00669007fe0e4a0d11e03156310dcdcec65b8bb3ea77e23689d3ce198"
+sha256 = "8c3d8d0d62239a4a776ee068ee6276ad9fae2175b44fa1cd8d2f487ead45edce"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/liblibcli-netlogon3.so.0"
-sha256 = "b751bb55d4fdfacecf48a621f79a31315d78de4d3a9a3d3547c5992ed3b00144"
+sha256 = "c37cf2c14cf321fee8a32fe983c7eb0c54cd6dfd3d8b78f85d1b92dc926f9bcd"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/liblibsmb.so.0"
-sha256 = "1c1dd37fd5b31373c015b2f012c3eec7b87aebdfd39097c0588383b1fe1d2022"
+sha256 = "8122d9c9480ec8ea0f48a429e971c818ce60529110ed030b4ef6443353cc6f19"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libmessages-dgm.so.0"
-sha256 = "a6dc38384e747e282ece61304a457129b1d26a3fd598d1d88aae57470e1f2ae3"
+sha256 = "bb1362cf8f30ad8b7a0bcac0e62a3a7847316d65123bda4f6c8ba474eef4868e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libmessages-util.so.0"
-sha256 = "a227386db7e5b4610d639afc986327c9c16f8b601d489c5dd734089af921c957"
+sha256 = "9832e4957647abb5e33c2d62f8cb460f0ae4d70a46b8c78d1722a9547637ad6e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libmsghdr.so.0"
-sha256 = "0b2d1d488ad2e47c96a342559b125f79fb13cbf9a58731094b65fad6659edd8c"
+sha256 = "eb83b4f31896c4487501bbc4bebab7406041932f0b8201df2a0519de723b62c7"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libmsrpc3.so.0"
-sha256 = "3ee50e8ebcf05837a2de8b815dd2f8b0f00d156f596dcd8594250d7b2746b403"
+sha256 = "587a776c9e0422ddf880c1b65f788e630835d4aa406b659f7084e29e14d14442"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libndr-samba.so.0"
-sha256 = "e628203157fed1a0c6d440a64c5674c08872b7010bb66fab51cf50f4461de4c3"
+sha256 = "ed19c58cd05ad94e1ffb9d311691ee49780f8910139ecfb4d4b28cef0f2bb0a7"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libndr-samba4.so.0"
-sha256 = "af103941c0c45cfecba213646f142a443877f71daf2d54f2d5b50d6a99e5ff80"
+sha256 = "30bcb01b41ccc3cc609979c32ba8b2dc55707aff0995d8a0e7a2bf076114262a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libnet-keytab.so.0"
-sha256 = "0a92580e4d9e75bd40fab032fa6404903d25b534a986da3ef6f8dfa3fc859370"
+sha256 = "f12437eecce313d8dfba2f5367018ad94154ec72e5963897733478d36371c4df"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libnetif.so.0"
-sha256 = "057e318707863f63a3e71cdb609001183f3cb4f13a1548df3add3c421419405a"
+sha256 = "ed3af6c5b7d82067356a96c6336d1c636932c34508e7488afb2380ee6f52c62e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libnpa-tstream.so.0"
-sha256 = "296020f0e708069eaa85afffbb74498e2b0f7a6e3bcd3312dda3164b448b7061"
+sha256 = "d6b9bed42003192055ae7472c7caf92eb7f99a766996524c0151c1a992aea917"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libnss-info.so.0"
-sha256 = "a2d6c28482f8f9d6b8224167b2279b561b2e4f8db38e9d78358b03582b558885"
+sha256 = "99a7b8ccae6e64c3e20a7fb4ea10dbfeb2dc1c3c3755f951243e623f673c2786"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libpopt-samba3-cmdline.so.0"
-sha256 = "c1b390b017845edacd52f2a1cd53a8ad696379444f265e33b169a880abc22b75"
+sha256 = "5253fdf69ea4187c1ee8b9367162e208470a31b83b73e6b8348225387bb484cc"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libpopt-samba3.so.0"
-sha256 = "1e271627c5bdfff4e5f86743938f5bf67c0a85dfa8beeafbc1818c549c0dc746"
+sha256 = "e5be428a43938dc635a16c238626b9dd2258f9f6d80fc356b1d9b30be1d9bde6"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libposix-eadb.so.0"
-sha256 = "b50413929d91efd154a9b2419bd28599c50fe2fb6f1e2fed5d04029a2721e14c"
+sha256 = "292caa5f6eb1a11c2155a36227bfa4373fc31d2f992bee3a752172875b42e125"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libprinter-driver.so.0"
-sha256 = "065a1d75160163b30decdb64cb335ecddb7cda52007e8c7e541979301145a73a"
+sha256 = "92a50c5eb07beb8cc4fbc9e85005d33325d384c80a2593106a8c9635340911cc"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libprinting-migrate.so.0"
-sha256 = "8c6c9d663ab5317091ed0518e848538ee6fcb54b59660eea3664fc532f83605b"
+sha256 = "1166d8b8663e7f87eaa3d5caa623f20fa936eee2ec5ab3c60608e3a36a20db88"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libprocess-model.so.0"
-sha256 = "2a7e1cc22a1bb5c7769e43388480573df8c638fbf4a43f90f6fdbd44eb52fca8"
+sha256 = "8844db54dd9b9e6646b52d0e92fbc2876f7f9d2cf038101b627eb928412ff078"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libregistry.so.0"
-sha256 = "b8e376d20d32cc8cf300b4b8f63cb49a7f1abd3b5112a8274dec261ce2b12e95"
+sha256 = "3a4e847bd4327037f804ace2057a585ea9d1a0b5fbca0b3252ca3afe63eae1cf"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libreplace.so.0"
-sha256 = "05450a47349c84df3f8131d14301485b5a2318080bc82736b7b79e69785f710c"
+sha256 = "09b556c0cbc6b681dc06085f8977c5ea6287aa8582643d67987ac1f5da23ccc2"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libroken-samba4.so.19"
-sha256 = "3381fddb08574ed0b0bc9116445daad4ecf55a822737368fa703c5ca580a5d8d"
+sha256 = "aadab1c5f6eaf82c963c2c240070abb71814db67e35f387e19c66122dbd20581"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libroken-samba4.so.19.0.1"
-sha256 = "3381fddb08574ed0b0bc9116445daad4ecf55a822737368fa703c5ca580a5d8d"
+sha256 = "aadab1c5f6eaf82c963c2c240070abb71814db67e35f387e19c66122dbd20581"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsamba-debug.so.0"
-sha256 = "b45f54b2d3d52d1b97c71b37bbd925d2afd63936303a039d2c7bbfcb4660442f"
+sha256 = "27343a59b7b71b8fe9467cf13c6fd62b17ef558799b1d9e71e6040878f0e8359"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsamba-modules.so.0"
-sha256 = "6aa75ec2dc53db2ebc5187405cc267efbb7fc88dd3c49a1f1888fece4437e779"
+sha256 = "63ff06c1385a724e67fb9567af079111d46553d244e6ec2b3971c3866538a7d2"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsamba-net.cpython-38-x86-64-linux-gnu.so.0"
-sha256 = "27617445823316bdc21d6eff84306174ae844506ee915a568ade2df234bfe2e4"
+sha256 = "d77d51a24ce1d6ce5aa1fe28138b5326c431b663a1a4933d44a336199de9e58f"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsamba-python.cpython-38-x86-64-linux-gnu.so.0"
-sha256 = "2c5d268a49fedd5f705fd71605f30ad54fefbe32e96c95e85648f0dc953cb0ce"
+sha256 = "54b331155c17e100ed01240fe8a568f1e36a14816f1c30a857438fa003be6913"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsamba-security.so.0"
-sha256 = "3ba3f060a060a4f44d99b0af2b8c415b3a1e22da4eefb79e80691f906ab989ba"
+sha256 = "8568c1790481d674e5f78ddc35ae0320725d82601898f8bd5ea2996122968c73"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsamba-sockets.so.0"
-sha256 = "b9cd8268a70af0ef9bc1bc651add772a3db3b05917445b00f174ba0bed3f65b8"
+sha256 = "057e0ad10486ade113691211080fd3dbcf272b444ffddd426c8935f4eaddaa3f"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsamba3-util.so.0"
-sha256 = "bbe9c667ca940be982559ec0fa1810fd12b91786096580c2bacd5859ac6b3580"
+sha256 = "f1c18422d5bd633efcfb1c2e0784aee70eea9f77829815869ef89684b58396d2"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsamdb-common.so.0"
-sha256 = "e4f423a60198c77bcc33ae62ab4ec33515ea28d35bcc8dcf39e7c0541d05e52f"
+sha256 = "243e4398df439360bb24b1ab7066bb2f7ce1d03b3ba680c0e75520882e9e471d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libscavenge-dns-records.so.0"
-sha256 = "7984234626ac44cc67246089d83b01cd9f86b9343d18ec4390a51df95db05353"
+sha256 = "08acb1b049022684e64259abbe3dd0c73f77acb92151e99841e01c8530fa7d8f"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsecrets3.so.0"
-sha256 = "885617388a3bfde429adcd8b5803e958331d71592587fb6d07c6d3edade2c3a3"
+sha256 = "2a139c2291ae92ca4a81885576c75fad86d8573971c6b2596c5a80deb732204c"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libserver-id-db.so.0"
-sha256 = "d986a2618b1448d668dae4685e37e2c9909918db7a29aa20ff1a7495b13e659d"
+sha256 = "f106d549d2b173c267f6d6b1387115156f97ea8c8fc8bd2a357fd9467ac6726d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libserver-role.so.0"
-sha256 = "004070b7f1187c10c8f12fcaedcebe4d295650f5a9d0fc476d6e83decd039bab"
+sha256 = "151cd5efa2655109ee0bd44752d8615589089b841d567bbd22ac692dd7ef1447"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libservice.so.0"
-sha256 = "00595fc68d1966757e7cf373a625c3cf45accbd3220c41ae70e01bf2f7b1c329"
+sha256 = "0434fab76180760f1be86be2851603080bbe188f9f3edaba5d52c4613e9065f7"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libshares.so.0"
-sha256 = "efffa26af0e058bb557d549f4c400be30d69800e3d48d9b81d71064e039b7d4e"
+sha256 = "2a66e99b6b7e81bdbbb4a52d52151cbbe9bb619772d90c0c16192bd50bee59fa"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsmb-transport.so.0"
-sha256 = "8767ab7dcf5aab3dce5d52316285d3ef2650e2bb7ae48fd16c28309850d259b4"
+sha256 = "838d5a8d87b4e64cc634fdbe9df5c71f16551e8e5705a9fc24c3846ec8503de6"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsmbclient-raw.so.0"
-sha256 = "91e580a46aad5621c0eae78030bf0528e8543a7acf98b0624da7255cb2084c17"
+sha256 = "c4472d9ed0d7309c2ba3e4700c5c11badc41cf48a7a2c355117b21fe83a0943e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsmbd-base.so.0"
-sha256 = "8c7067471295c71883e82e00d715903f4146c83a66a24931e2269556d7ed7b04"
-
-[[sgx.trusted_files]]
-uri = "file:/lib/x86_64-linux-gnu/samba/libsmbd-conn.so.0"
-sha256 = "5f7e0e7721beb1f110abe294546a15ce219fa2992090494b4158be179c7ca56c"
+sha256 = "32829cae3732328d57747cb0cde9cb6db85fbaeb6d054d5298f549be70429e8c"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsmbd-shim.so.0"
-sha256 = "5ae697da7a841efadf1211951df7417b20dd4411b97c3122ff2ec3cf674fb12f"
+sha256 = "e54c4e0462e818dcf98d4c032420af36e18a76bfd34afbbfb12d640c7ac4aa36"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsmbldaphelper.so.0"
-sha256 = "4fe0357a3d6a3e235ea62bdacd735dfa888250d9238f7bf45e7d9b8dca047abd"
+sha256 = "7de566baee1404f20a2112fe150fc2c06f8cb505d87059c2b65b10970106e33d"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsmbpasswdparser.so.0"
-sha256 = "d5206776bc7061c378a776a6fe7388c8175d28adaa978fe11c0e7da731f68ed2"
+sha256 = "b3eace25878ed25e32beae0756beee2a118a627af762783b7594e3b1ab80097e"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsocket-blocking.so.0"
-sha256 = "cf26697088ce294d3525742f646b3c5c01ed9ee4e1be1d928fc84042d40f0cfa"
+sha256 = "a46b82a05eba9c96feadcc981b10b884456c1b633234a3f619d16e3bfcd0001a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libsys-rw.so.0"
-sha256 = "dc65ab6ecc98d663a72dbd4def0315d22cb999eaebbc8a6bf3ef738e5093b22d"
+sha256 = "0ce45e328d2acd6eb6b442ce3846248ee30ca96ebd3cdc2fce9eca8036787314"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/samba/libtalloc-report-printf.so.0"
+sha256 = "efb7904bde0d8c87a3b74787cacf3859f1f8029842dc598b9db863125cb6b983"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libtalloc-report.so.0"
-sha256 = "942d86710a48bf291cf5542721917c30eb271a25caaacf507961cafc9c752385"
+sha256 = "2a1c71626d9bc561bf7c2681007be7ccd5ecd52a637e5612bfc810320d02c1b0"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libtdb-wrap.so.0"
-sha256 = "15e891a52ca0987ebb82417f2d19ef5a0c8132bc5cc1ad91c4c6816ddfcf889e"
+sha256 = "51a6054ae76566c7ac2654f07f57b9a733c131c2591eae6e5663367eac634eaa"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libtime-basic.so.0"
-sha256 = "f0e2e11bbb8b49832ae5a10fb25f9a580c28299863d94c5ac8efc2da2ae71332"
+sha256 = "300db18037151fa859f74c892142e94375a92754784423ac05e75f3b83ce8def"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libtrusts-util.so.0"
-sha256 = "4512d273b0a753d9cd71c072cbc868dc92585c04e37542fd1913099a3d02c722"
+sha256 = "10bd49ae1e18ed1a7a8600974db1449d5821dc66f4a862659938a6150ca682eb"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libutil-cmdline.so.0"
-sha256 = "57a485613050c83c0fcb71f0e971f3cdca06f6816ca7bed4902f16fe19e3ae40"
+sha256 = "f23de95918be3950a3735cf8f2859c869f24871344de38a62856e575466365a2"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libutil-reg.so.0"
-sha256 = "c1d99311f8282ac9733cb0e2e361c4a67c21f4f08cf572361c7245b74e245c9b"
+sha256 = "e47c0edf995ff41fc00bfd8ddeff8c5a2602a5784506a5d2adc4f26f450e2a5c"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libutil-setid.so.0"
-sha256 = "e18f64eea7a3e78be1cac382e7abdd0f0c4c0b153cf11680ea65c5bf74f74dca"
+sha256 = "01dadceff21f03ca0587ccef00861733d469672be3735e93ac91e0d8a642a39c"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libutil-tdb.so.0"
-sha256 = "6106cda1d65f4355b821191593c0fda6b9fe76316012a5597ac2b864b02eb419"
+sha256 = "f25b233e4110ffbcf7d8aaeed6e263c62d85fb94a313158945b2df61e1ff8eb7"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libwinbind-client.so.0"
-sha256 = "961a20beb1e5ef54647d9c514e7bdf1f6b410a4f0039e2665cc2a9db4e346f0e"
+sha256 = "ca7ab282a048519384a40890dab7328752b8b25d5daa3f2bd6a29e6092fff4ab"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libwind-samba4.so.0"
-sha256 = "651d6388853e5cb4120c336c7e07511aa067a9b8d8a7582028a1dcc2770ef0f7"
+sha256 = "176ccae64b209b2dc8b892cc2268b1456880ec308cecaf2d19c55d5d1f61e884"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libwind-samba4.so.0.0.0"
-sha256 = "651d6388853e5cb4120c336c7e07511aa067a9b8d8a7582028a1dcc2770ef0f7"
+sha256 = "176ccae64b209b2dc8b892cc2268b1456880ec308cecaf2d19c55d5d1f61e884"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/libxattr-tdb.so.0"
-sha256 = "13fc62e3464f0e6cef54b84305036fc24ae9d01e6f1f9e123b925acfbf797738"
+sha256 = "81edc9d4bf48bed69182c64a2c5896949e66cd90b2a72a04b165af7dfd01e9e1"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/process_model/prefork.so"
-sha256 = "e338a3321e0e935b4f464e9ae214405e93bef61a3d846e5f1553e9773c3061d9"
+sha256 = "66ac0595edba44341f12a715e961f1cd0f84dde1742fe5099bedcdcda6509bee"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/samba/process_model/standard.so"
-sha256 = "40787cf30f43520146412d71dc14d6d2d79d0c1701381116b780bf93349f0ddd"
+sha256 = "77fbb4bcab4a158c5c79590b7b0de363eded18aaf4bbba1d0c73573c91cd6aad"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/sane/libsane-abaton.so.1"
@@ -31898,59 +31946,59 @@ sha256 = "96493303ba8ba364a8da6b77fbb9f04d0f170cbecbc6bbacca616161bd0f0008"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/libldb-key-value.so"
-sha256 = "94f7a75192c2314b1a6400c1d42d710b3c0c386de1578bfd8d6b6411df81b58c"
+sha256 = "0934e41773abe4782db73c5766125a89c48a0dc8e929a0b893d74b31d2181d9a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/libldb-mdb-int.so"
-sha256 = "383a4ba620193a046d3ca2339ffe6f2df1a7658d5fc88405fd96a01ce772b58d"
+sha256 = "c0cf6bd6acd92b24fc5af9d56de32650b545304db0d0ffc4328afd1d4f1f370f"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/libldb-tdb-err-map.so"
-sha256 = "f14992f1a31c83206a83ee7e447f2c1c680857f3a745aca0d70f14bc58977163"
+sha256 = "5ff61e94de1ae6904f34db3e976f0ae8652e4a413458396386ba2ce0e389b834"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/libldb-tdb-int.so"
-sha256 = "1dc5f3b93cff8f3f79dd43c3dcf0344ca86562176f9ce682c942d608acf731b4"
+sha256 = "1e5aa12c31202c45b93c6187bba32dfe4111f16466329f42aefeaea6f9780573"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/asq.so"
-sha256 = "418769ab0bbc2e584672b598662fdb87c84ba39d749f16d1c29f047f56ca9c85"
+sha256 = "d2a8fe60afcb19a1db32481de6f0321dc90fe3a5522662b3605ed577691faac3"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/ldap.so"
-sha256 = "211ce1234e2e4515303fab9a675e36b44aaa8f68b131412f9c45e2797b4b3def"
+sha256 = "d4f63988b79b62832c37ee03b6117c59a2cd3f3e76097070e3e91c40f55fc283"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/ldb.so"
-sha256 = "a00ec4cbb0c22f63b9af502d8772bbfbb0742ca54f6fefa43c7076ceafba2ad6"
+sha256 = "bddc1273a945eff25d311476e2436a9cb017c8f7c48d46e76ea55a000d1840f9"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/mdb.so"
-sha256 = "96e178c767871df0f3eedee1065b42b81d9b2ffd67b8e54556bd7c48eec90862"
+sha256 = "40cca44c16f64095a6e762acbc07f9f3bbf6ee727fb79585f43e64bca8e6709e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/paged_searches.so"
-sha256 = "20d0284ebd8d172d62ade5b8f76ae7e61076cdbaf4ae4259740edfad324a81cf"
+sha256 = "0a71c55a64b00ffb6295883c1a7d206298dc2f40e5db0e525f93e8fcbe98c2fb"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/rdn_name.so"
-sha256 = "e8b10f1b8d9e37390408cfd66f93ba90bfd9fd89d142acc00d90d96731a78724"
+sha256 = "830f97d340d6331801cedac56e39a5fa5390ed82b751a05546f528f1886c61cc"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/sample.so"
-sha256 = "f6e74d5dea101748f1680d7b09f280aa9bcc2332f947403c60664f7b64251a51"
+sha256 = "f14ab66eaedfc5e7334f108969f029d61e5fb61056501d1493621d99ac616a0b"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/server_sort.so"
-sha256 = "7e8bc59939dd4bd62136a9f3266a8bc199ca871f8f5ba73e63c6863cb064bc3d"
+sha256 = "103354369e742eb1e35805284c1374302206d99e2a2a2e2047f43748ca548eb4"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/skel.so"
-sha256 = "77f8190f4296013705abd1bc8fc2c208514b86dadbdb055732e496fbb4d00c23"
+sha256 = "497242d9cb4df17b55197f356dbed450d0d90986bdf138adad709408f3103241"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldb/modules/ldb/tdb.so"
-sha256 = "2d5b8347abb76f59f5ed2f744e8fa6dcef3efc8cfaa88a134a785f46f07307d6"
+sha256 = "1126273de3350bb0bd0c4bef725f6470108629d9bcd8366d3f29cbbfe5bed6d6"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/ldscripts/elf32_x86_64.x"
@@ -34194,11 +34242,11 @@ sha256 = "c2b29a4ecca1e13ce3de5fbf858a7bc4a672a8ab60accabca29d786df7b25c9d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc-binding.so.0"
-sha256 = "f648f3d1c5f82a39e6ea99ebbeda7139b552d65653a9a4bf9a2fe32b89eb2821"
+sha256 = "7d82b6429f684ca57c1e8d747208fbbd4cac22024e21c388fdc20fd76e9cab94"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc-binding.so.0.0.1"
-sha256 = "f648f3d1c5f82a39e6ea99ebbeda7139b552d65653a9a4bf9a2fe32b89eb2821"
+sha256 = "7d82b6429f684ca57c1e8d747208fbbd4cac22024e21c388fdc20fd76e9cab94"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc-samr.so.0"
@@ -34209,20 +34257,28 @@ uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc-samr.so.0.0.1"
 sha256 = "d97ebdeb31b31bec45360c72dc80c65861db94363b663f7f1040c6c164fe5c87"
 
 [[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc-server-core.so.0"
+sha256 = "1ce19610b43e71b1a85239bcac5fc957ca6cd62645cdd91ed21ada33f40fd937"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc-server-core.so.0.0.1"
+sha256 = "1ce19610b43e71b1a85239bcac5fc957ca6cd62645cdd91ed21ada33f40fd937"
+
+[[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc-server.so.0"
-sha256 = "a39bb4f870cf8bae6599c4adf7cf9bb42a89bb6df19b2606e1d102e830f4050b"
+sha256 = "ecb426c3b4ab6276ae392db75124ca3fa6ef5d0f3d82c8c26c9b06be4934e538"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc-server.so.0.0.1"
-sha256 = "a39bb4f870cf8bae6599c4adf7cf9bb42a89bb6df19b2606e1d102e830f4050b"
+sha256 = "ecb426c3b4ab6276ae392db75124ca3fa6ef5d0f3d82c8c26c9b06be4934e538"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc.so.0"
-sha256 = "670abbc11c2ca998afab8e93c1dee6a510f426d49f7521b78077ab6c5e07336f"
+sha256 = "11480b9c51fb8e65271a531a447acf822eab1b1c7de5d6195e3239d5e91f681d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libdcerpc.so.0.0.1"
-sha256 = "670abbc11c2ca998afab8e93c1dee6a510f426d49f7521b78077ab6c5e07336f"
+sha256 = "11480b9c51fb8e65271a531a447acf822eab1b1c7de5d6195e3239d5e91f681d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libdconf.so.1"
@@ -34866,19 +34922,19 @@ sha256 = "e1de0b73a3471a618f950c92ff43060beac1271afb2cfad2c5c7118dec54092b"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreebl3.chk"
-sha256 = "260cfc74618a6e9c38c46369b653affcfdc204c2f2cb0393748e67dcfeb563dc"
+sha256 = "b4624b36cb1f6c7081205b1fa4237b2e6f1a7caa44c91fad268bf598460bacda"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreebl3.so"
-sha256 = "1172d618fdc5c7649d999422cb7f2653beb334d4f290732579f511a17f3ac21d"
+sha256 = "534dee1aefb4c830323af8beca35658af6536357be0bbb6535c394e376b3f8bd"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreeblpriv3.chk"
-sha256 = "3e3078e4f0493191ca44f5f1503464afec8cb80ee22e1bbb101f0a1a6f8e3a2a"
+sha256 = "7d898e2f8629929b777211308d7e3e4b58906ab4575dafeba121e8daa3e81fcd"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreeblpriv3.so"
-sha256 = "71c16eb306f9600c688b39413f2b2e2ed3ab597c782f8599388ca287dfa13942"
+sha256 = "20eeb25a3f84670aca08d1c22f7b02b4ef7c029b22e0d0cd93a44c8cb924bb31"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreehand-0.1.so.1"
@@ -34890,19 +34946,19 @@ sha256 = "9356b4e39914e91c619aaa6584321525eecd1654becfb856d7712b7b1c5e0d0e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreerdp-client2.so.2"
-sha256 = "5d83dfd4a764fdb4eb06b91333f20fdc94a7ffc86c0b3768b304183ba34877a2"
+sha256 = "2952e0f20a5ecc7e39afc872682ec38641c994cdfab301a1ca0bf991f8dfb445"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreerdp-client2.so.2.2.0"
-sha256 = "5d83dfd4a764fdb4eb06b91333f20fdc94a7ffc86c0b3768b304183ba34877a2"
+sha256 = "2952e0f20a5ecc7e39afc872682ec38641c994cdfab301a1ca0bf991f8dfb445"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreerdp2.so.2"
-sha256 = "232ecd4ae54ef79e95802a2c501f897649185576d22e27fc4306b21e224a7366"
+sha256 = "6fc7623d67012ef0ab3c2ea2073fd260332a723b317f77d264a0258668db38bb"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreerdp2.so.2.2.0"
-sha256 = "232ecd4ae54ef79e95802a2c501f897649185576d22e27fc4306b21e224a7366"
+sha256 = "6fc7623d67012ef0ab3c2ea2073fd260332a723b317f77d264a0258668db38bb"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libfreetype.so.6"
@@ -36162,51 +36218,51 @@ sha256 = "ecc9e112c9d17b09cd72f2c2ca17a56c3468ca62d62959fa52efcb8b7f8db2a5"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicudata.so.66"
-sha256 = "a46f7385244a9d93140c0685059acb6ba1568f0989874623086c09021b28901d"
+sha256 = "50b039da86ab40fed973954892aa52b0b833127b94103ec62b71c1e0891ce5ed"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicudata.so.66.1"
-sha256 = "a46f7385244a9d93140c0685059acb6ba1568f0989874623086c09021b28901d"
+sha256 = "50b039da86ab40fed973954892aa52b0b833127b94103ec62b71c1e0891ce5ed"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicui18n.so.66"
-sha256 = "c05137d241e8df4efafb29268dfc8429dd8073a9ba33337f0c1231cc14ba8af1"
+sha256 = "e6b2f6fdf6f473bd529526a06b1e1bb6dab4a9998da941346711f1805dd42816"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicui18n.so.66.1"
-sha256 = "c05137d241e8df4efafb29268dfc8429dd8073a9ba33337f0c1231cc14ba8af1"
+sha256 = "e6b2f6fdf6f473bd529526a06b1e1bb6dab4a9998da941346711f1805dd42816"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicuio.so.66"
-sha256 = "86afdb8d1ce7680a9221c45fa8aa17d21c6b9df696e75e97d5502595161bc27d"
+sha256 = "d60e57e18b70a3e71a28f5b23af8bdc239e2a0d9cd4f3d77094f2c50746bb6a1"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicuio.so.66.1"
-sha256 = "86afdb8d1ce7680a9221c45fa8aa17d21c6b9df696e75e97d5502595161bc27d"
+sha256 = "d60e57e18b70a3e71a28f5b23af8bdc239e2a0d9cd4f3d77094f2c50746bb6a1"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicutest.so.66"
-sha256 = "9c5670a28419640175c32eaf757999d82f129d6ee5353dbfcb6c9b19a5c0b5bf"
+sha256 = "8e998364ad7b3e26c69332b4684d423e5c4e12723455eb1abcd6ad033d4cb446"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicutest.so.66.1"
-sha256 = "9c5670a28419640175c32eaf757999d82f129d6ee5353dbfcb6c9b19a5c0b5bf"
+sha256 = "8e998364ad7b3e26c69332b4684d423e5c4e12723455eb1abcd6ad033d4cb446"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicutu.so.66"
-sha256 = "f88820b1a261a7c43864f35796fb9b037754419b2b3eba07f40740d2aafbbecc"
+sha256 = "d61f49b6f693eee3bd68a426fe13f467ac59296ff8ea2dc26a2056af2a57eed4"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicutu.so.66.1"
-sha256 = "f88820b1a261a7c43864f35796fb9b037754419b2b3eba07f40740d2aafbbecc"
+sha256 = "d61f49b6f693eee3bd68a426fe13f467ac59296ff8ea2dc26a2056af2a57eed4"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicuuc.so.66"
-sha256 = "97b89b3fcc8dbe8db72d3ef5f2300346bf60db5e3d119889deaa221334340e9c"
+sha256 = "d41e9287614412b6e95f809773a5f0f86ee3763a7d5f0db4856e79f64f7c8dab"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libicuuc.so.66.1"
-sha256 = "97b89b3fcc8dbe8db72d3ef5f2300346bf60db5e3d119889deaa221334340e9c"
+sha256 = "d41e9287614412b6e95f809773a5f0f86ee3763a7d5f0db4856e79f64f7c8dab"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libidn.so.11"
@@ -36558,11 +36614,11 @@ sha256 = "8d156993c4d72f11c35d5464f86322c42f1071d7e3a556a9a30147cedc48404c"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libldb.so.2"
-sha256 = "e629301beb84469e8ae6ce0ddc333dc23f4e2a6171a052116e2abec21ac04260"
+sha256 = "79686bc6a9421dd52d53bfbba1252faf7b6a88c9968b201f35bcb3a717f9c01b"
 
 [[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/libldb.so.2.0.10"
-sha256 = "e629301beb84469e8ae6ce0ddc333dc23f4e2a6171a052116e2abec21ac04260"
+uri = "file:/usr/lib/x86_64-linux-gnu/libldb.so.2.2.3"
+sha256 = "79686bc6a9421dd52d53bfbba1252faf7b6a88c9968b201f35bcb3a717f9c01b"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/liblirc_client.so.0"
@@ -37082,35 +37138,35 @@ sha256 = "fa03e9eef85aa5f95a277bee08e0ede54fa02444500d55275effb983a3898c0b"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libndr-krb5pac.so.0"
-sha256 = "936698e58feed5e581a4674ca930858c9167d76f410c27f3b68e9694a8c5e2de"
+sha256 = "6209448738a75b3acb6d60097aad474ea99324b0c02dc46478c2ee4e107c9a84"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libndr-krb5pac.so.0.0.1"
-sha256 = "936698e58feed5e581a4674ca930858c9167d76f410c27f3b68e9694a8c5e2de"
+sha256 = "6209448738a75b3acb6d60097aad474ea99324b0c02dc46478c2ee4e107c9a84"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libndr-nbt.so.0"
-sha256 = "5961f2a276776192467bd8a45e2d400b9da8bbdaae3afb09a8cb87dee72d6877"
+sha256 = "f372c7ce99fce9faedaf15aed9528306d6f225b63f3105bf5469d67e886b344d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libndr-nbt.so.0.0.1"
-sha256 = "5961f2a276776192467bd8a45e2d400b9da8bbdaae3afb09a8cb87dee72d6877"
+sha256 = "f372c7ce99fce9faedaf15aed9528306d6f225b63f3105bf5469d67e886b344d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libndr-standard.so.0"
-sha256 = "e186fc31e94beaa5087d2d8c4700e5f9ff2652aa7904d3d3a275364f5ac4061d"
+sha256 = "049cd152d9ff7c290b75a201f917859cfd76818c2f2d352d3cda23b2685c7ea2"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libndr-standard.so.0.0.1"
-sha256 = "e186fc31e94beaa5087d2d8c4700e5f9ff2652aa7904d3d3a275364f5ac4061d"
+sha256 = "049cd152d9ff7c290b75a201f917859cfd76818c2f2d352d3cda23b2685c7ea2"
 
 [[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/libndr.so.0"
-sha256 = "7614fe75bebb7db133607c62b0bc9c2648e386ba646fa0d48306db3708a12553"
+uri = "file:/usr/lib/x86_64-linux-gnu/libndr.so.1"
+sha256 = "3e4cf0795f7f55ff4374a1e974918ac741e5a3e0849f22817317f17fae546408"
 
 [[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/libndr.so.0.2.0"
-sha256 = "7614fe75bebb7db133607c62b0bc9c2648e386ba646fa0d48306db3708a12553"
+uri = "file:/usr/lib/x86_64-linux-gnu/libndr.so.1.0.0"
+sha256 = "3e4cf0795f7f55ff4374a1e974918ac741e5a3e0849f22817317f17fae546408"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libneon-gnutls.so.27"
@@ -37122,7 +37178,7 @@ sha256 = "739f6a35935cdb260ce41ff5651632f0a1dca69b76c21ff5f8f9a981184211ef"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libnetapi.so.0"
-sha256 = "d8d192cc3c80a37fd96fe45a8161f21f2c3b9d3a1f001f7b958527326a833b19"
+sha256 = "baa200fd06b73af129a928a1eb4a2ee6d7931bff2d9cd126e691f3b589c7f5d9"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libnetfilter_conntrack.so.3"
@@ -37207,6 +37263,26 @@ sha256 = "3da34dd8ee9e3f34b4b4bf36bc0fa82acddf9a23eca6eeb45a58bb6c1113fda7"
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libnfs.so.13.0.0"
 sha256 = "3da34dd8ee9e3f34b4b4bf36bc0fa82acddf9a23eca6eeb45a58bb6c1113fda7"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libnfsidmap/nsswitch.so"
+sha256 = "75e8cb50143e42db25448ff20fd9195af8c222cc505f2dd800f8dfbcb332b49f"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libnfsidmap/static.so"
+sha256 = "fa93b3eff1dd9824e9256c53f69cfea0cbd2aa8b8982c701e64b5f99df5b4043"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libnfsidmap/umich_ldap.so"
+sha256 = "d07c3a673d7e9cad5237b7956792ce887909e44ca4c3613ef8d0bfa24f1d94c0"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libnfsidmap.so.0"
+sha256 = "21dba0ff8741512b735e6f437ac3d68205d99ba5f8f3769ba9831c0592238f03"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libnfsidmap.so.0.3.0"
+sha256 = "21dba0ff8741512b735e6f437ac3d68205d99ba5f8f3769ba9831c0592238f03"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libnftnl.so.11"
@@ -37310,7 +37386,7 @@ sha256 = "4f0040c3c17df5457b82c571cfcd86d59b1763bd645992fef01088210a2d0bbb"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libnss3.so"
-sha256 = "6b791dec3859048e6e9965faab8b16dd3ccd67b46e63cf90740eabcff6f908e6"
+sha256 = "929a540c9dd382dec0087dce7ce1267f817703012566d6bf6421395702701794"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libnss_compat-2.31.so"
@@ -37414,7 +37490,7 @@ sha256 = "1ee219242183e9da72a838e6e0b33e1ebf07f90103741a7c406434ad03e30761"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libnssutil3.so"
-sha256 = "67f09fe304b0ee0ee86e5023af3e3282bd62087a1d401c38a589aa10d84ba76c"
+sha256 = "67539e931b3d046d0527f7d01f3e9bee3017f8de56060dfe58cb71dbc57c7ccf"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libntfs-3g.so.883"
@@ -37934,11 +38010,11 @@ sha256 = "bef33b4179d705baa8422e3de31c67982f03aad6bf0e8509cf018344b80d7bea"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libpq.so.5"
-sha256 = "6aab8f10ae3b0c696ef5b69efbabb613757622e9889fc1ac973ce06b17977b24"
+sha256 = "4ca7edcce063616714806d73b5a845043d3b03dbc401ca97606600e4a00a5f59"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libpq.so.5.12"
-sha256 = "6aab8f10ae3b0c696ef5b69efbabb613757622e9889fc1ac973ce06b17977b24"
+sha256 = "4ca7edcce063616714806d73b5a845043d3b03dbc401ca97606600e4a00a5f59"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libprocps.so.8"
@@ -38105,12 +38181,20 @@ uri = "file:/usr/lib/x86_64-linux-gnu/libpwquality.so.1.0.2"
 sha256 = "5d14662708b1518cb5e97f40923e98342036826febc83c6804007c06e8c879d6"
 
 [[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/libpytalloc-util.cpython-38-x86-64-linux-gnu.so.2"
-sha256 = "678af4c96ae25b60e4ff2a3bf9da7533a94581c4a055d1b12bb98b353aae5ef4"
+uri = "file:/usr/lib/x86_64-linux-gnu/libpyldb-util.cpython-38-x86-64-linux-gnu.so.2"
+sha256 = "b6594673852292b599728dbb4c4f094c2c24fc2b085eac7e2eff881a596fff8b"
 
 [[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/libpytalloc-util.cpython-38-x86-64-linux-gnu.so.2.3.0"
-sha256 = "678af4c96ae25b60e4ff2a3bf9da7533a94581c4a055d1b12bb98b353aae5ef4"
+uri = "file:/usr/lib/x86_64-linux-gnu/libpyldb-util.cpython-38-x86-64-linux-gnu.so.2.2.3"
+sha256 = "b6594673852292b599728dbb4c4f094c2c24fc2b085eac7e2eff881a596fff8b"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libpytalloc-util.cpython-38-x86-64-linux-gnu.so.2"
+sha256 = "1a08b87bb4b1dda2668a60ea1cc07de562d7f424f55e522f77bf19bca6b6b086"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libpytalloc-util.cpython-38-x86-64-linux-gnu.so.2.3.1"
+sha256 = "1a08b87bb4b1dda2668a60ea1cc07de562d7f424f55e522f77bf19bca6b6b086"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libpython3.8.a"
@@ -38406,55 +38490,55 @@ sha256 = "5a0a88920f788f914dc9dadf5a652b800173c2592adeb30352f903ea0087cbd1"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-credentials.so.0"
-sha256 = "30c2d6e20a3582f283e1cd0595c7a5f3e8c1c95d85bc3847403120917c2a2ed2"
+sha256 = "f004e778c610b76dc3f0e9c44441da08d557885ea6866c73fdbbb23154a39664"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-credentials.so.0.0.1"
-sha256 = "30c2d6e20a3582f283e1cd0595c7a5f3e8c1c95d85bc3847403120917c2a2ed2"
+sha256 = "f004e778c610b76dc3f0e9c44441da08d557885ea6866c73fdbbb23154a39664"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-errors.so.1"
-sha256 = "befb1deeff9616b88cb3401d86a3d970a408677069385fb0295131f117bb8bd7"
+sha256 = "7e6ec1586d490437657df07d6f70530eba4f732d48d3e5e39b7cab748741f102"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-hostconfig.so.0"
-sha256 = "328a608deafde26f5b0015a536abb5dccc7ab4c1c94328f03009e5e83db3b593"
+sha256 = "6444a545696a462eff9223f7c82c2bc1225127ff05fa0bdc14b9baba0b5dfb74"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-hostconfig.so.0.0.1"
-sha256 = "328a608deafde26f5b0015a536abb5dccc7ab4c1c94328f03009e5e83db3b593"
+sha256 = "6444a545696a462eff9223f7c82c2bc1225127ff05fa0bdc14b9baba0b5dfb74"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-passdb.so.0"
-sha256 = "918851464a04826e0addada886a3a8aafeb5e494c136cb36d66db340dd16378c"
+sha256 = "51e5f76fa237579f7d80325ec80278a208ef23933c52bb7fe785a633c89fe432"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-passdb.so.0.28.0"
-sha256 = "918851464a04826e0addada886a3a8aafeb5e494c136cb36d66db340dd16378c"
+sha256 = "51e5f76fa237579f7d80325ec80278a208ef23933c52bb7fe785a633c89fe432"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-policy.cpython-38-x86-64-linux-gnu.so.0"
-sha256 = "d2a59e904c610c170d8909a5a2d85ae2d3c1b084bb3fc8bf7696b0c90647eec8"
+sha256 = "c5f89403b4cbff7fc098a07aee79e10d5a5ea66255172c698c86ceb37a14fe99"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-policy.cpython-38-x86-64-linux-gnu.so.0.0.1"
-sha256 = "d2a59e904c610c170d8909a5a2d85ae2d3c1b084bb3fc8bf7696b0c90647eec8"
+sha256 = "c5f89403b4cbff7fc098a07aee79e10d5a5ea66255172c698c86ceb37a14fe99"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-util.so.0"
-sha256 = "495b99b6e4842935e9de933e06da9c570c1220f4fb9ff5cbc4d150c98aee915a"
+sha256 = "3b6f20a4b988c1e2b18e01126c6fa7561f0bea488e1d391cca472189590ffaee"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamba-util.so.0.0.1"
-sha256 = "495b99b6e4842935e9de933e06da9c570c1220f4fb9ff5cbc4d150c98aee915a"
+sha256 = "3b6f20a4b988c1e2b18e01126c6fa7561f0bea488e1d391cca472189590ffaee"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamdb.so.0"
-sha256 = "0ddfff422d39524402108acd85bf1eceddbf9ad44aee91d13161cc8087771891"
+sha256 = "e62f2f74ff343d2ce8b676ab3323149fcd1e69563af5d9215e272485b262ca77"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamdb.so.0.0.1"
-sha256 = "0ddfff422d39524402108acd85bf1eceddbf9ad44aee91d13161cc8087771891"
+sha256 = "e62f2f74ff343d2ce8b676ab3323149fcd1e69563af5d9215e272485b262ca77"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsamplerate.so.0"
@@ -38706,15 +38790,15 @@ sha256 = "994408d29ba0c1f5b3757a2dc9b81c1298b5a35eb45b995b062e3de774a6bae2"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsmbclient.so.0"
-sha256 = "352241f68b0b7cd4a35cecab41ec99a5c1ed9c366309d8240d5872560a64a333"
+sha256 = "3e1a283d27d9594dc9c050867d6ad311414176b2d26deb8c5b0f3919e6916613"
 
 [[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/libsmbclient.so.0.5.0"
-sha256 = "352241f68b0b7cd4a35cecab41ec99a5c1ed9c366309d8240d5872560a64a333"
+uri = "file:/usr/lib/x86_64-linux-gnu/libsmbclient.so.0.6.0"
+sha256 = "3e1a283d27d9594dc9c050867d6ad311414176b2d26deb8c5b0f3919e6916613"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsmbconf.so.0"
-sha256 = "4ad7d8a1fc33d14eb4a38bb49683742eeca07b16ba0be600a5edad405ae83557"
+sha256 = "3341cb390a495e98e88289929d2eb784aef24a69ce0c641551b765e8c08a9349"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsmbios_c.so.2"
@@ -38726,7 +38810,7 @@ sha256 = "210be5c65e79032c1e9162301dd8a1c3422e108704278a52e8e366fc01aadb13"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsmbldap.so.2"
-sha256 = "d29e8c56a72c9b2ab295ac4546f03441e128774b482e5ebabcebe1e006bf1b41"
+sha256 = "181af790bdf71707ed079e86f03587616c705ad6b97ca7e252fe5553fcc9b804"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsmi.so.2"
@@ -38738,7 +38822,7 @@ sha256 = "2770949c4185523d5713d0e11c182163cf409d0dc035b8874b1cbae51a022476"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsmime3.so"
-sha256 = "b897e152f6c57d2d8cbdbeedbaedc7d5ae7a1222bd4e541c4179cf977cea0606"
+sha256 = "bda444fb81c9a694cf8202607a78955475359a68143dc8995721db58c6b1308a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libsnapd-glib.so.1"
@@ -38914,7 +38998,7 @@ sha256 = "a0e971d42962917d1054da891917230387f2613ff20c74bfd30a02c334280078"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libssl3.so"
-sha256 = "d7aafc1ea66d8233f4fb6e9a78598d474b9370017a6eb7a112d013c56903a4b6"
+sha256 = "ff6536d4490a8190871f3182bc2833e32f3a2d250f9d1c32f21d4e7a8c4b3539"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libstartup-notification-1.so.0"
@@ -38978,11 +39062,11 @@ sha256 = "5239b453ae01e001801a824f41a896160d892a4891e862b97e7387d5c316fd7a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libtalloc.so.2"
-sha256 = "a35e1830e2ee58ecc08031c88564712b6ac4a6eb84f97d7df5c6efacfe7f975b"
+sha256 = "43f161ddddbaf2e04ef8cef89cbb4e0e19f739611ef1d0bedf6dc248ca5c4cd4"
 
 [[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/libtalloc.so.2.3.0"
-sha256 = "a35e1830e2ee58ecc08031c88564712b6ac4a6eb84f97d7df5c6efacfe7f975b"
+uri = "file:/usr/lib/x86_64-linux-gnu/libtalloc.so.2.3.1"
+sha256 = "43f161ddddbaf2e04ef8cef89cbb4e0e19f739611ef1d0bedf6dc248ca5c4cd4"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libtasn1.so.6"
@@ -39002,11 +39086,11 @@ sha256 = "52903f23dec4b52084654a6ea54426d48f6919e9347d3e73fb777226763ac498"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libtdb.so.1"
-sha256 = "987791f5335aebce546163526fa13b9d4cea1bd1aecca830a251b0a8e2a592f2"
+sha256 = "c2df7be47cab20df6524e6a39aeac7a6c8c63684cb1749b3a3c1effe164ba030"
 
 [[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/libtdb.so.1.4.2"
-sha256 = "987791f5335aebce546163526fa13b9d4cea1bd1aecca830a251b0a8e2a592f2"
+uri = "file:/usr/lib/x86_64-linux-gnu/libtdb.so.1.4.3"
+sha256 = "c2df7be47cab20df6524e6a39aeac7a6c8c63684cb1749b3a3c1effe164ba030"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libteamdctl.so.0"
@@ -39034,19 +39118,19 @@ sha256 = "9b1ea63a129c225573d10f9747083a68356ee339e83ca773fee98c2378da53a4"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libtevent-util.so.0"
-sha256 = "355aa337114cc780ab7d9183946e5c64c2c3f8a553d8c7fa394a611f885fbb4c"
+sha256 = "3399004ed1fc2e3dc0eddfe35529c95b32264b108d04e24373b46c63fced72af"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libtevent-util.so.0.0.1"
-sha256 = "355aa337114cc780ab7d9183946e5c64c2c3f8a553d8c7fa394a611f885fbb4c"
+sha256 = "3399004ed1fc2e3dc0eddfe35529c95b32264b108d04e24373b46c63fced72af"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libtevent.so.0"
-sha256 = "5cc9502812e6adea6a1b2231e87d00e301752f5e97ac63590e74b1312a36bf82"
+sha256 = "98fd249cd122653c20d72109a0b5741b83f53f3214f1cd194f6df21b9c1c2133"
 
 [[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/libtevent.so.0.10.1"
-sha256 = "5cc9502812e6adea6a1b2231e87d00e301752f5e97ac63590e74b1312a36bf82"
+uri = "file:/usr/lib/x86_64-linux-gnu/libtevent.so.0.10.2"
+sha256 = "98fd249cd122653c20d72109a0b5741b83f53f3214f1cd194f6df21b9c1c2133"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libtexlua53.so.5"
@@ -39163,6 +39247,14 @@ sha256 = "425378a1cfa4f5f2f8a847d4828f0dfc92c2b7d75e5f8f5207a4c0a42b2ee6fa"
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libtinfo.so.6.2"
 sha256 = "425378a1cfa4f5f2f8a847d4828f0dfc92c2b7d75e5f8f5207a4c0a42b2ee6fa"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libtirpc.so.3"
+sha256 = "6f6ca9d7f77d43c61ad66eb1137108e77d477fcd14d0602c0d281c80956c30e4"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0"
+sha256 = "6f6ca9d7f77d43c61ad66eb1137108e77d477fcd14d0602c0d281c80956c30e4"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libtk8.6.so"
@@ -39382,7 +39474,7 @@ sha256 = "b38a2a13ee67927eb28abb889be78aafc1ef1f6fc0c1c987abf12892fddf8a27"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libuno_sal.so.3"
-sha256 = "e9b9c2c1d4681c2bc8d0148afc4160708b4a76c3289975a4db1c622db4eda364"
+sha256 = "4ea09fc512486f27d09aa24ddd91781f7a67818f876f298ae10f58acd7662094"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libuno_salhelpergcc3.so.3"
@@ -39666,11 +39758,11 @@ sha256 = "674ab3456ce2f8d14015b36b81b0d61ee5fdd9bc46f00f41aa5dd0d12d319afa"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libwbclient.so.0"
-sha256 = "8960665260996b12f4ef9a0b6c1434f360d8ebdd3958adb74c410f7528541002"
+sha256 = "455617c8cf20cfca708f7cd0c4d1c309718772b4661e02090205ae5105c28bf2"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libwbclient.so.0.15"
-sha256 = "8960665260996b12f4ef9a0b6c1434f360d8ebdd3958adb74c410f7528541002"
+sha256 = "455617c8cf20cfca708f7cd0c4d1c309718772b4661e02090205ae5105c28bf2"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.0.so.37"
@@ -39738,11 +39830,11 @@ sha256 = "48cf57c8929aac2d7f8647bc1bf5d0778db989660ff76783fb5c5dab110d52e0"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libwinpr2.so.2"
-sha256 = "0986f401b14607d3af0f8ceb7f494a6265fbf79b329366fb8954cf720329e815"
+sha256 = "fd596896fbf0610b8675f896f7e43eea18488265a4b80e3b0d816fdb18644074"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libwinpr2.so.2.2.0"
-sha256 = "0986f401b14607d3af0f8ceb7f494a6265fbf79b329366fb8954cf720329e815"
+sha256 = "fd596896fbf0610b8675f896f7e43eea18488265a4b80e3b0d816fdb18644074"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libwireshark.so.13"
@@ -40358,39 +40450,39 @@ sha256 = "b364ef6baf07979c3a8fa8bac8d59acfc8f333286c5b404b5a0b7062929e169c"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/nss/libfreebl3.chk"
-sha256 = "260cfc74618a6e9c38c46369b653affcfdc204c2f2cb0393748e67dcfeb563dc"
+sha256 = "b4624b36cb1f6c7081205b1fa4237b2e6f1a7caa44c91fad268bf598460bacda"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/nss/libfreebl3.so"
-sha256 = "1172d618fdc5c7649d999422cb7f2653beb334d4f290732579f511a17f3ac21d"
+sha256 = "534dee1aefb4c830323af8beca35658af6536357be0bbb6535c394e376b3f8bd"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/nss/libfreeblpriv3.chk"
-sha256 = "3e3078e4f0493191ca44f5f1503464afec8cb80ee22e1bbb101f0a1a6f8e3a2a"
+sha256 = "7d898e2f8629929b777211308d7e3e4b58906ab4575dafeba121e8daa3e81fcd"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/nss/libfreeblpriv3.so"
-sha256 = "71c16eb306f9600c688b39413f2b2e2ed3ab597c782f8599388ca287dfa13942"
+sha256 = "20eeb25a3f84670aca08d1c22f7b02b4ef7c029b22e0d0cd93a44c8cb924bb31"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/nss/libnssckbi.so"
-sha256 = "3097fd760cadcb36e32fe1f4d2da7c7114b5169b997fe31ce001515db061dc8a"
+sha256 = "8e0e352ca9208aedf425d5a6be807eca131f49d6671c4802d292599e31498e0f"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/nss/libnssdbm3.chk"
-sha256 = "2e6d540a75bc0773405d8c7aff9f1ffa35cff56ae9883b218d5d1db0f0840dfd"
+sha256 = "afe5c64066ac0aa58ec1878ac06361a0d92d4caf84274bafc45f5122f4b1e7e7"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/nss/libnssdbm3.so"
-sha256 = "aafb384d059a61ccbe02b9dc60f2288b9d8c1fcd2aed6bbe552290e74ac3ccb0"
+sha256 = "c0b4762f40fd1a9ee6b255439933bdf53a529f496cfc02bdcda8368bff9d99b0"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/nss/libsoftokn3.chk"
-sha256 = "c8ff3343e6da4aee360e57348a43f74d36561b6f3dce4ebd171a8ea6305fce13"
+sha256 = "253fd8e5e8819d2335328920f6612674ed2e5e109a515a54bb79673923796841"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/nss/libsoftokn3.so"
-sha256 = "e87910c29653a63a6668ed44e4d619fa39d40fb6169235ef6a12019ef4df7ccb"
+sha256 = "b0b297995b7dfde80b8a497333db92612463ae7b52a792510633018044783a61"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so"
@@ -47010,511 +47102,515 @@ sha256 = "1d32f7ecf7a38d2e05190565761bf7efd5aa38a35602e499d293d5392c3f5abc"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/auth/samba4.so"
-sha256 = "6c7416e27b85244c6f4afc2841ee4292bab38519adaa099d7079af8632766966"
-
-[[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/samba/auth/script.so"
-sha256 = "f0f58d022ae0953d3f219413aa5846aa88dd390c6f59c851246de47cecc354e5"
+sha256 = "b964c605cab4f36fc4cf79b187d4b5157b1f632ef7f028b48cac1434fbb2f297"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9.so"
-sha256 = "97d1dd28b979d3af1e3b173059abb9a8c1b380aeeb94ad28dd5b0ae051e9a1fd"
+sha256 = "cbd522d7576f72eb3a0f3c7b016c8e9e4cb1d63e938ad096862acee5595c74f1"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_10.so"
-sha256 = "22989e714bfcd65d51222f129e7665ee53da511f24137ffb3cfc3df7cc38b3d6"
+sha256 = "00c9c7391add67032eed613aa3c39a89b04cd636b04914979c14cb2f69b9b847"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_11.so"
-sha256 = "13df06f8e892e964ecc5ae25af30bfc8330d47fb73647898c0daaf5657bfbdc7"
+sha256 = "4c58bcaf4eaea5dc3643a3b32c675a41f045dfbcf862013b289ab7f1da29c674"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_12.so"
-sha256 = "98df381e5465dc493a93d147873e53cf625bdad96e9262673149110232f8e9bc"
+sha256 = "17011660d5b530b470fb12cb888ead78c611bb9a665dc5d867b437b664acbb42"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_14.so"
+sha256 = "4dd763831dff56851cdc43de35d48d3911eec0fb31505dc2d7a72c76cffda04d"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_16.so"
+sha256 = "5251900e5ecd47a286edcb4c0276c43fbc31ea09ffd5dc0ec33b084b16b12d3e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/bind9/dlz_bind9_9.so"
-sha256 = "f33d65798206d9c75b30941a42d5682f67bd39ccdb4e79c769dfa23b936f14d5"
+sha256 = "1fedc7d444adf6e59c75a9ec49159c280655b3ef3f958908d69dcd8d5667e450"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/gensec/krb5.so"
-sha256 = "4220a9225334cb55820ff42e5f2540ef320e5dae499ab98939b68a6270920c46"
+sha256 = "4812ef431552736dd9fe34c4a900e9b2547e6f4a65c116a0246aefd46cf71e9e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libCHARSET3.so.0"
-sha256 = "9d1c361006b2dcd390342f16c4da45ce07f8215b676414acf1fa7433729224b9"
+sha256 = "facffcfe1f56d898a2a3d8e4e1b16d46dc5bc22701ad4e02613514b701431e2c"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libLIBWBCLIENT-OLD.so.0"
-sha256 = "7d12afd467579f34d26ce888b42621118e76f2063945df89ce53061eef34b0f0"
+sha256 = "2352c734be9b6813980dd0aa14018f43a29810adb80f4e2dc5b904d3996a9ff0"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libMESSAGING-SEND.so.0"
-sha256 = "eb84883da36bbcf56244d518877c4444261eaa6b69c8fc10351b0e2ac88292dd"
+sha256 = "f2eca67f08d0496c965d802dd0f15112c82f23c194d11dde8265bd29ad9df74d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libMESSAGING.so.0"
-sha256 = "7ba2dc8dfe5b4ad3fbb56b0cd25b21d421f932b7cbc2d7d0afd15b06a0139df0"
+sha256 = "5e433f5e9e8b8382d0e19f94d1d27553ed8c05ea38b6686901204c17649b213f"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libaddns.so.0"
-sha256 = "97a8ad4490e73c0ee5614bfc5669abec280e9c21dc05743456e79821a7f5c2e9"
+sha256 = "a05abe75821d24748af15072e6fdb970fca0741819366f27e26e148840d62307"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libads.so.0"
-sha256 = "52bd7a90fc8ddca38def14bd06ca3eda8a29d180a7bb4b6be0fd4ce29fa082cf"
-
-[[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/samba/libaesni-intel.so.0"
-sha256 = "31385a209d5ba0e6e9be2d697ae914e2d72b82c94b43106550003305d0c390c9"
+sha256 = "c7fa7e72c218b5e17ca887dfa40132d8f2d23f3ac3173887a2abf8c0be9a2210"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libasn1-samba4.so.8"
-sha256 = "ee1c39456f486308935a9bd4b41098613faa14df92cf56490ca87019f9e2dacb"
+sha256 = "210611496788376b00e9ca84a3aa19ec8cff3faa93c682e8385b34acb4363155"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libasn1-samba4.so.8.0.0"
-sha256 = "ee1c39456f486308935a9bd4b41098613faa14df92cf56490ca87019f9e2dacb"
+sha256 = "210611496788376b00e9ca84a3aa19ec8cff3faa93c682e8385b34acb4363155"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libasn1util.so.0"
-sha256 = "8cabb97b5fcb45cb3be1870e0a3ebbe9540b6701bc16884730cb26bfeca719f5"
+sha256 = "221d1f27cb95e42ddb2df72bf7ca25dfaa439a154b246b8970706d92b0198b63"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libauth-unix-token.so.0"
-sha256 = "462f8065184e573952b2249e13396b3c015282ac3469186d602569f2e1f57290"
+sha256 = "8cdabfe941f449c6b8ea404c27a97073c09e17b7034f0c36b373d57de177a7e8"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libauth.so.0"
-sha256 = "a9815dbd08b51ab52921bc37816f1e63ddeb66a715fc14e8330d53fe6c334904"
+sha256 = "507879a3928bfa954b5d38137847a42e9f305d60fdaf22023ba9b2a304ed9bd9"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libauth4.so.0"
-sha256 = "dea22cf5468ce334b4a13678e9ef7c9ebd9291d4f2f5a170986483a7e8d801f9"
+sha256 = "b47742a3a22280df2197ed2c42c5ef9a67d8df77a2714b0bd5838a746e97864e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libauthkrb5.so.0"
-sha256 = "b6781d6745f1273dbbb956a2de96d21554338ba2d4b87a9a6d5fe3501c6ebf06"
+sha256 = "fc17fc4c482ba0727862b36c99e2943dff2036e617d8a54731fde182f897839d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcli-cldap.so.0"
-sha256 = "31b1e790a271cfe1806fb09482a3efe1faf5dc96f7bf28b61a534565229d61e9"
+sha256 = "5727c5102671eecffd2921a258a21327f9a5835a596e3fb36e962bcf07899ac3"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcli-ldap-common.so.0"
-sha256 = "a2b4e08f1a2d0931e4889aec698754833c515432238cfc047951e28dd3cc602e"
+sha256 = "5be4b73e287f29427664c61900ef12bd6b924e5fdd9c942a3fe836f58bbc9e3b"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcli-ldap.so.0"
-sha256 = "cdd0820b3b45e0296cba13088ba2804e6f727bf5d4604636b8136da12a6dc97b"
+sha256 = "928e8513a85fa5ff0f89059609b1244eba9ff5f2037bcecba789a8bc9d1b9dc2"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcli-nbt.so.0"
-sha256 = "8133cabb41c25c1f472b39a065d13fef33c6a7806c990aab7ec9fa02cd8a9ba2"
+sha256 = "74b357c6525457c3034befce2307df70b463e718002a009637aa5f4cfbfceebb"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcli-smb-common.so.0"
-sha256 = "29b274ad3da465b2f173a8de2d96bef348b4b87975c5b2c4f568bcac394f21f4"
+sha256 = "94a90af1ae6c004d9959b438d1659b15b13930fe1b001341587630744396c342"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcli-spoolss.so.0"
-sha256 = "8df62728b222f1b0c3c73b5c333e6a3e2b42e88724637a16f114a321a47a20f0"
+sha256 = "d0823105013101daccd9f596cfa313b330443a7ad4045a4170eb003f95cd78c4"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcliauth.so.0"
-sha256 = "6591bc4ad84158eebbaaa6ef04b2fc719cd4c80e3f1d1ab73445d147f53e1e89"
+sha256 = "30935f61de1d28f92a377f428ccf6f5bd9402c1e62a4626bf3ee50c258b42487"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libclidns.so.0"
-sha256 = "3a075b73e698668e3fb084ddbce6abbbd7fd6322f2845ca4cb8492bb15ebf46b"
+sha256 = "b89aaa7e66bfc73a56d0f3d49f39364ff62cfb4b82b97d161eff976ba392dfe7"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcluster.so.0"
-sha256 = "9d84dafec904e3f9bf5957e1dcedd10eecbbf95190150b7fa8feb738e6385a56"
+sha256 = "3e40cd51ee8e530c595c0fa02eb65425ada6a076ea04473fcebf7669f777bc10"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcmdline-contexts.so.0"
-sha256 = "815713ac0eff0233ad58624a8595e9ef2cc7cb7977569d3ddb043b0a93fac9a1"
+sha256 = "42f9c931cc5ae28a038ee4d634db07209d73d64c78b946420f99c1bf95845225"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcmdline-credentials.so.0"
-sha256 = "0bb982051b33bc5e9f134a2a37449bafefaec8d7466e0ac17020ffebacc26389"
+sha256 = "07ecb7b9aa5679af2d1bb3edc283410b4238951988011d66d3fcefca705f3ade"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcom_err-samba4.so.0"
-sha256 = "47283a2ce262b1fef114ffc85c62412badf032044e721b46c1723d3013738b5e"
+sha256 = "6cd2392fe589ea834e45044e00dace3708865b8ce4bc887df548bca605e5acce"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcom_err-samba4.so.0.25"
-sha256 = "47283a2ce262b1fef114ffc85c62412badf032044e721b46c1723d3013738b5e"
+sha256 = "6cd2392fe589ea834e45044e00dace3708865b8ce4bc887df548bca605e5acce"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libcommon-auth.so.0"
-sha256 = "14a61bc9935471abc710eaaef9112b150e41f2cc91454aa0e703763f3eae61b8"
+sha256 = "43cc5c20096a4bf8e1f73a536ca1c1d71568cc4f895252c5dcb05e92598513a3"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libdbwrap.so.0"
-sha256 = "d0abda5285c95f2d22b984cb43221776308d0b02aa112d0e729af0c734c6d7cd"
+sha256 = "85f4241dc5e5d71ac9a45c797fdf2e0ca9dfd33baa953ead9bc746727d001976"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/samba/libdcerpc-pkt-auth.so.0"
+sha256 = "170ab3bc363740aa710e17c9dea9716f8dc61408805554cd10410ddcc1ccd94e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libdcerpc-samba.so.0"
-sha256 = "49b692e2a10085f0d24eb505f6bd0e7ed934c74dc753530c62b73e46c22c3518"
+sha256 = "558a4b86cf105e8f58720f718f13f1222b35d576350ac6d198dc9004f5ac008a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libdcerpc-samba4.so.0"
-sha256 = "4ac5f482aaa1d9a50ff56f61c4d16e48bd0e8a79894c3bf976f676996f440aa4"
+sha256 = "f069707cfe3b7d84656c1bfb969df8dfbb27e767d2c797d533b7f84e23e9bf7d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libdfs-server-ad.so.0"
-sha256 = "53a60350f910b3ec149c4b71c6447e9272a4ae1494ceda6f2c030a67bef793cf"
+sha256 = "ea245d101259b994da4d3eeb8f159032a935257cd2330009795889ec92cc02b0"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libdnsserver-common.so.0"
-sha256 = "392401749194e6652bf4651c0be474d9c8e9b73880ffea4ab9ff3a86e3f4288d"
+sha256 = "0756885c7d199e883d994e0f560f3a5089d8dde1b318d58d17e50c8dcb2c4dbb"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libdsdb-garbage-collect-tombstones.so.0"
-sha256 = "2c392b429b89d13a5c52766e6cbb2a1de649a321d2c40b1c4516764a4dd72157"
+sha256 = "3e4a1e32ae510f5236dd73de02ec4f830107dd56841ee51bebfaebc45f9a1cac"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libdsdb-module.so.0"
-sha256 = "52727d53ee8ec59efbe2676ca54d66b7db2ea17265f9a719ac056a9787aa12fc"
+sha256 = "bbaeb82bcc844888bfeb290dfcce6bc1c34746eb045a0a9f32700ffa94597e9d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libevents.so.0"
-sha256 = "7dc4d7d6bc6e566bd0972495a09849ce9a91cfc2816997fa9f08feefbfcfc758"
+sha256 = "27f19ec658b3bed9973a161c548bb447a6b178c674ca495e0904529af749c2ce"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libflag-mapping.so.0"
-sha256 = "7cf85eabe7ab48b2c0bc6fcf24be605f6d0323b27088bb5ae26ed937b2a81e42"
+sha256 = "22c543236c3012d1d993ca46174be0cc4f319fb50911dc13622f3e722ea4d35e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libgenrand.so.0"
-sha256 = "5920008a398c693aa80a1b4ed2fddfe7209848bff3e0e035cd65ea447a71483d"
+sha256 = "7574c6cca54b65d3a55cfb9f0bda405eeb5c065c5294055010702459131e957d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libgensec.so.0"
-sha256 = "2ed2cf94a937053fe90bafdafc7df3e29ea74ea29c3793e157859c88a6639703"
+sha256 = "cc0e229c5e9323e27d02b662f2dec55ed11f3c27150c14a071076b841406b1c0"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libgpext.so.0"
-sha256 = "26062a8d89007831094ecbc457e9e49e4cdcf0c9b177326fbe6c7e36fb391686"
+sha256 = "13fcd201c31ac39762da6b0044a6eed7e5a730d545aac1d54c6f5a2df9aecea9"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libgpo.so.0"
-sha256 = "6f401a253da2b53684b99879aa6665e26177b9bed120d2882411c28c97e59e27"
+sha256 = "51e035f69b92bbf35e2d5e73e8332ac66d31c464931464cebeed15177ee9c8aa"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libgse.so.0"
-sha256 = "9c7a603e2e10266dd0064fe4f7f3e6c7287f1efb27259b3645a5dcd005d72926"
+sha256 = "8e569fa646f13159705a089fc91c332027296076a6549eeb35a3dcbeaf63ce83"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libgssapi-samba4.so.2"
-sha256 = "e7c87aae405b1f2ba159b0aff487b678072bddd6e1ebae6beef204793d8faa23"
+sha256 = "ae0a7913a2d844cddb4cfc8b0468b076361a3a9c8f8a1b79220230f8ad24ed19"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libgssapi-samba4.so.2.0.0"
-sha256 = "e7c87aae405b1f2ba159b0aff487b678072bddd6e1ebae6beef204793d8faa23"
+sha256 = "ae0a7913a2d844cddb4cfc8b0468b076361a3a9c8f8a1b79220230f8ad24ed19"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libhcrypto-samba4.so.5"
-sha256 = "c554c785d8fe10afa7bb06e8a431cbaa4d51796c8dddd540a6aa66745ccb7798"
+sha256 = "eff47e3615aa718e3e4d2f7a8db08a199cfd622078bf47b3849129269f6ef711"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libhcrypto-samba4.so.5.0.1"
-sha256 = "c554c785d8fe10afa7bb06e8a431cbaa4d51796c8dddd540a6aa66745ccb7798"
+sha256 = "eff47e3615aa718e3e4d2f7a8db08a199cfd622078bf47b3849129269f6ef711"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libheimbase-samba4.so.1"
-sha256 = "7cdec9029375a3ad48672cb1e908f87b6b3354dd138f28b2964dcf13ab6299e7"
+sha256 = "b3dea85a4e4d45e9f4be36ca4728dec4ec425c6121472553acee104aa46514d8"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libheimbase-samba4.so.1.0.0"
-sha256 = "7cdec9029375a3ad48672cb1e908f87b6b3354dd138f28b2964dcf13ab6299e7"
+sha256 = "b3dea85a4e4d45e9f4be36ca4728dec4ec425c6121472553acee104aa46514d8"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libheimntlm-samba4.so.1"
-sha256 = "98b3e8b5aab33669399530c83b971810bca30993f7e2881e027e2b4edf14f403"
+sha256 = "856165c8ba7dad10b14008e78d4b25cb297f489d56e64deb3e51906f51b3fff9"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libheimntlm-samba4.so.1.0.1"
-sha256 = "98b3e8b5aab33669399530c83b971810bca30993f7e2881e027e2b4edf14f403"
+sha256 = "856165c8ba7dad10b14008e78d4b25cb297f489d56e64deb3e51906f51b3fff9"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libhttp.so.0"
-sha256 = "85cd44a2f69fd00c9dbca60be621b06516e518eaccf2702bb900d13d78ee3e01"
+sha256 = "ff8171fdf53b9de516f88794cd7533a87c293c09aefde5fc305fbc8c74a7ed48"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libhx509-samba4.so.5"
-sha256 = "1ce9837f4c9cce19ee5131ae44c7d8a2a5cb82dae1faeaedcfc2bb289d19eb8b"
+sha256 = "6e584c6418d2268d826f9f0b848736ff7fd7a7cbf0fed82516362f16bb62e934"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libhx509-samba4.so.5.0.0"
-sha256 = "1ce9837f4c9cce19ee5131ae44c7d8a2a5cb82dae1faeaedcfc2bb289d19eb8b"
+sha256 = "6e584c6418d2268d826f9f0b848736ff7fd7a7cbf0fed82516362f16bb62e934"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libinterfaces.so.0"
-sha256 = "7bb58bd2acbfac1c23f8558c483d38dd08d4a4a59f3d5ddf84178b434b9f555e"
+sha256 = "7675cef2003ba3fa49bc7ac3bd414fa53d09b16f216d8a7d30d2eee516c03169"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libiov-buf.so.0"
-sha256 = "05747febd3784ee1dffb40bdd3dab8556e2a3d2e05eba1369f2ebbef5965aca9"
+sha256 = "54298cff13c9af4e4b30448e390da2e4db0170b9affb325fbdb4c5c5b91e4b36"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libkrb5-samba4.so.26"
-sha256 = "ba93b6590110702cbcf550e953ff430c99421ec77807fe839a0534a75fb56cf0"
+sha256 = "0b1b42f4fe319d19ee7fd96abab298d3d8b9241aa3d0ec8d2a609c65ab6d3b0a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libkrb5-samba4.so.26.0.0"
-sha256 = "ba93b6590110702cbcf550e953ff430c99421ec77807fe839a0534a75fb56cf0"
+sha256 = "0b1b42f4fe319d19ee7fd96abab298d3d8b9241aa3d0ec8d2a609c65ab6d3b0a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libkrb5samba.so.0"
-sha256 = "fbf249c6d91f9eed53ef40f0371ee07a78487465c3f421b66cb2c760ff452e15"
+sha256 = "88104be7321c4a293e20b4ca65bdde520b14715cd2a64e02014ebdcf4298c936"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libldbsamba.so.0"
-sha256 = "5de41307f2b3c1f218b6a399dd7618a4a252a44f6558493a848eea0392ffec15"
+sha256 = "ee5b2f579a4bf8682e5f37dc5dbfb67a4fb370487853cb2ef322ca553ea34a9f"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/liblibcli-lsa3.so.0"
-sha256 = "8aaf2af00669007fe0e4a0d11e03156310dcdcec65b8bb3ea77e23689d3ce198"
+sha256 = "8c3d8d0d62239a4a776ee068ee6276ad9fae2175b44fa1cd8d2f487ead45edce"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/liblibcli-netlogon3.so.0"
-sha256 = "b751bb55d4fdfacecf48a621f79a31315d78de4d3a9a3d3547c5992ed3b00144"
+sha256 = "c37cf2c14cf321fee8a32fe983c7eb0c54cd6dfd3d8b78f85d1b92dc926f9bcd"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/liblibsmb.so.0"
-sha256 = "1c1dd37fd5b31373c015b2f012c3eec7b87aebdfd39097c0588383b1fe1d2022"
+sha256 = "8122d9c9480ec8ea0f48a429e971c818ce60529110ed030b4ef6443353cc6f19"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libmessages-dgm.so.0"
-sha256 = "a6dc38384e747e282ece61304a457129b1d26a3fd598d1d88aae57470e1f2ae3"
+sha256 = "bb1362cf8f30ad8b7a0bcac0e62a3a7847316d65123bda4f6c8ba474eef4868e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libmessages-util.so.0"
-sha256 = "a227386db7e5b4610d639afc986327c9c16f8b601d489c5dd734089af921c957"
+sha256 = "9832e4957647abb5e33c2d62f8cb460f0ae4d70a46b8c78d1722a9547637ad6e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libmsghdr.so.0"
-sha256 = "0b2d1d488ad2e47c96a342559b125f79fb13cbf9a58731094b65fad6659edd8c"
+sha256 = "eb83b4f31896c4487501bbc4bebab7406041932f0b8201df2a0519de723b62c7"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libmsrpc3.so.0"
-sha256 = "3ee50e8ebcf05837a2de8b815dd2f8b0f00d156f596dcd8594250d7b2746b403"
+sha256 = "587a776c9e0422ddf880c1b65f788e630835d4aa406b659f7084e29e14d14442"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libndr-samba.so.0"
-sha256 = "e628203157fed1a0c6d440a64c5674c08872b7010bb66fab51cf50f4461de4c3"
+sha256 = "ed19c58cd05ad94e1ffb9d311691ee49780f8910139ecfb4d4b28cef0f2bb0a7"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libndr-samba4.so.0"
-sha256 = "af103941c0c45cfecba213646f142a443877f71daf2d54f2d5b50d6a99e5ff80"
+sha256 = "30bcb01b41ccc3cc609979c32ba8b2dc55707aff0995d8a0e7a2bf076114262a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libnet-keytab.so.0"
-sha256 = "0a92580e4d9e75bd40fab032fa6404903d25b534a986da3ef6f8dfa3fc859370"
+sha256 = "f12437eecce313d8dfba2f5367018ad94154ec72e5963897733478d36371c4df"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libnetif.so.0"
-sha256 = "057e318707863f63a3e71cdb609001183f3cb4f13a1548df3add3c421419405a"
+sha256 = "ed3af6c5b7d82067356a96c6336d1c636932c34508e7488afb2380ee6f52c62e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libnpa-tstream.so.0"
-sha256 = "296020f0e708069eaa85afffbb74498e2b0f7a6e3bcd3312dda3164b448b7061"
+sha256 = "d6b9bed42003192055ae7472c7caf92eb7f99a766996524c0151c1a992aea917"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libnss-info.so.0"
-sha256 = "a2d6c28482f8f9d6b8224167b2279b561b2e4f8db38e9d78358b03582b558885"
+sha256 = "99a7b8ccae6e64c3e20a7fb4ea10dbfeb2dc1c3c3755f951243e623f673c2786"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libpopt-samba3-cmdline.so.0"
-sha256 = "c1b390b017845edacd52f2a1cd53a8ad696379444f265e33b169a880abc22b75"
+sha256 = "5253fdf69ea4187c1ee8b9367162e208470a31b83b73e6b8348225387bb484cc"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libpopt-samba3.so.0"
-sha256 = "1e271627c5bdfff4e5f86743938f5bf67c0a85dfa8beeafbc1818c549c0dc746"
+sha256 = "e5be428a43938dc635a16c238626b9dd2258f9f6d80fc356b1d9b30be1d9bde6"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libposix-eadb.so.0"
-sha256 = "b50413929d91efd154a9b2419bd28599c50fe2fb6f1e2fed5d04029a2721e14c"
+sha256 = "292caa5f6eb1a11c2155a36227bfa4373fc31d2f992bee3a752172875b42e125"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libprinter-driver.so.0"
-sha256 = "065a1d75160163b30decdb64cb335ecddb7cda52007e8c7e541979301145a73a"
+sha256 = "92a50c5eb07beb8cc4fbc9e85005d33325d384c80a2593106a8c9635340911cc"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libprinting-migrate.so.0"
-sha256 = "8c6c9d663ab5317091ed0518e848538ee6fcb54b59660eea3664fc532f83605b"
+sha256 = "1166d8b8663e7f87eaa3d5caa623f20fa936eee2ec5ab3c60608e3a36a20db88"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libprocess-model.so.0"
-sha256 = "2a7e1cc22a1bb5c7769e43388480573df8c638fbf4a43f90f6fdbd44eb52fca8"
+sha256 = "8844db54dd9b9e6646b52d0e92fbc2876f7f9d2cf038101b627eb928412ff078"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libregistry.so.0"
-sha256 = "b8e376d20d32cc8cf300b4b8f63cb49a7f1abd3b5112a8274dec261ce2b12e95"
+sha256 = "3a4e847bd4327037f804ace2057a585ea9d1a0b5fbca0b3252ca3afe63eae1cf"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libreplace.so.0"
-sha256 = "05450a47349c84df3f8131d14301485b5a2318080bc82736b7b79e69785f710c"
+sha256 = "09b556c0cbc6b681dc06085f8977c5ea6287aa8582643d67987ac1f5da23ccc2"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libroken-samba4.so.19"
-sha256 = "3381fddb08574ed0b0bc9116445daad4ecf55a822737368fa703c5ca580a5d8d"
+sha256 = "aadab1c5f6eaf82c963c2c240070abb71814db67e35f387e19c66122dbd20581"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libroken-samba4.so.19.0.1"
-sha256 = "3381fddb08574ed0b0bc9116445daad4ecf55a822737368fa703c5ca580a5d8d"
+sha256 = "aadab1c5f6eaf82c963c2c240070abb71814db67e35f387e19c66122dbd20581"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsamba-debug.so.0"
-sha256 = "b45f54b2d3d52d1b97c71b37bbd925d2afd63936303a039d2c7bbfcb4660442f"
+sha256 = "27343a59b7b71b8fe9467cf13c6fd62b17ef558799b1d9e71e6040878f0e8359"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsamba-modules.so.0"
-sha256 = "6aa75ec2dc53db2ebc5187405cc267efbb7fc88dd3c49a1f1888fece4437e779"
+sha256 = "63ff06c1385a724e67fb9567af079111d46553d244e6ec2b3971c3866538a7d2"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsamba-net.cpython-38-x86-64-linux-gnu.so.0"
-sha256 = "27617445823316bdc21d6eff84306174ae844506ee915a568ade2df234bfe2e4"
+sha256 = "d77d51a24ce1d6ce5aa1fe28138b5326c431b663a1a4933d44a336199de9e58f"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsamba-python.cpython-38-x86-64-linux-gnu.so.0"
-sha256 = "2c5d268a49fedd5f705fd71605f30ad54fefbe32e96c95e85648f0dc953cb0ce"
+sha256 = "54b331155c17e100ed01240fe8a568f1e36a14816f1c30a857438fa003be6913"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsamba-security.so.0"
-sha256 = "3ba3f060a060a4f44d99b0af2b8c415b3a1e22da4eefb79e80691f906ab989ba"
+sha256 = "8568c1790481d674e5f78ddc35ae0320725d82601898f8bd5ea2996122968c73"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsamba-sockets.so.0"
-sha256 = "b9cd8268a70af0ef9bc1bc651add772a3db3b05917445b00f174ba0bed3f65b8"
+sha256 = "057e0ad10486ade113691211080fd3dbcf272b444ffddd426c8935f4eaddaa3f"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsamba3-util.so.0"
-sha256 = "bbe9c667ca940be982559ec0fa1810fd12b91786096580c2bacd5859ac6b3580"
+sha256 = "f1c18422d5bd633efcfb1c2e0784aee70eea9f77829815869ef89684b58396d2"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsamdb-common.so.0"
-sha256 = "e4f423a60198c77bcc33ae62ab4ec33515ea28d35bcc8dcf39e7c0541d05e52f"
+sha256 = "243e4398df439360bb24b1ab7066bb2f7ce1d03b3ba680c0e75520882e9e471d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libscavenge-dns-records.so.0"
-sha256 = "7984234626ac44cc67246089d83b01cd9f86b9343d18ec4390a51df95db05353"
+sha256 = "08acb1b049022684e64259abbe3dd0c73f77acb92151e99841e01c8530fa7d8f"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsecrets3.so.0"
-sha256 = "885617388a3bfde429adcd8b5803e958331d71592587fb6d07c6d3edade2c3a3"
+sha256 = "2a139c2291ae92ca4a81885576c75fad86d8573971c6b2596c5a80deb732204c"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libserver-id-db.so.0"
-sha256 = "d986a2618b1448d668dae4685e37e2c9909918db7a29aa20ff1a7495b13e659d"
+sha256 = "f106d549d2b173c267f6d6b1387115156f97ea8c8fc8bd2a357fd9467ac6726d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libserver-role.so.0"
-sha256 = "004070b7f1187c10c8f12fcaedcebe4d295650f5a9d0fc476d6e83decd039bab"
+sha256 = "151cd5efa2655109ee0bd44752d8615589089b841d567bbd22ac692dd7ef1447"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libservice.so.0"
-sha256 = "00595fc68d1966757e7cf373a625c3cf45accbd3220c41ae70e01bf2f7b1c329"
+sha256 = "0434fab76180760f1be86be2851603080bbe188f9f3edaba5d52c4613e9065f7"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libshares.so.0"
-sha256 = "efffa26af0e058bb557d549f4c400be30d69800e3d48d9b81d71064e039b7d4e"
+sha256 = "2a66e99b6b7e81bdbbb4a52d52151cbbe9bb619772d90c0c16192bd50bee59fa"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsmb-transport.so.0"
-sha256 = "8767ab7dcf5aab3dce5d52316285d3ef2650e2bb7ae48fd16c28309850d259b4"
+sha256 = "838d5a8d87b4e64cc634fdbe9df5c71f16551e8e5705a9fc24c3846ec8503de6"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsmbclient-raw.so.0"
-sha256 = "91e580a46aad5621c0eae78030bf0528e8543a7acf98b0624da7255cb2084c17"
+sha256 = "c4472d9ed0d7309c2ba3e4700c5c11badc41cf48a7a2c355117b21fe83a0943e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsmbd-base.so.0"
-sha256 = "8c7067471295c71883e82e00d715903f4146c83a66a24931e2269556d7ed7b04"
-
-[[sgx.trusted_files]]
-uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsmbd-conn.so.0"
-sha256 = "5f7e0e7721beb1f110abe294546a15ce219fa2992090494b4158be179c7ca56c"
+sha256 = "32829cae3732328d57747cb0cde9cb6db85fbaeb6d054d5298f549be70429e8c"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsmbd-shim.so.0"
-sha256 = "5ae697da7a841efadf1211951df7417b20dd4411b97c3122ff2ec3cf674fb12f"
+sha256 = "e54c4e0462e818dcf98d4c032420af36e18a76bfd34afbbfb12d640c7ac4aa36"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsmbldaphelper.so.0"
-sha256 = "4fe0357a3d6a3e235ea62bdacd735dfa888250d9238f7bf45e7d9b8dca047abd"
+sha256 = "7de566baee1404f20a2112fe150fc2c06f8cb505d87059c2b65b10970106e33d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsmbpasswdparser.so.0"
-sha256 = "d5206776bc7061c378a776a6fe7388c8175d28adaa978fe11c0e7da731f68ed2"
+sha256 = "b3eace25878ed25e32beae0756beee2a118a627af762783b7594e3b1ab80097e"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsocket-blocking.so.0"
-sha256 = "cf26697088ce294d3525742f646b3c5c01ed9ee4e1be1d928fc84042d40f0cfa"
+sha256 = "a46b82a05eba9c96feadcc981b10b884456c1b633234a3f619d16e3bfcd0001a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libsys-rw.so.0"
-sha256 = "dc65ab6ecc98d663a72dbd4def0315d22cb999eaebbc8a6bf3ef738e5093b22d"
+sha256 = "0ce45e328d2acd6eb6b442ce3846248ee30ca96ebd3cdc2fce9eca8036787314"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/samba/libtalloc-report-printf.so.0"
+sha256 = "efb7904bde0d8c87a3b74787cacf3859f1f8029842dc598b9db863125cb6b983"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libtalloc-report.so.0"
-sha256 = "942d86710a48bf291cf5542721917c30eb271a25caaacf507961cafc9c752385"
+sha256 = "2a1c71626d9bc561bf7c2681007be7ccd5ecd52a637e5612bfc810320d02c1b0"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libtdb-wrap.so.0"
-sha256 = "15e891a52ca0987ebb82417f2d19ef5a0c8132bc5cc1ad91c4c6816ddfcf889e"
+sha256 = "51a6054ae76566c7ac2654f07f57b9a733c131c2591eae6e5663367eac634eaa"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libtime-basic.so.0"
-sha256 = "f0e2e11bbb8b49832ae5a10fb25f9a580c28299863d94c5ac8efc2da2ae71332"
+sha256 = "300db18037151fa859f74c892142e94375a92754784423ac05e75f3b83ce8def"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libtrusts-util.so.0"
-sha256 = "4512d273b0a753d9cd71c072cbc868dc92585c04e37542fd1913099a3d02c722"
+sha256 = "10bd49ae1e18ed1a7a8600974db1449d5821dc66f4a862659938a6150ca682eb"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libutil-cmdline.so.0"
-sha256 = "57a485613050c83c0fcb71f0e971f3cdca06f6816ca7bed4902f16fe19e3ae40"
+sha256 = "f23de95918be3950a3735cf8f2859c869f24871344de38a62856e575466365a2"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libutil-reg.so.0"
-sha256 = "c1d99311f8282ac9733cb0e2e361c4a67c21f4f08cf572361c7245b74e245c9b"
+sha256 = "e47c0edf995ff41fc00bfd8ddeff8c5a2602a5784506a5d2adc4f26f450e2a5c"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libutil-setid.so.0"
-sha256 = "e18f64eea7a3e78be1cac382e7abdd0f0c4c0b153cf11680ea65c5bf74f74dca"
+sha256 = "01dadceff21f03ca0587ccef00861733d469672be3735e93ac91e0d8a642a39c"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libutil-tdb.so.0"
-sha256 = "6106cda1d65f4355b821191593c0fda6b9fe76316012a5597ac2b864b02eb419"
+sha256 = "f25b233e4110ffbcf7d8aaeed6e263c62d85fb94a313158945b2df61e1ff8eb7"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libwinbind-client.so.0"
-sha256 = "961a20beb1e5ef54647d9c514e7bdf1f6b410a4f0039e2665cc2a9db4e346f0e"
+sha256 = "ca7ab282a048519384a40890dab7328752b8b25d5daa3f2bd6a29e6092fff4ab"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libwind-samba4.so.0"
-sha256 = "651d6388853e5cb4120c336c7e07511aa067a9b8d8a7582028a1dcc2770ef0f7"
+sha256 = "176ccae64b209b2dc8b892cc2268b1456880ec308cecaf2d19c55d5d1f61e884"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libwind-samba4.so.0.0.0"
-sha256 = "651d6388853e5cb4120c336c7e07511aa067a9b8d8a7582028a1dcc2770ef0f7"
+sha256 = "176ccae64b209b2dc8b892cc2268b1456880ec308cecaf2d19c55d5d1f61e884"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/libxattr-tdb.so.0"
-sha256 = "13fc62e3464f0e6cef54b84305036fc24ae9d01e6f1f9e123b925acfbf797738"
+sha256 = "81edc9d4bf48bed69182c64a2c5896949e66cd90b2a72a04b165af7dfd01e9e1"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/process_model/prefork.so"
-sha256 = "e338a3321e0e935b4f464e9ae214405e93bef61a3d846e5f1553e9773c3061d9"
+sha256 = "66ac0595edba44341f12a715e961f1cd0f84dde1742fe5099bedcdcda6509bee"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/samba/process_model/standard.so"
-sha256 = "40787cf30f43520146412d71dc14d6d2d79d0c1701381116b780bf93349f0ddd"
+sha256 = "77fbb4bcab4a158c5c79590b7b0de363eded18aaf4bbba1d0c73573c91cd6aad"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/sane/libsane-abaton.so.1"
@@ -51614,7 +51710,7 @@ sha256 = "a1c2d8af47c1a951f39f11cf53160703f282946d9821068eadf97b7d43208a34"
 
 [[sgx.trusted_files]]
 uri = "file:server"
-sha256 = "936c40ca8203111bd083d6683cd01505f4ac34cf3d210e81713ab82bad21d391"
+sha256 = "51cfbf7686e1b0fb12d3bf90f7cdfbf32f7d502d25869f3023891391babdffa6"
 
 [[sgx.trusted_files]]
 uri = "file:server.argv"
