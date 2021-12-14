@@ -95,6 +95,10 @@ public class CalendarActivity extends Activity {
                     shot_Day = Year + "-" + "0"+ Month + "-" + Day;
                 }else if(Month < 10 && Day <10){
                     shot_Day = Year + "-" + "0"+ Month + "-" + "0" + Day;
+                }else if(Month > 10 && Day < 10){
+                    shot_Day = Year + "-" +  Month + "-" + "0" + Day;
+                }else{
+                    shot_Day = Year + "-" + Month + "-" + Day;
                 }
                 
                 
