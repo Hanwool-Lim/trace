@@ -2904,6 +2904,8 @@ else if(messagetype == 1){
 	char *server = "127.0.0.1"; //no localhost
 	char *user = "root";
 	char *database = "tracking";
+	
+	int write_msg_sz;
 
 	DB_connect = mysql_init(NULL);
 
@@ -2914,15 +2916,21 @@ else if(messagetype == 1){
 	sprintf(command, "select EXISTS (select * from tracking where FileID='%s' limit 1) as success", FileID);
 	
 	mysql_query(DB_connect, command);
-	
 	DB_result = mysql_use_result(DB_connect);
-	
 	DB_row = mysql_fetch_row(DB_result);
 	
 	if(atoi(DB_row[0]) == 0){
-		
+		sprintf(server_message, "%s,%s,%s", messagetype, FileID, 'R');
+		write_msg_sz = (int)XSTRLEN(server_message);
+		ServerWrite(ssl, server_message, write_msg_sz);
+	}
 	
-	ServerWrite(ssl, write_msg, write_msg_sz);
+	else{
+		sprintf(server_message, "%s,%s,%s", messagetype, FileID, 'A');
+		write_msg_sz = (int)XSTRLEN(server_message);
+		ServerWrite(ssl, server_message, write_msg_sz);
+	}
+	mysql_close(DB_connect);
 }
     
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
