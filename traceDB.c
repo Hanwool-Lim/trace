@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "/usr/include/mysql/mysql.h"
 #include <stdlib.h>
+#include <mysql.h>
 #include <string.h>
 
 int main(int argc, char *argv[]){
