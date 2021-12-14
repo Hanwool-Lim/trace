@@ -612,7 +612,6 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 		strncpy(FileID, ptr, sizeof(FileID));
 		//printf("FileID : %s  /  ", FileID);
 
-
 		ptr = strtok(NULL, ",");
 		if(atoi(ptr)==0)
 			strncpy(IO_mode, "READ", sizeof(IO_mode));
@@ -626,6 +625,11 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 		Result = atoi(ptr);
 		//printf("Result : %d\n", Result);
 	}else if(messagetype == 1){
+		//FileID
+		XMEMSET(FileID, 0, sizeof(FileID));
+		ptr = strtok(NULL, ",");
+		strncpy(FileID, ptr, sizeof(FileID));
+		//printf("FileID : %s  /  ", FileID);
 	
 	}
     }
