@@ -2895,12 +2895,14 @@ if(messagetype == 0){
 	mysql_close(DB_connect);
 	//end mysql
 } 
-	    
+  
 else if(messagetype == 1){
 	//mysql connect
 	char *server = "127.0.0.1"; //no localhost
 	char *user = "root";
 	char *database = "tracking";
+	
+	int query_stat;
 	
 	int write_msg_sz;
 
@@ -2910,25 +2912,34 @@ else if(messagetype == 1){
 		fprintf(stderr, "%s\n", mysql_error(DB_connect));
 		return -1;
 	}
-	sprintf(command, "select EXISTS (select * from tracking where FileID='%s' limit 1) as success", FileID);
 	
-	mysql_query(DB_connect, command);
+	sprintf(command, "select EXISTS (select * from tracking where FileID='%s' limit 1) as success",FileID);
+	
+	query_stat = mysql_query(DB_connect, command);
+	
+	if(query_stat != 0){
+		fprintf(stderr, "mysql query error %s\n", mysql_error(DB_connect));
+		return -1;
+	}
+	
 	DB_result = mysql_use_result(DB_connect);
 	DB_row = mysql_fetch_row(DB_result);
 	
 	if(atoi(DB_row[0]) == 0){
-		sprintf(server_message, "%s,%s,%s", messagetype, FileID, 'R');
+		sprintf(server_message, "%d,%s,R", messagetype, FileID);
 		write_msg_sz = (int)XSTRLEN(server_message);
 		ServerWrite(ssl, server_message, write_msg_sz);
 	}
 	
 	else{
-		sprintf(server_message, "%s,%s,%s", messagetype, FileID, 'A');
+		sprintf(server_message, "%d,%s,A", messagetype, FileID);
 		write_msg_sz = (int)XSTRLEN(server_message);
 		ServerWrite(ssl, server_message, write_msg_sz);
 	}
 	mysql_close(DB_connect);
+	
 }
+
     
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;

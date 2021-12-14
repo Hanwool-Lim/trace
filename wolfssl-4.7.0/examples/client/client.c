@@ -943,7 +943,7 @@ static int ClientRead(WOLFSSL* ssl, char* reply, int replyLen, int mustRead,
     );
     if (ret > 0) {
         reply[ret] = 0; /* null terminate */
-        // printf("%s%s\n", str, reply);
+        printf("%s%s\n", str, reply);
     }
 
     return err;
@@ -3500,7 +3500,7 @@ THREAD_RETURN WOLFSSL_THREAD client_test(void* args)
 	//XMEMSET() : memset과 유사(시작주소, 값, 사이즈)
 	XMEMSET(msg, 0, sizeof(msg));
 	XMEMSET(traceMsg, 0, sizeof(traceMsg)); //add  Date
-	strncpy(traceMsg, argv[5], strlen(argv[5])); //add
+	strncpy(traceMsg, argv[3], strlen(argv[3])); //add
 
     if (sendGET) { //sendGET : 기본값 = 0, g옵션을 사용할때 1값을 가짐
         printf("SSL connect ok, sending GET...\n");
