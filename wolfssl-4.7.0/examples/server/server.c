@@ -128,6 +128,7 @@ int Result; //add
 
 MYSQL *DB_connect;
 MYSQL_RES *DB_result;
+MYSQL_ROW DB_row;
 
 char command[1024];
 
