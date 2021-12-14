@@ -2888,8 +2888,6 @@ if(messagetype == 0){
 		return -1;
 	}
 
-	DB_result = mysql_use_result(DB_connect);
-
 	sprintf(command, "insert into tracking (Date, Time, AgentID, DeviceID, ServiceID, FileID, IO) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
 
 	mysql_query(DB_connect, command);
