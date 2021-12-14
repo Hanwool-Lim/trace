@@ -101,10 +101,6 @@ public class CalendarActivity extends Activity {
                     shot_Day = Year + "-" + Month + "-" + Day;
                 }
                 
-                
-                
-
-                shot_Day = Year + "-" + Month + "-" + Day;
                 Intent intent = getIntent();
                 service = intent.getStringExtra("ServiceID");
                 device = intent.getStringExtra("DeviceID");
