@@ -2872,7 +2872,7 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
             }
         } //end if(err == 0 && echoData == 0 && throughput == 0)
 //add
-if(memessagetype == 0){
+if(messagetype == 0){
 	//mysql connect
 	char *server = "127.0.0.1"; //no localhost
 	char *user = "root";
@@ -2894,6 +2894,18 @@ if(memessagetype == 0){
 
 	mysql_close(DB_connect);
 	//end mysql
+} else if(messagetype == 1){
+	//mysql connect
+	char *server = "127.0.0.1"; //no localhost
+	char *user = "root";
+	char *database = "tracking";
+
+	DB_connect = mysql_init(NULL);
+
+	if(!mysql_real_connect(DB_connect, server, user, "", "tracking", 0, NULL, 0)){
+		fprintf(stderr, "%s\n", mysql_error(DB_connect));
+		return -1;
+	}
 }
     
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
