@@ -132,6 +132,8 @@ MYSQL_ROW DB_row;
 
 char command[1024];
 
+char server_message[1024];
+
 int runWithErrors = 0; /* Used with -x flag to run err_sys vs. print errors */
 int catastrophic = 0; /* Use with -x flag to still exit when an error is
                       * considered catastrophic EG the servers own cert failing
@@ -2914,6 +2916,13 @@ else if(messagetype == 1){
 	mysql_query(DB_connect, command);
 	
 	DB_result = mysql_use_result(DB_connect);
+	
+	DB_row = mysql_fetch_row(DB_result);
+	
+	if(atoi(DB_row[0]) == 0){
+		
+	
+	ServerWrite(ssl, write_msg, write_msg_sz);
 }
     
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
