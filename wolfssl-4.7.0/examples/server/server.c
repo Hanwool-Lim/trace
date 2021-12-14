@@ -2871,28 +2871,30 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
                 goto exit;
             }
         } //end if(err == 0 && echoData == 0 && throughput == 0)
+//add
+if(memessagetype == 0){
+	//mysql connect
+	char *server = "127.0.0.1"; //no localhost
+	char *user = "root";
+	char *database = "tracking";
 
-//mysql connect
-char *server = "127.0.0.1"; //no localhost
-char *user = "root";
-char *database = "tracking";
+	DB_connect = mysql_init(NULL);
 
-DB_connect = mysql_init(NULL);
+	if(!mysql_real_connect(DB_connect, server, user, "", "tracking", 0, NULL, 0)){
+		fprintf(stderr, "%s\n", mysql_error(DB_connect));
+		return -1;
+	}
 
-if(!mysql_real_connect(DB_connect, server, user, "", "tracking", 0, NULL, 0)){
-	fprintf(stderr, "%s\n", mysql_error(DB_connect));
-	return -1;
+	DB_result = mysql_use_result(DB_connect);
+
+	sprintf(command, "insert into tracking (Date, Time, AgentID, DeviceID, ServiceID, FileID, IO) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
+
+	mysql_query(DB_connect, command);
+	DB_result=mysql_use_result(DB_connect);
+
+	mysql_close(DB_connect);
+	//end mysql
 }
-
-DB_result = mysql_use_result(DB_connect);
-
-sprintf(command, "insert into tracking (Date, Time, AgentID, DeviceID, ServiceID, FileID, IO) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
-
-mysql_query(DB_connect, command);
-DB_result=mysql_use_result(DB_connect);
-
-mysql_close(DB_connect);
-//end mysql         
     
 #if defined(WOLFSSL_MDK_SHELL) && defined(HAVE_MDK_RTX) //실행 X
         os_dly_wait(500) ;
