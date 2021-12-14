@@ -2887,7 +2887,6 @@ if(messagetype == 0){
 		fprintf(stderr, "%s\n", mysql_error(DB_connect));
 		return -1;
 	}
-
 	sprintf(command, "insert into tracking (Date, Time, AgentID, DeviceID, ServiceID, FileID, IO) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",Date, Time, AgentID, DeviceID, ServiceID, FileID, IO_mode);
 
 	mysql_query(DB_connect, command);
