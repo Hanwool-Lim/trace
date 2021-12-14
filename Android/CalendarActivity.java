@@ -90,6 +90,13 @@ public class CalendarActivity extends Activity {
 //                Log.i("Year test", Year + "");
 //                Log.i("Month test", Month + "");
 //                Log.i("Day test", Day + "");
+                
+                if (Month < 10 && Day > 10){
+                    shot_Day = Year + "-" + "0"+ Month + "-" + Day;
+                }
+                
+                
+                
 
                 shot_Day = Year + "-" + Month + "-" + Day;
                 Intent intent = getIntent();
