@@ -575,55 +575,59 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 	messagetype = atoi(ptr);
 	//printf("messagetype : %d  ", messagetype);
 
-	//Date
-	XMEMSET(Date, 0, sizeof(Date));
-	ptr = strtok(NULL, ",");
-	strncpy(Date, ptr, sizeof(Date));
-	//printf("Date : %s  ", Date);
+	if(messagetype == 0){
+		//Date
+		XMEMSET(Date, 0, sizeof(Date));
+		ptr = strtok(NULL, ",");
+		strncpy(Date, ptr, sizeof(Date));
+		//printf("Date : %s  ", Date);
 
-	//Time
-	XMEMSET(Time, 0, sizeof(Time));
-	ptr = strtok(NULL, ",");
-	strncpy(Time, ptr, sizeof(Time));
-	//printf("Time : %s  /  ", Time);
+		//Time
+		XMEMSET(Time, 0, sizeof(Time));
+		ptr = strtok(NULL, ",");
+		strncpy(Time, ptr, sizeof(Time));
+		//printf("Time : %s  /  ", Time);
 
-	//ServiceID
-	XMEMSET(ServiceID, 0, sizeof(ServiceID));
-	ptr = strtok(NULL, ",");
-	strncpy(ServiceID, ptr, sizeof(ServiceID));
-	//printf("ServiceID : %s  /  ", ServiceID);
+		//ServiceID
+		XMEMSET(ServiceID, 0, sizeof(ServiceID));
+		ptr = strtok(NULL, ",");
+		strncpy(ServiceID, ptr, sizeof(ServiceID));
+		//printf("ServiceID : %s  /  ", ServiceID);
 	
-	//AgentID
-	XMEMSET(AgentID, 0, sizeof(AgentID));
-	ptr = strtok(NULL, ",");
-	strncpy(AgentID, ptr, sizeof(AgentID));
-	//printf("AgentID : %s  /  ", AgentID);
+		//AgentID
+		XMEMSET(AgentID, 0, sizeof(AgentID));
+		ptr = strtok(NULL, ",");
+		strncpy(AgentID, ptr, sizeof(AgentID));
+		//printf("AgentID : %s  /  ", AgentID);
+	
+		//DeviceID
+		XMEMSET(DeviceID, 0, sizeof(DeviceID));
+		ptr = strtok(NULL, ",");
+		strncpy(DeviceID, ptr, sizeof(DeviceID));
+		//printf("DeviceID : %s  /\n", DeviceID);
 
-	//DeviceID
-	XMEMSET(DeviceID, 0, sizeof(DeviceID));
-	ptr = strtok(NULL, ",");
-	strncpy(DeviceID, ptr, sizeof(DeviceID));
-	//printf("DeviceID : %s  /\n", DeviceID);
-
-	//FileID
-	XMEMSET(FileID, 0, sizeof(FileID));
-	ptr = strtok(NULL, ",");
-	strncpy(FileID, ptr, sizeof(FileID));
-	//printf("FileID : %s  /  ", FileID);
+		//FileID
+		XMEMSET(FileID, 0, sizeof(FileID));
+		ptr = strtok(NULL, ",");
+		strncpy(FileID, ptr, sizeof(FileID));
+		//printf("FileID : %s  /  ", FileID);
 
 
-	ptr = strtok(NULL, ",");
-	if(atoi(ptr)==0)
-		strncpy(IO_mode, "READ", sizeof(IO_mode));
-	else if(atoi(ptr)==1)
-		strncpy(IO_mode, "WRITE", sizeof(IO_mode));
-	else
-		strncpy(IO_mode, "R&W", sizeof(IO_mode));
-	//printf("IO_mode : %s  /  ", IO_mode);
+		ptr = strtok(NULL, ",");
+		if(atoi(ptr)==0)
+			strncpy(IO_mode, "READ", sizeof(IO_mode));
+		else if(atoi(ptr)==1)
+			strncpy(IO_mode, "WRITE", sizeof(IO_mode));
+		else
+			strncpy(IO_mode, "R&W", sizeof(IO_mode));
+		//printf("IO_mode : %s  /  ", IO_mode);
 
-	ptr = strtok(NULL, ",");
-	Result = atoi(ptr);
-	//printf("Result : %d\n", Result);
+		ptr = strtok(NULL, ",");
+		Result = atoi(ptr);
+		//printf("Result : %d\n", Result);
+	}else if(messagetype == 1){
+	
+	}
     }
 }
 
