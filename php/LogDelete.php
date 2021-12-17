@@ -19,6 +19,7 @@
 		system("/home/tracking/trace/Deletion '$command'");
 		
 		$statement = mysqli_prepare($con, "INSERT INTO removed values ('$DeviceID','$ServiceID','$command')");
+		mysqli_stmt_bind_param($statement, "sss", $Date, $DeviceID, $ServiceID);
    	}
 
 	    #로그 삭제
