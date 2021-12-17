@@ -2906,7 +2906,7 @@ else if(messagetype == 1){
 
 	DB_connect = mysql_init(NULL);
 
-	if(!mysql_real_connect(DB_connect, server, user, "", "removed", 0, NULL, 0)){
+	if(!mysql_real_connect(DB_connect, server, user, "", "tracking", 0, NULL, 0)){
 		fprintf(stderr, "%s\n", mysql_error(DB_connect));
 		return -1;
 	}
