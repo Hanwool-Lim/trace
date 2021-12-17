@@ -169,7 +169,7 @@ public class CalendarActivity extends Activity {
                                 Toast.makeText(getApplicationContext(),"데이터 완전폐기에 성공하였습니다.", Toast.LENGTH_SHORT).show();
 
                             }else{
-                                Toast.makeText(getApplicationContext(),"로그 삭제에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"데이터 완전폐기에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                                 return;
                             }
 
