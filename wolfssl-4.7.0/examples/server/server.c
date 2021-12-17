@@ -583,13 +583,13 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 		XMEMSET(Date, 0, sizeof(Date));
 		ptr = strtok(NULL, ",");
 		strncpy(Date, ptr, sizeof(Date));
-		//printf("Date : %s  ", Date);
+		printf("Date : %s  ", Date);
 
 		//Time
 		XMEMSET(Time, 0, sizeof(Time));
 		ptr = strtok(NULL, ",");
 		strncpy(Time, ptr, sizeof(Time));
-		//printf("Time : %s  /  ", Time);
+		printf("Time : %s  /  ", Time);
 
 		//ServiceID
 		XMEMSET(ServiceID, 0, sizeof(ServiceID));
