@@ -17,6 +17,8 @@
 		$command = $row["FileID"];
 		system("python Socket.py /home/tracking/trace/Deletion '$command'");
 		system("/home/tracking/trace/Deletion '$command'");
+		
+		$statement = mysqli_prepare($con, "INSERT INTO removed values ('$DeviceID','$ServiceID','$command')");
    	}
 
 	    #로그 삭제
