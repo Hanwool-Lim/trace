@@ -17,11 +17,16 @@
 		$command = $row["FileID"];
 		system("python Socket.py /home/tracking/trace/Deletion '$command'");
 		system("/home/tracking/trace/Deletion '$command'");
+		
+		$statement = mysqli_prepare($con, "INSERT INTO removed values ('$DeviceID','$ServiceID','$command')");
+		mysqli_stmt_bind_param($statement, "sss", $Date, $DeviceID, $ServiceID);
+		mysqli_stmt_execute($statement);
    	}
 
-	$statement = mysqli_prepare($con, "DELETE FROM tracking WHERE ( Date= ? AND DeviceID = ? AND ServiceID = ?)");
-	mysqli_stmt_bind_param($statement, "sss", $Date, $DeviceID, $ServiceID);
-	mysqli_stmt_execute($statement);
+	    #로그 삭제
+	#$statement = mysqli_prepare($con, "DELETE FROM tracking WHERE ( Date= ? AND DeviceID = ? AND ServiceID = ?)");
+	#mysqli_stmt_bind_param($statement, "sss", $Date, $DeviceID, $ServiceID);
+	#mysqli_stmt_execute($statement);
 
 	$response["success"] = true;
     }

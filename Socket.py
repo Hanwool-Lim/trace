@@ -16,11 +16,19 @@ client_socket_SKS.connect((SKS, SKS_PORT))
 
 msg = file_name;
 data = msg.encode();
+<<<<<<< HEAD
 #length = len(data);
 #client_socket_SKS.sendall(length.to_bytes(4, byteorder="little"));
 
 # 데이터를 전송한다.
 client_socket_SKS.sendall(data);
 
-client_socket_SKS.close();
+=======
+length = len(data);
+#client_socket_SKS.sendall(length.to_bytes(4, byteorder="little"));
 
+# 데이터를 전송한다.
+client_socket_SKS.sendall(data);
+
+>>>>>>> 789f169ea607544843032c7716cf9fc1f2d7fda8
+client_socket_SKS.close();

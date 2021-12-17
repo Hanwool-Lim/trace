@@ -15,9 +15,15 @@
 			$command = $row["FileID"];
 			system("python Socket.py /home/tracking/trace/Deletion '$command'");
 			system("/home/tracking/trace/Deletion '$command'");
+			
+			#removed 테이블에 저장
+			$statement = mysqli_prepare($con, "INSERT INTO removed values ('$DeviceID','$ServiceID','$command')");
+			mysqli_stmt_bind_param($statement, "sss", $Date, $DeviceID, $ServiceID);
+			mysqli_stmt_execute($statement);
 		}
 
-    		$statement = mysqli_query($con, "DELETE FROM tracking WHERE DeviceID = '$DeviceID'");
+		#맵핑정보만 
+    		#$statement = mysqli_query($con, "DELETE FROM tracking WHERE DeviceID = '$DeviceID'");
 		$statement = mysqli_query($con, "DELETE FROM mapping WHERE DeviceID = '$DeviceID'");
 
 		$response["success"] = true;
