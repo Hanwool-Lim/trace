@@ -2879,7 +2879,6 @@ if(messagetype == 0){
 	//mysql connect
 	char *server = "127.0.0.1"; //no localhost
 	char *user = "root";
-	char *database = "tracking";
 
 	DB_connect = mysql_init(NULL);
 
@@ -2900,7 +2899,6 @@ else if(messagetype == 1){
 	//mysql connect
 	char *server = "127.0.0.1"; //no localhost
 	char *user = "root";
-	char *database = "tracking";
 	
 	int query_stat;
 	
@@ -2908,7 +2906,7 @@ else if(messagetype == 1){
 
 	DB_connect = mysql_init(NULL);
 
-	if(!mysql_real_connect(DB_connect, server, user, "", "tracking", 0, NULL, 0)){
+	if(!mysql_real_connect(DB_connect, server, user, "", "removed", 0, NULL, 0)){
 		fprintf(stderr, "%s\n", mysql_error(DB_connect));
 		return -1;
 	}
