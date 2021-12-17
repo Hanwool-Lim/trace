@@ -576,44 +576,44 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 	//message type
 	ptr = strtok(input, ",");
 	messagetype = atoi(ptr);
-	printf("messagetype : %d  ", messagetype);
+	//printf("messagetype : %d  ", messagetype);
 
 	if(messagetype == 0){
 		//Date
 		XMEMSET(Date, 0, sizeof(Date));
 		ptr = strtok(NULL, ",");
 		strncpy(Date, ptr, sizeof(Date));
-		printf("Date : %s  ", Date);
+		//printf("Date : %s  ", Date);
 
 		//Time
 		XMEMSET(Time, 0, sizeof(Time));
 		ptr = strtok(NULL, ",");
 		strncpy(Time, ptr, sizeof(Time));
-		printf("Time : %s  /  ", Time);
+		//printf("Time : %s  /  ", Time);
 
 		//ServiceID
 		XMEMSET(ServiceID, 0, sizeof(ServiceID));
 		ptr = strtok(NULL, ",");
 		strncpy(ServiceID, ptr, sizeof(ServiceID));
-		printf("ServiceID : %s  /  ", ServiceID);
+		//printf("ServiceID : %s  /  ", ServiceID);
 	
 		//AgentID
 		XMEMSET(AgentID, 0, sizeof(AgentID));
 		ptr = strtok(NULL, ",");
 		strncpy(AgentID, ptr, sizeof(AgentID));
-		printf("AgentID : %s  /  ", AgentID);
+		//printf("AgentID : %s  /  ", AgentID);
 	
 		//DeviceID
 		XMEMSET(DeviceID, 0, sizeof(DeviceID));
 		ptr = strtok(NULL, ",");
 		strncpy(DeviceID, ptr, sizeof(DeviceID));
-		printf("DeviceID : %s  /\n", DeviceID);
+		//printf("DeviceID : %s  /\n", DeviceID);
 
 		//FileID
 		XMEMSET(FileID, 0, sizeof(FileID));
 		ptr = strtok(NULL, ",");
 		strncpy(FileID, ptr, sizeof(FileID));
-		printf("FileID : %s  /  ", FileID);
+		//printf("FileID : %s  /  ", FileID);
 
 		ptr = strtok(NULL, ",");
 		if(atoi(ptr)==0)
@@ -622,7 +622,7 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 			strncpy(IO_mode, "WRITE", sizeof(IO_mode));
 		else
 			strncpy(IO_mode, "R&W", sizeof(IO_mode));
-		printf("IO_mode : %s  /  ", IO_mode);
+		//printf("IO_mode : %s  /  ", IO_mode);
 
 		ptr = strtok(NULL, ",");
 		Result = atoi(ptr);
@@ -632,7 +632,7 @@ static void ServerRead(WOLFSSL* ssl, char* input, int inputLen) //중요
 		XMEMSET(FileID, 0, sizeof(FileID));
 		ptr = strtok(NULL, ",");
 		strncpy(FileID, ptr, sizeof(FileID));
-		printf("FileID : %s  /  ", FileID);
+		//printf("FileID : %s\n", FileID);
 	
 	}
     }
