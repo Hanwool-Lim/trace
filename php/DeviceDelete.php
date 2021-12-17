@@ -17,7 +17,8 @@
 			system("/home/tracking/trace/Deletion '$command'");
 		}
 
-    		$statement = mysqli_query($con, "DELETE FROM tracking WHERE DeviceID = '$DeviceID'");
+		#맵핑정보만 
+    		#$statement = mysqli_query($con, "DELETE FROM tracking WHERE DeviceID = '$DeviceID'");
 		$statement = mysqli_query($con, "DELETE FROM mapping WHERE DeviceID = '$DeviceID'");
 
 		$response["success"] = true;
