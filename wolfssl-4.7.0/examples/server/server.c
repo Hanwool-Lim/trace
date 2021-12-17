@@ -1241,9 +1241,9 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
     //ourCert    = svrCertFile;
     //ourKey     = svrKeyFile;
     
-    //verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
-    //ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
-    //ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
+    verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
+    ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
+    ourKey     = "/home/tracking/trace/wolfssl-4.7.0/certs/server-key.pem"; //svrKeyFile;
 //setting Client_cert, server_cert, Server_Key
 
 #else
