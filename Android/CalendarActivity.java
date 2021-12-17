@@ -166,7 +166,7 @@ public class CalendarActivity extends Activity {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if(success){
-                                Toast.makeText(getApplicationContext(),"데이터 완전폐기에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"데이터 완전폐기에 성공하였습니다.", Toast.LENGTH_LONG).show();
 
                             }else{
                                 Toast.makeText(getApplicationContext(),"데이터 완전폐기에 실패하였습니다.", Toast.LENGTH_SHORT).show();
