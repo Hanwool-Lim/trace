@@ -22,8 +22,10 @@
 			system("python Socket.py /home/tracking/trace/Deletion '$command'");
 			system("/home/tracking/trace/Deletion '$command'");
 			
+			#removed 
 			$statement = mysqli_prepare($con, "INSERT INTO removed values ('$DeviceID','$ServiceID','$command')");
 			mysqli_stmt_bind_param($statement, "sss", $Date, $DeviceID, $ServiceID);
+			mysqli_stmt_execute($statement);
 		}
 		
 		#디바이스 삭제
