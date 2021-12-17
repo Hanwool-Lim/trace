@@ -2925,12 +2925,14 @@ else if(messagetype == 1){
 	
 	if(atoi(DB_row[0]) == 0){
 		sprintf(server_message, "%d,%s,A", messagetype, FileID);
+		printf("%s\n", server_message);
 		write_msg_sz = (int)XSTRLEN(server_message);
 		ServerWrite(ssl, server_message, write_msg_sz);
 	}
 	
 	else{
 		sprintf(server_message, "%d,%s,R", messagetype, FileID);
+		printf("%s\n", server_message);
 		write_msg_sz = (int)XSTRLEN(server_message);
 		ServerWrite(ssl, server_message, write_msg_sz);
 	}
