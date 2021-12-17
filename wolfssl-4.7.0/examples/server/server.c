@@ -1237,9 +1237,9 @@ THREAD_RETURN WOLFSSL_THREAD server_test(void* args)
 
 //기본적인 실행에서 실행
 #ifndef NO_RSA
-    verifyCert = cliCertFile;
-    ourCert    = svrCertFile;
-    ourKey     = svrKeyFile;
+    //verifyCert = cliCertFile;
+    //ourCert    = svrCertFile;
+    //ourKey     = svrKeyFile;
     
     //verifyCert = "/home/tracking/trace/wolfssl-4.7.0/certs/client-cert.pem"; //cliCertFile;
     //ourCert    = "/home/tracking/trace/wolfssl-4.7.0/certs/server-cert.pem"; //svrCertFile;
