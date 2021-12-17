@@ -2924,13 +2924,13 @@ else if(messagetype == 1){
 	DB_row = mysql_fetch_row(DB_result);
 	
 	if(atoi(DB_row[0]) == 0){
-		sprintf(server_message, "%d,%s,R", messagetype, FileID);
+		sprintf(server_message, "%d,%s,A", messagetype, FileID);
 		write_msg_sz = (int)XSTRLEN(server_message);
 		ServerWrite(ssl, server_message, write_msg_sz);
 	}
 	
 	else{
-		sprintf(server_message, "%d,%s,A", messagetype, FileID);
+		sprintf(server_message, "%d,%s,R", messagetype, FileID);
 		write_msg_sz = (int)XSTRLEN(server_message);
 		ServerWrite(ssl, server_message, write_msg_sz);
 	}
