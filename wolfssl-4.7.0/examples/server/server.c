@@ -2911,7 +2911,7 @@ else if(messagetype == 1){
 		return -1;
 	}
 	
-	sprintf(command, "select EXISTS (select * from tracking where FileID='%s' limit 1) as success",FileID);
+	sprintf(command, "select EXISTS (select * from removed where FileID='%s' limit 1) as success",FileID);
 	
 	query_stat = mysql_query(DB_connect, command);
 	
