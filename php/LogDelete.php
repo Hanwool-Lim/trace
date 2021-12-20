@@ -15,7 +15,7 @@
 	$NFS_statement = mysqli_query($con, "Select Distinct FileID FROM tracking WHERE Date = '$Date' AND DeviceID = '$DeviceID' AND ServiceID = '$ServiceID'");
 	while($row=mysqli_fetch_assoc($NFS_statement)){
 		$command = $row["FileID"];
-		system("python Socket.py /home/tracking/trace/Deletion '$command'");
+		system("python /home/tracking/trace/Socket.py '$command'");
 		system("/home/tracking/trace/Deletion '$command'");
 		
 		$statement = mysqli_prepare($con, "INSERT INTO removed values ('$DeviceID','$ServiceID','$command')");
