@@ -4,7 +4,7 @@
 int main(int argc, char* argv[]){
 
 //	char server_link[100] = "192.168.219.102:/home/jun/Desktop/IOagent";
-	char nfs_link[100] = "/home/tracking/Desktop/IOagent";
+	char nfs_link[100] = "/home/tracking/Desktop/nfs";
 	char command[100];
 	int count;
 
