@@ -13494,19 +13494,19 @@ sha256 = "1a08b87bb4b1dda2668a60ea1cc07de562d7f424f55e522f77bf19bca6b6b086"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libpython3.8.a"
-sha256 = "480128b406dd30ae012d7e6e0fc1925bf89b02ee723fb281b6feb8d522c53049"
+sha256 = "8fe00c4811a00e825bf6099ebcac54c550190e303187c925a4da1bd98a7e8de1"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libpython3.8.so"
-sha256 = "51ff886e82af9538ca944d617c61865fcc06bf30d13db344679f86253b5e65f2"
+sha256 = "dec798ef022383a526638a37c30e0bbec04adcd45482bb3be866f994e3ad1b4a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libpython3.8.so.1"
-sha256 = "51ff886e82af9538ca944d617c61865fcc06bf30d13db344679f86253b5e65f2"
+sha256 = "dec798ef022383a526638a37c30e0bbec04adcd45482bb3be866f994e3ad1b4a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libpython3.8.so.1.0"
-sha256 = "51ff886e82af9538ca944d617c61865fcc06bf30d13db344679f86253b5e65f2"
+sha256 = "dec798ef022383a526638a37c30e0bbec04adcd45482bb3be866f994e3ad1b4a"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libqmi-glib.so.5"
@@ -13539,6 +13539,10 @@ sha256 = "ab8ef43391130ea9504ff44bcc3286b80d38685095ba5603346daea12fe107ba"
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/libquadmath.so.0.0.0"
 sha256 = "ab8ef43391130ea9504ff44bcc3286b80d38685095ba5603346daea12fe107ba"
+
+[[sgx.trusted_files]]
+uri = "file:/lib/x86_64-linux-gnu/libra_tls_attest.so"
+sha256 = "061b309db2d033b8ed25ca966c86f66b09eac2980140361cca69fde558a2f8ae"
 
 [[sgx.trusted_files]]
 uri = "file:/lib/x86_64-linux-gnu/librados.so.2"
@@ -38198,19 +38202,19 @@ sha256 = "1a08b87bb4b1dda2668a60ea1cc07de562d7f424f55e522f77bf19bca6b6b086"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libpython3.8.a"
-sha256 = "480128b406dd30ae012d7e6e0fc1925bf89b02ee723fb281b6feb8d522c53049"
+sha256 = "8fe00c4811a00e825bf6099ebcac54c550190e303187c925a4da1bd98a7e8de1"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libpython3.8.so"
-sha256 = "51ff886e82af9538ca944d617c61865fcc06bf30d13db344679f86253b5e65f2"
+sha256 = "dec798ef022383a526638a37c30e0bbec04adcd45482bb3be866f994e3ad1b4a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libpython3.8.so.1"
-sha256 = "51ff886e82af9538ca944d617c61865fcc06bf30d13db344679f86253b5e65f2"
+sha256 = "dec798ef022383a526638a37c30e0bbec04adcd45482bb3be866f994e3ad1b4a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libpython3.8.so.1.0"
-sha256 = "51ff886e82af9538ca944d617c61865fcc06bf30d13db344679f86253b5e65f2"
+sha256 = "dec798ef022383a526638a37c30e0bbec04adcd45482bb3be866f994e3ad1b4a"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libqmi-glib.so.5"
@@ -38243,6 +38247,10 @@ sha256 = "ab8ef43391130ea9504ff44bcc3286b80d38685095ba5603346daea12fe107ba"
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0"
 sha256 = "ab8ef43391130ea9504ff44bcc3286b80d38685095ba5603346daea12fe107ba"
+
+[[sgx.trusted_files]]
+uri = "file:/usr/lib/x86_64-linux-gnu/libra_tls_attest.so"
+sha256 = "061b309db2d033b8ed25ca966c86f66b09eac2980140361cca69fde558a2f8ae"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/lib/x86_64-linux-gnu/librados.so.2"
@@ -49566,15 +49574,15 @@ sha256 = "5fe2678eb605cf1712ce37a5c638c9f565f7164c74c16d5644bd7af969101420"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/local/lib/libwolfssl.so"
-sha256 = "1bca7cb32509f606b04ba0c7b5019b56c55648fea4f7a2477b87a48d7be94fbc"
+sha256 = "4e52b9f853718e7477ecb5e21fc22edf7cde5742bac1e8cb0f79ad46222c6a5d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/local/lib/libwolfssl.so.24"
-sha256 = "1bca7cb32509f606b04ba0c7b5019b56c55648fea4f7a2477b87a48d7be94fbc"
+sha256 = "4e52b9f853718e7477ecb5e21fc22edf7cde5742bac1e8cb0f79ad46222c6a5d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/local/lib/libwolfssl.so.24.4.0"
-sha256 = "1bca7cb32509f606b04ba0c7b5019b56c55648fea4f7a2477b87a48d7be94fbc"
+sha256 = "4e52b9f853718e7477ecb5e21fc22edf7cde5742bac1e8cb0f79ad46222c6a5d"
 
 [[sgx.trusted_files]]
 uri = "file:/usr/local/lib/pkgconfig/wolfssl.pc"
