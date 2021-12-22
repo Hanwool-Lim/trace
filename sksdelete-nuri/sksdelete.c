@@ -3,8 +3,10 @@
 #include <wolfssl/test.h>
 #include <string.h>
 #include <errno.h>
+//#include "ra_tls.h"
+//#include <mbedtls/x509_crt.h>
 
-int ra_tls_create_key_and_crt_der(uint8_t **, size_t *, uint8_t **, size_t *);
+int ra_tls_create_key_and_crt_der(uint8_t **der_key, size_t *der_key_size, uint8_t **der_crt, size_t *der_crt_size);
 
 int load_ra_tls_cert(WOLFSSL_CTX *ctx){
     int ret;
